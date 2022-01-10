@@ -4,4 +4,4 @@
 Help you to develop strong BDS C++ plugins easily  
 More Info 👉 [LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS)  
 
-### Do Not Push To This Repo
+# Do not push to this Repo.
