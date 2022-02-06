@@ -699,4 +699,12 @@ class ConsoleOutputEvent : public EventTemplate<ConsoleOutputEvent>
 public:
     std::string mOutput;
 };
+    
+class PlayerBedEnterEvent : public EventTemplate<PlayerBedEnterEvent>
+{
+public:
+    Player* mPlayer;
+    BlockInstance* mBlockInstance;
+};
+
 }; // namespace Event
