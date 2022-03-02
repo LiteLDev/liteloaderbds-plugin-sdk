@@ -4,10 +4,12 @@ class Actor;
 #define USE_PARSE_ENUM_STRING
 //#define ENABLE_PARAMETER_TYPE_POSTFIX
 #include "MC/Command.hpp"
+#include "MC/CommandOrigin.hpp"
+#include "MC/CommandOutput.hpp"
+#include "MC/CommandParameterData.hpp"
 #include "MC/CommandRegistry.hpp"
 #include "MC/CommandSelector.hpp"
 #include "MC/CommandPosition.hpp"
-#include "MC/CommandParameterData.hpp"
 #include "Utils/WinHelper.h"
 #include <third-party/magic_enum/magic_enum.hpp>
 
