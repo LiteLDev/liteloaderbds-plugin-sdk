@@ -47,6 +47,7 @@ public:
     LIAPI float getAvgPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
+    LIAPI bool isOperator();
     LIAPI bool isOP();
 
 
@@ -104,6 +105,7 @@ public:
     LIAPI bool sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay = 0);
     LIAPI bool sendCommandRequestPacket(const string& cmd);
     LIAPI bool sendTextTalkPacket(const string& msg);
+    LIAPI bool sendTextTalkPacket(const string& msg, Player* target/* = nullptr*/);
 
     LIAPI bool sendRawFormPacket(unsigned formId, const string& data) const;
 
