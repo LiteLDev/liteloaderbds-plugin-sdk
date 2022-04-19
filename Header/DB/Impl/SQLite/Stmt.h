@@ -16,8 +16,7 @@ class SQLiteStmt : public Stmt
     RowHeader resultHeader;
     int boundParamsCount = 0;
     int totalParamsCount = 0;
-    uint64_t affectedRowCount = -1;
-    uint64_t insertRowId = -1;
+    int affectedRowsCount = -1;
     bool onHeap = false;
     bool stepped = false;
     std::vector<int> boundIndexes;
@@ -37,21 +36,14 @@ public:
     Row fetch();
     Stmt& fetchAll(std::function<bool(const Row&)> cb);
     ResultSet fetchAll();
-    /**
-     * @see Stmt::reset for details
-     * @see https://www.sqlite.org/c3ref/reset.html
-     */
-    Stmt& reset();
-    Stmt& clear();
+    ResultSet fetchAll(RowHeader& header);
+	Stmt& reset();
     void close();
-    void destroy();
-    uint64_t getAffectedRows() const;
-    uint64_t getInsertId() const;
-    int getUnboundParams() const;
-    int getBoundParams() const;
-    int getParamsCount() const;
-    Session* getSession() const;
-    DBType getType() const;
+    int getAffectedRows();
+    int getUnboundParams();
+    int getBoundParams();
+    int getParamsCount();
+    DBType getType();
 
     Stmt& operator,(const BindType& b);
 
