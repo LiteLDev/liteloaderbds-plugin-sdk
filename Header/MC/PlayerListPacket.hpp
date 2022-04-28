@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Packet.hpp"
-
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "PlayerListEntry.hpp"
@@ -16,7 +15,8 @@ enum class PlayerListPacketType
 
 #undef BEFORE_EXTRA
 
-class PlayerListPacket : public Packet {
+class PlayerListPacket : public Packet
+{
 
 #define AFTER_EXTRA
 // Add Member There
@@ -39,8 +39,12 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
+    inline enum StreamReadResult _read(class ReadOnlyBinaryStream & a0){
+        enum StreamReadResult (PlayerListPacket::*rv)(class ReadOnlyBinaryStream &);
+        *((void**)&rv) = dlsym("?_read@PlayerListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream &>(a0));
+    }
     inline  ~PlayerListPacket(){
          (PlayerListPacket::*rv)();
         *((void**)&rv) = dlsym("??1PlayerListPacket@@UEAA@XZ");

@@ -2,13 +2,12 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Command.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class ServerScriptDebugCommand : public Command {
+class ServerScriptDebugCommand {
 
 #define AFTER_EXTRA
 
