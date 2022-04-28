@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class LootCommand {
+class LootCommand : public Command {
 
 #define AFTER_EXTRA
 

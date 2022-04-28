@@ -60,19 +60,14 @@ public:
     /*34*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
     /*35*/ virtual std::string getFeedbackURL() const;
     /*
-    inline bool areQuizzesSupported() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?areQuizzesSupported@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool useFullScreenByDefault() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?useFullScreenByDefault@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool muteByDefault() const{
+    inline bool areQuizzesSupported() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?muteByDefault@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?areQuizzesSupported@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool requireEduLevelSettings() const{
@@ -80,9 +75,9 @@ public:
         *((void**)&rv) = dlsym("?requireEduLevelSettings@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool worldBuilderDisabled() const{
+    inline bool muteByDefault() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?worldBuilderDisabled@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?muteByDefault@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool useNormalizedFontSize() const{
@@ -90,9 +85,9 @@ public:
         *((void**)&rv) = dlsym("?useNormalizedFontSize@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool webSocketsDisabled() const{
+    inline bool worldBuilderDisabled() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?webSocketsDisabled@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?worldBuilderDisabled@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool useEduDemoUpsellDialog() const{
@@ -100,14 +95,14 @@ public:
         *((void**)&rv) = dlsym("?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool webSocketsDisabled() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?webSocketsDisabled@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool sendPermissionsTelemetry() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool supportsChangingMultiplayerDuringPlay() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool shouldPromptBeforeExit() const{
@@ -115,14 +110,19 @@ public:
         *((void**)&rv) = dlsym("?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool requireTrustedContent() const{
+    inline bool supportsChangingMultiplayerDuringPlay() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?requireTrustedContent@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool gameArgumentsNeedAuthentication() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool requireTrustedContent() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?requireTrustedContent@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline enum AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const{
@@ -135,19 +135,14 @@ public:
         *((void**)&rv) = dlsym("?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canUseAzureNotebooks() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool worldsAreSingleUse() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?worldsAreSingleUse@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool areResourcePacksAllowed() const{
+    inline bool canUseAzureNotebooks() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool allowGameArguments() const{
@@ -160,19 +155,24 @@ public:
         *((void**)&rv) = dlsym("?areEmotesSupported@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool areResourcePacksAllowed() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool arePremiumSkinPacksAllowed() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?arePremiumSkinPacksAllowed@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isChatScreenAllowed() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?isChatScreenAllowed@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isGameTabShownInSettings() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?isGameTabShownInSettings@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isChatScreenAllowed() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?isChatScreenAllowed@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isPlayScreenAllowed() const{

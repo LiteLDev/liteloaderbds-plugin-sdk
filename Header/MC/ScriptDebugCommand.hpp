@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Command.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ScriptDebugCommand {
+class ScriptDebugCommand : public Command {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,6 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ScriptDebugCommand();
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
     MCAPI ScriptDebugCommand();
 
 protected:

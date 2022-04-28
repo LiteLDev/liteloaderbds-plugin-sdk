@@ -420,24 +420,19 @@ public:
         *((void**)&rv) = dlsym("?displayClientMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline void _serverInitItemStackIds(){
-        void (Player::*rv)();
-        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
-        return (this->*rv)();
+    inline void openSign(class BlockPos const & a0){
+        void (Player::*rv)(class BlockPos const &);
+        *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     inline void playEmote(std::string const & a0){
         void (Player::*rv)(std::string const &);
         *((void**)&rv) = dlsym("?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline void openSign(class BlockPos const & a0){
-        void (Player::*rv)(class BlockPos const &);
-        *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
-    }
-    inline void stopLoading(){
+    inline void _serverInitItemStackIds(){
         void (Player::*rv)();
-        *((void**)&rv) = dlsym("?stopLoading@Player@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
         return (this->*rv)();
     }
     inline void openPortfolio(){
@@ -448,6 +443,11 @@ public:
     inline void resetRot(){
         void (Player::*rv)();
         *((void**)&rv) = dlsym("?resetRot@Player@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void stopLoading(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?stopLoading@Player@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void openNpcInteractScreen(class std::shared_ptr<struct INpcDialogueData> a0){

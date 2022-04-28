@@ -3,13 +3,13 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Packet.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class AvailableActorIdentifiersPacket : public Packet
-{
+class AvailableActorIdentifiersPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -28,16 +28,12 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
     /*
     inline  ~AvailableActorIdentifiersPacket(){
          (AvailableActorIdentifiersPacket::*rv)();
         *((void**)&rv) = dlsym("??1AvailableActorIdentifiersPacket@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline enum StreamReadResult _read(class ReadOnlyBinaryStream & a0){
-        enum StreamReadResult (AvailableActorIdentifiersPacket::*rv)(class ReadOnlyBinaryStream &);
-        *((void**)&rv) = dlsym("?_read@AvailableActorIdentifiersPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream &>(a0));
     }
     */
     MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const &);
