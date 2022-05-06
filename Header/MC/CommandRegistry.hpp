@@ -54,10 +54,11 @@ typeid_t<T> type_id()
     static typeid_t<T> id = typeid_t<T>::count++;
     return id;
 }
+
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimension, int>>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
+//template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>();
+//template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum CommandOperator>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
@@ -75,9 +76,10 @@ template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Relative
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::string>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<class Command>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<Actor>>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+//template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 //template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
+
 template<>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>()
 {
@@ -90,7 +92,30 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentif
     return id;
 };
 
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>()
+{
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@VCommandItem@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    return id;
+};
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, bool>()
+{
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    return id;
+};
+
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>()
+{
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@PEBVBlock@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    return id;
+};
+
 #pragma endregion
+
 #undef BEFORE_EXTRA
 
 class CommandRegistry {
@@ -517,10 +542,10 @@ public:
         {typeid(CommandRawText).name(),
          dlsym_real(
              "??$parse@VCommandRawText@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
-        {typeid(Block const*).name(),
+        {typeid(class Block const*).name(),
          dlsym_real(
              "??$parse@PEBVBlock@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
-        {typeid(MobEffect const*).name(),
+        {typeid(class MobEffect const*).name(),
          dlsym_real(
              "??$parse@PEBVMobEffect@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandItem).name(),
