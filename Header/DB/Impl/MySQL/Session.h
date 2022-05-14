@@ -1,22 +1,27 @@
 #pragma once
 #include "../../Session.h"
 
-struct sqlite3;
+struct MYSQL;
+
 namespace DB
 {
 
-class SQLiteSession : public Session
+class MySQLStmt;
+
+class MySQLSession : public Session
 {
 
-    sqlite3* conn = nullptr;
+    MYSQL* conn = nullptr;
+
+    void setSSL(const ConnParams& params);
 
 public:
-
-    SQLiteSession();
-    SQLiteSession(const ConnParams& params);
-    ~SQLiteSession();
+    MySQLSession();
+    MySQLSession(const ConnParams& params);
+    ~MySQLSession();
     void open(const ConnParams& params);
     bool execute(const std::string& query);
+    bool relogin(const std::string& user, const std::string& password, const std::string& db = "");
     Session& query(const std::string& query, std::function<bool(const Row&)> callback);
     SharedPointer<Stmt> prepare(const std::string& query, bool autoExecute = false);
     std::string getLastError() const;
@@ -28,7 +33,8 @@ public:
 
     SharedPointer<Stmt> operator<<(const std::string& query);
 
-    friend class SQLiteStmt;
+    friend class MySQLStmt;
+
 };
 
 } // namespace DB
