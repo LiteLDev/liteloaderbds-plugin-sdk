@@ -82,7 +82,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual bool canHurtAndBreakItem() const;
-    /*50*/ virtual void __unk_vfn_50();
+    /*50*/ virtual bool isSignalSource() const;
     /*51*/ virtual bool canBeOriginalSurface() const;
     /*52*/ virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /*53*/ virtual bool isValidAuxValue(int) const;
@@ -229,8 +229,8 @@ public:
     /*194*/ virtual float getExplosionResistance(class Actor *) const;
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*196*/ virtual struct Brightness getEmissiveBrightness(class Block const &) const;
-    /*197*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
-    /*198*/ virtual void __unk_vfn_198();
+    /*197*/ virtual class mce::Color getMapColor() const;
+    /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*200*/ virtual void _executeEvent(std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /*201*/ virtual bool _executeTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
@@ -250,11 +250,6 @@ public:
         bool (BlockLegacy::*rv)(class BlockSource &, float, float, float) const;
         *((void**)&rv) = dlsym("?spawnBurnResources@BlockLegacy@@UEBA_NAEAVBlockSource@@MMM@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<float>(a1), std::forward<float>(a2), std::forward<float>(a3));
-    }
-    inline bool use(class Player & a0, class BlockPos const & a1, unsigned char a2) const{
-        bool (BlockLegacy::*rv)(class Player &, class BlockPos const &, unsigned char) const;
-        *((void**)&rv) = dlsym("?use@BlockLegacy@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1), std::forward<unsigned char>(a2));
     }
     inline bool isLeverBlock() const{
         bool (BlockLegacy::*rv)() const;
@@ -391,21 +386,6 @@ public:
         *((void**)&rv) = dlsym("?isRailBlock@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int getExtraRenderLayers() const{
-        int (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?getExtraRenderLayers@BlockLegacy@@MEBAHXZ");
-        return (this->*rv)();
-    }
-    inline bool canSurvive(class BlockSource & a0, class BlockPos const & a1) const{
-        bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?canSurvive@BlockLegacy@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline bool mayPlaceOn(class BlockSource & a0, class BlockPos const & a1) const{
-        bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?mayPlaceOn@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
     inline bool canSpawnOn() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?canSpawnOn@BlockLegacy@@UEBA_NXZ");
@@ -416,55 +396,15 @@ public:
         *((void**)&rv) = dlsym("?canBeSilkTouched@BlockLegacy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void onExploded(class BlockSource & a0, class BlockPos const & a1, class Actor * a2) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Actor *) const;
-        *((void**)&rv) = dlsym("?onExploded@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor *>(a2));
-    }
-    inline void onPlace(class BlockSource & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onPlace@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline void onStepOn(class Actor & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class Actor &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onStepOn@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0), std::forward<class BlockPos const &>(a1));
-    }
     inline void onPlayerPlacing(class BlockSource & a0, class BlockPos const & a1, class Actor & a2, unsigned char a3) const{
         void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
         *((void**)&rv) = dlsym("?onPlayerPlacing@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor &>(a2), std::forward<unsigned char>(a3));
     }
-    inline void tick(class BlockSource & a0, class BlockPos const & a1, class Random & a2) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Random &) const;
-        *((void**)&rv) = dlsym("?tick@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
-    }
-    inline void onStandOn(class EntityContext & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class EntityContext &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onStandOn@BlockLegacy@@MEBAXAEAVEntityContext@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class EntityContext &>(a0), std::forward<class BlockPos const &>(a1));
-    }
     inline void onStepOff(class Actor & a0, class BlockPos const & a1) const{
         void (BlockLegacy::*rv)(class Actor &, class BlockPos const &) const;
         *((void**)&rv) = dlsym("?onStepOff@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class Actor &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline  ~BlockLegacy(){
-         (BlockLegacy::*rv)();
-        *((void**)&rv) = dlsym("??1BlockLegacy@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline class mce::Color getMapColor(class BlockSource & a0, class BlockPos const & a1) const{
-        class mce::Color (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getMapColor@BlockLegacy@@MEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline class mce::Color getMapColor() const{
-        class mce::Color (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?getMapColor@BlockLegacy@@MEBA?AVColor@mce@@XZ");
-        return (this->*rv)();
     }
     */
     MCAPI BlockLegacy(std::string const &, int, class Material const &);

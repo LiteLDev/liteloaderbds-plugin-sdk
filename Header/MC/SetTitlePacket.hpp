@@ -30,13 +30,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~SetTitlePacket(){
-         (SetTitlePacket::*rv)();
-        *((void**)&rv) = dlsym("??1SetTitlePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI SetTitlePacket(int, int, int);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);

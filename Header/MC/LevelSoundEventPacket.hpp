@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~LevelSoundEventPacket(){
-         (LevelSoundEventPacket::*rv)();
-        *((void**)&rv) = dlsym("??1LevelSoundEventPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI LevelSoundEventPacket(enum LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
     MCAPI LevelSoundEventPacket();
 

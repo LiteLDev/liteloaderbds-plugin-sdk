@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ClientboundDebugRendererPacket(){
-         (ClientboundDebugRendererPacket::*rv)();
-        *((void**)&rv) = dlsym("??1ClientboundDebugRendererPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const &, class Vec3 const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
     MCAPI ClientboundDebugRendererPacket(enum ClientboundDebugRendererPacket::Type);
     MCAPI ClientboundDebugRendererPacket();

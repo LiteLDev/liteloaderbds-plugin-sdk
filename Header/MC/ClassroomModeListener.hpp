@@ -26,10 +26,12 @@ public:
 public:
     /*0*/ virtual ~ClassroomModeListener();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
     /*
     inline void onEntityRemoved(class Actor & a0){
         void (ClassroomModeListener::*rv)(class Actor &);
@@ -51,15 +53,15 @@ public:
         *((void**)&rv) = dlsym("?onChunkUnloaded@ClassroomModeListener@@UEAAXAEAVLevelChunk@@@Z");
         return (this->*rv)(std::forward<class LevelChunk &>(a0));
     }
-    inline void onEntityAdded(class Actor & a0){
-        void (ClassroomModeListener::*rv)(class Actor &);
-        *((void**)&rv) = dlsym("?onEntityAdded@ClassroomModeListener@@UEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0));
-    }
     inline void onChunkLoaded(class ChunkSource & a0, class LevelChunk & a1){
         void (ClassroomModeListener::*rv)(class ChunkSource &, class LevelChunk &);
         *((void**)&rv) = dlsym("?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
         return (this->*rv)(std::forward<class ChunkSource &>(a0), std::forward<class LevelChunk &>(a1));
+    }
+    inline void onEntityAdded(class Actor & a0){
+        void (ClassroomModeListener::*rv)(class Actor &);
+        *((void**)&rv) = dlsym("?onEntityAdded@ClassroomModeListener@@UEAAXAEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0));
     }
     */
     MCAPI ClassroomModeListener(class IMinecraftEventing &);

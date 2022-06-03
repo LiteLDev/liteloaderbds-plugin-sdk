@@ -35,13 +35,6 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*18*/ virtual void useWorkstation();
-    /*
-    inline  ~WorkGoal(){
-         (WorkGoal::*rv)();
-        *((void**)&rv) = dlsym("??1WorkGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI WorkGoal(class Mob &);
     MCAPI void playPOISoundEvent() const;
 

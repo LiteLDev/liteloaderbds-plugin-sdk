@@ -26,7 +26,6 @@ public:
 public:
     /*0*/ virtual ~LevelListener();
     /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void onSourceDestroyed(class BlockSource &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_6();
@@ -154,11 +153,6 @@ public:
         void (LevelListener::*rv)(class LevelChunk &);
         *((void**)&rv) = dlsym("?onChunkUnloaded@LevelListener@@UEAAXAEAVLevelChunk@@@Z");
         return (this->*rv)(std::forward<class LevelChunk &>(a0));
-    }
-    inline  ~LevelListener(){
-         (LevelListener::*rv)();
-        *((void**)&rv) = dlsym("??1LevelListener@@UEAA@XZ");
-        return (this->*rv)();
     }
     */
 

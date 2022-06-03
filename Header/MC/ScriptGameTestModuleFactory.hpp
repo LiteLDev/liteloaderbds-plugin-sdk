@@ -2,13 +2,15 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
+#include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ScriptGameTestModuleFactory {
+class ScriptGameTestModuleFactory : public TextObjectText {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -36,13 +36,6 @@ public:
     /*14*/ virtual void fillInputPacket(class PlayerAuthInputPacket &);
     /*15*/ virtual void __unk_vfn_15() = 0;
     /*16*/ virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
-    /*
-    inline  ~MoveInputHandler(){
-         (MoveInputHandler::*rv)();
-        *((void**)&rv) = dlsym("??1MoveInputHandler@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI bool wantsMoveForward() const;
 
 protected:

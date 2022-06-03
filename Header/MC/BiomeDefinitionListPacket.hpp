@@ -29,13 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~BiomeDefinitionListPacket(){
-         (BiomeDefinitionListPacket::*rv)();
-        *((void**)&rv) = dlsym("??1BiomeDefinitionListPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI BiomeDefinitionListPacket();
 
 protected:

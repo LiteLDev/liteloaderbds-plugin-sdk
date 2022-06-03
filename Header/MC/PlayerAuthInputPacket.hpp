@@ -30,13 +30,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~PlayerAuthInputPacket(){
-         (PlayerAuthInputPacket::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerAuthInputPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     MCAPI PlayerAuthInputPacket();
     MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;

@@ -28,13 +28,6 @@ public:
     /*0*/ virtual ~ActorHasTargetTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline  ~ActorHasTargetTest(){
-         (ActorHasTargetTest::*rv)();
-        *((void**)&rv) = dlsym("??1ActorHasTargetTest@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

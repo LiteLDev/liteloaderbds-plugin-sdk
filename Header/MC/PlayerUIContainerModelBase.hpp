@@ -34,18 +34,10 @@ public:
     /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container * _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
-    /*
-    inline  ~PlayerUIContainerModelBase(){
-         (PlayerUIContainerModelBase::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerUIContainerModelBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player &, int, enum ContainerCategory);
 
 protected:

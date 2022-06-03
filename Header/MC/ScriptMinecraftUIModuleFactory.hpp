@@ -2,13 +2,15 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "Bedrock.hpp"
+#include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class ScriptMinecraftUIModuleFactory {
+class ScriptMinecraftUIModuleFactory : public TextObjectText {
 
 #define AFTER_EXTRA
 

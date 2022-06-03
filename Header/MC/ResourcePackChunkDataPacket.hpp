@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ResourcePackChunkDataPacket(){
-         (ResourcePackChunkDataPacket::*rv)();
-        *((void**)&rv) = dlsym("??1ResourcePackChunkDataPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ResourcePackChunkDataPacket(std::string const &, int, unsigned __int64, std::vector<unsigned char> const &);
     MCAPI ResourcePackChunkDataPacket();
 

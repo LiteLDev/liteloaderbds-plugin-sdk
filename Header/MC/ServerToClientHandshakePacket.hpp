@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ServerToClientHandshakePacket(){
-         (ServerToClientHandshakePacket::*rv)();
-        *((void**)&rv) = dlsym("??1ServerToClientHandshakePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ServerToClientHandshakePacket(std::string const &);
     MCAPI ServerToClientHandshakePacket();
 

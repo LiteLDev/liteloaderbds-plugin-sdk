@@ -368,19 +368,9 @@ public:
         *((void**)&rv) = dlsym("?isCreativeModeAllowed@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool isLeashableType(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasOutputSignal(unsigned char a0) const{
-        bool (Actor::*rv)(unsigned char) const;
-        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
-        return (this->*rv)(std::forward<unsigned char>(a0));
-    }
-    inline bool isLocalPlayer() const{
+    inline bool breaksFallingBlocks() const{
         bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isShootable(){
@@ -388,9 +378,19 @@ public:
         *((void**)&rv) = dlsym("?isShootable@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool breaksFallingBlocks() const{
+    inline bool hasOutputSignal(unsigned char a0) const{
+        bool (Actor::*rv)(unsigned char) const;
+        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
+        return (this->*rv)(std::forward<unsigned char>(a0));
+    }
+    inline bool isLeashableType(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLocalPlayer() const{
         bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool _makeFlySound() const{
@@ -403,24 +403,19 @@ public:
         *((void**)&rv) = dlsym("?isPlayer@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool getAlwaysShowNameTag() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool interactPreventDefault(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?interactPreventDefault@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
+    inline bool getAlwaysShowNameTag() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline int getOutputSignal() const{
         int (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?getOutputSignal@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class Actor * findAttackTarget(){
-        class Actor * (Actor::*rv)();
-        *((void**)&rv) = dlsym("?findAttackTarget@Actor@@UEAAPEAV1@XZ");
         return (this->*rv)();
     }
     inline bool canExistInPeaceful() const{
@@ -443,16 +438,6 @@ public:
         *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void _onSizeUpdated(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Actor@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(enum Actor::InitializationMethod a0, class VariantParameterList const & a1){
-        void (Actor::*rv)(enum Actor::InitializationMethod, class VariantParameterList const &);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<enum Actor::InitializationMethod>(a0), std::forward<class VariantParameterList const &>(a1));
-    }
     inline void changeDimension(class ChangeDimensionPacket const & a0){
         void (Actor::*rv)(class ChangeDimensionPacket const &);
         *((void**)&rv) = dlsym("?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z");
@@ -468,24 +453,9 @@ public:
         *((void**)&rv) = dlsym("?_doAutoAttackOnTouch@Actor@@EEAAXAEAV1@@Z");
         return (this->*rv)(std::forward<class Actor &>(a0));
     }
-    inline void updateEntitySpecificMolangVariables(class RenderParams & a0){
-        void (Actor::*rv)(class RenderParams &);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Actor@@MEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams &>(a0));
-    }
     inline float getDeletionDelayTimeSeconds() const{
         float (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?getDeletionDelayTimeSeconds@Actor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline  ~Actor(){
-         (Actor::*rv)();
-        *((void**)&rv) = dlsym("??1Actor@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getSourceUniqueID() const{
-        struct ActorUniqueID (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceUniqueID@Actor@@UEBA?AUActorUniqueID@@XZ");
         return (this->*rv)();
     }
     */
@@ -563,8 +533,8 @@ public:
     MCAPI enum EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
     MCAPI bool getFirstAvailableSeatPos(class Actor &, class Vec3 &) const;
     MCAPI class Actor * getFirstPassenger() const;
-    MCAPI class SimpleContainer & getHandContainer();
     MCAPI class SimpleContainer const & getHandContainer() const;
+    MCAPI class SimpleContainer & getHandContainer();
     MCAPI int getHealth() const;
     MCAPI int getHurtDir() const;
     MCAPI int getHurtTime() const;

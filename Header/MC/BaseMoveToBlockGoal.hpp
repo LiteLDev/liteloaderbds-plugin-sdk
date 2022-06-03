@@ -28,16 +28,13 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void appendDebugInfo(std::string &) const = 0;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /*14*/ virtual void _moveToBlock();
-    /*17*/ virtual bool findTargetBlock();
     /*
-    inline  ~BaseMoveToBlockGoal(){
-         (BaseMoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("??1BaseMoveToBlockGoal@@UEAA@XZ");
+    inline bool findTargetBlock(){
+        bool (BaseMoveToBlockGoal::*rv)();
+        *((void**)&rv) = dlsym("?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ");
         return (this->*rv)();
     }
     */

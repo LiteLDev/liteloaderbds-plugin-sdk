@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "CommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -35,23 +36,17 @@ public:
     /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*26*/ virtual void __unk_vfn_26();
-    /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
     /*
-    inline  ~BlockCommandOrigin(){
-         (BlockCommandOrigin::*rv)();
-        *((void**)&rv) = dlsym("??1BlockCommandOrigin@@UEAA@XZ");
+    inline bool canUseCommandsWithoutCheatsEnabled() const{
+        bool (BlockCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@BlockCommandOrigin@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

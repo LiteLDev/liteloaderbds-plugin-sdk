@@ -42,16 +42,8 @@ public:
     /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
     /*15*/ virtual class Core::PathBuffer<std::string> const & getSubPath() const;
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
-    /*18*/ virtual bool canRecurse() const;
     /*19*/ virtual void unload();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-    /*
-    inline  ~ZipPackAccessStrategy(){
-         (ZipPackAccessStrategy::*rv)();
-        *((void**)&rv) = dlsym("??1ZipPackAccessStrategy@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, class ResourceLocation const &, class Core::Path const &);
 
 protected:

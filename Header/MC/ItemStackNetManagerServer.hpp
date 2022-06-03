@@ -30,7 +30,6 @@ public:
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
     /*4*/ virtual bool allowInventoryTransactionManager() const;
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
-    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
     MCAPI ItemStackNetManagerServer(class ServerPlayer &, bool);
     MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);

@@ -3,13 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
+#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class SnapshotEnv {
+class SnapshotEnv : public TransactionalWorldBlockTarget {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -27,15 +28,28 @@ public:
     /*0*/ virtual ~SnapshotEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
-    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
+    /*
+    inline class leveldb::Status DeleteFileA(std::string const & a0){
+        class leveldb::Status (SnapshotEnv::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?DeleteFileA@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline class leveldb::Status NewAppendableFile(std::string const & a0, class leveldb::WritableFile ** a1){
+        class leveldb::Status (SnapshotEnv::*rv)(std::string const &, class leveldb::WritableFile **);
+        *((void**)&rv) = dlsym("?NewAppendableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class leveldb::WritableFile **>(a1));
+    }
+    inline class leveldb::Status NewWritableFile(std::string const & a0, class leveldb::WritableFile ** a1){
+        class leveldb::Status (SnapshotEnv::*rv)(std::string const &, class leveldb::WritableFile **);
+        *((void**)&rv) = dlsym("?NewWritableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class leveldb::WritableFile **>(a1));
+    }
+    inline class leveldb::Status RenameFile(std::string const & a0, std::string const & a1){
+        class leveldb::Status (SnapshotEnv::*rv)(std::string const &, std::string const &);
+        *((void**)&rv) = dlsym("?RenameFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<std::string const &>(a1));
+    }
+    */
     MCAPI SnapshotEnv(class leveldb::Env *);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
     MCAPI void releaseSnapshot();

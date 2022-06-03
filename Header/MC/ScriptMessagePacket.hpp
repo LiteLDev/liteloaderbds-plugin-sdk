@@ -26,13 +26,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ScriptMessagePacket(){
-         (ScriptMessagePacket::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptMessagePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptMessagePacket(std::string const &, std::string const &);
     MCAPI ScriptMessagePacket();
     MCAPI std::string const & getMessageId() const;

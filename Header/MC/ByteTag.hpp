@@ -33,7 +33,6 @@ public:
 
 public:
     /*0*/ virtual ~ByteTag();
-    /*1*/ virtual void deleteChildren();
     /*2*/ virtual void write(class IDataOutput &) const;
     /*3*/ virtual void load(class IDataInput &);
     /*4*/ virtual std::string toString() const;
@@ -41,13 +40,6 @@ public:
     /*6*/ virtual bool equals(class Tag const &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
-    /*
-    inline  ~ByteTag(){
-         (ByteTag::*rv)();
-        *((void**)&rv) = dlsym("??1ByteTag@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ByteTag(unsigned char);
     MCAPI ByteTag();
 

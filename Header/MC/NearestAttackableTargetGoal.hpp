@@ -29,14 +29,9 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*4*/ virtual void start();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
-    /*
-    inline  ~NearestAttackableTargetGoal(){
-         (NearestAttackableTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("??1NearestAttackableTargetGoal@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI NearestAttackableTargetGoal(class Mob &);
 
 protected:

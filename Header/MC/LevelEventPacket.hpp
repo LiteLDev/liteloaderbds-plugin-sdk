@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~LevelEventPacket(){
-         (LevelEventPacket::*rv)();
-        *((void**)&rv) = dlsym("??1LevelEventPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const &, int);
     MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
     MCAPI LevelEventPacket();

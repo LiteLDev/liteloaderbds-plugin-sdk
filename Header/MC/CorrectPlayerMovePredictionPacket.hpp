@@ -29,13 +29,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~CorrectPlayerMovePredictionPacket(){
-         (CorrectPlayerMovePredictionPacket::*rv)();
-        *((void**)&rv) = dlsym("??1CorrectPlayerMovePredictionPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

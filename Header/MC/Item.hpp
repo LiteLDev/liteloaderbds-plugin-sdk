@@ -34,8 +34,8 @@ public:
     /*0*/ virtual ~Item();
     /*1*/ virtual bool initServer(class Json::Value &, class SemVersion const &);
     /*2*/ virtual void tearDown();
-    /*3*/ virtual int getMaxUseDuration(class ItemStack const *) const;
-    /*4*/ virtual void __unk_vfn_4();
+    /*3*/ virtual int getMaxUseDuration(class ItemInstance const *) const;
+    /*4*/ virtual int getMaxUseDuration(class ItemStack const *) const;
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*7*/ virtual void __unk_vfn_7();
@@ -55,7 +55,7 @@ public:
     /*21*/ virtual class ItemComponent * getComponent(class HashedString const &) const;
     /*22*/ virtual class ICameraItemComponent * getCamera() const;
     /*23*/ virtual class IFoodItemComponent * getFood() const;
-    /*24*/ virtual class FuelItemComponent * getFuel() const;
+    /*24*/ virtual class FuelItemComponent const * getFuel() const;
     /*25*/ virtual class Item & setMaxStackSize(unsigned char);
     /*26*/ virtual class Item & setStackedByData(bool);
     /*27*/ virtual class Item & setMaxDamage(int);
@@ -151,8 +151,8 @@ public:
     /*117*/ virtual class Item & setIcon(struct TextureUVCoordinateSet const &);
     /*118*/ virtual class Item & setIconAtlas(std::string const &, int);
     /*119*/ virtual bool canBeCharged() const;
-    /*120*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
-    /*121*/ virtual void __unk_vfn_121();
+    /*120*/ virtual void playSoundIncrementally(class ItemInstance const &, class Mob &) const;
+    /*121*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
     /*122*/ virtual float getFurnaceBurnIntervalMultipler(class ItemStackBase const &) const;
     /*123*/ virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
     /*124*/ virtual std::string getAuxValuesDescription() const;
@@ -160,11 +160,6 @@ public:
     /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*
-    inline bool isComponentBased() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isMultiColorTinted(class ItemStack const & a0) const{
         bool (Item::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?isMultiColorTinted@Item@@UEBA_NAEBVItemStack@@@Z");
@@ -178,6 +173,11 @@ public:
     inline bool isActorPlacerItem() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isActorPlacerItem@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isComponentBased() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool hasCustomColor(class ItemStackBase const & a0) const{
@@ -200,44 +200,19 @@ public:
         *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isMusicDisk() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isCandle() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool isMusicDisk() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isPattern() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isPattern@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class FuelItemComponent const * getFuel() const{
-        class FuelItemComponent const * (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?getFuel@Item@@UEBAPEBVFuelItemComponent@@XZ");
-        return (this->*rv)();
-    }
-    inline bool _calculatePlacePos(class ItemStackBase & a0, class Actor & a1, unsigned char & a2, class BlockPos & a3) const{
-        bool (Item::*rv)(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
-        *((void**)&rv) = dlsym("?_calculatePlacePos@Item@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase &>(a0), std::forward<class Actor &>(a1), std::forward<unsigned char &>(a2), std::forward<class BlockPos &>(a3));
-    }
-    inline void playSoundIncrementally(class ItemInstance const & a0, class Mob & a1) const{
-        void (Item::*rv)(class ItemInstance const &, class Mob &) const;
-        *((void**)&rv) = dlsym("?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class ItemInstance const &>(a0), std::forward<class Mob &>(a1));
-    }
-    inline int getMaxUseDuration(class ItemInstance const * a0) const{
-        int (Item::*rv)(class ItemInstance const *) const;
-        *((void**)&rv) = dlsym("?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z");
-        return (this->*rv)(std::forward<class ItemInstance const *>(a0));
-    }
-    inline  ~Item(){
-         (Item::*rv)();
-        *((void**)&rv) = dlsym("??1Item@@UEAA@XZ");
         return (this->*rv)();
     }
     inline class mce::Color getBaseColor(class ItemStack const & a0) const{

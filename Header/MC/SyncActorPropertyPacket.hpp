@@ -29,13 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~SyncActorPropertyPacket(){
-         (SyncActorPropertyPacket::*rv)();
-        *((void**)&rv) = dlsym("??1SyncActorPropertyPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI SyncActorPropertyPacket(class Actor const &);
     MCAPI SyncActorPropertyPacket();
 

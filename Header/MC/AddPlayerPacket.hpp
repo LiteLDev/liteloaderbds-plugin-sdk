@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~AddPlayerPacket(){
-         (AddPlayerPacket::*rv)();
-        *((void**)&rv) = dlsym("??1AddPlayerPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI AddPlayerPacket(class Player &);
     MCAPI AddPlayerPacket();
 

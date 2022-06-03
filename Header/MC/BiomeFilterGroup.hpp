@@ -26,13 +26,6 @@ public:
 public:
     /*0*/ virtual ~BiomeFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
-    /*
-    inline  ~BiomeFilterGroup(){
-         (BiomeFilterGroup::*rv)();
-        *((void**)&rv) = dlsym("??1BiomeFilterGroup@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
 

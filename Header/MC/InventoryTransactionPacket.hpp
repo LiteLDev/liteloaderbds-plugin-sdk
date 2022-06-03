@@ -34,13 +34,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~InventoryTransactionPacket(){
-         (InventoryTransactionPacket::*rv)();
-        *((void**)&rv) = dlsym("??1InventoryTransactionPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
     MCAPI InventoryTransactionPacket();
     MCAPI void postLoadItems(class BlockPalette &, bool) const;

@@ -25,13 +25,6 @@ public:
 public:
     /*0*/ virtual ~FurnaceContainerScreenValidator();
     /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
-    /*
-    inline  ~FurnaceContainerScreenValidator(){
-         (FurnaceContainerScreenValidator::*rv)();
-        *((void**)&rv) = dlsym("??1FurnaceContainerScreenValidator@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI FurnaceContainerScreenValidator();
 
 protected:

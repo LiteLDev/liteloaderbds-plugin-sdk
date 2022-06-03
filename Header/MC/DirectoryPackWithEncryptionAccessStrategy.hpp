@@ -41,7 +41,6 @@ public:
     /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
-    /*18*/ virtual bool canRecurse() const;
     /*19*/ virtual void unload();
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;

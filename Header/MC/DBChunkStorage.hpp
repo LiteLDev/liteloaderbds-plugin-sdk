@@ -30,8 +30,8 @@ public:
     /*0*/ virtual ~DBChunkStorage();
     /*1*/ virtual void shutdown();
     /*2*/ virtual bool isShutdownDone();
-    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
-    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool isChunkKnown(class ChunkPos const &);
     /*8*/ virtual bool postProcess(class ChunkViewSource &);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
@@ -44,8 +44,6 @@ public:
     /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*19*/ virtual void flushPendingDiscardedChunkWrites();
     /*20*/ virtual void flushThreadBatch();
-    /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /*24*/ virtual void clearDeletedEntities();
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /*27*/ virtual class BiomeChunkBlendingAttenuator getBiomeHeightAttenuatorForLevelChunk(class ChunkPos const &);
     /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();

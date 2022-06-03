@@ -29,14 +29,6 @@ public:
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*6*/ virtual class Json::Value _serializeValue() const;
-    /*
-    inline  ~FilterTestHourlyClock(){
-         (FilterTestHourlyClock::*rv)();
-        *((void**)&rv) = dlsym("??1FilterTestHourlyClock@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

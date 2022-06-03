@@ -31,13 +31,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~ActorEventPacket(){
-         (ActorEventPacket::*rv)();
-        *((void**)&rv) = dlsym("??1ActorEventPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ActorEventPacket(class ActorRuntimeID, enum ActorEvent, int);
     MCAPI ActorEventPacket();
 

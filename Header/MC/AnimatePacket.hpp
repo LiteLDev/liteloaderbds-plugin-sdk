@@ -42,13 +42,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~AnimatePacket(){
-         (AnimatePacket::*rv)();
-        *((void**)&rv) = dlsym("??1AnimatePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor &);
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);

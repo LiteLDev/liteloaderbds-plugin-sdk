@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~TakeItemActorPacket(){
-         (TakeItemActorPacket::*rv)();
-        *((void**)&rv) = dlsym("??1TakeItemActorPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI TakeItemActorPacket(class ActorRuntimeID, class ActorRuntimeID);
     MCAPI TakeItemActorPacket();
 

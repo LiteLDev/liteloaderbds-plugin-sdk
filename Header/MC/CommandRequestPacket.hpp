@@ -29,13 +29,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~CommandRequestPacket(){
-         (CommandRequestPacket::*rv)();
-        *((void**)&rv) = dlsym("??1CommandRequestPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI CommandRequestPacket(class CommandContext &, bool);
     MCAPI CommandRequestPacket();
     MCAPI std::unique_ptr<class CommandContext> createCommandContext(class NetworkIdentifier const &, class Bedrock::NonOwnerPointer<class ILevel> const &, int) const;

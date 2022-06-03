@@ -32,13 +32,6 @@ public:
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline  ~FurnaceContainerManagerModel(){
-         (FurnaceContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("??1FurnaceContainerManagerModel@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:

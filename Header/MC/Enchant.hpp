@@ -108,7 +108,7 @@ public:
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual int getMinLevel() const;
     /*5*/ virtual int getMaxLevel() const;
     /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const &) const;
     /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
@@ -138,16 +138,6 @@ public:
     inline bool isDiscoverable() const{
         bool (Enchant::*rv)() const;
         *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getMinLevel() const{
-        int (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMinLevel@Enchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline  ~Enchant(){
-         (Enchant::*rv)();
-        *((void**)&rv) = dlsym("??1Enchant@@UEAA@XZ");
         return (this->*rv)();
     }
     */

@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~LabTablePacket(){
-         (LabTablePacket::*rv)();
-        *((void**)&rv) = dlsym("??1LabTablePacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI LabTablePacket(class BlockPos const &, enum LabTableReactionType);
     MCAPI LabTablePacket(enum LabTablePacket::Type, class BlockPos const &);
     MCAPI LabTablePacket();

@@ -28,13 +28,6 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~AdventureSettingsPacket(){
-         (AdventureSettingsPacket::*rv)();
-        *((void**)&rv) = dlsym("??1AdventureSettingsPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI AdventureSettingsPacket(struct AdventureSettings const &, class Abilities const &, struct ActorUniqueID, bool);
     MCAPI AdventureSettingsPacket();
     MCAPI void fillIn(struct AdventureSettings &, class Abilities &) const;
