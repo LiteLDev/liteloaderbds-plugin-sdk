@@ -77,6 +77,9 @@ public:
     /*211*/ virtual int getAlternateSignal(class BlockSource &, class BlockPos const &) const;
     /*212*/ virtual int getOutputSignal(class Block const &) const;
     /*213*/ virtual int getTurnOffDelay(class Block const &) const;
+    /*214*/ virtual int getTurnOnDelay(class Block const &) const = 0;
+    /*215*/ virtual class Block const * getOnBlock(class Block const *) const = 0;
+    /*216*/ virtual class Block const * getOffBlock(class Block const *) const = 0;
     /*
     inline bool canSpawnOn() const{
         bool (DiodeBlock::*rv)() const;

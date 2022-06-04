@@ -73,6 +73,7 @@ public:
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ virtual void __unk_vfn_210();
+    /*211*/ MCAPI std::string const & getDescriptionId() const;
     /*
     inline bool canBeSilkTouched() const{
         bool (AbstractCandleBlock::*rv)() const;

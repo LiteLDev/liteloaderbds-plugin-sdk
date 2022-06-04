@@ -84,6 +84,7 @@ public:
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ virtual void __unk_vfn_209();
+    /*210*/ MCAPI std::string const & getDescriptionId() const;
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (ItemFrameBlock::*rv)() const;

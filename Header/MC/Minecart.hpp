@@ -62,6 +62,7 @@ public:
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual void destroy(class ActorDamageSource const &, bool);
+    /*280*/ virtual enum MinecartType getType() = 0;
     /*281*/ virtual class Block const * getDefaultDisplayBlock() const;
     /*282*/ virtual void __unk_vfn_282();
     /*283*/ virtual int getDefaultDisplayOffset() const;

@@ -81,6 +81,7 @@ public:
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void __unk_vfn_206();
     /*207*/ virtual void __unk_vfn_207();
+    /*208*/ MCAPI std::string const & getDescriptionId() const;
     /*
     inline bool hasComparatorSignal() const{
         bool (ComposterBlock::*rv)() const;

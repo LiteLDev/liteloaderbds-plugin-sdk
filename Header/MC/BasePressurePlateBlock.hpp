@@ -75,6 +75,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual int getTickDelay() const;
+    /*204*/ virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const = 0;
+    /*205*/ virtual int getSignalForData(int) const = 0;
+    /*206*/ virtual int getRedstoneSignal(int) const = 0;
     /*207*/ virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
     /*
     inline bool canSpawnOn() const{
