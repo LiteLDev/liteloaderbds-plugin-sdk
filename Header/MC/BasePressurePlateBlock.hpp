@@ -74,6 +74,7 @@ public:
     /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
+    /*203*/ virtual int getTickDelay() const;
     /*207*/ virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
     /*
     inline bool canSpawnOn() const{
@@ -84,11 +85,6 @@ public:
     inline bool isSignalSource() const{
         bool (BasePressurePlateBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isSignalSource@BasePressurePlateBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getTickDelay() const{
-        int (BasePressurePlateBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?getTickDelay@BasePressurePlateBlock@@UEBAHXZ");
         return (this->*rv)();
     }
     */

@@ -217,7 +217,6 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void _onSizeUpdated();
     /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void __unk_vfn_280();
     /*285*/ virtual float getSpeed() const;
     /*286*/ virtual void setSpeed(float);
     /*291*/ virtual void travel(float, float, float);
@@ -235,7 +234,6 @@ public:
     /*331*/ virtual void dropEquipmentOnDeath();
     /*332*/ virtual void clearVanishEnchantedItemsOnDeath();
     /*333*/ virtual void sendInventory(bool);
-    /*338*/ virtual void __unk_vfn_338();
     /*344*/ virtual bool canExistWhenDisallowMob() const;
     /*345*/ virtual void __unk_vfn_345();
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();

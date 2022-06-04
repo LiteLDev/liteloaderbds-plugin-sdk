@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-#include "Potion.hpp"
 #include "Item.hpp"
 
 #define BEFORE_EXTRA

@@ -76,6 +76,7 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
+    /*203*/ virtual void __unk_vfn_203();
     /*204*/ virtual void __unk_vfn_204();
     /*205*/ virtual void __unk_vfn_205();
     /*206*/ virtual void __unk_vfn_206();

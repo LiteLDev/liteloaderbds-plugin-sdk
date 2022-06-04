@@ -66,6 +66,7 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
+    /*203*/ virtual int getSignal(class BlockSource &, class BlockPos const &, int) const;
     /*204*/ virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
     /*205*/ virtual bool isSameDiode(class Block const &) const;
     /*206*/ virtual bool shouldPrioritize(class BlockSource &, class BlockPos const &) const;
@@ -81,11 +82,6 @@ public:
         bool (DiodeBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canSpawnOn@DiodeBlock@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline int getSignal(class BlockSource & a0, class BlockPos const & a1, int a2) const{
-        int (DiodeBlock::*rv)(class BlockSource &, class BlockPos const &, int) const;
-        *((void**)&rv) = dlsym("?getSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<int>(a2));
     }
     */
     MCAPI DiodeBlock(std::string const &, int, bool);
