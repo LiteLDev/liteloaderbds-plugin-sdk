@@ -22,12 +22,11 @@ public:
     SecureStorage() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGE
+public:
 #endif
 
-protected:
-
-private:
 
 };

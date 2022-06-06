@@ -23,6 +23,7 @@ public:
     Sapling() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Sapling();
     /*19*/ virtual void __unk_vfn_19();
@@ -71,18 +72,24 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAPLING
+public:
 #endif
     MCAPI Sapling(std::string const &, int);
 
-protected:
+//protected:
     MCAPI bool advanceTree(class BlockSource &, class BlockPos const &, class Random &, class Actor *) const;
 
-private:
+//private:
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateJungleTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateOakTree(class FeatureRegistry const &, class BlockPos const &, class BlockSource &, class Random &, bool) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateRedwoodTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateRoofTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &, bool) const;
     MCAPI bool _isNearFlowerBlock(class BlockSource &, class BlockPos const &) const;
+
+protected:
+
+private:
+
 
 };

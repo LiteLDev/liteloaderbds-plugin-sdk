@@ -23,6 +23,7 @@ public:
     FlowerBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlowerBlock();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -75,12 +76,14 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERBLOCK
+public:
 #endif
     MCAPI FlowerBlock(std::string const &, int, enum FlowerBlock::Type, class Material const &);
 
-protected:
+//private:
+    MCAPI bool _fertilizable(class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI bool _fertilizable(class BlockSource &, class BlockPos const &) const;
+
 
 };

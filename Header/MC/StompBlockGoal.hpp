@@ -23,6 +23,7 @@ public:
     StompBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StompBlockGoal();
     /*1*/ virtual bool canUse();
@@ -43,11 +44,9 @@ public:
     /*20*/ virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
     /*21*/ virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPBLOCKGOAL
+public:
 #endif
     MCAPI StompBlockGoal(class Block const *, class Mob &, float, int, int, float, int);
 
-protected:
-
-private:
 
 };

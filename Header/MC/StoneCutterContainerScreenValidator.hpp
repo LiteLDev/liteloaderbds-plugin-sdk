@@ -21,17 +21,16 @@ public:
     StoneCutterContainerScreenValidator(class StoneCutterContainerScreenValidator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StoneCutterContainerScreenValidator();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool isCraftingImplemented();
     /*3*/ virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERCONTAINERSCREENVALIDATOR
+public:
 #endif
     MCAPI StoneCutterContainerScreenValidator();
 
-protected:
-
-private:
 
 };

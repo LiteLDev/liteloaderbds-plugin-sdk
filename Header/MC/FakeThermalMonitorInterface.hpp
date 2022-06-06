@@ -21,17 +21,16 @@ public:
     FakeThermalMonitorInterface(class FakeThermalMonitorInterface const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FakeThermalMonitorInterface();
     /*1*/ virtual enum ThermalState getThermalState() const;
     /*2*/ virtual float getThermalValueCelsius() const;
     /*3*/ virtual bool isLowBatteryModeEnabled() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAKETHERMALMONITORINTERFACE
+public:
 #endif
     MCAPI FakeThermalMonitorInterface();
 
-protected:
-
-private:
 
 };

@@ -23,17 +23,16 @@ public:
     IdleState() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IdleState();
     /*1*/ virtual void tick();
     /*2*/ virtual void start();
     /*3*/ virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDLESTATE
+public:
 #endif
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 
-protected:
-
-private:
 
 };

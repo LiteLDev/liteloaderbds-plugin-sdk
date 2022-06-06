@@ -22,6 +22,7 @@ public:
     SkeletonHorseTrapGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SkeletonHorseTrapGoal();
     /*1*/ virtual bool canUse();
@@ -32,12 +33,14 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKELETONHORSETRAPGOAL
+public:
 #endif
     MCAPI SkeletonHorseTrapGoal(class Horse &, int, float);
 
-protected:
+//private:
+    MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
 
 private:
-    MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
+
 
 };

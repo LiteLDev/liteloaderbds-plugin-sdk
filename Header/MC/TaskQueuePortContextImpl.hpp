@@ -20,6 +20,7 @@ public:
     TaskQueuePortContextImpl() = delete;
 #endif
 
+
 public:
     /*0*/ virtual unsigned int AddRef();
     /*1*/ virtual unsigned int Release();
@@ -34,10 +35,8 @@ public:
     /*10*/ virtual bool AddSuspend();
     /*11*/ virtual bool RemoveSuspend();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
+public:
 #endif
 
-protected:
-
-private:
 
 };

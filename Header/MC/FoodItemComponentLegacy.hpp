@@ -23,6 +23,7 @@ public:
     FoodItemComponentLegacy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FoodItemComponentLegacy();
     /*1*/ virtual int getNutrition() const;
@@ -32,17 +33,19 @@ public:
     /*5*/ virtual bool use(class ItemStack &, class Player &);
     /*6*/ virtual class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENTLEGACY
+public:
 #endif
     MCAPI FoodItemComponentLegacy(class Item &);
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     MCAPI bool init(class Json::Value &, class SemVersion const &);
     MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const &);
 
-protected:
-
-private:
+//private:
     MCAPI void _applyEatEffects(class ItemStack const &, class Actor &, class Level &);
     MCAPI void _loadEffects(class Json::Value &);
     MCAPI void _loadRemoveEffects(class Json::Value &);
+
+private:
+
 
 };

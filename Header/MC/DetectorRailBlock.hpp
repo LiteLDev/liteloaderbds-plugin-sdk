@@ -23,6 +23,7 @@ public:
     DetectorRailBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DetectorRailBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,13 +68,15 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DETECTORRAILBLOCK
+public:
     MCVAPI bool hasComparatorSignal() const;
 #endif
     MCAPI DetectorRailBlock(std::string const &, int);
 
-protected:
+//private:
+    MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
+
 
 };

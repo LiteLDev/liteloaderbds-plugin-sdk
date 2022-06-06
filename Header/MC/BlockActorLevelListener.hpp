@@ -22,6 +22,7 @@ public:
     BlockActorLevelListener(class BlockActorLevelListener const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockActorLevelListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -47,11 +48,9 @@ public:
     /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual void onChunkUnloaded(class LevelChunk &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTORLEVELLISTENER
+public:
 #endif
     MCAPI BlockActorLevelListener();
 
-protected:
-
-private:
 
 };

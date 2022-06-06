@@ -21,6 +21,7 @@ public:
     DynamicJumpControl(class DynamicJumpControl const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DynamicJumpControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct JumpControlDescription *);
@@ -31,11 +32,9 @@ public:
     /*6*/ virtual void setJumpType(class JumpControlComponent &, class Mob &, enum JumpType);
     /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
+public:
 #endif
     MCAPI DynamicJumpControl();
 
-protected:
-
-private:
 
 };

@@ -22,8 +22,10 @@ public:
     SharedAttributes() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDATTRIBUTES
+public:
 #endif
     MCAPI static class Attribute const ABSORPTION;
     MCAPI static class Attribute const ATTACK_DAMAGE;
@@ -41,13 +43,14 @@ public:
     MCAPI static void loadAttributes(class BaseAttributeMap *, class ListTag const *);
     MCAPI static std::unique_ptr<class ListTag> saveAttributes(class BaseAttributeMap *);
 
-protected:
-
-private:
+//private:
     MCAPI static class AttributeInstance * _legacyGetInstance(class BaseAttributeMap &, std::string const &);
     MCAPI static std::string const & _legacyGetName(std::string const &);
     MCAPI static void _loadAttribute(class AttributeInstance &, class CompoundTag const *);
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const &);
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const &);
+
+private:
+
 
 };

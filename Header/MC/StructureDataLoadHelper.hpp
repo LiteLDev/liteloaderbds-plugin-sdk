@@ -23,6 +23,7 @@ public:
     StructureDataLoadHelper() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructureDataLoadHelper();
     /*1*/ virtual class Vec3 loadPosition(class Vec3 const &);
@@ -43,13 +44,11 @@ public:
     /*16*/ virtual bool shouldResetTime();
     /*17*/ virtual struct ActorUniqueID _generateNewID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
+public:
     MCVAPI float loadRotationDegreesX(float);
     MCVAPI float loadRotationRadiansX(float);
 #endif
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);
 
-protected:
-
-private:
 
 };

@@ -24,15 +24,14 @@ public:
     ActorUndergroundTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorUndergroundTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUNDERGROUNDTEST
+public:
 #endif
 
-protected:
-
-private:
 
 };

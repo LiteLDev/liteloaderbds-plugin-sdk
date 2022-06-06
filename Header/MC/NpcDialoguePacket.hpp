@@ -22,6 +22,7 @@ public:
     NpcDialoguePacket(class NpcDialoguePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcDialoguePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,13 +30,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUEPACKET
+public:
 #endif
     MCAPI NpcDialoguePacket(struct ActorUniqueID);
     MCAPI NpcDialoguePacket();
     MCAPI static bool initializePacket(class NpcDialoguePacket &, class NpcDialogueStorage const *, std::string const &);
 
-protected:
-
-private:
 
 };

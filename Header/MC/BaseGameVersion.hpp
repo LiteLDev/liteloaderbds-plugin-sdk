@@ -16,8 +16,10 @@ class BaseGameVersion {
 
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGAMEVERSION
+public:
 #endif
     MCAPI BaseGameVersion(class BaseGameVersion const &);
     MCAPI BaseGameVersion(class SemVersion const &);
@@ -44,8 +46,5 @@ public:
     MCAPI static class BaseGameVersion const INCOMPATIBLE;
     MCAPI static enum SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
 
-protected:
-
-private:
 
 };

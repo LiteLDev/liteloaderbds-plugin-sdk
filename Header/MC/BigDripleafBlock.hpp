@@ -23,6 +23,7 @@ public:
     BigDripleafBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BigDripleafBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -80,6 +81,7 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGDRIPLEAFBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
@@ -87,10 +89,11 @@ public:
     MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
     MCAPI static void placeWithRandomHeight(class BlockSource &, class Random &, class BlockPos, int);
 
-protected:
-
-private:
+//private:
     MCAPI void _resetTilt(class BlockSource &, class BlockPos const &) const;
     MCAPI void _setTiltAndScheduleTick(enum BigDripleafTilt, class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

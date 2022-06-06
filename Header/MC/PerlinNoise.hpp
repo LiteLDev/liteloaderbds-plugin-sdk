@@ -21,8 +21,10 @@ public:
     PerlinNoise() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINNOISE
+public:
 #endif
     MCAPI PerlinNoise(class PerlinNoise const &);
     MCAPI PerlinNoise(class IRandom &, int, int);
@@ -34,9 +36,10 @@ public:
     MCAPI float getValueNormalized(class Vec3 const &) const;
     MCAPI ~PerlinNoise();
 
-protected:
+//private:
+    MCAPI void _init(class IRandom &, struct YBlendingBugSettings);
 
 private:
-    MCAPI void _init(class IRandom &, struct YBlendingBugSettings);
+
 
 };

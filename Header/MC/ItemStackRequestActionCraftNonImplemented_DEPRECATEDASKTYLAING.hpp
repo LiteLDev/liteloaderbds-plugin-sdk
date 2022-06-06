@@ -21,6 +21,7 @@ public:
     ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
     /*1*/ virtual void __unk_vfn_1();
@@ -29,11 +30,9 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTNONIMPLEMENTED_DEPRECATEDASKTYLAING
+public:
 #endif
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     ChestBoatItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChestBoatItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -40,11 +41,9 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*128*/ virtual enum ActorType _getActorType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBOATITEM
+public:
 #endif
     MCAPI ChestBoatItem(std::string const &, int, enum WoodType);
 
-protected:
-
-private:
 
 };

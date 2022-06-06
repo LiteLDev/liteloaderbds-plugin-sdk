@@ -23,6 +23,7 @@ public:
     CommandBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -76,6 +77,7 @@ public:
     /*208*/ virtual void __unk_vfn_208();
     /*209*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCK
+public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
@@ -83,13 +85,14 @@ public:
     MCAPI enum CommandBlockMode getMode() const;
     MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum CommandBlockMode, bool) const;
 
-protected:
-
-private:
+//private:
     MCAPI void _execute(class BlockSource &, class CommandBlockActor &, class BlockPos const &, bool) const;
     MCAPI void _executeChain(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _executeChainBlock(class BlockSource &, class BlockPos const &, class CommandBlockActor &, bool) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
+
+private:
     MCAPI static int mCBModeMap[];
+
 
 };

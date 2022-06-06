@@ -23,16 +23,15 @@ public:
     SHChestCorridor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SHChestCorridor();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHCHESTCORRIDOR
+public:
 #endif
 
-protected:
-
-private:
 
 };

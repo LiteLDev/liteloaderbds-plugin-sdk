@@ -23,6 +23,7 @@ public:
     ChestBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChestBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,6 +73,7 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCK
+public:
     MCVAPI bool detachesOnPistonMove(class BlockSource &, class BlockPos const &) const;
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isContainerBlock() const;
@@ -80,8 +82,5 @@ public:
     MCAPI ChestBlock(std::string const &, int, enum ChestBlock::ChestType, enum MaterialType);
     MCAPI void updateSignalStrength(class BlockSource &, class BlockPos const &, int) const;
 
-protected:
-
-private:
 
 };

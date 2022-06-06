@@ -23,6 +23,7 @@ public:
     Inventory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Inventory();
     /*1*/ virtual void init();
@@ -36,6 +37,7 @@ public:
     /*39*/ virtual int getFirstEmptySlot() const;
     /*40*/ virtual void setContainerSize(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORY
+public:
 #endif
     MCAPI Inventory(class Player *);
     MCAPI void dropSlot(int, bool, bool, bool);
@@ -43,8 +45,5 @@ public:
     MCAPI void setupDefault();
     MCAPI void tick(int);
 
-protected:
-
-private:
 
 };

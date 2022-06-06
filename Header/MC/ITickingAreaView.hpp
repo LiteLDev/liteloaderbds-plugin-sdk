@@ -22,12 +22,11 @@ public:
     ITickingAreaView() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREAVIEW
+public:
 #endif
 
-protected:
-
-private:
 
 };

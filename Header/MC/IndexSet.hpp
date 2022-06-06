@@ -15,8 +15,10 @@ class IndexSet {
 
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INDEXSET
+public:
 #endif
     MCAPI IndexSet();
     MCAPI IndexSet(class IndexSet &&);
@@ -30,8 +32,5 @@ public:
     MCAPI void remove(unsigned __int64);
     MCAPI ~IndexSet();
 
-protected:
-
-private:
 
 };

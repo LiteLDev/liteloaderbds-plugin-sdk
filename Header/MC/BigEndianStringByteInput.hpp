@@ -23,6 +23,7 @@ public:
     BigEndianStringByteInput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BigEndianStringByteInput();
     /*3*/ virtual float readFloat();
@@ -33,10 +34,8 @@ public:
     /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*11*/ virtual bool readBigEndianBytes(void *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
+public:
 #endif
 
-protected:
-
-private:
 
 };

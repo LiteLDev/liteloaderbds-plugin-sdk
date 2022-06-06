@@ -24,6 +24,7 @@ public:
     DyePowderItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DyePowderItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,11 +49,9 @@ public:
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
+public:
 #endif
     MCAPI DyePowderItem(std::string const &, int, enum ItemColor, bool, bool);
 
-protected:
-
-private:
 
 };

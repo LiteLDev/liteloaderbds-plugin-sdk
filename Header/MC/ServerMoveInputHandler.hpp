@@ -22,6 +22,7 @@ public:
     ServerMoveInputHandler(class ServerMoveInputHandler const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ServerMoveInputHandler();
     /*2*/ virtual void __unk_vfn_2();
@@ -29,13 +30,11 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*15*/ virtual void __unk_vfn_15();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMOVEINPUTHANDLER
+public:
     MCVAPI void registerInputHandlers(class InputHandler &);
 #endif
     MCAPI ServerMoveInputHandler();
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
 
-protected:
-
-private:
 
 };

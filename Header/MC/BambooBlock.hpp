@@ -23,6 +23,7 @@ public:
     BambooBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BambooBlock();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -84,16 +85,18 @@ public:
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BAMBOOBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI BambooBlock(std::string const &, int);
     MCAPI static int getMaxHeight(class BlockPos const &);
 
-protected:
-
-private:
+//private:
     MCAPI class Block const & _determineNewBlockState(class BlockSource &, class BlockPos const &) const;
     MCAPI enum LeafSize _getLeafSize(class Block const &) const;
     MCAPI enum StalkThickness _getStalkThickness(class Block const &) const;
+
+private:
+
 
 };

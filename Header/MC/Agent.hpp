@@ -24,6 +24,7 @@ public:
     Agent() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Agent();
@@ -73,6 +74,7 @@ public:
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENT
+public:
     MCVAPI bool breaksFallingBlocks() const;
     MCVAPI bool getAlwaysShowNameTag() const;
     MCVAPI bool interactPreventDefault();
@@ -92,9 +94,10 @@ public:
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const &);
     MCAPI static class Agent * tryGetFromEntity(class EntityContext &, bool);
 
-protected:
+//private:
+    MCAPI class ContainerComponent * _getContainerComponent();
 
 private:
-    MCAPI class ContainerComponent * _getContainerComponent();
+
 
 };

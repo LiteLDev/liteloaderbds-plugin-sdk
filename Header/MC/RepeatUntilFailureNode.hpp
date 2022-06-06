@@ -21,16 +21,15 @@ public:
     RepeatUntilFailureNode(class RepeatUntilFailureNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RepeatUntilFailureNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILURENODE
+public:
 #endif
     MCAPI RepeatUntilFailureNode();
 
-protected:
-
-private:
 
 };

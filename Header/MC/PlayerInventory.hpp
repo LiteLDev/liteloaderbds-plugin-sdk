@@ -28,8 +28,10 @@ public:
     PlayerInventory() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINVENTORY
+public:
     MCVAPI void containerContentChanged(int);
     MCVAPI void containerSizeChanged(int);
     MCVAPI void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
@@ -73,8 +75,5 @@ public:
     MCAPI void swapSlots(int, int);
     MCAPI void tick();
 
-protected:
-
-private:
 
 };

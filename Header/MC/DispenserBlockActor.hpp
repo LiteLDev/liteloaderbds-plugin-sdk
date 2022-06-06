@@ -22,8 +22,10 @@ public:
     DispenserBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
+public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI class Container const * getContainer() const;
@@ -45,8 +47,5 @@ public:
     MCAPI DispenserBlockActor(class BlockPos);
     MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
 
-protected:
-
-private:
 
 };

@@ -22,21 +22,24 @@ public:
     VibrationListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VibrationListener();
     /*1*/ virtual void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
     /*2*/ virtual class GameEvents::PositionSource const & getPositionSource() const;
     /*3*/ virtual unsigned int getRange() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENER
+public:
 #endif
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
     MCAPI class GameEvent const & getGameEvent() const;
     MCAPI void tick(class BlockSource &);
     MCAPI static int getGameEventFrequency(class GameEvent const &);
 
-protected:
+//private:
+    MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, class Actor const *, class BlockPos const &, class GameEvents::PositionSource const &);
 
 private:
-    MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, class Actor const *, class BlockPos const &, class GameEvents::PositionSource const &);
+
 
 };

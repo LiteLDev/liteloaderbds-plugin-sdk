@@ -19,8 +19,10 @@ public:
     ScriptItemEnchantments() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMENCHANTMENTS
+public:
 #endif
     MCAPI ScriptItemEnchantments(class ScriptItemEnchantments &&);
     MCAPI ScriptItemEnchantments(class ScriptItemEnchantments const &);
@@ -34,8 +36,5 @@ public:
     MCAPI ~ScriptItemEnchantments();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemEnchantments> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

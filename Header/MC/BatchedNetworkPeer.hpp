@@ -23,6 +23,7 @@ public:
     BatchedNetworkPeer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BatchedNetworkPeer();
     /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
@@ -31,13 +32,15 @@ public:
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BATCHEDNETWORKPEER
+public:
 #endif
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
     MCAPI void setAsyncEnabled(bool);
 
-protected:
+//private:
+    MCAPI void _startSendTask();
 
 private:
-    MCAPI void _startSendTask();
+
 
 };

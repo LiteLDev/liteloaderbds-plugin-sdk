@@ -15,8 +15,10 @@ class DefinitionTrigger {
 
 #undef AFTER_EXTRA
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONTRIGGER
+public:
 #endif
     MCAPI DefinitionTrigger(class DefinitionTrigger &&);
     MCAPI DefinitionTrigger();
@@ -31,8 +33,5 @@ public:
     MCAPI static void bindType();
     MCAPI static class DefinitionTrigger fromCompoundTag(class CompoundTag const &);
 
-protected:
-
-private:
 
 };

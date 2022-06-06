@@ -23,6 +23,7 @@ public:
     AbstractCandleBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AbstractCandleBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -75,17 +76,19 @@ public:
     /*210*/ virtual void __unk_vfn_210();
     /*211*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTCANDLEBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool hasVariableLighting() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI AbstractCandleBlock(std::string const &, int, class Material const &);
 
-protected:
+//protected:
     MCAPI void _addExtinguishEffects(class Block const &, class BlockSource &, class BlockPos const &) const;
     MCAPI void _checkForWaterlogging(class BlockSource &, class BlockPos const &) const;
     MCAPI static bool _canBeLit(class Block const &, class BlockSource &, class BlockPos const &);
 
-private:
+protected:
+
 
 };

@@ -23,6 +23,7 @@ public:
     ActorSpawnRuleGroup() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorSpawnRuleGroup();
     /*1*/ virtual std::string const & getRootKey();
@@ -30,6 +31,7 @@ public:
     /*3*/ virtual bool processPopulationControl(std::string const &, class Json::Value &);
     /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSPAWNRULEGROUP
+public:
 #endif
     MCAPI ActorSpawnRuleGroup(class ResourcePackManager &, class IWorldRegistriesProvider &);
     MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const &) const;
@@ -37,8 +39,5 @@ public:
     MCAPI void offSetDelayByCurrentTick(struct Tick const &);
     MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random &);
 
-protected:
-
-private:
 
 };

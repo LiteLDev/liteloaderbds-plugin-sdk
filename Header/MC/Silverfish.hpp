@@ -24,6 +24,7 @@ public:
     Silverfish() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Silverfish();
     /*40*/ virtual void __unk_vfn_40();
@@ -60,12 +61,10 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SILVERFISH
+public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Silverfish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

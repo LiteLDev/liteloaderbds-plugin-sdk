@@ -24,6 +24,7 @@ public:
     Minecraft() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Minecraft();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,6 +34,7 @@ public:
     /*5*/ virtual bool getSimPaused() const;
     /*6*/ virtual bool isOnlineClient() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFT
+public:
     MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
 #endif
@@ -56,9 +58,10 @@ public:
     MCAPI void startLeaveGame(bool);
     MCAPI bool update();
 
-protected:
+//private:
+    MCAPI void _tryCatchupMovementTicks();
 
 private:
-    MCAPI void _tryCatchupMovementTicks();
+
 
 };

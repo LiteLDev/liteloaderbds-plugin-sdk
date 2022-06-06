@@ -23,6 +23,7 @@ public:
     ChemistryTableBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChemistryTableBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,6 +73,7 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isCraftingBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -80,8 +82,5 @@ public:
     MCAPI static class ItemInstance getItemForType(enum ChemistryTableType, int);
     MCAPI static bool isUIValidForPlayer(class BlockPos const &, class Player &, float, enum ChemistryTableType);
 
-protected:
-
-private:
 
 };

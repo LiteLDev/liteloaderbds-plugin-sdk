@@ -22,6 +22,7 @@ public:
     TakeFlowerGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TakeFlowerGoal();
     /*1*/ virtual bool canUse();
@@ -32,11 +33,9 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAKEFLOWERGOAL
+public:
 #endif
     MCAPI TakeFlowerGoal(class Mob &);
 
-protected:
-
-private:
 
 };

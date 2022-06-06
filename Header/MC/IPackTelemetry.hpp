@@ -22,12 +22,11 @@ public:
     IPackTelemetry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKTELEMETRY
+public:
 #endif
 
-protected:
-
-private:
 
 };

@@ -22,8 +22,10 @@ public:
     GameEvent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENT
+public:
 #endif
     MCAPI GameEvent(enum GameEventConfig::GameEvents, unsigned char);
     MCAPI enum GameEventConfig::GameEvents const getEventType() const;
@@ -31,8 +33,5 @@ public:
     MCAPI float getRadiusSqrd() const;
     MCAPI bool isCategory(enum GameEventConfig::GameEventCategory) const;
 
-protected:
-
-private:
 
 };

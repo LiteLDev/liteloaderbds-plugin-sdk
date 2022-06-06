@@ -23,6 +23,7 @@ public:
     ComparatorBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComparatorBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -38,11 +39,9 @@ public:
     /*37*/ virtual int getOutputSignal();
     /*38*/ virtual void setOutputSignal(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCKACTOR
+public:
 #endif
     MCAPI ComparatorBlockActor(class BlockPos const &);
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     FlowerPotBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlowerPotBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -71,6 +72,7 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERPOTBLOCK
+public:
     MCVAPI bool isInteractiveBlock() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
@@ -78,12 +80,13 @@ public:
     MCAPI class FlowerPotBlockActor * getFlowerPotEntity(class BlockSource &, class BlockPos const &) const;
     MCAPI static bool isValidResource(class Block const &);
 
-protected:
-
-private:
+//private:
     MCAPI bool _tryPlaceFlower(class Player &, class BlockPos const &) const;
     MCAPI bool _tryTakeFlower(class Player &, class BlockPos const &) const;
     MCAPI void _updateFlowerPotEntity(class BlockSource &, class BlockPos const &, class FlowerPotBlockActor *, class Block const *) const;
     MCAPI bool isSupportedBlock(class Block const &) const;
+
+private:
+
 
 };

@@ -34,6 +34,7 @@ public:
     BlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -73,6 +74,7 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTOR
+public:
     MCVAPI void fixupOnLoad(class LevelChunk &);
     MCVAPI class Container * getContainer();
     MCVAPI class Container const * getContainer() const;
@@ -100,12 +102,17 @@ public:
     MCAPI static bool isType(class BlockActor &, enum BlockActorType);
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level &, class CompoundTag const &, class DataLoadHelper &);
 
-protected:
+//protected:
     MCAPI void _resetAABB();
 
-private:
+//private:
     MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> _createIdClassMap();
+
+protected:
+
+private:
     MCAPI static class std::map<enum BlockActorType, std::string, struct std::less<enum BlockActorType>, class std::allocator<struct std::pair<enum BlockActorType const, std::string>>> const mClassIdMap;
     MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> const mIdClassMap;
+
 
 };

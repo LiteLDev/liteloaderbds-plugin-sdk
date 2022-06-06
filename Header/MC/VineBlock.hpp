@@ -23,6 +23,7 @@ public:
     VineBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VineBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -71,6 +72,7 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VINEBLOCK
+public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI VineBlock(std::string const &, int);
@@ -85,11 +87,12 @@ public:
     MCAPI static class Block const & getBlockForFace(unsigned char);
     MCAPI static bool isAcceptableNeighbour(class Block const &);
 
-protected:
-
-private:
+//private:
     MCAPI bool _canGrowDown(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _canSideSpread(class BlockSource &, class BlockPos const &) const;
     MCAPI int _nextVineDirections(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

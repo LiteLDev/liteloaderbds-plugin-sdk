@@ -23,6 +23,7 @@ public:
     LeafBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LeafBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -74,15 +75,17 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getExtraResourceItem(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEAFBLOCK
+public:
 #endif
     MCAPI LeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
     MCAPI class mce::Color getSeasonsColor(class BlockSource &, class BlockPos const &, int, int) const;
     MCAPI static void runDecay(class BlockSource &, class BlockPos const &, int);
 
-protected:
+//protected:
     MCAPI class Block const & getSapling() const;
     MCAPI static bool _isTransparent(class Block const &, enum BlockProperty const &);
 
-private:
+protected:
+
 
 };

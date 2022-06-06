@@ -24,6 +24,7 @@ public:
     ActorServerCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorServerCommandOrigin();
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
@@ -32,14 +33,12 @@ public:
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSERVERCOMMANDORIGIN
+public:
 #endif
     MCAPI ActorServerCommandOrigin(class Actor &);
     MCAPI struct ActorUniqueID getTargetOther() const;
     MCAPI void setTargetOther(struct ActorUniqueID);
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
 
-protected:
-
-private:
 
 };

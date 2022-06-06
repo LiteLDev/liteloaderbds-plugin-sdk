@@ -23,6 +23,7 @@ public:
     SandBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SandBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -73,11 +74,9 @@ public:
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SANDBLOCK
+public:
 #endif
     MCAPI SandBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

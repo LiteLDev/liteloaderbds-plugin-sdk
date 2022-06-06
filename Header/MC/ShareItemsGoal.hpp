@@ -22,6 +22,7 @@ public:
     ShareItemsGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShareItemsGoal();
     /*1*/ virtual bool canUse();
@@ -32,12 +33,14 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREITEMSGOAL
+public:
 #endif
     MCAPI ShareItemsGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, float);
 
-protected:
+//protected:
     MCAPI struct std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<struct std::pair<int, class ItemStack>> const &);
 
-private:
+protected:
+
 
 };

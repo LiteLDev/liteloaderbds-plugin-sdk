@@ -23,6 +23,7 @@ public:
     InventoryContainerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~InventoryContainerModel();
@@ -39,12 +40,14 @@ public:
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTAINERMODEL
+public:
 #endif
     MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player &);
 
-protected:
+//private:
+    MCAPI void _refreshSlot(int);
 
 private:
-    MCAPI void _refreshSlot(int);
+
 
 };

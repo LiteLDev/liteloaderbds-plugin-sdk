@@ -23,6 +23,7 @@ public:
     LecternBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LecternBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -72,15 +73,17 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCK
+public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI LecternBlock(std::string const &, int);
     MCAPI void emitRedstonePulse(class BlockSource &, class BlockPos const &) const;
 
-protected:
+//private:
+    MCAPI bool _dropBook(class Player &, class BlockPos const &) const;
 
 private:
-    MCAPI bool _dropBook(class Player &, class BlockPos const &) const;
+
 
 };

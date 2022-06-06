@@ -24,6 +24,7 @@ public:
     EggItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EggItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -43,10 +44,8 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EGGITEM
+public:
 #endif
 
-protected:
-
-private:
 
 };

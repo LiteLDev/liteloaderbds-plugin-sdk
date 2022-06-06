@@ -23,6 +23,7 @@ public:
     BambooSapling() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BambooSapling();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -74,11 +75,13 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BAMBOOSAPLING
+public:
 #endif
 
-protected:
+//private:
+    MCAPI bool _grow(class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI bool _grow(class BlockSource &, class BlockPos const &) const;
+
 
 };

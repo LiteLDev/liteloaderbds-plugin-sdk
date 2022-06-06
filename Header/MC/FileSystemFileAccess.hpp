@@ -23,6 +23,7 @@ public:
     FileSystemFileAccess() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FileSystemFileAccess();
     /*1*/ virtual void * fopen(class Core::Path const &, std::string const &);
@@ -33,11 +34,9 @@ public:
     /*6*/ virtual class IFileWriteAccess * getWriteInterface();
     /*7*/ virtual void unload();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILESYSTEMFILEACCESS
+public:
 #endif
     MCAPI FileSystemFileAccess(enum FileSystemMode);
 
-protected:
-
-private:
 
 };

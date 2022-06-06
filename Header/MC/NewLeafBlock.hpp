@@ -23,6 +23,7 @@ public:
     NewLeafBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NewLeafBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,11 +67,9 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getExtraResourceItem(class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWLEAFBLOCK
+public:
 #endif
     MCAPI NewLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
 
-protected:
-
-private:
 
 };

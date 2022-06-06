@@ -23,16 +23,15 @@ public:
     DynamicJumpControlDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~DynamicJumpControlDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROLDESCRIPTION
+public:
 #endif
 
-protected:
-
-private:
 
 };

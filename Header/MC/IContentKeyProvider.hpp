@@ -22,16 +22,15 @@ public:
     IContentKeyProvider() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IContentKeyProvider();
     /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual std::string getAlternateContentKey(class ContentIdentity const &) const;
     /*3*/ virtual bool requireEncryptedReads() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
+public:
 #endif
 
-protected:
-
-private:
 
 };

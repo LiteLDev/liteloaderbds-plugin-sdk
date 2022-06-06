@@ -23,6 +23,7 @@ public:
     BookCloningRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BookCloningRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -32,13 +33,11 @@ public:
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*7*/ virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOKCLONINGRECIPE
+public:
 #endif
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const ID;
 
-protected:
-
-private:
 
 };

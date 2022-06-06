@@ -22,8 +22,10 @@ public:
     POIInstance() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POIINSTANCE
+public:
 #endif
     MCAPI POIInstance(class BlockPos const &, bool, std::string, enum POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
     MCAPI void decreaseOwnerCount(unsigned __int64);
@@ -48,8 +50,5 @@ public:
     MCAPI void trySpawnParticles(class BlockSource &, class Random &, int) const;
     MCAPI bool useBoundingBox() const;
 
-protected:
-
-private:
 
 };

@@ -25,6 +25,7 @@ public:
     ActorDamageSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorDamageSource();
     /*1*/ virtual bool isEntitySource() const;
@@ -47,6 +48,7 @@ public:
     /*18*/ virtual enum ActorCategory getDamagingEntityCategories() const;
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGESOURCE
+public:
 #endif
     MCAPI ActorDamageSource(enum ActorDamageCause);
     MCAPI enum ActorDamageCause getCause() const;
@@ -55,8 +57,5 @@ public:
     MCAPI static enum ActorDamageCause lookupCause(std::string const &);
     MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
 
-protected:
-
-private:
 
 };

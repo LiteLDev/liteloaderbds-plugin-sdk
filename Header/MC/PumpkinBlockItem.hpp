@@ -24,6 +24,7 @@ public:
     PumpkinBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PumpkinBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -41,11 +42,9 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUMPKINBLOCKITEM
+public:
 #endif
     MCAPI PumpkinBlockItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

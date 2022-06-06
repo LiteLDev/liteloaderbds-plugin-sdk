@@ -22,8 +22,10 @@ public:
     ScriptPluginResult() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINRESULT
+public:
 #endif
     MCAPI ScriptPluginResult(struct Scripting::ModuleDescriptor const &);
     MCAPI void addError(std::string const &);
@@ -34,8 +36,5 @@ public:
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     MCAPI ~ScriptPluginResult();
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     SquidIdleGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SquidIdleGoal();
     /*1*/ virtual bool canUse();
@@ -32,10 +33,8 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDIDLEGOAL
+public:
 #endif
 
-protected:
-
-private:
 
 };

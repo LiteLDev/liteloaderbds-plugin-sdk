@@ -22,8 +22,10 @@ public:
     ActorClassTree() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCLASSTREE
+public:
 #endif
     MCAPI static enum ActorType getEntityTypeIdLegacy(enum ActorType);
     MCAPI static bool hasCategory(enum ActorCategory const &, enum ActorCategory);
@@ -34,8 +36,5 @@ public:
     MCAPI static bool isOfType(enum ActorType, enum ActorType);
     MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     ServerCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ServerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -42,12 +43,10 @@ public:
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMANDORIGIN
+public:
 #endif
     MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum CommandPermissionLevel, class AutomaticID<class Dimension, int>);
     MCAPI static std::unique_ptr<class ServerCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
-protected:
-
-private:
 
 };

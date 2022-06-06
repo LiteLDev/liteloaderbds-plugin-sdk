@@ -22,6 +22,7 @@ public:
     MobEquipmentPacket(class MobEquipmentPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MobEquipmentPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,13 +30,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEQUIPMENTPACKET
+public:
 #endif
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const &, int, int, enum ContainerID);
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const &, int, int, enum ContainerID);
     MCAPI MobEquipmentPacket();
 
-protected:
-
-private:
 
 };

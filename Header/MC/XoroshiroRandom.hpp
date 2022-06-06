@@ -22,6 +22,7 @@ public:
     XoroshiroRandom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~XoroshiroRandom();
     /*1*/ virtual int nextInt();
@@ -35,10 +36,8 @@ public:
     /*9*/ virtual std::unique_ptr<class IRandom> fork();
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRORANDOM
+public:
 #endif
 
-protected:
-
-private:
 
 };

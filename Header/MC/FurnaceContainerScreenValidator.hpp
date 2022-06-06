@@ -22,15 +22,14 @@ public:
     FurnaceContainerScreenValidator(class FurnaceContainerScreenValidator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FurnaceContainerScreenValidator();
     /*1*/ virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERSCREENVALIDATOR
+public:
 #endif
     MCAPI FurnaceContainerScreenValidator();
 
-protected:
-
-private:
 
 };

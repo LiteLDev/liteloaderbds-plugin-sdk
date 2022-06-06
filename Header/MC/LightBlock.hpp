@@ -23,6 +23,7 @@ public:
     LightBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LightBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -73,11 +74,9 @@ public:
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTBLOCK
+public:
 #endif
     MCAPI LightBlock(std::string const &, int, class Material const &);
 
-protected:
-
-private:
 
 };

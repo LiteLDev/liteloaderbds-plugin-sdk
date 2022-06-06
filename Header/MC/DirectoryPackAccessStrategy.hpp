@@ -24,6 +24,7 @@ public:
     DirectoryPackAccessStrategy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DirectoryPackAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
@@ -44,11 +45,9 @@ public:
     /*18*/ virtual bool canRecurse() const;
     /*19*/ virtual void unload();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKACCESSSTRATEGY
+public:
 #endif
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const &, bool);
 
-protected:
-
-private:
 
 };

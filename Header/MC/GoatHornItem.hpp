@@ -24,6 +24,7 @@ public:
     GoatHornItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GoatHornItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,12 +47,10 @@ public:
     /*100*/ virtual int getCooldownTime() const;
     /*119*/ virtual bool canBeCharged() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOATHORNITEM
+public:
 #endif
     MCAPI GoatHornItem(std::string const &, int);
     MCAPI static void addGoatHornVarationSaveData(class Goat &, class ItemStack &);
 
-protected:
-
-private:
 
 };

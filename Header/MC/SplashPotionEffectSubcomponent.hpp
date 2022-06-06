@@ -22,6 +22,7 @@ public:
     SplashPotionEffectSubcomponent(class SplashPotionEffectSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SplashPotionEffectSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -29,12 +30,10 @@ public:
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPLASHPOTIONEFFECTSUBCOMPONENT
+public:
 #endif
     MCAPI SplashPotionEffectSubcomponent();
     MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, class std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int);
 
-protected:
-
-private:
 
 };

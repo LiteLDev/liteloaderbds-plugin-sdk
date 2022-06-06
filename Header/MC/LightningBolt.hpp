@@ -23,6 +23,7 @@ public:
     LightningBolt() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -51,13 +52,15 @@ public:
     /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTNINGBOLT
+public:
     MCVAPI bool shouldAlwaysRender();
 #endif
     MCAPI LightningBolt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
+//private:
+    MCAPI bool _shouldSetOnFire() const;
 
 private:
-    MCAPI bool _shouldSetOnFire() const;
+
 
 };

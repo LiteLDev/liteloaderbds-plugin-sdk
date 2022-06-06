@@ -23,6 +23,7 @@ public:
     DiodeBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DiodeBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -81,14 +82,16 @@ public:
     /*215*/ virtual class Block const * getOnBlock(class Block const *) const = 0;
     /*216*/ virtual class Block const * getOffBlock(class Block const *) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIODEBLOCK
+public:
     MCVAPI bool canSpawnOn() const;
 #endif
     MCAPI DiodeBlock(std::string const &, int, bool);
     MCAPI static bool isDiode(class Block const &);
 
-protected:
+//protected:
     MCAPI int getAlternateSignalAt(class BlockSource &, class BlockPos const &, int) const;
 
-private:
+protected:
+
 
 };

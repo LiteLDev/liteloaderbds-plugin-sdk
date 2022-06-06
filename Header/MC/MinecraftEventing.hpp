@@ -33,8 +33,10 @@ public:
     MinecraftEventing() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTEVENTING
+public:
     MCVAPI void addCrashTelemetryToBatch(class std::shared_ptr<class Bedrock::SessionInfo>);
     MCVAPI void addListener(std::unique_ptr<class Social::Events::IEventListener>);
     MCVAPI void fileEventCloudWorldPullFailed(std::string const &, std::string const &, bool);
@@ -329,15 +331,16 @@ public:
     MCAPI static void fireEventPlayerTransform(class Player &);
     MCAPI static void fireEventSlashCommandExecuted(class Player *, std::string const &, int, int, std::string const &);
 
-protected:
-
-private:
+//private:
     MCAPI void _fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, bool, class StructureTelemetryClientData const *);
     MCAPI void _generateWorldSessionId();
     MCAPI void fireEventPlayerMessage(std::string const &, std::string const &, std::string const &, std::string const &);
+
+private:
     MCAPI static std::unique_ptr<class Social::Events::AchievementEventing> mAchievementEventing;
     MCAPI static class std::unordered_map<enum ItemAcquisitionMethod, enum MinecraftEventing::AcquisitionMethod, struct std::hash<enum ItemAcquisitionMethod>, struct std::equal_to<enum ItemAcquisitionMethod>, class std::allocator<struct std::pair<enum ItemAcquisitionMethod const, enum MinecraftEventing::AcquisitionMethod>>> const mAcquisitionMethodMap;
     MCAPI static class std::unordered_map<enum ItemUseMethod, enum MinecraftEventing::UseMethod, struct std::hash<enum ItemUseMethod>, struct std::equal_to<enum ItemUseMethod>, class std::allocator<struct std::pair<enum ItemUseMethod const, enum MinecraftEventing::UseMethod>>> const mUseMethodMap;
     MCAPI static class std::mutex sMutex;
+
 
 };

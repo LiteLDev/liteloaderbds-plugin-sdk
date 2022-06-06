@@ -23,6 +23,7 @@ public:
     TopSnowBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TopSnowBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -89,6 +90,7 @@ public:
     /*207*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOPSNOWBLOCK
+public:
     MCVAPI bool canBeDestroyedByWaterSpread() const;
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool canHaveExtraData() const;
@@ -101,10 +103,11 @@ public:
     MCAPI static class Block const & getCoveredBlock(class BlockSource const &, class BlockPos const &);
     MCAPI static class Block const & getSnowBlockToBuild(class BlockSource const &, class BlockPos const &, int, bool);
 
-protected:
-
-private:
+//private:
     MCAPI bool _canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const *) const;
     MCAPI bool _canSurvive(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

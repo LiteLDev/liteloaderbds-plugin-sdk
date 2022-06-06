@@ -22,6 +22,7 @@ public:
     BaseMoveToGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseMoveToGoal();
     /*1*/ virtual bool canUse();
@@ -41,16 +42,18 @@ public:
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOGOAL
+public:
 #endif
     MCAPI BaseMoveToGoal(class Mob &, float, float, float, int, int);
     MCAPI void setTargetPositionOffset(class Vec3 const &);
 
-protected:
+//protected:
     MCAPI class BlockPos _blockAboveTarget() const;
     MCAPI void _checkIfStuck();
     MCAPI bool _isCooldownActive() const;
     MCAPI void setInterval(int);
 
-private:
+protected:
+
 
 };

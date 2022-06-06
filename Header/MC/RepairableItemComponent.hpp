@@ -22,6 +22,7 @@ public:
     RepairableItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RepairableItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -31,6 +32,7 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPAIRABLEITEMCOMPONENT
+public:
 #endif
     MCAPI RepairableItemComponent(class ComponentItem *);
     MCAPI int handleItemRepair(class ItemStackBase &, class ItemStackBase &);
@@ -38,10 +40,11 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
-
-private:
+//private:
     MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;
     MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode);
+
+private:
+
 
 };

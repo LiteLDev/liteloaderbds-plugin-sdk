@@ -22,6 +22,7 @@ public:
     PlayerSkinPacket(class PlayerSkinPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerSkinPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -30,11 +31,9 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSKINPACKET
+public:
 #endif
     MCAPI PlayerSkinPacket();
 
-protected:
-
-private:
 
 };

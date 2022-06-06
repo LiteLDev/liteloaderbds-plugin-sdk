@@ -22,6 +22,7 @@ public:
     RedstoneTorchCapacitor(class RedstoneTorchCapacitor const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RedstoneTorchCapacitor();
     /*1*/ virtual int getStrength() const;
@@ -37,14 +38,16 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONETORCHCAPACITOR
+public:
 #endif
     MCAPI RedstoneTorchCapacitor();
     MCAPI void resetBurnOutCount();
     MCAPI void setOn(bool);
 
-protected:
+//private:
+    MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
 
 private:
-    MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
+
 
 };

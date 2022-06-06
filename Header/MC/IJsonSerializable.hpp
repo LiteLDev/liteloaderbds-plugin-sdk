@@ -22,12 +22,11 @@ public:
     IJsonSerializable() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IJSONSERIALIZABLE
+public:
 #endif
 
-protected:
-
-private:
 
 };

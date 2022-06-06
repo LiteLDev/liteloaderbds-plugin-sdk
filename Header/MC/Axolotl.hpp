@@ -24,6 +24,7 @@ public:
     Axolotl() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Axolotl();
@@ -54,11 +55,9 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*360*/ virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const &, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AXOLOTL
+public:
 #endif
     MCAPI Axolotl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

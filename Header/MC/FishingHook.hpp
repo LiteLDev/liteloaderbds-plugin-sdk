@@ -23,6 +23,7 @@ public:
     FishingHook() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~FishingHook();
@@ -51,13 +52,14 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGHOOK
+public:
 #endif
     MCAPI FishingHook(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Actor * getOwner();
     MCAPI int retrieve();
     MCAPI static float const BOBBER_SIZE;
 
-protected:
+//protected:
     MCAPI void _fishPosEvent();
     MCAPI void _fishTeaseEvent();
     MCAPI void _fishhookEvent();
@@ -69,6 +71,7 @@ protected:
     MCAPI void _updateGravity();
     MCAPI void _updateServer();
 
-private:
+protected:
+
 
 };

@@ -22,6 +22,7 @@ public:
     SwimWithEntityGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SwimWithEntityGoal();
     /*1*/ virtual bool canUse();
@@ -32,12 +33,14 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWITHENTITYGOAL
+public:
 #endif
     MCAPI SwimWithEntityGoal(class Mob &);
 
-protected:
+//private:
+    MCAPI bool _setWantedMob();
 
 private:
-    MCAPI bool _setWantedMob();
+
 
 };

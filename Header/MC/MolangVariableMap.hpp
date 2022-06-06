@@ -20,8 +20,10 @@ public:
     MolangVariableMap() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLEMAP
+public:
 #endif
     MCAPI MolangVariableMap(class MolangVariableMap &&);
     MCAPI MolangVariableMap(class MolangVariableMap const &);
@@ -43,11 +45,12 @@ public:
     MCAPI void setMolangVariableSettings(struct MolangVariableSettings const &);
     MCAPI ~MolangVariableMap();
 
-protected:
-
-private:
+//private:
     MCAPI class MolangVariable const * _getMolangVariable(enum MolangVariableIndex) const;
     MCAPI class MolangVariable * _getOrAddMolangVariable(unsigned __int64 const &, char const *, bool);
     MCAPI class MolangVariable * _getOrAddMolangVariable(enum MolangVariableIndex);
+
+private:
+
 
 };

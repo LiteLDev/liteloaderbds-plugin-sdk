@@ -24,6 +24,7 @@ public:
     LavaSlime() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~LavaSlime();
@@ -63,11 +64,9 @@ public:
     /*369*/ virtual void decreaseSquish();
     /*370*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAVASLIME
+public:
 #endif
     MCAPI LavaSlime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     ComplexItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComplexItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -41,12 +42,10 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*128*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXITEM
+public:
     MCVAPI bool isComplex() const;
 #endif
     MCAPI ComplexItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

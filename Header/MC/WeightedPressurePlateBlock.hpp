@@ -23,6 +23,7 @@ public:
     WeightedPressurePlateBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WeightedPressurePlateBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,13 +65,11 @@ public:
     /*205*/ virtual int getSignalForData(int) const;
     /*206*/ virtual int getRedstoneSignal(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEIGHTEDPRESSUREPLATEBLOCK
+public:
 #endif
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
     MCAPI static int const MAX_WEIGHT_HEAVY;
     MCAPI static int const MAX_WEIGHT_LIGHT;
 
-protected:
-
-private:
 
 };

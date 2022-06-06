@@ -23,6 +23,7 @@ public:
     ComparatorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComparatorBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -75,15 +76,17 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCK
+public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI ComparatorBlock(std::string const &, int, bool);
 
-protected:
-
-private:
+//private:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
     MCAPI void _refreshOutputState(class BlockSource &, class BlockPos const &, int) const;
+
+private:
+
 
 };

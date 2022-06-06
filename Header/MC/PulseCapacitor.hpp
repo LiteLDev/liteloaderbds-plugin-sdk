@@ -22,6 +22,7 @@ public:
     PulseCapacitor(class PulseCapacitor const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PulseCapacitor();
     /*1*/ virtual int getStrength() const;
@@ -35,11 +36,9 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PULSECAPACITOR
+public:
 #endif
     MCAPI PulseCapacitor();
 
-protected:
-
-private:
 
 };

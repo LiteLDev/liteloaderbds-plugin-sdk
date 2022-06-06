@@ -33,6 +33,7 @@ public:
     IntArrayTag(class IntArrayTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IntArrayTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -43,11 +44,9 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTARRAYTAG
+public:
 #endif
     MCAPI IntArrayTag();
 
-protected:
-
-private:
 
 };

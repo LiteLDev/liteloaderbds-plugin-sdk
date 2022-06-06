@@ -23,6 +23,7 @@ public:
     LiquidBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LiquidBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -72,21 +73,27 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI LiquidBlock(std::string const &, int, class Material const &);
     MCAPI int getTickDelay(class BlockSource &) const;
     MCAPI static float getHeightFromDepth(int);
 
-protected:
+//protected:
     MCAPI void emitFizzParticle(class BlockSource &, class BlockPos const &) const;
     MCAPI int getDepth(class BlockSource &, class BlockPos const &) const;
     MCAPI int getRenderedDepth(class BlockSource &, class BlockPos const &) const;
     MCAPI void solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     MCAPI void trySpreadFire(class BlockSource &, class BlockPos const &, class Random &) const;
 
-private:
+//private:
     MCAPI class Vec3 _getFlow(class BlockSource &, class BlockPos const &) const;
     MCAPI void _solidify(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+
+protected:
+
+private:
+
 
 };

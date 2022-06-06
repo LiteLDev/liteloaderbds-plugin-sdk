@@ -24,6 +24,7 @@ public:
     BlockCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -44,14 +45,16 @@ public:
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMMANDORIGIN
+public:
 #endif
     MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
-protected:
+//protected:
     MCAPI std::string _getName(class BlockSource &) const;
 
-private:
+protected:
+
 
 };

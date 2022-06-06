@@ -23,6 +23,7 @@ public:
     CutCopperStairs() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CutCopperStairs();
     /*16*/ virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
@@ -69,12 +70,10 @@ public:
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CUTCOPPERSTAIRS
+public:
 #endif
     MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
     MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum CopperType, class WeakPtr<class BlockLegacy> &);
 
-protected:
-
-private:
 
 };

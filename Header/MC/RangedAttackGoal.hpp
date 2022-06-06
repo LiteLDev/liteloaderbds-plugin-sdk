@@ -22,6 +22,7 @@ public:
     RangedAttackGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RangedAttackGoal();
     /*1*/ virtual bool canUse();
@@ -32,12 +33,10 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDATTACKGOAL
+public:
 #endif
     MCAPI RangedAttackGoal(class Mob &);
     MCAPI void handleAttackBehavior(class Actor *, class Vec3 const &, float, bool);
 
-protected:
-
-private:
 
 };

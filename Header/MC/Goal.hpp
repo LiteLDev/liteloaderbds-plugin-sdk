@@ -21,6 +21,7 @@ public:
     Goal(class Goal const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Goal();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -32,6 +33,7 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool isTargetGoal() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
+public:
     MCVAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
     MCVAPI void start();
     MCVAPI void stop();
@@ -43,8 +45,5 @@ public:
     MCAPI void setRequiredControlFlags(int);
     MCAPI void setTypeId(unsigned short);
 
-protected:
-
-private:
 
 };

@@ -20,6 +20,7 @@ public:
     SculkVeinBlockBehavior() = delete;
 #endif
 
+
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
     /*1*/ virtual int updateFacingData(int, class Block const &) const;
@@ -28,12 +29,14 @@ public:
     /*4*/ virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &) const;
     /*5*/ virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINBLOCKBEHAVIOR
+public:
 #endif
 
-protected:
-
-private:
+//private:
     MCAPI static bool _attemptPlaceSculk(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &);
     MCAPI static void _cleanUpVeinsWithSculkSubstrate(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &);
+
+private:
+
 
 };

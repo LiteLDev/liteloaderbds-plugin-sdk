@@ -21,8 +21,10 @@ public:
     LevelDbEnv(class LevelDbEnv const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBENV
+public:
     MCVAPI class leveldb::Status CreateDir(std::string const &);
     MCVAPI class leveldb::Status DeleteDir(std::string const &);
     MCVAPI class leveldb::Status DeleteFileA(std::string const &);
@@ -47,9 +49,10 @@ public:
     MCAPI bool IsComplete() const;
     MCAPI LevelDbEnv();
 
-protected:
+//private:
 
 private:
     MCAPI static class LevelDbEnv * sSingleton;
+
 
 };

@@ -23,6 +23,7 @@ public:
     LabTableContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LabTableContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -33,12 +34,10 @@ public:
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLECONTAINERMANAGERMODEL
+public:
 #endif
     MCAPI LabTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const INPUT_SLOTS;
 
-protected:
-
-private:
 
 };

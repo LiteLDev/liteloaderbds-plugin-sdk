@@ -22,12 +22,11 @@ public:
     ServerMetrics() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMETRICS
+public:
 #endif
 
-protected:
-
-private:
 
 };

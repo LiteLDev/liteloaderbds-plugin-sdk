@@ -23,6 +23,7 @@ public:
     JigsawBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JigsawBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -37,11 +38,9 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCKACTOR
+public:
 #endif
     MCAPI JigsawBlockActor(class BlockPos const &);
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     HoneyBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HoneyBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -65,11 +66,9 @@ public:
     /*193*/ virtual int getExtraRenderLayers() const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HONEYBLOCK
+public:
 #endif
     MCAPI HoneyBlock(std::string const &, int, class Material const &);
 
-protected:
-
-private:
 
 };

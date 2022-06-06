@@ -23,6 +23,7 @@ public:
     MultifaceBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MultifaceBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -77,6 +78,7 @@ public:
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK
+public:
     MCVAPI bool isMultifaceBlock() const;
 #endif
     MCAPI MultifaceBlock(std::string const &, int, class Material const &);
@@ -95,11 +97,16 @@ public:
     MCAPI static int getMultifaceValueFromFace(unsigned char);
     MCAPI static bool hasFace(class Block const &, unsigned char);
 
-protected:
+//protected:
     MCAPI bool _canSpread(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
     MCAPI int _getNumSides(class Block const &) const;
 
-private:
+//private:
     MCAPI void _removeBlock(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, bool) const;
+
+protected:
+
+private:
+
 
 };

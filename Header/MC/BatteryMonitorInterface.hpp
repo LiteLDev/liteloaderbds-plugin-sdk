@@ -22,12 +22,11 @@ public:
     BatteryMonitorInterface() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BATTERYMONITORINTERFACE
+public:
 #endif
 
-protected:
-
-private:
 
 };

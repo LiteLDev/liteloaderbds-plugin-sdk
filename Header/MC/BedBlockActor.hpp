@@ -23,6 +23,7 @@ public:
     BedBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BedBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -43,14 +44,12 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDBLOCKACTOR
+public:
 #endif
     MCAPI BedBlockActor(class BlockPos const &);
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);
     MCAPI void startSleepingOn();
     MCAPI void stopSleepingOn(class BlockSource &, bool);
 
-protected:
-
-private:
 
 };

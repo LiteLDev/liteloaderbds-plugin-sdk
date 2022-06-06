@@ -24,6 +24,7 @@ public:
     RecordItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RecordItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -42,14 +43,12 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEM
+public:
     MCVAPI bool isMusicDisk() const;
 #endif
     MCAPI RecordItem(std::string const &, int, enum LevelSoundEvent);
     MCAPI float getDuration() const;
     MCAPI enum LevelSoundEvent getSound() const;
 
-protected:
-
-private:
 
 };

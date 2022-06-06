@@ -23,14 +23,13 @@ public:
     NavigationHoverDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationHoverDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONHOVERDESCRIPTION
+public:
 #endif
 
-protected:
-
-private:
 
 };

@@ -22,12 +22,11 @@ public:
     IScreenChangedEventing() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISCREENCHANGEDEVENTING
+public:
 #endif
 
-protected:
-
-private:
 
 };

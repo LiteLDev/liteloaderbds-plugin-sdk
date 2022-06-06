@@ -31,6 +31,7 @@ public:
     SimulatedPlayer() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~SimulatedPlayer();
@@ -80,6 +81,7 @@ public:
     /*446*/ virtual int _getSpawnChunkLimit() const;
     /*447*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMULATEDPLAYER
+public:
     MCVAPI bool isSimulated() const;
     MCVAPI bool useNewAi() const;
 #endif
@@ -117,9 +119,7 @@ public:
     MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
     MCAPI static class SimulatedPlayer * tryGetFromEntity(class EntityContext &, bool);
 
-protected:
-
-private:
+//private:
     MCAPI void _addMoveComponent();
     MCAPI struct ScriptNavigationResult _createNavigationResult(class NavigationComponent *) const;
     MCAPI float _getInputSpeed();
@@ -127,5 +127,8 @@ private:
     MCAPI bool _trySwing();
     MCAPI void _updateMovement();
     MCAPI void _updateRidingComponents();
+
+private:
+
 
 };

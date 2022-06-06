@@ -22,6 +22,7 @@ public:
     ScriptActorGameplayHandler() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptActorGameplayHandler();
     /*1*/ virtual void __unk_vfn_1();
@@ -29,11 +30,13 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ActorDefinitionStartedEvent &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTORGAMEPLAYHANDLER
+public:
 #endif
 
-protected:
+//private:
+    MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
 
 private:
-    MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
+
 
 };

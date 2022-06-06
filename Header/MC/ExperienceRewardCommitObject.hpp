@@ -20,17 +20,16 @@ public:
     ExperienceRewardCommitObject() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ExperienceRewardCommitObject();
     /*1*/ virtual bool append(class ContainerValidationCommitObject *);
     /*2*/ virtual bool canCommit(class ContainerScreenContext const &) const;
     /*3*/ virtual void commit(class ContainerScreenContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMMITOBJECT
+public:
 #endif
     MCAPI ExperienceRewardCommitObject(int);
 
-protected:
-
-private:
 
 };

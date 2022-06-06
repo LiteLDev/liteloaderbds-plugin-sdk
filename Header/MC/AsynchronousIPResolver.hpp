@@ -22,8 +22,10 @@ public:
     AsynchronousIPResolver() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCHRONOUSIPRESOLVER
+public:
 #endif
     MCAPI AsynchronousIPResolver(std::string);
     MCAPI std::string getIp() const;
@@ -31,9 +33,10 @@ public:
     MCAPI bool isDone() const;
     MCAPI ~AsynchronousIPResolver();
 
-protected:
+//private:
+    MCAPI void _resolve();
 
 private:
-    MCAPI void _resolve();
+
 
 };

@@ -20,6 +20,7 @@ public:
     DurabilityItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DurabilityItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -29,6 +30,7 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DURABILITYITEMCOMPONENT
+public:
 #endif
     MCAPI DurabilityItemComponent(class ComponentItem *);
     MCAPI int getDamageChance(int) const;
@@ -38,8 +40,5 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
-
-private:
 
 };

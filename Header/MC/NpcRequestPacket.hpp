@@ -22,6 +22,7 @@ public:
     NpcRequestPacket(class NpcRequestPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NpcRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,6 +30,7 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCREQUESTPACKET
+public:
 #endif
     MCAPI NpcRequestPacket();
     MCAPI std::string const & getInteractText() const;
@@ -39,9 +41,10 @@ public:
     MCAPI static class NpcRequestPacket requestSetName(class ActorRuntimeID, std::string);
     MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int);
 
-protected:
+//private:
+    MCAPI NpcRequestPacket(class ActorRuntimeID, enum NpcRequestPacket::RequestType, std::string, unsigned char);
 
 private:
-    MCAPI NpcRequestPacket(class ActorRuntimeID, enum NpcRequestPacket::RequestType, std::string, unsigned char);
+
 
 };

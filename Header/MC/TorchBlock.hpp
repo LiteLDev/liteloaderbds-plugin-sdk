@@ -23,6 +23,7 @@ public:
     TorchBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TorchBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -71,17 +72,23 @@ public:
     /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TORCHBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI TorchBlock(std::string const &, int, enum MaterialType);
 
-protected:
+//protected:
     MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum TorchFacing) const;
     MCAPI bool canBePlacedOn(class BlockSource &, class BlockPos const &, unsigned char) const;
+
+//private:
+
+protected:
 
 private:
     MCAPI static enum TorchFacing const DATA_FROM_FACING[];
     MCAPI static unsigned short const FACING_FROM_DATA[];
+
 
 };

@@ -23,6 +23,7 @@ public:
     ActorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,12 +65,14 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
 
-protected:
+//protected:
     MCAPI ActorBlock(std::string const &, int, class Material const &);
 
-private:
+protected:
+
 
 };

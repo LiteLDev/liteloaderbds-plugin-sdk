@@ -22,6 +22,7 @@ public:
     CameraShakePacket(class CameraShakePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CameraShakePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,13 +30,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKEPACKET
+public:
 #endif
     MCAPI CameraShakePacket(float, float, enum CameraShakeType);
     MCAPI CameraShakePacket(enum CameraShakeAction);
     MCAPI CameraShakePacket();
 
-protected:
-
-private:
 
 };

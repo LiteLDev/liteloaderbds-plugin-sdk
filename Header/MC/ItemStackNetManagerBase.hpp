@@ -22,6 +22,7 @@ public:
     ItemStackNetManagerBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
     /*1*/ virtual bool isEnabled() const;
@@ -35,6 +36,7 @@ public:
     /*9*/ virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum ContainerType, int);
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERBASE
+public:
 #endif
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
@@ -44,9 +46,10 @@ public:
     MCAPI static class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
     MCAPI static bool setPlayerContainer(class Player &, enum ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
-protected:
+//protected:
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 
-private:
+protected:
+
 
 };

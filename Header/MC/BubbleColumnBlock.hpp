@@ -23,6 +23,7 @@ public:
     BubbleColumnBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BubbleColumnBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -75,15 +76,17 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUBBLECOLUMNBLOCK
+public:
 #endif
     MCAPI BubbleColumnBlock(std::string const &, int);
     MCAPI static bool addBubbleColumnSegment(class BlockSource &, class BlockPos const &);
     MCAPI static void spawnBubbles(class BlockSource &, class BlockPos const &);
 
-protected:
-
-private:
+//private:
     MCAPI static void createParticles(class BlockSource &, class BlockPos const &, class Random &, bool);
     MCAPI static bool getFlowDownward(class Block const &);
+
+private:
+
 
 };

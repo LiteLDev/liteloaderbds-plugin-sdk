@@ -23,6 +23,7 @@ public:
     NyliumBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NyliumBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,6 +64,7 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NYLIUMBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI NyliumBlock(std::string const &, int);
@@ -71,9 +73,10 @@ public:
     MCAPI static class Block const & netherSproutBlockProvider(class Randomize const &);
     MCAPI static class Block const & warpedBlockProvider(class Randomize const &);
 
-protected:
+//private:
+    MCAPI bool _scatterVegetation(class BlockSource &, class BlockPos const &, class Random &, class std::function<class Block const & (class Randomize const &)>) const;
 
 private:
-    MCAPI bool _scatterVegetation(class BlockSource &, class BlockPos const &, class Random &, class std::function<class Block const & (class Randomize const &)>) const;
+
 
 };

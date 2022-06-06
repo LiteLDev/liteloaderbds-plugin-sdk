@@ -23,6 +23,7 @@ public:
     EnchantingTableBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnchantingTableBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -39,11 +40,9 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGTABLEBLOCKACTOR
+public:
 #endif
     MCAPI EnchantingTableBlockActor(class BlockPos const &);
 
-protected:
-
-private:
 
 };

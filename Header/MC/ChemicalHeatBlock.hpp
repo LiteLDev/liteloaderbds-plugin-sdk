@@ -23,6 +23,7 @@ public:
     ChemicalHeatBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChemicalHeatBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,12 +64,14 @@ public:
     /*193*/ virtual int getExtraRenderLayers() const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMICALHEATBLOCK
+public:
 #endif
     MCAPI ChemicalHeatBlock(std::string const &, int);
 
-protected:
+//private:
+    MCAPI void _queueTick(class BlockSource &, class BlockPos const &, class Random &) const;
 
 private:
-    MCAPI void _queueTick(class BlockSource &, class BlockPos const &, class Random &) const;
+
 
 };

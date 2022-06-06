@@ -22,6 +22,7 @@ public:
     AdmireItemGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AdmireItemGoal();
     /*1*/ virtual bool canUse();
@@ -32,12 +33,14 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMGOAL
+public:
 #endif
     MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class DefinitionTrigger const &, class DefinitionTrigger const &);
 
-protected:
+//private:
+    MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
 
 private:
-    MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
+
 
 };

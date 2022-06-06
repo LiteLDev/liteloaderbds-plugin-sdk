@@ -26,8 +26,10 @@ public:
     CommandVersion() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDVERSION
+public:
 #endif
     MCAPI CommandVersion(int, int);
     MCAPI bool covers(class CommandVersion const &) const;
@@ -35,8 +37,5 @@ public:
     MCAPI static int const CurrentVersion;
     MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     ScriptPlayer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptPlayer();
     /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
@@ -30,6 +31,7 @@ public:
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLAYER
+public:
 #endif
     MCAPI ScriptPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const &);
@@ -43,8 +45,5 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const &);
 
-protected:
-
-private:
 
 };

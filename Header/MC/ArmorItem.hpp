@@ -31,6 +31,7 @@ public:
     ArmorItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ArmorItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -68,6 +69,7 @@ public:
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*128*/ virtual float getArmorKnockbackResistance() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEM
+public:
 #endif
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
@@ -83,9 +85,10 @@ public:
     MCAPI static bool isDamageable(class ItemDescriptor const &);
     MCAPI static int const mHealthPerSlot[];
 
-protected:
+//private:
+    MCAPI class ItemInstance getTierItem() const;
 
 private:
-    MCAPI class ItemInstance getTierItem() const;
+
 
 };

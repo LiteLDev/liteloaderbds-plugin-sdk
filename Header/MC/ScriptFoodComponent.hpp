@@ -21,9 +21,11 @@ public:
     ScriptFoodComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptFoodComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFOODCOMPONENT
+public:
 #endif
     MCAPI ScriptFoodComponent(class ScriptFoodComponent const &);
     MCAPI ScriptFoodComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
@@ -35,8 +37,5 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptFoodComponent> bind(struct Scripting::Version);
     MCAPI static std::string const & getTypeName();
 
-protected:
-
-private:
 
 };

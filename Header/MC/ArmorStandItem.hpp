@@ -24,6 +24,7 @@ public:
     ArmorStandItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ArmorStandItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -41,11 +42,9 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORSTANDITEM
+public:
 #endif
     MCAPI ArmorStandItem(std::string const &, short);
 
-protected:
-
-private:
 
 };

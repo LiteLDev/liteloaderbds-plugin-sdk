@@ -23,18 +23,18 @@ public:
     MonumentBuilding() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MonumentBuilding();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONUMENTBUILDING
+public:
 #endif
     MCAPI MonumentBuilding(class Random &, short, int, int, int &);
 
-protected:
-
-private:
+//private:
     MCAPI void generateEntranceArchs(class BlockSource &, class Random &, class BoundingBox const &);
     MCAPI void generateEntranceWall(class BlockSource &, class Random &, class BoundingBox const &);
     MCAPI void generateLowerWall(class BlockSource &, class Random &, class BoundingBox const &);
@@ -43,5 +43,8 @@ private:
     MCAPI std::vector<class std::shared_ptr<class RoomDefinition>> generateRoomGraph(class Random &);
     MCAPI void generateUpperWall(class BlockSource &, class Random &, class BoundingBox const &);
     MCAPI void generateWing(bool, int, class BlockSource &, class Random &, class BoundingBox const &);
+
+private:
+
 
 };

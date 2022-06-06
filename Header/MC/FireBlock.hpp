@@ -23,6 +23,7 @@ public:
     FireBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FireBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -70,19 +71,21 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI FireBlock(std::string const &, int);
     MCAPI static bool isSolidToppedBlock(class BlockSource &, class BlockPos const &);
 
-protected:
-
-private:
+//private:
     MCAPI void _tryAddToTickingQueue(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI bool _trySpawnBlueFire(class BlockSource &, class BlockPos const &) const;
     MCAPI void checkBurn(class BlockSource &, class BlockPos const &, int, class Random &, int) const;
     MCAPI float getFireOdds(class BlockSource &, class BlockPos const &) const;
     MCAPI bool isValidFireLocation(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

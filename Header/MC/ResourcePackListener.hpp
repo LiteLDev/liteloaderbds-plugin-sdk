@@ -22,16 +22,15 @@ public:
     ResourcePackListener() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKLISTENER
+public:
     MCVAPI void onBaseGamePackDownloadComplete();
     MCVAPI void onFullPackStackInvalid();
     MCVAPI void onLanguageSubpacksChanged();
     MCVAPI void onResourceManagerDestroyed(class ResourcePackManager &);
 #endif
 
-protected:
-
-private:
 
 };

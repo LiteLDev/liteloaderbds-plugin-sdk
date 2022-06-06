@@ -22,6 +22,7 @@ public:
     JumpToBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JumpToBlockGoal();
     /*1*/ virtual bool canUse();
@@ -32,18 +33,20 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPTOBLOCKGOAL
+public:
 #endif
     MCAPI JumpToBlockGoal(class Mob &);
     MCAPI void resetCooldown();
 
-protected:
-
-private:
+//private:
     MCAPI bool _calculateJumpCurve(class BlockPos const &, struct JumpToBlockGoal::WeightedJumpToBlockPos &);
     MCAPI void _clearGoalState();
     MCAPI bool _findCandidateBlocks(class NavigationComponent &);
     MCAPI bool _findJumpableBlocks(bool);
     MCAPI bool _findTargetBlock();
     MCAPI bool _validTransition(class Vec3 const &, class Vec3 const &) const;
+
+private:
+
 
 };

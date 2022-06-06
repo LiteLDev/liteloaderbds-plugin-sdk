@@ -25,6 +25,7 @@ public:
     HoeItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HoeItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -43,11 +44,9 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual void __unk_vfn_76();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOEITEM
+public:
 #endif
     MCAPI HoeItem(std::string const &, int, class Item::Tier const &, class Experiments const &);
 
-protected:
-
-private:
 
 };

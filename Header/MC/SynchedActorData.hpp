@@ -158,8 +158,10 @@ public:
     SynchedActorData(class SynchedActorData const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATA
+public:
 #endif
     MCAPI SynchedActorData(class SynchedActorData &&);
     MCAPI SynchedActorData();
@@ -186,11 +188,12 @@ public:
     MCAPI void setStatusFlag(enum ActorFlags, bool);
     MCAPI ~SynchedActorData();
 
-protected:
-
-private:
+//private:
     MCAPI class DataItem * _find(unsigned short) const;
     MCAPI class DataItem & _get(unsigned short);
     MCAPI void _resizeToContain(unsigned short);
+
+private:
+
 
 };

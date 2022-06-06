@@ -23,6 +23,7 @@ public:
     NetherrackBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherrackBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,11 +68,9 @@ public:
     /*207*/ virtual void __unk_vfn_207();
     /*208*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERRACKBLOCK
+public:
 #endif
     MCAPI NetherrackBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

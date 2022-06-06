@@ -23,6 +23,7 @@ public:
     ButtonBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ButtonBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -80,6 +81,7 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONBLOCK
+public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isButtonBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -88,12 +90,17 @@ public:
     MCAPI void buttonPressed(class BlockSource &, class Block const &, class Vec3 const &) const;
     MCAPI static bool canAttachTo(class BlockSource &, class BlockPos const &, unsigned char);
 
-protected:
+//protected:
     MCAPI ButtonBlock(std::string const &, int, class Material const &, bool);
 
-private:
+//private:
     MCAPI void _buttonUnpressed(class BlockSource &, class Block const &, class Vec3 const &) const;
     MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
     MCAPI void _getShape(class AABB &, bool, unsigned char, bool) const;
+
+protected:
+
+private:
+
 
 };

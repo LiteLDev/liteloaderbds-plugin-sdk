@@ -22,6 +22,7 @@ public:
     VexRandomMoveGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VexRandomMoveGoal();
     /*1*/ virtual bool canUse();
@@ -32,11 +33,9 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEXRANDOMMOVEGOAL
+public:
 #endif
     MCAPI VexRandomMoveGoal(class Mob &);
 
-protected:
-
-private:
 
 };

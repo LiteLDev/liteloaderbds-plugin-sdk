@@ -22,8 +22,10 @@ public:
     HopperBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCKACTOR
+public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI class Container * getContainer();
@@ -49,12 +51,13 @@ public:
     MCAPI bool isAttachedToChestAndFurnace(class BlockSource &);
     MCAPI void updateCooldownAfterMove(struct Tick const &, int);
 
-protected:
-
-private:
+//private:
     MCAPI void _ensureTickingOrder(class BlockSource &, int);
     MCAPI void _tick(class BlockSource &, int);
     MCAPI bool isAttachedToContainerType(class BlockSource &, enum ContainerType);
     MCAPI bool isSourceOfContainerType(class BlockSource &, enum ContainerType);
+
+private:
+
 
 };

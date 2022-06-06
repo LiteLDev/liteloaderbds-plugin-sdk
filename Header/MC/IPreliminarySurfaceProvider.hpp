@@ -22,12 +22,11 @@ public:
     IPreliminarySurfaceProvider() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPRELIMINARYSURFACEPROVIDER
+public:
 #endif
 
-protected:
-
-private:
 
 };

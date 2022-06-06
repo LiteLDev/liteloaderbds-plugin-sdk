@@ -22,6 +22,7 @@ public:
     EntityPlacerItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EntityPlacerItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -31,16 +32,18 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYPLACERITEMCOMPONENT
+public:
 #endif
     MCAPI EntityPlacerItemComponent(class ComponentItem *);
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
-
-private:
+//private:
     MCAPI void _positionAndRotateActor(class Actor &, class Vec3, unsigned char, class Vec3 const &, class BlockLegacy const *) const;
     MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     ActorSkeletalAnimationPlayer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorSkeletalAnimationPlayer();
     /*1*/ virtual void applyToPose(class RenderParams &, class std::unordered_map<enum SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum SkeletalHierarchyIndex>, struct std::equal_to<enum SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
@@ -34,11 +35,9 @@ public:
     /*8*/ virtual enum ActorAnimationType getAnimationType() const;
     /*9*/ virtual class HashedString const & getRawName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPLAYER
+public:
 #endif
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const &, class ActorSkeletalAnimationPtr, class AnimationComponent &, class ExpressionNode const &);
 
-protected:
-
-private:
 
 };

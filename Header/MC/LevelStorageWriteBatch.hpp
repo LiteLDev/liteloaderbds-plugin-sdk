@@ -27,6 +27,7 @@ public:
     LevelStorageWriteBatch(class LevelStorageWriteBatch const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelStorageWriteBatch();
     /*1*/ virtual void putKey(std::string const &, class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category);
@@ -36,6 +37,7 @@ public:
     /*5*/ virtual void deleteKey(std::string const &, enum DBHelpers::Category);
     /*6*/ virtual void flush(class LevelStorage &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEWRITEBATCH
+public:
 #endif
     MCAPI LevelStorageWriteBatch();
     MCAPI void addFlushCallback(class std::function<void (void)>);
@@ -44,8 +46,5 @@ public:
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &) const;
     MCAPI class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &);
 
-protected:
-
-private:
 
 };

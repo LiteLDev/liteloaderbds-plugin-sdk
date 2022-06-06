@@ -24,6 +24,7 @@ public:
     BalloonItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BalloonItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -44,11 +45,9 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONITEM
+public:
 #endif
     MCAPI BalloonItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

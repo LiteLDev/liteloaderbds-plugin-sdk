@@ -21,8 +21,10 @@ public:
     LevelDataWrapper(class LevelDataWrapper const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATAWRAPPER
+public:
 #endif
     MCAPI LevelDataWrapper();
     MCAPI class LevelData const & operator*() const;
@@ -32,8 +34,5 @@ public:
     MCAPI void setLevelData(class LevelData &);
     MCAPI ~LevelDataWrapper();
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     NBBridgeEndFiller() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBBridgeEndFiller();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -38,11 +39,9 @@ public:
     /*11*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBBRIDGEENDFILLER
+public:
 #endif
     MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
 
-protected:
-
-private:
 
 };

@@ -30,6 +30,7 @@ public:
     SparklerItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SparklerItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -52,13 +53,11 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARKLERITEM
+public:
 #endif
     MCAPI SparklerItem(std::string const &, int);
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     EndPortalFrameBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndPortalFrameBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -68,14 +69,16 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALFRAMEBLOCK
+public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI EndPortalFrameBlock(std::string const &, int);
 
-protected:
+//private:
+    MCAPI static void createPortal(class BlockSource &, class BlockPos const &);
 
 private:
-    MCAPI static void createPortal(class BlockSource &, class BlockPos const &);
+
 
 };

@@ -23,6 +23,7 @@ public:
     RandomBreachingGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomBreachingGoal();
     /*1*/ virtual bool canUse();
@@ -35,11 +36,9 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMBREACHINGGOAL
+public:
 #endif
     MCAPI RandomBreachingGoal(class Mob &, float, int, int, int, float);
 
-protected:
-
-private:
 
 };

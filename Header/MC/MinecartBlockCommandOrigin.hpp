@@ -24,6 +24,7 @@ public:
     MinecartBlockCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MinecartBlockCommandOrigin();
     /*3*/ virtual class BlockPos getBlockPosition() const;
@@ -37,12 +38,10 @@ public:
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTBLOCKCOMMANDORIGIN
+public:
 #endif
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
-protected:
-
-private:
 
 };

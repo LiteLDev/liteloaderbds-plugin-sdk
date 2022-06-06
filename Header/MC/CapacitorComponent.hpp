@@ -20,6 +20,7 @@ public:
     CapacitorComponent(class CapacitorComponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CapacitorComponent();
     /*17*/ virtual void __unk_vfn_17();
@@ -27,11 +28,9 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAPACITORCOMPONENT
+public:
 #endif
     MCAPI CapacitorComponent();
 
-protected:
-
-private:
 
 };

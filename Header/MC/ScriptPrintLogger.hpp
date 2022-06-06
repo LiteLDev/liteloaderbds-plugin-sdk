@@ -22,6 +22,7 @@ public:
     ScriptPrintLogger() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptPrintLogger();
     /*1*/ virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
@@ -30,10 +31,8 @@ public:
     /*4*/ virtual void onException(struct Scripting::ContextId, struct Scripting::Error const &) const;
     /*5*/ virtual bool shouldPrintException(struct Scripting::Error const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPRINTLOGGER
+public:
 #endif
 
-protected:
-
-private:
 
 };

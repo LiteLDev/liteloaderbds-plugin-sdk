@@ -23,6 +23,7 @@ public:
     CropBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CropBlock();
     /*4*/ virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
@@ -76,13 +77,15 @@ public:
     /*206*/ virtual int getSeedNum(class Randomize &, int, int) const;
     /*207*/ virtual int getCropNum(class Randomize &, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROPBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI CropBlock(std::string const &, int);
 
-protected:
+//private:
+    MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI float getGrowthSpeed(class BlockSource &, class BlockPos const &) const;
+
 
 };

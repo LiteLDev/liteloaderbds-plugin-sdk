@@ -23,6 +23,7 @@ public:
     LabTableInputValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LabTableInputValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -35,11 +36,9 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEINPUTVALIDATION
+public:
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
 #endif
 
-protected:
-
-private:
 
 };

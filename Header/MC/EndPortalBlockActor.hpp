@@ -23,6 +23,7 @@ public:
     EndPortalBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndPortalBlockActor();
     /*12*/ virtual void __unk_vfn_12();
@@ -33,11 +34,9 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALBLOCKACTOR
+public:
 #endif
     MCAPI EndPortalBlockActor(class BlockPos const &);
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     RakDataOutput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RakDataOutput();
     /*1*/ virtual void writeString(class gsl::basic_string_span<char const, -1>);
@@ -34,10 +35,8 @@ public:
     /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAOUTPUT
+public:
 #endif
 
-protected:
-
-private:
 
 };

@@ -21,8 +21,10 @@ public:
     StructureEditorData(class StructureEditorData const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREEDITORDATA
+public:
 #endif
     MCAPI StructureEditorData();
     MCAPI std::string getAnimationModeAsString() const;
@@ -69,10 +71,11 @@ public:
     MCAPI static char const NAMESPACE_DELIMITER;
     MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum Rotation);
 
-protected:
+//private:
+    MCAPI void _setPivotFromStructureSize();
 
 private:
-    MCAPI void _setPivotFromStructureSize();
     MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
+
 
 };

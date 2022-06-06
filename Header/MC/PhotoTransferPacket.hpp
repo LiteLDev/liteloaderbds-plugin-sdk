@@ -22,6 +22,7 @@ public:
     PhotoTransferPacket(class PhotoTransferPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PhotoTransferPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,11 +30,9 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOTRANSFERPACKET
+public:
 #endif
     MCAPI PhotoTransferPacket();
 
-protected:
-
-private:
 
 };

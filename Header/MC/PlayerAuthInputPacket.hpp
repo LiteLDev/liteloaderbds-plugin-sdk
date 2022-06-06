@@ -24,6 +24,7 @@ public:
     PlayerAuthInputPacket(class PlayerAuthInputPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerAuthInputPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -31,6 +32,7 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERAUTHINPUTPACKET
+public:
 #endif
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     MCAPI PlayerAuthInputPacket();
@@ -40,8 +42,5 @@ public:
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
     MCAPI class PlayerAuthInputPacket takeCopy() const;
 
-protected:
-
-private:
 
 };

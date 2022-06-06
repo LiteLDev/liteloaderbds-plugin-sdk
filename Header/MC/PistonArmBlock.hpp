@@ -24,6 +24,7 @@ public:
     PistonArmBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PistonArmBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -74,13 +75,15 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONARMBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI PistonArmBlock(std::string const &, int, enum PistonBlock::Type);
 
-protected:
+//private:
+    MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;
 
 private:
-    MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;
+
 
 };

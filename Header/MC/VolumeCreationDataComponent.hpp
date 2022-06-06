@@ -20,13 +20,12 @@ public:
     VolumeCreationDataComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMECREATIONDATACOMPONENT
+public:
 #endif
     MCAPI ~VolumeCreationDataComponent();
 
-protected:
-
-private:
 
 };

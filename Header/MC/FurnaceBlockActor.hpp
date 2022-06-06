@@ -22,8 +22,10 @@ public:
     FurnaceBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEBLOCKACTOR
+public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
@@ -69,13 +71,19 @@ public:
     MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const &, int);
     MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const &, int);
 
-protected:
+//protected:
     MCAPI FurnaceBlockActor(enum BlockActorType, class BlockPos const &, class HashedString const &, enum LevelSoundEvent, enum ContainerType, int, class Block const &, class Block const &);
 
-private:
+//private:
     MCAPI void _refreshFurnaceBlockLitState(class BlockSource &);
     MCAPI void burn(class Recipes const &);
     MCAPI bool canBurn(class Recipes const &);
+    MCAPI static float _getXPRewardMultiplier(class ItemStackBase const &);
+    MCAPI static int _roundXPReward(float);
+
+protected:
+
+private:
     MCAPI static std::string const BURN_DURATION_KEY;
     MCAPI static std::string const BURN_TIME_KEY;
     MCAPI static std::string const COOK_TIME_KEY;
@@ -85,7 +93,6 @@ private:
     MCAPI static std::string const SLOT_KEY;
     MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
     MCAPI static std::string const STORED_XP_KEY;
-    MCAPI static float _getXPRewardMultiplier(class ItemStackBase const &);
-    MCAPI static int _roundXPReward(float);
+
 
 };

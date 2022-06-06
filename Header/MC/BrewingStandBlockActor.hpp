@@ -22,8 +22,10 @@ public:
     BrewingStandBlockActor() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCKACTOR
+public:
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI class Container const * getContainer() const;
@@ -53,9 +55,10 @@ public:
     MCAPI void setFuelTotal(int);
     MCAPI static bool isFuel(class ItemDescriptor const &);
 
-protected:
+//private:
+    MCAPI bool canBrew();
 
 private:
-    MCAPI bool canBrew();
+
 
 };

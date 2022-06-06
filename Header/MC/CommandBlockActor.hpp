@@ -23,6 +23,7 @@ public:
     CommandBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -46,6 +47,7 @@ public:
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKACTOR
+public:
 #endif
     MCAPI CommandBlockActor(class BlockPos const &, enum CommandBlockMode);
     MCAPI class BaseCommandBlock & getBaseCommandBlock();
@@ -67,9 +69,10 @@ public:
     MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum CommandBlockMode, bool, bool, bool, int, bool);
     MCAPI bool wasConditionMet();
 
-protected:
+//private:
+    MCAPI void _setAutomatic(class BlockSource &, bool, enum CommandBlockMode);
 
 private:
-    MCAPI void _setAutomatic(class BlockSource &, bool, enum CommandBlockMode);
+
 
 };

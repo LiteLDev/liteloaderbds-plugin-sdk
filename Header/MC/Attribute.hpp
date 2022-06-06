@@ -22,8 +22,10 @@ public:
     Attribute() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTE
+public:
 #endif
     MCAPI Attribute(class HashedString const &, enum RedefinitionMode, bool);
     MCAPI unsigned int const getIDValue() const;
@@ -32,8 +34,5 @@ public:
     MCAPI bool isClientSyncable() const;
     MCAPI static class Attribute & getByName(class HashedString const &);
 
-protected:
-
-private:
 
 };

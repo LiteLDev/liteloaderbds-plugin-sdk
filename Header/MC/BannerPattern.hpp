@@ -22,8 +22,10 @@ public:
     BannerPattern() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERPATTERN
+public:
 #endif
     MCAPI bool getIgnoreAux() const;
     MCAPI class ItemStack const & getIngredientItem() const;
@@ -81,8 +83,5 @@ public:
     MCAPI static class BannerPattern * mTrianglesBottom;
     MCAPI static class BannerPattern * mTrianglesTop;
 
-protected:
-
-private:
 
 };

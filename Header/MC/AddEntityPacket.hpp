@@ -22,17 +22,16 @@ public:
     AddEntityPacket(class AddEntityPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AddEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDENTITYPACKET
+public:
 #endif
     MCAPI AddEntityPacket(class EntityContext const &);
     MCAPI AddEntityPacket();
 
-protected:
-
-private:
 
 };

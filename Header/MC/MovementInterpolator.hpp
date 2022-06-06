@@ -21,6 +21,7 @@ public:
     MovementInterpolator(class MovementInterpolator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MovementInterpolator();
     /*1*/ virtual void lerpTo(class Vec3 const &, class Vec2 const &, int);
@@ -34,11 +35,9 @@ public:
     /*9*/ virtual int getPositionSteps() const;
     /*10*/ virtual int getRotationSteps() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATOR
+public:
 #endif
     MCAPI MovementInterpolator();
 
-protected:
-
-private:
 
 };

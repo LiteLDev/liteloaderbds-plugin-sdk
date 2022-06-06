@@ -23,6 +23,7 @@ public:
     BlastFurnaceBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlastFurnaceBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,11 +64,9 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACEBLOCK
+public:
 #endif
     MCAPI BlastFurnaceBlock(std::string const &, int, bool);
 
-protected:
-
-private:
 
 };

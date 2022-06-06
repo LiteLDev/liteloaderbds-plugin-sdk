@@ -22,8 +22,10 @@ public:
     ContainerValidationBase() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONBASE
+public:
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
@@ -35,8 +37,5 @@ public:
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif
 
-protected:
-
-private:
 
 };

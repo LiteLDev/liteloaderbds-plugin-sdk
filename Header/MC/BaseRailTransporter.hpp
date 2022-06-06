@@ -23,6 +23,7 @@ public:
     BaseRailTransporter() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseRailTransporter();
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
@@ -32,10 +33,8 @@ public:
     /*20*/ virtual void __unk_vfn_20();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILTRANSPORTER
+public:
 #endif
 
-protected:
-
-private:
 
 };

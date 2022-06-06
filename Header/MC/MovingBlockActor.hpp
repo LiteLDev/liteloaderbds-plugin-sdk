@@ -23,6 +23,7 @@ public:
     MovingBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MovingBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -40,6 +41,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVINGBLOCKACTOR
+public:
 #endif
     MCAPI MovingBlockActor(class BlockPos const &);
     MCAPI class std::shared_ptr<class BlockActor> aquireBlockEntity();
@@ -54,8 +56,5 @@ public:
     MCAPI void setCollisionShape(class AABB const &);
     MCAPI void setExtraBlock(class Block const &);
 
-protected:
-
-private:
 
 };

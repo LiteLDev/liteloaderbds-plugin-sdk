@@ -23,6 +23,7 @@ public:
     TwistingVinesBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TwistingVinesBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -71,13 +72,15 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TWISTINGVINESBLOCK
+public:
 #endif
     MCAPI TwistingVinesBlock(std::string const &, int);
 
-protected:
-
-private:
+//private:
     MCAPI int _getAge(class Block const &) const;
     MCAPI void _tryGrow(class BlockSource &, class BlockPos const &, int) const;
+
+private:
+
 
 };

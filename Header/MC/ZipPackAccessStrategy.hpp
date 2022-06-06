@@ -25,6 +25,7 @@ public:
     ZipPackAccessStrategy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ZipPackAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
@@ -45,12 +46,14 @@ public:
     /*19*/ virtual void unload();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZIPPACKACCESSSTRATEGY
+public:
 #endif
     MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, class ResourceLocation const &, class Core::Path const &);
 
-protected:
+//private:
+    MCAPI bool _tryReadFromPendingQueue(class Core::Path const &, std::string &) const;
 
 private:
-    MCAPI bool _tryReadFromPendingQueue(class Core::Path const &, std::string &) const;
+
 
 };

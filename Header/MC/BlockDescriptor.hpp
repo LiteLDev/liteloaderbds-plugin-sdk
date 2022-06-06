@@ -20,8 +20,10 @@ public:
     class BlockDescriptor& operator=(class BlockDescriptor const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESCRIPTOR
+public:
 #endif
     MCAPI BlockDescriptor(class BlockDescriptor &&);
     MCAPI BlockDescriptor(class BlockDescriptor const &);
@@ -45,10 +47,11 @@ public:
     MCAPI static class BlockDescriptor fromCompoundTag(class CompoundTag const &);
     MCAPI static class BlockDescriptor fromTagExpression(std::string const &, enum MolangVersion);
 
-protected:
-
-private:
+//private:
     MCAPI bool _anyTagsMatch(class Block const &) const;
     MCAPI void _resolveImpl() const;
+
+private:
+
 
 };

@@ -22,8 +22,10 @@ public:
     AgeableComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLECOMPONENT
+public:
 #endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getAge() const;
@@ -31,8 +33,5 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setAge(int);
 
-protected:
-
-private:
 
 };

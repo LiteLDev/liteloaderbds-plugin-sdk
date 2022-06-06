@@ -23,6 +23,7 @@ public:
     ScaffoldingBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScaffoldingBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -77,15 +78,21 @@ public:
     /*204*/ virtual std::string getDustParticleName(class Block const &) const;
     /*205*/ virtual void __unk_vfn_205();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAFFOLDINGBLOCK
+public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ScaffoldingBlock(std::string const &, int);
     MCAPI static int const MAX_STABILITY;
 
-protected:
+//protected:
     MCAPI int calculateStability(class BlockSource const &, class BlockPos const &) const;
 
-private:
+//private:
     MCAPI bool _updateBlockStability(class BlockSource &, class BlockPos const &) const;
+
+protected:
+
+private:
+
 
 };

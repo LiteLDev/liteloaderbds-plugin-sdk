@@ -21,8 +21,10 @@ public:
     BinaryHeap(class BinaryHeap const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYHEAP
+public:
 #endif
     MCAPI BinaryHeap();
     MCAPI void changeCost(class PathfinderNode *, float);
@@ -32,9 +34,10 @@ public:
     MCAPI class PathfinderNode * pop();
     MCAPI ~BinaryHeap();
 
-protected:
+//private:
+    MCAPI void downHeap(int);
 
 private:
-    MCAPI void downHeap(int);
+
 
 };

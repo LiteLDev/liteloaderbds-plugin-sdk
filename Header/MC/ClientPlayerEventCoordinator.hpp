@@ -22,15 +22,14 @@ public:
     ClientPlayerEventCoordinator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTPLAYEREVENTCOORDINATOR
+public:
 #endif
     MCAPI void sendPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
     MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     ItemStackResponsePacket(class ItemStackResponsePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,13 +30,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSEPACKET
+public:
 #endif
     MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     MCAPI ItemStackResponsePacket();
     MCAPI std::vector<struct ItemStackResponseInfo> const & getResponses() const;
 
-protected:
-
-private:
 
 };

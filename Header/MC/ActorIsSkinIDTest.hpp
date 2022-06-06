@@ -24,15 +24,14 @@ public:
     ActorIsSkinIDTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorIsSkinIDTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISSKINIDTEST
+public:
 #endif
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     TickingAreaView() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TickingAreaView();
     /*1*/ virtual void init(struct Bounds const &, bool);
@@ -37,13 +38,15 @@ public:
     /*11*/ virtual std::unique_ptr<class ChunkViewSource> createChildSource();
     /*12*/ virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREAVIEW
+public:
 #endif
     MCAPI TickingAreaView(class ChunkSource &);
     MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase &);
 
-protected:
+//private:
+    MCAPI bool _tickChunk(struct Tick const &, class BlockSource &, class Level &, class ChunkPos const &);
 
 private:
-    MCAPI bool _tickChunk(struct Tick const &, class BlockSource &, class Level &, class ChunkPos const &);
+
 
 };

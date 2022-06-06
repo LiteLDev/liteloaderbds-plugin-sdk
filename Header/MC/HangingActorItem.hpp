@@ -24,6 +24,7 @@ public:
     HangingActorItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HangingActorItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -41,11 +42,9 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGACTORITEM
+public:
 #endif
     MCAPI HangingActorItem(std::string const &, int, enum ActorType);
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     ActorHasEquipmentTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorHasEquipmentTest();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -33,10 +34,8 @@ public:
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
+public:
 #endif
 
-protected:
-
-private:
 
 };

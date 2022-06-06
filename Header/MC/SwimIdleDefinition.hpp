@@ -22,15 +22,14 @@ public:
     SwimIdleDefinition(class SwimIdleDefinition const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMIDLEDEFINITION
+public:
 #endif
     MCAPI SwimIdleDefinition();
     MCAPI void initialize(class EntityContext &, class SwimIdleGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimIdleDefinition>> &);
 
-protected:
-
-private:
 
 };

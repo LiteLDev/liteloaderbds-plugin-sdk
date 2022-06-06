@@ -24,6 +24,7 @@ public:
     FireworksItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FireworksItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,6 +46,7 @@ public:
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSITEM
+public:
 #endif
     MCAPI FireworksItem(std::string const &, int);
     MCAPI static std::string const TAG_EXPLOSIONS;
@@ -53,8 +55,5 @@ public:
     MCAPI static class ItemInstance const & initFireworksRocketItem(class ItemInstance &, std::vector<class ItemInstance> const &, int);
     MCAPI static class ItemStack const & initFireworksRocketItem(class ItemStack &, std::vector<class ItemStack> const &, int);
 
-protected:
-
-private:
 
 };

@@ -25,6 +25,7 @@ public:
     ExperienceOrb() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ExperienceOrb();
@@ -57,6 +58,7 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*273*/ virtual void doWaterSplashEffect();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEORB
+public:
 #endif
     MCAPI ExperienceOrb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getIconIndex() const;
@@ -64,10 +66,11 @@ public:
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum ExperienceOrb::DropType, class Player *);
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, enum ExperienceOrb::DropType, class Player *);
 
-protected:
+//private:
+    MCAPI void _handleMending(class Player &);
 
 private:
-    MCAPI void _handleMending(class Player &);
     MCAPI static int const LIFETIME;
+
 
 };

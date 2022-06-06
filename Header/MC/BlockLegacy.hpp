@@ -31,6 +31,7 @@ public:
     BlockLegacy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockLegacy();
     /*1*/ virtual class Block const & getStateFromLegacyData(unsigned short) const;
@@ -236,6 +237,7 @@ public:
     /*201*/ virtual bool _executeTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /*202*/ virtual void _forceExecuteTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACY
+public:
     MCVAPI bool canBeDestroyedByWaterSpread() const;
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool canHaveExtraData() const;
@@ -339,7 +341,7 @@ public:
     MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor &, class BlockPos const &, float);
     MCAPI static void spawnResources(class BlockSource &, class BlockPos const &, class Randomize &, std::vector<class Item const *> *, float, int);
 
-protected:
+//protected:
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
     MCAPI bool forEachBlockPermutationMutable(class std::function<bool (class Block &)>);
     MCAPI int getBurnOdds() const;
@@ -349,7 +351,12 @@ protected:
     MCAPI struct Brightness getLight() const;
     MCAPI static class AABB createAABBWithPixelCoordinates(float, float, float, float, float, float);
 
-private:
+//private:
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;
+
+protected:
+
+private:
+
 
 };

@@ -23,6 +23,7 @@ public:
     RotatedPillarInfestedBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RotatedPillarInfestedBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -62,11 +63,9 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROTATEDPILLARINFESTEDBLOCK
+public:
 #endif
     MCAPI RotatedPillarInfestedBlock(std::string const &, int, class Material const &);
 
-protected:
-
-private:
 
 };

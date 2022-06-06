@@ -22,6 +22,7 @@ public:
     WorldBlockTarget() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WorldBlockTarget();
     /*1*/ virtual void __unk_vfn_1();
@@ -50,13 +51,11 @@ public:
     /*24*/ virtual struct WorldGenContext const & getContext();
     /*25*/ virtual void disableBlockSimple();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDBLOCKTARGET
+public:
     MCVAPI bool apply() const;
     MCVAPI bool canGetChunk() const;
 #endif
     MCAPI WorldBlockTarget(class BlockSource &, struct WorldGenContext const &);
 
-protected:
-
-private:
 
 };

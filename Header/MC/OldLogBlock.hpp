@@ -23,6 +23,7 @@ public:
     OldLogBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OldLogBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -67,11 +68,9 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OLDLOGBLOCK
+public:
 #endif
     MCAPI OldLogBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

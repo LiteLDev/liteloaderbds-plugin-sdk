@@ -23,6 +23,7 @@ public:
     EndRodBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndRodBlock();
     /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
@@ -71,11 +72,9 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDRODBLOCK
+public:
 #endif
     MCAPI EndRodBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

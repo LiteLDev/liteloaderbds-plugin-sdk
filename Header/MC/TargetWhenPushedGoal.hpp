@@ -22,6 +22,7 @@ public:
     TargetWhenPushedGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TargetWhenPushedGoal();
     /*1*/ virtual bool canUse();
@@ -31,13 +32,11 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETWHENPUSHEDGOAL
+public:
     MCVAPI bool canBeInterrupted();
     MCVAPI bool canContinueToUse();
 #endif
     MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
 
-protected:
-
-private:
 
 };

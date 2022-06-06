@@ -24,6 +24,7 @@ public:
     ChemistryItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChemistryItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -41,11 +42,9 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*101*/ virtual void fixupCommon(class ItemStackBase &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYITEM
+public:
 #endif
     MCAPI static void validate(class ItemStackBase &);
 
-protected:
-
-private:
 
 };

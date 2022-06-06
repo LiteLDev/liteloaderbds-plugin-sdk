@@ -22,6 +22,7 @@ public:
     SyncActorPropertyPacket(class SyncActorPropertyPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SyncActorPropertyPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -30,12 +31,10 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCACTORPROPERTYPACKET
+public:
 #endif
     MCAPI SyncActorPropertyPacket(class Actor const &);
     MCAPI SyncActorPropertyPacket();
 
-protected:
-
-private:
 
 };

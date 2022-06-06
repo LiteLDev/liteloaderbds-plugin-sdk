@@ -21,16 +21,15 @@ public:
     ShootBowNode(class ShootBowNode const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShootBowNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
     /*2*/ virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTBOWNODE
+public:
 #endif
     MCAPI ShootBowNode();
 
-protected:
-
-private:
 
 };

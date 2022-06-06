@@ -74,6 +74,7 @@ public:
     EventPacket(class EventPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -81,6 +82,7 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTPACKET
+public:
 #endif
     MCAPI EventPacket(class Player const &, std::string const &);
     MCAPI EventPacket(class Player const &, std::string const &, int);
@@ -103,8 +105,5 @@ public:
     MCAPI EventPacket();
     MCAPI class EventPacket & operator=(class EventPacket &&);
 
-protected:
-
-private:
 
 };

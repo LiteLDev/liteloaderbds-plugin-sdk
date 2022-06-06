@@ -23,6 +23,7 @@ public:
     SoulSpeedEnchant() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SoulSpeedEnchant();
     /*2*/ virtual int getMinCost(int) const;
@@ -33,6 +34,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOULSPEEDENCHANT
+public:
     MCVAPI bool isDiscoverable() const;
     MCVAPI bool isTreasureOnly() const;
 #endif
@@ -43,8 +45,5 @@ public:
     MCAPI static bool isActive(class Actor const &);
     MCAPI static bool shouldSpawnParticles(class Actor const &);
 
-protected:
-
-private:
 
 };

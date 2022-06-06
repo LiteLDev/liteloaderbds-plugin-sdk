@@ -24,6 +24,7 @@ public:
     ChemistryStickItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChemistryStickItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -48,6 +49,7 @@ public:
     /*97*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /*101*/ virtual void fixupCommon(class ItemStackBase &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYSTICKITEM
+public:
     MCVAPI bool showsDurabilityInCreative() const;
     MCVAPI bool uniqueAuxValues() const;
 #endif
@@ -56,12 +58,16 @@ public:
     MCAPI static bool isActive(int);
     MCAPI static bool isChemistryStick(class ItemStackBase const &);
 
-protected:
+//protected:
     MCAPI std::string _getColorName(int) const;
     MCAPI bool _tick(class ItemStack &, unsigned __int64) const;
 
-private:
+//private:
     MCAPI void _storeActivationTimestamp(class ItemStack &, unsigned __int64, int) const;
+
+protected:
+
+private:
     MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
     MCAPI static int const ACTIVE_BIT;
     MCAPI static int const COLOR_BITS;
@@ -69,5 +75,6 @@ private:
     MCAPI static int const DAMAGE_BITS;
     MCAPI static int const DAMAGE_MASK;
     MCAPI static int const DAMAGE_START_BIT;
+
 
 };

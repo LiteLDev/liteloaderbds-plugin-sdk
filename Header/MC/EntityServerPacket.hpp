@@ -22,17 +22,16 @@ public:
     EntityServerPacket(class EntityServerPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EntityServerPacket();
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSERVERPACKET
+public:
 #endif
     MCAPI EntityServerPacket(class EntityContext const &);
     MCAPI EntityServerPacket();
 
-protected:
-
-private:
 
 };

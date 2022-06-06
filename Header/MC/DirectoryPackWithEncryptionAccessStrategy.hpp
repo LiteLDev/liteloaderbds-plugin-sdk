@@ -24,6 +24,7 @@ public:
     DirectoryPackWithEncryptionAccessStrategy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DirectoryPackWithEncryptionAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
@@ -45,13 +46,15 @@ public:
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKWITHENCRYPTIONACCESSSTRATEGY
+public:
 #endif
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, class IContentKeyProvider const &);
 
-protected:
-
-private:
+//private:
     MCAPI bool _getUnencryptedAsset(class Core::Path const &, std::string &) const;
     MCAPI bool _hasUnencryptedAsset(class Core::Path const &) const;
+
+private:
+
 
 };

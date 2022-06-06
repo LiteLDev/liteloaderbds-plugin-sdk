@@ -22,6 +22,7 @@ public:
     ItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemComponent();
     /*1*/ virtual bool checkComponentDataForContentErrors() const;
@@ -30,6 +31,7 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
+public:
     MCVAPI void initializeFromNetwork(class CompoundTag const &);
     MCVAPI bool isNetworkComponent() const;
     MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
@@ -38,8 +40,5 @@ public:
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
 
-protected:
-
-private:
 
 };

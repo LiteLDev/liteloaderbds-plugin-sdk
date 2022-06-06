@@ -20,8 +20,10 @@ public:
     ScriptFormPromiseTracker(class ScriptFormPromiseTracker const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
+public:
     MCVAPI enum EventResult onEvent(struct PlayerFormCloseEvent const &);
     MCVAPI enum EventResult onEvent(struct PlayerFormResponseEvent const &);
 #endif
@@ -31,8 +33,5 @@ public:
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);
     MCAPI void rejectAllForShutdown();
 
-protected:
-
-private:
 
 };

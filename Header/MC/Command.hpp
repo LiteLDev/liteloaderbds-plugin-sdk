@@ -77,10 +77,12 @@ public:
     Command(class Command const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Command();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMAND
+public:
 #endif
     MCAPI Command();
     MCAPI std::string getCommandName() const;
@@ -90,7 +92,7 @@ public:
     MCAPI static bool validRange(int, int, int, class CommandOutput &);
     MCAPI static bool validRange(float, float, float, class CommandOutput &);
 
-protected:
+//protected:
     MCAPI class CommandRegistry const & getRegistry() const;
     MCAPI void sendTelemetry(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI bool shouldSendTelemetry(class CommandOrigin const &) const;
@@ -99,6 +101,7 @@ protected:
     MCAPI static bool isWildcard(class CommandSelectorBase const &);
     MCAPI static bool validData(int, unsigned short &, class CommandOutput &);
 
-private:
+protected:
+
 
 };

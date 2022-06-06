@@ -24,6 +24,7 @@ public:
     ExperiencePotionItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ExperiencePotionItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -44,11 +45,9 @@ public:
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEPOTIONITEM
+public:
 #endif
     MCAPI ExperiencePotionItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

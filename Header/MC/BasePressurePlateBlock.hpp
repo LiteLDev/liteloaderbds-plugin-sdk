@@ -23,6 +23,7 @@ public:
     BasePressurePlateBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BasePressurePlateBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -80,14 +81,16 @@ public:
     /*206*/ virtual int getRedstoneSignal(int) const = 0;
     /*207*/ virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEPRESSUREPLATEBLOCK
+public:
     MCVAPI bool canSpawnOn() const;
     MCVAPI bool isSignalSource() const;
 #endif
 
-protected:
+//protected:
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &, int, int) const;
 
-private:
+protected:
+
 
 };

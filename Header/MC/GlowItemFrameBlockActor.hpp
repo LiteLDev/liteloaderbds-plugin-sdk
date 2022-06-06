@@ -23,6 +23,7 @@ public:
     GlowItemFrameBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GlowItemFrameBlockActor();
     /*12*/ virtual void __unk_vfn_12();
@@ -33,11 +34,9 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWITEMFRAMEBLOCKACTOR
+public:
 #endif
     MCAPI GlowItemFrameBlockActor(class BlockPos);
 
-protected:
-
-private:
 
 };

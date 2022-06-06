@@ -25,11 +25,13 @@ public:
     BackgroundWorker() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BackgroundWorker();
     /*1*/ virtual bool isAsync() const;
     /*2*/ virtual bool canTaskRunAgain() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDWORKER
+public:
 #endif
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class WorkerPool &, bool);
     MCAPI unsigned __int64 getApproximateTaskCount() const;
@@ -44,11 +46,12 @@ public:
     MCAPI void wake();
     MCAPI static class BackgroundWorker * getLocal();
 
-protected:
-
-private:
+//private:
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
+
+private:
     MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
+
 
 };

@@ -24,6 +24,7 @@ public:
     Shulker() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Shulker();
@@ -71,6 +72,7 @@ public:
     /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKER
+public:
     MCVAPI bool breaksFallingBlocks() const;
     MCVAPI bool isLeashableType();
     MCVAPI bool useNewAi() const;
@@ -80,10 +82,10 @@ public:
     MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
     MCAPI static void setShulkerAttachPos(class SynchedActorData &, class BlockPos const &);
 
-protected:
+//protected:
     MCAPI static void _setPeekAmount(class SynchedActorData &, int);
 
-private:
+//private:
     MCAPI void _calculateBB();
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
     MCAPI bool _isValidAttach(class BlockPos, unsigned char);
@@ -91,5 +93,10 @@ private:
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
     MCAPI void _trySpawnShulker();
     MCAPI bool _tryTeleportSomewhere();
+
+protected:
+
+private:
+
 
 };

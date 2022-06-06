@@ -19,8 +19,10 @@ public:
     ScriptPlayerIterator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLAYERITERATOR
+public:
 #endif
     MCAPI ScriptPlayerIterator(std::vector<class Scripting::StrongTypedObjectHandle<class ScriptPlayer>> &&);
     MCAPI ScriptPlayerIterator(class ScriptPlayerIterator const &);
@@ -28,8 +30,5 @@ public:
     MCAPI ~ScriptPlayerIterator();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerIterator> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

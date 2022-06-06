@@ -23,9 +23,11 @@ public:
     ScriptLeashableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptLeashableComponent();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLEASHABLECOMPONENT
+public:
 #endif
     MCAPI ScriptLeashableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<float> getSoftDistance() const;
@@ -33,8 +35,5 @@ public:
     MCAPI class Scripting::Result<void> unleash() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptLeashableComponent> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

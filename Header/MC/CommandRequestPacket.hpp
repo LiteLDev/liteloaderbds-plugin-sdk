@@ -23,6 +23,7 @@ public:
     CommandRequestPacket(class CommandRequestPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CommandRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -30,14 +31,12 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDREQUESTPACKET
+public:
 #endif
     MCAPI CommandRequestPacket(class CommandContext &, bool);
     MCAPI CommandRequestPacket();
     MCAPI std::unique_ptr<class CommandContext> createCommandContext(class NetworkIdentifier const &, class Bedrock::NonOwnerPointer<class ILevel> const &, int) const;
     MCAPI bool getInternalSource() const;
 
-protected:
-
-private:
 
 };

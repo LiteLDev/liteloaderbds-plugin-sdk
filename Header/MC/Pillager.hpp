@@ -24,6 +24,7 @@ public:
     Pillager() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Pillager();
     /*40*/ virtual void __unk_vfn_40();
@@ -56,11 +57,9 @@ public:
     /*359*/ virtual void __unk_vfn_359();
     /*361*/ virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PILLAGER
+public:
 #endif
     MCAPI Pillager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

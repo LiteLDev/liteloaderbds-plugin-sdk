@@ -22,6 +22,7 @@ public:
     AvailableActorIdentifiersPacket(class AvailableActorIdentifiersPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AvailableActorIdentifiersPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -30,12 +31,10 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVAILABLEACTORIDENTIFIERSPACKET
+public:
 #endif
     MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const &);
     MCAPI AvailableActorIdentifiersPacket();
 
-protected:
-
-private:
 
 };

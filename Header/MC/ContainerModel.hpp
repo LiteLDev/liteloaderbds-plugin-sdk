@@ -22,6 +22,7 @@ public:
     ContainerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~ContainerModel();
@@ -47,6 +48,7 @@ public:
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMODEL
+public:
     MCVAPI bool isExpanableItemFiltered(int) const;
     MCVAPI bool isItemFiltered(class ItemStackBase const &) const;
     MCVAPI bool isItemInstanceBased() const;
@@ -69,11 +71,16 @@ public:
     MCAPI void setClientUIContainer(class SparseContainerClient *);
     MCAPI void setItemSource(int, struct SlotData const &);
 
-protected:
+//protected:
     MCAPI void _init();
     MCAPI void _notifyPlayer(int, class ItemStack const &, class ItemStack const &);
 
-private:
+//private:
     MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
+
+protected:
+
+private:
+
 
 };

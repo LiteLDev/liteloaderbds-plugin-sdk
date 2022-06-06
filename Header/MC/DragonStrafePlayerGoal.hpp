@@ -22,6 +22,7 @@ public:
     DragonStrafePlayerGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DragonStrafePlayerGoal();
     /*1*/ virtual bool canUse();
@@ -32,13 +33,15 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSTRAFEPLAYERGOAL
+public:
 #endif
     MCAPI DragonStrafePlayerGoal(class Mob &);
 
-protected:
-
-private:
+//private:
     MCAPI void navigateToNextPathNode();
     MCAPI void setTarget(class Actor *);
+
+private:
+
 
 };

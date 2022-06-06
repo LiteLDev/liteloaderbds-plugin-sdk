@@ -23,6 +23,7 @@ public:
     ClothBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ClothBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -64,12 +65,10 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOTHBLOCK
+public:
     MCVAPI bool isVibrationBlocking() const;
 #endif
     MCAPI ClothBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

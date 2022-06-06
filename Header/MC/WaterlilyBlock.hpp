@@ -23,6 +23,7 @@ public:
     WaterlilyBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WaterlilyBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -67,11 +68,9 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERLILYBLOCK
+public:
 #endif
     MCAPI WaterlilyBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

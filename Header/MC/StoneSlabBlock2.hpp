@@ -23,6 +23,7 @@ public:
     StoneSlabBlock2() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StoneSlabBlock2();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,12 +67,10 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONESLABBLOCK2
+public:
 #endif
     MCAPI StoneSlabBlock2(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
     MCAPI static class std::array<std::string, 8> const SLAB_NAMES;
 
-protected:
-
-private:
 
 };

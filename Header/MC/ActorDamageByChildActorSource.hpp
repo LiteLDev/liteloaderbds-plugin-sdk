@@ -23,6 +23,7 @@ public:
     ActorDamageByChildActorSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorDamageByChildActorSource();
     /*2*/ virtual bool isChildEntitySource() const;
@@ -34,11 +35,9 @@ public:
     /*18*/ virtual enum ActorCategory getDamagingEntityCategories() const;
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYCHILDACTORSOURCE
+public:
 #endif
     MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum ActorDamageCause);
 
-protected:
-
-private:
 
 };

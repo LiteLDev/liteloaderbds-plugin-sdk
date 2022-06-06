@@ -26,12 +26,14 @@ public:
     ItemStackRequestAction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemStackRequestAction();
     /*1*/ virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
     /*2*/ virtual int getFilteredStringIndex() const;
     /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
+public:
 #endif
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
@@ -39,9 +41,10 @@ public:
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 
-protected:
+//private:
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
+
 
 };

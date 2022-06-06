@@ -20,6 +20,7 @@ public:
     DefaultSculkBehavior() = delete;
 #endif
 
+
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
     /*1*/ virtual int updateFacingData(int, class Block const &) const;
@@ -28,11 +29,13 @@ public:
     /*4*/ virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &) const;
     /*5*/ virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTSCULKBEHAVIOR
+public:
 #endif
 
-protected:
+//private:
+    MCAPI static bool _attemptSpreadVeinsIntoBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &);
 
 private:
-    MCAPI static bool _attemptSpreadVeinsIntoBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &);
+
 
 };

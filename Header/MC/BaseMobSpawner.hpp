@@ -22,6 +22,7 @@ public:
     BaseMobSpawner() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseMobSpawner();
     /*1*/ virtual void tick(class BlockSource &);
@@ -29,15 +30,17 @@ public:
     /*3*/ virtual void save(class CompoundTag &);
     /*4*/ virtual class BlockPos const & getPos() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOBSPAWNER
+public:
 #endif
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     MCAPI class Actor * createAndAddDisplayEntity(class BlockSource &);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
     MCAPI class Mob * tryGetOrCreateDisplayEntity(class BlockSource &);
 
-protected:
+//protected:
     MCAPI void _delay(class BlockSource &);
 
-private:
+protected:
+
 
 };

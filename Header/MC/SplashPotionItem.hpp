@@ -25,6 +25,7 @@ public:
     SplashPotionItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SplashPotionItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -49,11 +50,9 @@ public:
     /*116*/ virtual class Item & setIcon(std::string const &, int);
     /*128*/ virtual enum Potion::PotionType getPotionType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPLASHPOTIONITEM
+public:
 #endif
     MCAPI SplashPotionItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

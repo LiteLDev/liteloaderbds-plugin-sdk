@@ -22,15 +22,14 @@ public:
     ControlledByPlayerDefinition(class ControlledByPlayerDefinition const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTROLLEDBYPLAYERDEFINITION
+public:
 #endif
     MCAPI ControlledByPlayerDefinition();
     MCAPI void initialize(class EntityContext &, class ControlledByPlayerGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ControlledByPlayerDefinition>> &);
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     ClockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ClockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -42,11 +43,9 @@ public:
     /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOCKITEM
+public:
 #endif
     MCAPI ClockItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

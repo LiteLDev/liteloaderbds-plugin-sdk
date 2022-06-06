@@ -24,6 +24,7 @@ public:
     LodestoneCompassItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LodestoneCompassItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -44,13 +45,11 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSITEM
+public:
 #endif
     MCAPI LodestoneCompassItem(std::string const &, int);
     MCAPI static class PositionTrackingId getPositionTrackingId(class ItemStackBase const &);
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);
 
-protected:
-
-private:
 
 };

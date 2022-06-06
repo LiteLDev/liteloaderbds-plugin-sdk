@@ -23,6 +23,7 @@ public:
     NBStairsRoom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBStairsRoom();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -38,10 +39,8 @@ public:
     /*11*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBSTAIRSROOM
+public:
 #endif
 
-protected:
-
-private:
 
 };

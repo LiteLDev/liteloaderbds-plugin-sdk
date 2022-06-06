@@ -24,6 +24,7 @@ public:
     Skeleton() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Skeleton();
     /*40*/ virtual void __unk_vfn_40();
@@ -60,14 +61,16 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKELETON
+public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Skeleton(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void setWitherParent(class WitherBoss *);
 
-protected:
+//private:
 
 private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
+
 
 };

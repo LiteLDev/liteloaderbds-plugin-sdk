@@ -21,8 +21,10 @@ public:
     LookAtComponent(class LookAtComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATCOMPONENT
+public:
 #endif
     MCAPI LookAtComponent();
     MCAPI int & getCoolingTime();
@@ -30,8 +32,5 @@ public:
     MCAPI bool getTarget() const;
     MCAPI bool isLookingAtMe(class Actor &, class Actor &);
 
-protected:
-
-private:
 
 };

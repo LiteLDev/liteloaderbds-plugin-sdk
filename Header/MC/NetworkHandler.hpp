@@ -30,8 +30,10 @@ public:
     NetworkHandler() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKHANDLER
+public:
     MCVAPI void _onDisable();
     MCVAPI void _onEnable();
     MCVAPI class Social::GameConnectionInfo const & getConnectionInfo() const;
@@ -79,12 +81,13 @@ public:
     MCAPI void update(std::vector<class WeakEntityRef> const *);
     MCAPI static class std::shared_ptr<struct NetherNetInstance> mNetherNetInstance;
 
-protected:
-
-private:
+//private:
     MCAPI class NetworkHandler::Connection * _getConnectionFromId(class NetworkIdentifier const &) const;
     MCAPI void _handlePacketViolation(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &, class NetworkHandler::Connection &, unsigned char, std::string const &);
     MCAPI void _sendInternal(class NetworkIdentifier const &, class Packet const &, std::string const &);
     MCAPI bool _sortAndPacketizeEvents(class NetworkHandler::Connection &, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
+
+private:
+
 
 };

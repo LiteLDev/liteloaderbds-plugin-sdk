@@ -22,6 +22,7 @@ public:
     UpdateSubChunkBlocksPacket(class UpdateSubChunkBlocksPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdateSubChunkBlocksPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,13 +30,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATESUBCHUNKBLOCKSPACKET
+public:
 #endif
     MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &);
     MCAPI UpdateSubChunkBlocksPacket();
     MCAPI void setSubChunkPosition(class SubChunkPos const &);
 
-protected:
-
-private:
 
 };

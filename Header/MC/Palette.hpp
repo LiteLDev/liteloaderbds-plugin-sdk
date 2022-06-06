@@ -22,8 +22,10 @@ public:
     Palette() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PALETTE
+public:
 #endif
     MCAPI static class mce::Color const BLACK;
     MCAPI static class mce::Color const BLUE;
@@ -44,8 +46,5 @@ public:
     MCAPI static enum PaletteColor fromByte(unsigned char);
     MCAPI static class mce::Color const & getColor(enum PaletteColor);
 
-protected:
-
-private:
 
 };

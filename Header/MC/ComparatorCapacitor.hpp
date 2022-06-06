@@ -24,6 +24,7 @@ public:
     ComparatorCapacitor(class ComparatorCapacitor const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComparatorCapacitor();
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
@@ -39,6 +40,7 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORCAPACITOR
+public:
 #endif
     MCAPI ComparatorCapacitor();
     MCAPI void clearAnalogStrength(unsigned char);
@@ -47,8 +49,5 @@ public:
     MCAPI void setAnalogStrength(int, unsigned char);
     MCAPI void setMode(enum ComparatorCapacitor::Mode);
 
-protected:
-
-private:
 
 };

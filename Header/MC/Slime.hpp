@@ -24,6 +24,7 @@ public:
     Slime() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Slime();
@@ -72,6 +73,7 @@ public:
     /*369*/ virtual void decreaseSquish();
     /*370*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIME
+public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Slime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -79,10 +81,11 @@ public:
     MCAPI int getSlimeSize() const;
     MCAPI float getSquishValue() const;
 
-protected:
+//protected:
     MCAPI void justJumped();
     MCAPI void justLanded();
 
-private:
+protected:
+
 
 };

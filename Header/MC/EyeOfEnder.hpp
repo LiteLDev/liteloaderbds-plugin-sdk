@@ -23,6 +23,7 @@ public:
     EyeOfEnder() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~EyeOfEnder();
@@ -49,12 +50,10 @@ public:
     /*261*/ virtual void __unk_vfn_261();
     /*269*/ virtual void __unk_vfn_269();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EYEOFENDER
+public:
 #endif
     MCAPI EyeOfEnder(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void signalTo(class Player const &, class BlockPos &);
 
-protected:
-
-private:
 
 };

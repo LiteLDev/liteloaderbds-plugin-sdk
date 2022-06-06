@@ -22,6 +22,7 @@ public:
     MapCreateLockedCopyPacket(class MapCreateLockedCopyPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MapCreateLockedCopyPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,14 +30,12 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPCREATELOCKEDCOPYPACKET
+public:
 #endif
     MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID, struct ActorUniqueID);
     MCAPI MapCreateLockedCopyPacket();
     MCAPI struct ActorUniqueID getNewMapId() const;
     MCAPI struct ActorUniqueID getOriginalMapId() const;
 
-protected:
-
-private:
 
 };

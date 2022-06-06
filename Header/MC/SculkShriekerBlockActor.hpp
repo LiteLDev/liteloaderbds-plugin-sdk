@@ -21,6 +21,7 @@ public:
     SculkShriekerBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SculkShriekerBlockActor();
     /*7*/ virtual void tick(class BlockSource &);
@@ -33,11 +34,9 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERBLOCKACTOR
+public:
 #endif
     MCAPI SculkShriekerBlockActor(class BlockPos const &);
 
-protected:
-
-private:
 
 };

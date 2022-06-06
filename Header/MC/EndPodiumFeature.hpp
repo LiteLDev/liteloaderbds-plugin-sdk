@@ -23,11 +23,13 @@ public:
     EndPodiumFeature() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndPodiumFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPODIUMFEATURE
+public:
 #endif
     MCAPI EndPodiumFeature(bool);
     MCAPI static float const CORNER_ROUNDING;
@@ -37,8 +39,5 @@ public:
     MCAPI static int const PODIUM_RADIUS;
     MCAPI static int const RIM_RADIUS;
 
-protected:
-
-private:
 
 };

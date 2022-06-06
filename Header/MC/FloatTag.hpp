@@ -31,6 +31,7 @@ public:
     FloatTag(class FloatTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FloatTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -41,12 +42,10 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATTAG
+public:
 #endif
     MCAPI FloatTag(float);
     MCAPI FloatTag();
 
-protected:
-
-private:
 
 };

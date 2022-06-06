@@ -24,6 +24,7 @@ public:
     PlayerCommandOrigin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
@@ -47,12 +48,10 @@ public:
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERCOMMANDORIGIN
+public:
 #endif
     MCAPI PlayerCommandOrigin(class Player &);
     MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const &, class Level &);
 
-protected:
-
-private:
 
 };

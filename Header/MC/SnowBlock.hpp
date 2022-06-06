@@ -23,6 +23,7 @@ public:
     SnowBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SnowBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -63,12 +64,10 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBLOCK
+public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI SnowBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

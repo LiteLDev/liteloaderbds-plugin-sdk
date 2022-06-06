@@ -23,6 +23,7 @@ public:
     DirtBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DirtBlock();
     /*18*/ virtual bool isSolid() const;
@@ -75,11 +76,9 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRTBLOCK
+public:
 #endif
     MCAPI DirtBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

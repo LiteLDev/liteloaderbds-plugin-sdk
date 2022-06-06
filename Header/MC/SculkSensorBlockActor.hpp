@@ -23,6 +23,7 @@ public:
     SculkSensorBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SculkSensorBlockActor();
     /*7*/ virtual void tick(class BlockSource &);
@@ -35,14 +36,12 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORBLOCKACTOR
+public:
 #endif
     MCAPI SculkSensorBlockActor(class BlockPos const &);
     MCAPI int getLatestGameEventFrequency() const;
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
 
-protected:
-
-private:
 
 };

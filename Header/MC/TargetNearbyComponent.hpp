@@ -22,8 +22,10 @@ public:
     TargetNearbyComponent() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETNEARBYCOMPONENT
+public:
 #endif
     MCAPI bool getWasInsideRange() const;
     MCAPI bool getWasOutsideRange() const;
@@ -33,8 +35,5 @@ public:
     MCAPI void setWasOutsideRange(bool);
     MCAPI void setWasSeenLastTick(bool);
 
-protected:
-
-private:
 
 };

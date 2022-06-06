@@ -23,6 +23,7 @@ public:
     CraftHandlerBase() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftHandlerBase();
     /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
@@ -32,6 +33,7 @@ public:
     /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERBASE
+public:
 #endif
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
     MCAPI bool _isNonImplementedTrustClientResults() const;
@@ -40,11 +42,12 @@ public:
     MCAPI bool isCraftRequest();
     MCAPI void postRequest(bool);
 
-protected:
+//protected:
     MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 
-private:
+protected:
+
 
 };

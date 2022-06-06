@@ -23,6 +23,7 @@ public:
     WorkGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WorkGoal();
     /*1*/ virtual bool canUse();
@@ -36,15 +37,17 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*18*/ virtual void useWorkstation();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKGOAL
+public:
 #endif
     MCAPI WorkGoal(class Mob &);
     MCAPI void playPOISoundEvent() const;
 
-protected:
+//private:
+    MCAPI bool _isInsideOrIsNotRaining();
 
 private:
-    MCAPI bool _isInsideOrIsNotRaining();
     MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
     MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
+
 
 };

@@ -23,6 +23,7 @@ public:
     JukeboxBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JukeboxBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -66,14 +67,16 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCK
+public:
     MCVAPI bool hasComparatorSignal() const;
 #endif
     MCAPI JukeboxBlock(std::string const &, int);
 
-protected:
-
-private:
+//private:
     MCAPI void _dropRecording(class BlockSource &, class BlockPos const &) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

@@ -22,6 +22,7 @@ public:
     RandomStrollGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~RandomStrollGoal();
     /*1*/ virtual bool canUse();
@@ -35,11 +36,9 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _setWantedPosition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSTROLLGOAL
+public:
 #endif
     MCAPI RandomStrollGoal(class Mob &, float, int, int, int);
 
-protected:
-
-private:
 
 };

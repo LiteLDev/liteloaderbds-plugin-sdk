@@ -24,6 +24,7 @@ public:
     ArrowItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ArrowItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -47,13 +48,15 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*116*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROWITEM
+public:
 #endif
     MCAPI ArrowItem(std::string const &, int);
     MCAPI void applyEffect(class Arrow *, class ItemInstance const &) const;
 
-protected:
+//protected:
     MCAPI std::vector<class MobEffectInstance> getMobEffects(int) const;
 
-private:
+protected:
+
 
 };

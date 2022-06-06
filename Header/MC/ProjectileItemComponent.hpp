@@ -22,6 +22,7 @@ public:
     ProjectileItemComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ProjectileItemComponent();
     /*1*/ virtual bool isNetworkComponent() const;
@@ -31,6 +32,7 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEITEMCOMPONENT
+public:
 #endif
     MCAPI ProjectileItemComponent(class ComponentItem *);
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
@@ -39,8 +41,5 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
-
-private:
 
 };

@@ -20,8 +20,10 @@ public:
     DelayRequest() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYREQUEST
+public:
 #endif
     MCAPI DelayRequest(std::unique_ptr<class IRequestAction>, unsigned __int64);
     MCAPI void executeAction(class ServerLevel &, class Dimension &);
@@ -30,8 +32,5 @@ public:
     MCAPI bool operator>(class DelayRequest const &) const;
     MCAPI ~DelayRequest();
 
-protected:
-
-private:
 
 };

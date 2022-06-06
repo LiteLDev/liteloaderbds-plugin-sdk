@@ -23,6 +23,7 @@ public:
     TrapDoorBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TrapDoorBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -73,15 +74,17 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAPDOORBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI TrapDoorBlock(std::string const &, int, class Material const &);
 
-protected:
+//private:
+    MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
 
 private:
-    MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
     MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
 
 };

@@ -22,6 +22,7 @@ public:
     DisconnectPacket(class DisconnectPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DisconnectPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,12 +30,10 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISCONNECTPACKET
+public:
 #endif
     MCAPI DisconnectPacket(std::string const &, bool);
     MCAPI DisconnectPacket();
 
-protected:
-
-private:
 
 };

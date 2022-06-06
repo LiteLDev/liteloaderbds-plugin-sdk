@@ -22,6 +22,7 @@ public:
     GameTestLevelListener() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GameTestLevelListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -34,11 +35,9 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTLEVELLISTENER
+public:
 #endif
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
 
-protected:
-
-private:
 
 };

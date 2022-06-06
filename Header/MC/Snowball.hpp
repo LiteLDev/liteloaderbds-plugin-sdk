@@ -24,6 +24,7 @@ public:
     Snowball() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Snowball();
@@ -49,11 +50,9 @@ public:
     /*278*/ virtual void __unk_vfn_278();
     /*280*/ virtual void __unk_vfn_280();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBALL
+public:
 #endif
     MCAPI Snowball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

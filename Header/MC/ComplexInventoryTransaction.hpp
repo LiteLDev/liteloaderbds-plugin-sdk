@@ -32,6 +32,7 @@ public:
     ComplexInventoryTransaction() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ComplexInventoryTransaction();
     /*1*/ virtual void __unk_vfn_1();
@@ -40,6 +41,7 @@ public:
     /*4*/ virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXINVENTORYTRANSACTION
+public:
     MCVAPI void read(class ReadOnlyBinaryStream &);
     MCVAPI void write(class BinaryStream &) const;
 #endif
@@ -49,9 +51,10 @@ public:
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);
 
-protected:
+//private:
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ComplexInventoryTransaction::Type, std::string> const transactionTypeMap;
+
 
 };

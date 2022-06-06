@@ -24,6 +24,7 @@ public:
     Horse() = delete;
 #endif
 
+
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Horse();
@@ -84,18 +85,20 @@ public:
     /*369*/ virtual void makeMad();
     /*370*/ virtual bool tameToPlayer(class Player &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSE
+public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Horse(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static int const DONKEY_CHEST_COUNT;
     MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
 
-protected:
-
-private:
+//private:
     MCAPI void openMouth();
     MCAPI void setHorseFlag(enum HorseFlags, bool);
     MCAPI bool setHorseType(enum ActorType &);
+
+private:
     MCAPI static int const DATA_AGE;
+
 
 };

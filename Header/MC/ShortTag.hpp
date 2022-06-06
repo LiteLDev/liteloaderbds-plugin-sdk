@@ -31,6 +31,7 @@ public:
     ShortTag(class ShortTag const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShortTag();
     /*2*/ virtual void write(class IDataOutput &) const;
@@ -41,12 +42,10 @@ public:
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHORTTAG
+public:
 #endif
     MCAPI ShortTag(short);
     MCAPI ShortTag();
 
-protected:
-
-private:
 
 };

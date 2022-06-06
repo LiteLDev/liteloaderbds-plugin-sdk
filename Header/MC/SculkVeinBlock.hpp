@@ -23,6 +23,7 @@ public:
     SculkVeinBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SculkVeinBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,11 +64,9 @@ public:
     /*203*/ virtual class Block const & getMultifaceBlock() const;
     /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINBLOCK
+public:
 #endif
     MCAPI SculkVeinBlock(std::string const &, int, class Material const &);
 
-protected:
-
-private:
 
 };

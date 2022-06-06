@@ -22,6 +22,7 @@ public:
     HurtOwnerSubcomponent(class HurtOwnerSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HurtOwnerSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
@@ -29,11 +30,9 @@ public:
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTOWNERSUBCOMPONENT
+public:
 #endif
     MCAPI HurtOwnerSubcomponent();
 
-protected:
-
-private:
 
 };

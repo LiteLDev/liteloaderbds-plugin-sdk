@@ -21,6 +21,7 @@ public:
     IgniteSubcomponent(class IgniteSubcomponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IgniteSubcomponent();
     /*1*/ virtual void __unk_vfn_1();
@@ -28,13 +29,11 @@ public:
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGNITESUBCOMPONENT
+public:
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     MCAPI IgniteSubcomponent();
 
-protected:
-
-private:
 
 };

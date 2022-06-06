@@ -22,8 +22,10 @@ public:
     ScriptItemStack() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMSTACK
+public:
 #endif
     MCAPI ScriptItemStack(class ScriptItemStack &&);
     MCAPI ScriptItemStack(class ScriptItemStack const &);
@@ -42,8 +44,5 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemStack> bind(struct Scripting::Version, class Level *);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptItemStack> createHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const &);
 
-protected:
-
-private:
 
 };

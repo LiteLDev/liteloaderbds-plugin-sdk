@@ -25,6 +25,7 @@ public:
     CameraItemComponentLegacy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CameraItemComponentLegacy();
     /*1*/ virtual float blackBarsDuration() const;
@@ -40,13 +41,15 @@ public:
     /*11*/ virtual void releaseUsing(class ItemStack &, class Player &, int);
     /*12*/ virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERAITEMCOMPONENTLEGACY
+public:
 #endif
     MCAPI CameraItemComponentLegacy(class Item &);
     MCAPI bool init(class Json::Value &, class SemVersion const &);
 
-protected:
+//private:
+    MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
 
 private:
-    MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
+
 
 };

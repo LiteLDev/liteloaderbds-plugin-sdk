@@ -23,6 +23,7 @@ public:
     OceanMonumentPiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OceanMonumentPiece();
     /*6*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
@@ -30,13 +31,16 @@ public:
     /*8*/ virtual int getWorldZ(int, int);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTPIECE
+public:
 #endif
 
-protected:
+//protected:
     MCAPI OceanMonumentPiece(int, int &, class std::shared_ptr<class RoomDefinition>, int, int, int);
     MCAPI bool chunkIntersects(class BoundingBox const &, int, int, int, int);
     MCAPI void generateDefaultFloor(class BlockSource &, class BoundingBox const &, int, int, bool);
     MCAPI void spawnElder(class BlockSource &, class BoundingBox const &, int, int, int);
+
+protected:
     MCAPI static int mGridroomLeftWingConnectIndex;
     MCAPI static int mGridroomRightWingConnectIndex;
     MCAPI static int mGridroomSourceIndex;
@@ -45,6 +49,5 @@ protected:
     MCAPI static int const mPenthouseIndex;
     MCAPI static int const mRightWingIndex;
 
-private:
 
 };

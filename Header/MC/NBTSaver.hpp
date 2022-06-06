@@ -22,13 +22,12 @@ public:
     NBTSaver() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSAVER
+public:
 #endif
     MCAPI class CompoundTag getSavedCompoundTag();
 
-protected:
-
-private:
 
 };

@@ -22,14 +22,17 @@ public:
     ScatteredFeaturePiece() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
+public:
     MCVAPI ~ScatteredFeaturePiece();
 #endif
 
-protected:
+//protected:
     MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
 
-private:
+protected:
+
 
 };

@@ -22,6 +22,7 @@ public:
     LevelChunkPacket(class LevelChunkPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelChunkPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,13 +30,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKPACKET
+public:
 #endif
     MCAPI LevelChunkPacket(class ChunkPos const &, bool);
     MCAPI LevelChunkPacket();
     MCAPI void pushSubChunkMetadata(unsigned __int64);
 
-protected:
-
-private:
 
 };

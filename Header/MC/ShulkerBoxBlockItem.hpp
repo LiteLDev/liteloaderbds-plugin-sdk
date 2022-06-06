@@ -24,6 +24,7 @@ public:
     ShulkerBoxBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShulkerBoxBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -44,12 +45,14 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*92*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKITEM
+public:
 #endif
     MCAPI ShulkerBoxBlockItem(std::string const &, int, class Block const *);
 
-protected:
+//private:
+    MCAPI std::string buildContainedItemList(class CompoundTag const *) const;
 
 private:
-    MCAPI std::string buildContainedItemList(class CompoundTag const *) const;
+
 
 };

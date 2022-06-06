@@ -24,6 +24,7 @@ public:
     CoalItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CoalItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -42,10 +43,8 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*123*/ virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COALITEM
+public:
 #endif
 
-protected:
-
-private:
 
 };

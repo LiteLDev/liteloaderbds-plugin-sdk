@@ -23,6 +23,7 @@ public:
     TripWireHookBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~TripWireHookBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -73,15 +74,17 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPWIREHOOKBLOCK
+public:
     MCVAPI bool canSpawnOn() const;
 #endif
     MCAPI TripWireHookBlock(std::string const &, int);
     MCAPI void calculateState(class BlockSource &, class BlockPos const &, bool, bool, int, class Block const &) const;
 
-protected:
-
-private:
+//private:
     MCAPI void _getShape(int, class AABB &) const;
     MCAPI void playSound(class BlockSource &, class BlockPos const &, bool, bool, bool, bool) const;
+
+private:
+
 
 };

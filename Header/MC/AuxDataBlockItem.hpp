@@ -24,6 +24,7 @@ public:
     AuxDataBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AuxDataBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -42,11 +43,9 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUXDATABLOCKITEM
+public:
 #endif
     MCAPI AuxDataBlockItem(std::string const &, int, class Block const *);
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     ProducerComponent(class ProducerComponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ProducerComponent();
     /*3*/ virtual void setStrength(int);
@@ -33,12 +34,10 @@ public:
     /*20*/ virtual void __unk_vfn_20();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRODUCERCOMPONENT
+public:
 #endif
     MCAPI ProducerComponent();
     MCAPI void allowAttachments(bool);
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     WeaponItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WeaponItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -51,11 +52,9 @@ public:
     /*84*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEM
+public:
 #endif
     MCAPI WeaponItem(std::string const &, int, class Item::Tier const &);
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     GlowStickItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GlowStickItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -44,13 +45,11 @@ public:
     /*113*/ virtual struct Brightness getLightEmission(int) const;
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWSTICKITEM
+public:
 #endif
     MCAPI GlowStickItem(std::string const &, int);
     MCAPI static enum ItemColor const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     MinecartHopper() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~MinecartHopper();
     /*40*/ virtual void __unk_vfn_40();
@@ -53,11 +54,9 @@ public:
     /*283*/ virtual int getDefaultDisplayOffset() const;
     /*284*/ virtual void applyNaturalSlowdown(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTHOPPER
+public:
 #endif
     MCAPI MinecartHopper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

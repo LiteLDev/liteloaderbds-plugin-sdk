@@ -24,6 +24,7 @@ public:
     Dolphin() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Dolphin();
@@ -56,11 +57,9 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOLPHIN
+public:
 #endif
     MCAPI Dolphin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

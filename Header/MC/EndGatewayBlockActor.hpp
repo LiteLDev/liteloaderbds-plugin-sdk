@@ -23,6 +23,7 @@ public:
     EndGatewayBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndGatewayBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -40,6 +41,7 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYBLOCKACTOR
+public:
 #endif
     MCAPI EndGatewayBlockActor(class BlockPos const &);
     MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
@@ -54,9 +56,10 @@ public:
     MCAPI static class BlockPos findTallestBlock(class BlockSource &, class BlockPos const &, int, bool);
     MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int);
 
-protected:
+//private:
+    MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
 
 private:
-    MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
+
 
 };

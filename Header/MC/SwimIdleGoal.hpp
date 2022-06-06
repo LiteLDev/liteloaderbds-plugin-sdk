@@ -22,6 +22,7 @@ public:
     SwimIdleGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SwimIdleGoal();
     /*1*/ virtual bool canUse();
@@ -32,11 +33,9 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMIDLEGOAL
+public:
 #endif
     MCAPI SwimIdleGoal(class Mob &);
 
-protected:
-
-private:
 
 };

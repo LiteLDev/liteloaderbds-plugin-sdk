@@ -24,13 +24,12 @@ public:
     PlaceBlockDefinition() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlaceBlockDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLACEBLOCKDEFINITION
+public:
 #endif
 
-protected:
-
-private:
 
 };

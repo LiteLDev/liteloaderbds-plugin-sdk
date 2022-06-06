@@ -22,8 +22,10 @@ public:
     ResourcePackTransmissionManager() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKTRANSMISSIONMANAGER
+public:
 #endif
     MCAPI ResourcePackTransmissionManager(class Scheduler &);
     MCAPI void cleanupResourcePackManager(class NetworkIdentifier const &);
@@ -31,8 +33,5 @@ public:
     MCAPI void update();
     MCAPI ~ResourcePackTransmissionManager();
 
-protected:
-
-private:
 
 };

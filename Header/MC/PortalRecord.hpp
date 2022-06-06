@@ -20,8 +20,10 @@ public:
     PortalRecord() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALRECORD
+public:
 #endif
     MCAPI PortalRecord(class BlockPos const &);
     MCAPI PortalRecord(class BlockPos const &, int, int, int);
@@ -29,8 +31,5 @@ public:
     MCAPI unsigned __int64 hashCode() const;
     MCAPI bool operator==(class PortalRecord const &) const;
 
-protected:
-
-private:
 
 };

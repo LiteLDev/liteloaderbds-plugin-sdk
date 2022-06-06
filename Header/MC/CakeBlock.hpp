@@ -23,6 +23,7 @@ public:
     CakeBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CakeBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -70,6 +71,7 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAKEBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool hasComparatorSignal() const;
 #endif
@@ -77,8 +79,5 @@ public:
     MCAPI static int getComparatorSignalFromBites(int);
     MCAPI static void removeCakeSlice(class Player &, class BlockSource &, class BlockPos const &, class Block const *);
 
-protected:
-
-private:
 
 };

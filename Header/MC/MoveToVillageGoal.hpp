@@ -23,6 +23,7 @@ public:
     MoveToVillageGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MoveToVillageGoal();
     /*1*/ virtual bool canUse();
@@ -37,12 +38,14 @@ public:
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual class BlockPos _selectRandomPosInVillage();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOVILLAGEGOAL
+public:
 #endif
     MCAPI MoveToVillageGoal(class Mob &, float, float, float, int);
 
-protected:
+//protected:
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();
 
-private:
+protected:
+
 
 };

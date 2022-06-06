@@ -23,16 +23,15 @@ public:
     ShapedChemistryRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ShapedChemistryRecipe();
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*8*/ virtual class mce::UUID const & getId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPEDCHEMISTRYRECIPE
+public:
 #endif
     MCAPI static class mce::UUID const ID;
 
-protected:
-
-private:
 
 };

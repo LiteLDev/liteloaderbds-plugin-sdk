@@ -23,6 +23,7 @@ public:
     BaseMoveToBlockGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseMoveToBlockGoal();
     /*1*/ virtual bool canUse();
@@ -33,11 +34,9 @@ public:
     /*14*/ virtual void _moveToBlock();
     /*17*/ virtual bool findTargetBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOBLOCKGOAL
+public:
 #endif
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 
-protected:
-
-private:
 
 };

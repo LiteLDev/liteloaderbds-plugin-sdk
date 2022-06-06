@@ -23,6 +23,7 @@ public:
     DefendTrustedTargetGoal() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DefendTrustedTargetGoal();
     /*1*/ virtual bool canUse();
@@ -31,12 +32,14 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDTRUSTEDTARGETGOAL
+public:
 #endif
     MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class DefinitionTrigger const &);
 
-protected:
+//private:
+    MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
 
 private:
-    MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
+
 
 };

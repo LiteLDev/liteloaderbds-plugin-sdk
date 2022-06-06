@@ -23,6 +23,7 @@ public:
     PackSourceFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PackSourceFactory();
     /*1*/ virtual class WorldTemplatePackSource & createWorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum PackType, enum PackOrigin);
@@ -40,11 +41,9 @@ public:
     /*13*/ virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const &);
     /*14*/ virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEFACTORY
+public:
 #endif
     MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const &);
 
-protected:
-
-private:
 
 };

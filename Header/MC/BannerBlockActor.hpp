@@ -23,6 +23,7 @@ public:
     BannerBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BannerBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -39,6 +40,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERBLOCKACTOR
+public:
 #endif
     MCAPI BannerBlockActor(class BlockPos const &);
     MCAPI unsigned char getBaseColorInt() const;
@@ -55,8 +57,5 @@ public:
     MCAPI static bool isDefaultBanner(class ItemStackBase const &);
     MCAPI static bool removeLastPattern(class ItemStack &, class Player &);
 
-protected:
-
-private:
 
 };

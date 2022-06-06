@@ -23,6 +23,7 @@ public:
     OffhandContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OffhandContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -33,12 +34,10 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFHANDCONTAINERVALIDATION
+public:
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
 #endif
 
-protected:
-
-private:
 
 };

@@ -21,8 +21,10 @@ public:
     HideComponent(class HideComponent const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDECOMPONENT
+public:
 #endif
     MCAPI HideComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &);
@@ -34,8 +36,5 @@ public:
     MCAPI void setNotHiding();
     MCAPI void setReactingToBell();
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     PistonBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PistonBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -41,6 +42,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCKACTOR
+public:
 #endif
     MCAPI PistonBlockActor(class BlockPos const &, bool);
     MCAPI std::vector<class BlockPos> const & getAttachedBlocks() const;
@@ -55,9 +57,7 @@ public:
     MCAPI void moveEntityLastProgress(class Actor &, class Vec3);
     MCAPI void setShouldVerifyArmType(bool);
 
-protected:
-
-private:
+//private:
     MCAPI bool _attachedBlockWalker(class BlockSource &, class BlockPos const &, unsigned char, unsigned char);
     MCAPI bool _checkAttachedBlocks(class BlockSource &);
     MCAPI void _checkInceptionAchievement(class BlockActor &, class BlockSource &, class BlockPos const &);
@@ -68,6 +68,9 @@ private:
     MCAPI void _sortAttachedBlocks(class BlockSource &);
     MCAPI void _spawnBlocks(class BlockSource &);
     MCAPI void _spawnMovingBlocks(class BlockSource &);
+
+private:
     MCAPI static float const ARM_ANIMATION_SPEED;
+
 
 };

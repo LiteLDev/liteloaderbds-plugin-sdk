@@ -22,6 +22,7 @@ public:
     UpdatePlayerGameTypePacket(class UpdatePlayerGameTypePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~UpdatePlayerGameTypePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,12 +30,10 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEPLAYERGAMETYPEPACKET
+public:
 #endif
     MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const &);
     MCAPI UpdatePlayerGameTypePacket();
 
-protected:
-
-private:
 
 };

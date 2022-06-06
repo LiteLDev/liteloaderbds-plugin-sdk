@@ -24,6 +24,7 @@ public:
     ActorPlacerItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorPlacerItem();
     /*2*/ virtual void tearDown();
@@ -49,6 +50,7 @@ public:
     /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPLACERITEM
+public:
     MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
     MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
     MCVAPI bool isActorPlacerItem() const;
@@ -60,14 +62,15 @@ public:
     MCAPI static void registerCustomEggs(class ActorInfoRegistry const &);
     MCAPI static class Actor * spawnOrMoveAgent(class Vec3 const &, class Actor &);
 
-protected:
-
-private:
+//private:
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource &) const;
     MCAPI class Actor * _spawnActorAt(class BlockSource &, class Vec3 const &, class Vec3 const &, class ItemStack const &, class Actor *) const;
     MCAPI static void _setAgentOwner(class Player &, class Agent &);
+
+private:
     MCAPI static class std::unordered_map<unsigned int, std::string, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, std::string>>> mCustomSpawnEggs;
     MCAPI static class std::unordered_map<class HashedString, struct TextureUVCoordinateSet, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct TextureUVCoordinateSet>>> mUVTextureMap;
     MCAPI static struct TextureUVCoordinateSet m_uvEggMask;
+
 
 };

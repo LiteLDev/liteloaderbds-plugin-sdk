@@ -23,6 +23,7 @@ public:
     CreatedOutputContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CreatedOutputContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -35,13 +36,11 @@ public:
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATEDOUTPUTCONTAINERVALIDATION
+public:
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
 #endif
 
-protected:
-
-private:
 
 };

@@ -22,8 +22,10 @@ public:
     PropertiesSettings() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTIESSETTINGS
+public:
 #endif
     MCAPI PropertiesSettings(std::string const &);
     MCAPI bool allowCheats() const;
@@ -67,8 +69,5 @@ public:
     MCAPI static bool parseBoolValue(std::string const &);
     MCAPI static enum GameType parseGameMode(std::string const &);
 
-protected:
-
-private:
 
 };

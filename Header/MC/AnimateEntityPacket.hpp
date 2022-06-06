@@ -22,6 +22,7 @@ public:
     AnimateEntityPacket(class AnimateEntityPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AnimateEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,12 +30,10 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEENTITYPACKET
+public:
 #endif
     MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const &, std::string const &, std::string const &, float, std::string const &, enum MolangVersion, std::string const &);
     MCAPI AnimateEntityPacket();
 
-protected:
-
-private:
 
 };

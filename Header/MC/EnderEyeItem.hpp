@@ -24,6 +24,7 @@ public:
     EnderEyeItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnderEyeItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -42,11 +43,9 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDEREYEITEM
+public:
 #endif
     MCAPI EnderEyeItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

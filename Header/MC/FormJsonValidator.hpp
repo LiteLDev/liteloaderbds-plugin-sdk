@@ -23,8 +23,10 @@ public:
     FormJsonValidator() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FORMJSONVALIDATOR
+public:
 #endif
     MCAPI static class JsonValidator::Property getContentItemProperty(class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &, class JsonValidator::Property const &);
     MCAPI static class JsonValidator::Property getControlLockedProperty();
@@ -35,8 +37,5 @@ public:
     MCAPI static class JsonValidator::Property getTextInputProperty(bool);
     MCAPI static class JsonValidator::Property getToggleProperty(bool);
 
-protected:
-
-private:
 
 };

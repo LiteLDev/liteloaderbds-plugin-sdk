@@ -23,6 +23,7 @@ public:
     SpongeBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SpongeBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -68,16 +69,18 @@ public:
     /*187*/ virtual void __unk_vfn_187();
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPONGEBLOCK
+public:
 #endif
     MCAPI SpongeBlock(std::string const &, int, class Material const &);
 
-protected:
-
-private:
+//private:
     MCAPI void _attemptAbsorbWater(class BlockSource &, class BlockPos const &) const;
     MCAPI void _evaporateWater(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _performAbsorbWater(class BlockSource &, class BlockPos const &) const;
     MCAPI void _setShouldDry(class BlockSource &, class BlockPos const &) const;
     MCAPI void _spawnAbsorbParticles(class BlockSource &, class BlockPos const &) const;
+
+private:
+
 
 };

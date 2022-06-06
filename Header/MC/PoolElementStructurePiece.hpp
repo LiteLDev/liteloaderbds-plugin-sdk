@@ -23,6 +23,7 @@ public:
     PoolElementStructurePiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PoolElementStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
@@ -35,14 +36,12 @@ public:
     /*16*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
     /*17*/ virtual bool _needsPostProcessing(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POOLELEMENTSTRUCTUREPIECE
+public:
 #endif
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
     MCAPI class StructurePoolElement const & getElement() const;
     MCAPI class BlockPos const & getPosition() const;
     MCAPI void setReferencePosition(class BlockPos const &);
 
-protected:
-
-private:
 
 };

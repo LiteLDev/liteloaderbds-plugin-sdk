@@ -23,6 +23,7 @@ public:
     WorldLimitChunkSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~WorldLimitChunkSource();
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
@@ -30,11 +31,9 @@ public:
     /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /*25*/ virtual bool canCreateViews() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDLIMITCHUNKSOURCE
+public:
 #endif
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
 
-protected:
-
-private:
 
 };

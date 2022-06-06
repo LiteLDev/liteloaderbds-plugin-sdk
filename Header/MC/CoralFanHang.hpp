@@ -23,6 +23,7 @@ public:
     CoralFanHang() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CoralFanHang();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -71,11 +72,9 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFANHANG
+public:
 #endif
     MCAPI CoralFanHang(std::string const &, int);
 
-protected:
-
-private:
 
 };

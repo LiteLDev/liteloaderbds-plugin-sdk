@@ -23,14 +23,13 @@ public:
     FlushableEnv() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FlushableEnv();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLEENV
+public:
 #endif
     MCAPI FlushableEnv(class leveldb::Env *);
 
-protected:
-
-private:
 
 };

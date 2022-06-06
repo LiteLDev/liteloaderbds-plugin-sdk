@@ -22,8 +22,10 @@ public:
     WebviewObserver() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
+public:
     MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const &);
     MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const &);
     MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const &);
@@ -35,8 +37,5 @@ public:
     MCVAPI void onWebviewChanged();
 #endif
 
-protected:
-
-private:
 
 };

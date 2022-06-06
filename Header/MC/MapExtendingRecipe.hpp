@@ -23,6 +23,7 @@ public:
     MapExtendingRecipe() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MapExtendingRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -32,14 +33,16 @@ public:
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*7*/ virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPEXTENDINGRECIPE
+public:
 #endif
     MCAPI MapExtendingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const CartographyTableID;
     MCAPI static class mce::UUID const CraftingTableID;
 
-protected:
+//private:
+    MCAPI void _updateMapInstance(class ItemInstance &) const;
 
 private:
-    MCAPI void _updateMapInstance(class ItemInstance &) const;
+
 
 };

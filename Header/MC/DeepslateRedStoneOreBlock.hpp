@@ -23,6 +23,7 @@ public:
     DeepslateRedStoneOreBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DeepslateRedStoneOreBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -63,11 +64,9 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEEPSLATEREDSTONEOREBLOCK
+public:
 #endif
     MCAPI DeepslateRedStoneOreBlock(std::string const &, int, bool);
 
-protected:
-
-private:
 
 };

@@ -22,12 +22,11 @@ public:
     UriListener() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_URILISTENER
+public:
 #endif
 
-protected:
-
-private:
 
 };

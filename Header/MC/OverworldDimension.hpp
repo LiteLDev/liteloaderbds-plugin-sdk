@@ -22,8 +22,10 @@ public:
     OverworldDimension() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDDIMENSION
+public:
     MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
     MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
     MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
@@ -36,9 +38,10 @@ public:
 #endif
     MCAPI OverworldDimension(class Level &, class Scheduler &);
 
-protected:
+//private:
+    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(unsigned int, bool, class BaseGameVersion const &, class Experiments const &);
 
 private:
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(unsigned int, bool, class BaseGameVersion const &, class Experiments const &);
+
 
 };

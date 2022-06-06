@@ -23,6 +23,7 @@ public:
     MusicBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~MusicBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -35,13 +36,11 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUSICBLOCKACTOR
+public:
 #endif
     MCAPI MusicBlockActor(class BlockPos const &);
     MCAPI void playNote(class BlockSource &, class BlockPos const &);
     MCAPI void tune();
 
-protected:
-
-private:
 
 };

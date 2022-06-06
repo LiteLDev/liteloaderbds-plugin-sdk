@@ -22,13 +22,16 @@ public:
     BackwardsCompatTextureGroup() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKWARDSCOMPATTEXTUREGROUP
+public:
 #endif
 
-protected:
+//private:
 
 private:
     MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
+
 
 };

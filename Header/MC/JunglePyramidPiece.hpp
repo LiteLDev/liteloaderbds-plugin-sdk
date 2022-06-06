@@ -23,16 +23,15 @@ public:
     JunglePyramidPiece() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~JunglePyramidPiece();
     /*3*/ virtual enum StructurePieceType getType() const;
     /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUNGLEPYRAMIDPIECE
+public:
 #endif
     MCAPI JunglePyramidPiece(short, int, int);
 
-protected:
-
-private:
 
 };

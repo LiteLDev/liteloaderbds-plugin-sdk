@@ -23,6 +23,7 @@ public:
     ReedBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ReedBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -74,13 +75,11 @@ public:
     /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REEDBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ReedBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

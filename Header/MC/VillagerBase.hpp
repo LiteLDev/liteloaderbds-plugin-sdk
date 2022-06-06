@@ -25,6 +25,7 @@ public:
     VillagerBase() = delete;
 #endif
 
+
 public:
     /*11*/ virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~VillagerBase();
@@ -59,6 +60,7 @@ public:
     /*355*/ virtual void _serverAiMobStep();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGERBASE
+public:
     MCVAPI bool interactPreventDefault();
     MCVAPI bool useNewAi() const;
 #endif
@@ -72,9 +74,10 @@ public:
     MCAPI void stopGoals();
     MCAPI static enum VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
 
-protected:
+//private:
+    MCAPI void _addParticlesAroundSelf(enum ParticleType);
 
 private:
-    MCAPI void _addParticlesAroundSelf(enum ParticleType);
+
 
 };

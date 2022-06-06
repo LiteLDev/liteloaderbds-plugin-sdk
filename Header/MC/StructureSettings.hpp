@@ -45,8 +45,10 @@ public:
     StructureSettings(class StructureSettings const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESETTINGS
+public:
 #endif
     MCAPI StructureSettings(class StructureSettings &&);
     MCAPI StructureSettings();
@@ -91,8 +93,5 @@ public:
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
 
-protected:
-
-private:
 
 };

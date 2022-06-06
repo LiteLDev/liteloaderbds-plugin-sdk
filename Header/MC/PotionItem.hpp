@@ -25,6 +25,7 @@ public:
     PotionItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PotionItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -54,14 +55,12 @@ public:
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*128*/ virtual enum Potion::PotionType getPotionType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONITEM
+public:
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI PotionItem(std::string const &, int);
     MCAPI static void applyEffect(class ThrownPotion *, class ItemStack const &);
     MCAPI static bool isDestructivePotion(enum Potion::PotionVariant);
 
-protected:
-
-private:
 
 };

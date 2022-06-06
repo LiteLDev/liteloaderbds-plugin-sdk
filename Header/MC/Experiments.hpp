@@ -21,8 +21,10 @@ public:
     Experiments(class Experiments const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTS
+public:
 #endif
     MCAPI bool DataDrivenBiomes() const;
     MCAPI bool DataDrivenItems() const;
@@ -41,8 +43,5 @@ public:
     MCAPI static std::string const & getExperimentTextID(enum AllExperiments);
     MCAPI static std::vector<std::string> const & getToggleNames();
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     SmithingTableBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SmithingTableBlock();
     /*19*/ virtual void __unk_vfn_19();
@@ -60,13 +61,11 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEBLOCK
+public:
     MCVAPI bool isCraftingBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI SmithingTableBlock(std::string const &, int, class Material const &);
 
-protected:
-
-private:
 
 };

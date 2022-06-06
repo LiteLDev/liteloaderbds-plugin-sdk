@@ -23,6 +23,7 @@ public:
     FenceGateBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FenceGateBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -71,15 +72,17 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FENCEGATEBLOCK
+public:
     MCVAPI bool isFenceGateBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI FenceGateBlock(std::string const &, int, enum WoodType);
     MCAPI void resolveIsInWall(class BlockSource &, class BlockPos const &) const;
 
-protected:
+//private:
+    MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
 
 private:
-    MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
+
 
 };

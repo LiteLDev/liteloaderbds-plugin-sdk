@@ -24,6 +24,7 @@ public:
     CarrotOnAStickItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CarrotOnAStickItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -46,11 +47,9 @@ public:
     /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARROTONASTICKITEM
+public:
 #endif
     MCAPI CarrotOnAStickItem(std::string const &, int);
 
-protected:
-
-private:
 
 };

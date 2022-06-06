@@ -21,8 +21,10 @@ public:
     CommandOutputParameter() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTPARAMETER
+public:
 #endif
     MCAPI CommandOutputParameter(class CommandOutputParameter &&);
     MCAPI CommandOutputParameter(class CommandOutputParameter const &);
@@ -42,8 +44,5 @@ public:
     MCAPI CommandOutputParameter(bool);
     MCAPI ~CommandOutputParameter();
 
-protected:
-
-private:
 
 };

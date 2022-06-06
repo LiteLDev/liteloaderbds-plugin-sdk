@@ -23,6 +23,7 @@ public:
     Coral() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~Coral();
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
@@ -79,14 +80,16 @@ public:
     /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORAL
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI Coral(std::string const &, int);
 
-protected:
+//protected:
     MCAPI void checkAlive(class BlockSource &, class BlockPos const &) const;
 
-private:
+protected:
+
 
 };

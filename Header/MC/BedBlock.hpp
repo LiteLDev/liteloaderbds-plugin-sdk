@@ -23,6 +23,7 @@ public:
     BedBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BedBlock();
     /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
@@ -77,6 +78,7 @@ public:
     /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*199*/ virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDBLOCK
+public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isBounceBlock() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -89,8 +91,5 @@ public:
     MCAPI static bool isValidStandUpPosition(class BlockSource &, class BlockPos const &);
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);
 
-protected:
-
-private:
 
 };

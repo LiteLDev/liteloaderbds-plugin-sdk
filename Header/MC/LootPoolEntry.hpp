@@ -23,16 +23,15 @@ public:
     LootPoolEntry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOLENTRY
+public:
 #endif
     MCAPI void createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI int getWeight(float) const;
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const &);
 
-protected:
-
-private:
 
 };

@@ -23,6 +23,7 @@ public:
     DirectoryPackSource() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~DirectoryPackSource();
     /*1*/ virtual void __unk_vfn_1();
@@ -31,6 +32,7 @@ public:
     /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class IContentKeyProvider const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKSOURCE
+public:
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
@@ -39,8 +41,5 @@ public:
     MCAPI bool removePack(class Core::Path const &);
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const &);
 
-protected:
-
-private:
 
 };

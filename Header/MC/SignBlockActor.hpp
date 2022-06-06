@@ -25,6 +25,7 @@ public:
     SignBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SignBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -42,6 +43,7 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCKACTOR
+public:
 #endif
     MCAPI SignBlockActor(class BlockPos const &);
     MCAPI class mce::Color const & getSignTextColor() const;
@@ -52,8 +54,5 @@ public:
     MCAPI void setSignTextColor(class mce::Color const &);
     MCAPI void setType(enum SignBlockActor::SignType);
 
-protected:
-
-private:
 
 };

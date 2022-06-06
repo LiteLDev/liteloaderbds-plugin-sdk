@@ -23,6 +23,7 @@ public:
     EndPortalBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EndPortalBlock();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -71,12 +72,10 @@ public:
     /*199*/ virtual void __unk_vfn_199();
     /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALBLOCK
+public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI EndPortalBlock(std::string const &, int);
 
-protected:
-
-private:
 
 };

@@ -78,6 +78,7 @@ public:
     Actor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual bool hasComponent(class HashedString const &) const;
     /*1*/ virtual class Mob * getLastHurtByMob();
@@ -358,6 +359,7 @@ public:
     /*276*/ virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
     /*277*/ virtual void _onSizeUpdated();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOR
+public:
     MCVAPI void _doAutoAttackOnTouch(class Actor &);
     MCVAPI bool _makeFlySound() const;
     MCVAPI bool breaksFallingBlocks() const;
@@ -775,7 +777,7 @@ public:
     MCAPI static class Actor * tryGetFromEntity(class EntityContext &, bool);
     MCAPI static class Actor * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
-protected:
+//protected:
     MCAPI void _assignActorMovementProxy(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     MCAPI class ItemActor const * _drop(class ItemStack const &, bool);
     MCAPI bool _isHeadInWater() const;
@@ -791,7 +793,7 @@ protected:
     MCAPI static bool _isImmersedInWater(class Vec3 const &, class BlockSource const &, class Vec2 const &);
     MCAPI static class Block const & getBlockWhenClimbing(struct IActorMovementProxy const &);
 
-private:
+//private:
     MCAPI void _defaultInitEquipmentDropChances();
     MCAPI void _initAliasProperties();
     MCAPI void _initializeLeashRopeSystem(class Actor *);
@@ -806,9 +808,14 @@ private:
     MCAPI void _tryPlantWitherRose();
     MCAPI void _updateComposition(bool);
     MCAPI void _updateOwnerChunk();
+    MCAPI static bool _containsSneakCollisionShapes(struct IActorMovementProxy &, class AABB const &);
+
+protected:
+
+private:
     MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
     MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
     MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
-    MCAPI static bool _containsSneakCollisionShapes(struct IActorMovementProxy &, class AABB const &);
+
 
 };

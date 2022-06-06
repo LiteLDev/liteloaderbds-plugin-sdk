@@ -22,8 +22,10 @@ public:
     DirectPlayerMovementProxy() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTPLAYERMOVEMENTPROXY
+public:
     MCVAPI class Player * _getPlayer();
     MCVAPI void _onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     MCVAPI void _resetPos(bool);
@@ -99,8 +101,5 @@ public:
     MCVAPI bool wasAutoJumping() const;
 #endif
 
-protected:
-
-private:
 
 };

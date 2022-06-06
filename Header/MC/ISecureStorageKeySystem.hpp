@@ -22,12 +22,11 @@ public:
     ISecureStorageKeySystem() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISECURESTORAGEKEYSYSTEM
+public:
 #endif
 
-protected:
-
-private:
 
 };

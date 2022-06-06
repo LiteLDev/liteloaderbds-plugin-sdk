@@ -23,6 +23,7 @@ public:
     ItemFrameBlock() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemFrameBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -86,17 +87,19 @@ public:
     /*209*/ virtual void __unk_vfn_209();
     /*210*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEBLOCK
+public:
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ItemFrameBlock(std::string const &, int);
 
-protected:
-
-private:
+//private:
     MCAPI void _checkAchievements(class Player &, class BlockPos const &) const;
     MCAPI class ItemFrameBlockActor * _getItemFrame(class BlockSource &, class BlockPos const &) const;
     MCAPI void getShape(int, class AABB &, bool) const;
+
+private:
+
 
 };

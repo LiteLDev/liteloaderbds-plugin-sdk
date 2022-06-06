@@ -22,8 +22,10 @@ public:
     ScriptWorld() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWORLD
+public:
 #endif
     MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const &, class ServerLevel *);
     MCAPI void _playOrQueueMusic(std::string const &, class std::optional<struct ScriptMusicOptions>, enum LevelEvent);
@@ -37,8 +39,5 @@ public:
     MCAPI ~ScriptWorld();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorld> bind(struct Scripting::Version);
 
-protected:
-
-private:
 
 };

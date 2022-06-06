@@ -22,6 +22,7 @@ public:
     LevelSoundEventPacketV2(class LevelSoundEventPacketV2 const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~LevelSoundEventPacketV2();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,11 +30,9 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTPACKETV2
+public:
 #endif
     MCAPI LevelSoundEventPacketV2();
 
-protected:
-
-private:
 
 };

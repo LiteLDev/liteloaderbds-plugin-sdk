@@ -24,6 +24,7 @@ public:
     ChemistryAuxDataBlockItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ChemistryAuxDataBlockItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -41,10 +42,8 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*101*/ virtual void fixupCommon(class ItemStackBase &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYAUXDATABLOCKITEM
+public:
 #endif
 
-protected:
-
-private:
 
 };

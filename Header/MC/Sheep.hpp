@@ -24,6 +24,7 @@ public:
     Sheep() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~Sheep();
     /*40*/ virtual void __unk_vfn_40();
@@ -55,14 +56,16 @@ public:
     /*354*/ virtual void newServerAiStep();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHEEP
+public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Sheep(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool isGrazing() const;
 
-protected:
+//private:
 
 private:
     MCAPI static int const EAT_ANIMATION_TICKS;
+
 
 };

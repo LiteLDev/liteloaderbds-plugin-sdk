@@ -23,6 +23,7 @@ public:
     CraftingContainer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CraftingContainer();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
@@ -36,12 +37,10 @@ public:
     /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void setContainerChanged(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINER
+public:
 #endif
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const & getItem(int, int) const;
 
-protected:
-
-private:
 
 };

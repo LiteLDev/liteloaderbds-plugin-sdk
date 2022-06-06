@@ -22,8 +22,10 @@ public:
     BurnOdds() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURNODDS
+public:
 #endif
     MCAPI static class BurnOdds const EASY;
     MCAPI static class BurnOdds const HARD;
@@ -31,8 +33,5 @@ public:
     MCAPI static class BurnOdds const MEDIUM;
     MCAPI static class BurnOdds const NEVER;
 
-protected:
-
-private:
 
 };

@@ -24,6 +24,7 @@ public:
     BannerItem() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BannerItem();
     /*5*/ virtual void __unk_vfn_5();
@@ -45,12 +46,10 @@ public:
     /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERITEM
+public:
 #endif
     MCAPI BannerItem(std::string const &, int);
     MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
 
-protected:
-
-private:
 
 };

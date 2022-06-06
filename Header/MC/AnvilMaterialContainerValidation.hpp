@@ -23,6 +23,7 @@ public:
     AnvilMaterialContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AnvilMaterialContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -35,10 +36,8 @@ public:
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILMATERIALCONTAINERVALIDATION
+public:
 #endif
 
-protected:
-
-private:
 
 };

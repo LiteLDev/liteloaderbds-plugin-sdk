@@ -22,6 +22,7 @@ public:
     StructureTemplateDataResponsePacket(class StructureTemplateDataResponsePacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~StructureTemplateDataResponsePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
@@ -29,13 +30,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATARESPONSEPACKET
+public:
 #endif
     MCAPI StructureTemplateDataResponsePacket(std::string const &, std::unique_ptr<class CompoundTag>, enum StructureTemplateResponseType);
     MCAPI StructureTemplateDataResponsePacket();
     MCAPI class StructureTemplateDataResponsePacket & operator=(class StructureTemplateDataResponsePacket &&);
 
-protected:
-
-private:
 
 };

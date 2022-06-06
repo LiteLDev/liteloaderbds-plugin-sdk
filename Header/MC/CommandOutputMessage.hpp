@@ -21,8 +21,10 @@ public:
     CommandOutputMessage() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTMESSAGE
+public:
 #endif
     MCAPI CommandOutputMessage(class CommandOutputMessage &&);
     MCAPI CommandOutputMessage(class CommandOutputMessage const &);
@@ -33,8 +35,5 @@ public:
     MCAPI std::string getUserMessage() const;
     MCAPI ~CommandOutputMessage();
 
-protected:
-
-private:
 
 };

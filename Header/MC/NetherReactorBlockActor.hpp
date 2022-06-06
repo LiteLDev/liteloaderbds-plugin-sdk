@@ -23,6 +23,7 @@ public:
     NetherReactorBlockActor() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NetherReactorBlockActor();
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -35,11 +36,9 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERREACTORBLOCKACTOR
+public:
 #endif
     MCAPI NetherReactorBlockActor(class BlockPos const &);
 
-protected:
-
-private:
 
 };

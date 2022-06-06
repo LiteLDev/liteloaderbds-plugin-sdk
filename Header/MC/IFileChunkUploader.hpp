@@ -24,6 +24,7 @@ public:
     IFileChunkUploader(class IFileChunkUploader const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IFileChunkUploader();
     /*1*/ virtual void __unk_vfn_1();
@@ -38,13 +39,11 @@ public:
     /*10*/ virtual float getUploadProgress(struct FileInfo const &) const = 0;
     /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
+public:
     MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
     MCVAPI void update();
 #endif
     MCAPI IFileChunkUploader();
 
-protected:
-
-private:
 
 };

@@ -28,8 +28,10 @@ public:
     BiomeRegistry(class BiomeRegistry const &) = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEREGISTRY
+public:
     MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
 #endif
@@ -44,13 +46,14 @@ public:
     MCAPI class Biome & registerBiome(std::string const &);
     MCAPI void registrationFinished();
 
-protected:
-
-private:
+//private:
     MCAPI bool _addToInheritanceTree(class InheritanceTree<struct BiomeRegistry::BiomeParent> &, std::string const &, class Json::Value &&, class SemVersion const &);
     MCAPI class InheritanceTree<struct BiomeRegistry::BiomeParent> _buildInheritanceTree(class ResourcePackManager &);
     MCAPI void _initTagRegistry();
     MCAPI bool _loadSingleBiome(class ResourcePackManager &, class InheritanceTree<struct BiomeRegistry::BiomeParent> &, std::string const &);
     MCAPI void _mergeDataInheritance(class Json::Value &, class SemVersion &, class InheritanceTree<struct BiomeRegistry::BiomeParent> &, struct BiomeRegistry::BiomeParent const &);
+
+private:
+
 
 };

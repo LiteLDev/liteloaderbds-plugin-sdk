@@ -23,6 +23,7 @@ public:
     FurnaceFuelContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~FurnaceFuelContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -33,11 +34,9 @@ public:
     /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEFUELCONTAINERVALIDATION
+public:
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
 #endif
 
-protected:
-
-private:
 
 };

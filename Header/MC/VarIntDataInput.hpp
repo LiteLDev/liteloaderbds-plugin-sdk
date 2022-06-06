@@ -22,6 +22,7 @@ public:
     VarIntDataInput() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~VarIntDataInput();
     /*1*/ virtual void __unk_vfn_1();
@@ -35,12 +36,10 @@ public:
     /*9*/ virtual bool readBytes(void *, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAINPUT
+public:
     MCVAPI std::string readLongString();
     MCVAPI std::string readString();
 #endif
 
-protected:
-
-private:
 
 };

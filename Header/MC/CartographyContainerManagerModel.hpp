@@ -23,6 +23,7 @@ public:
     CartographyContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~CartographyContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -33,11 +34,9 @@ public:
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYCONTAINERMANAGERMODEL
+public:
 #endif
     MCAPI CartographyContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
-protected:
-
-private:
 
 };

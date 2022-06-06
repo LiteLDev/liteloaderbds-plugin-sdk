@@ -22,6 +22,7 @@ public:
     Tadpole() = delete;
 #endif
 
+
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Tadpole();
@@ -50,11 +51,9 @@ public:
     /*345*/ virtual void __unk_vfn_345();
     /*359*/ virtual void __unk_vfn_359();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TADPOLE
+public:
 #endif
     MCAPI Tadpole(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

@@ -22,6 +22,7 @@ public:
     IRandom() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~IRandom();
     /*1*/ virtual void __unk_vfn_1() = 0;
@@ -35,10 +36,8 @@ public:
     /*9*/ virtual void __unk_vfn_9() = 0;
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRANDOM
+public:
 #endif
 
-protected:
-
-private:
 
 };

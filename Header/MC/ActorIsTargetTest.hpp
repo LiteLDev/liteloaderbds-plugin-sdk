@@ -24,15 +24,14 @@ public:
     ActorIsTargetTest() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorIsTargetTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISTARGETTEST
+public:
 #endif
 
-protected:
-
-private:
 
 };

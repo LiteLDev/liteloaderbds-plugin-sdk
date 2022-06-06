@@ -22,12 +22,11 @@ public:
     IUIEventTelemetry() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUIEVENTTELEMETRY
+public:
 #endif
 
-protected:
-
-private:
 
 };

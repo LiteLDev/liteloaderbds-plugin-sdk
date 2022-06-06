@@ -24,6 +24,7 @@ public:
     CaveSpider() = delete;
 #endif
 
+
 public:
     /*14*/ virtual ~CaveSpider();
     /*40*/ virtual void __unk_vfn_40();
@@ -54,11 +55,9 @@ public:
     /*362*/ virtual float getModelScale() const;
     /*363*/ virtual enum Spider::Type getSpiderType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVESPIDER
+public:
 #endif
     MCAPI CaveSpider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
-protected:
-
-private:
 
 };

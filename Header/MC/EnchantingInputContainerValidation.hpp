@@ -23,6 +23,7 @@ public:
     EnchantingInputContainerValidation() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnchantingInputContainerValidation();
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
@@ -34,11 +35,9 @@ public:
     /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGINPUTCONTAINERVALIDATION
+public:
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
 
-protected:
-
-private:
 
 };

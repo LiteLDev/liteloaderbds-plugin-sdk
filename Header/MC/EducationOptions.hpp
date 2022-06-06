@@ -22,8 +22,10 @@ public:
     EducationOptions() = delete;
 #endif
 
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONOPTIONS
+public:
     MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager &);
     MCVAPI ~EducationOptions();
 #endif
@@ -35,10 +37,11 @@ public:
     MCAPI static bool isCodeBuilderEnabled();
     MCAPI static bool isEducationEnabled();
 
-protected:
+//private:
+    MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
 
 private:
     MCAPI static class EducationOptions DEFAULT_OPTION;
-    MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
+
 
 };
