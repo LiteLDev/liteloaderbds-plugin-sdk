@@ -17,21 +17,21 @@ class WeakEntityRef {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
-    class WeakEntityRef& operator=(class WeakEntityRef const &) = delete;
-    WeakEntityRef(class WeakEntityRef const &) = delete;
+    class WeakEntityRef& operator=(class WeakEntityRef const &) = default;
+    WeakEntityRef(class WeakEntityRef const&) = default;
     WeakEntityRef() = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKENTITYREF
-public:
 #endif
     MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     MCAPI class WeakEntityRef & operator=(class WeakEntityRef &&);
     MCAPI bool operator==(class WeakEntityRef) const;
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     MCAPI ~WeakEntityRef();
+
 
 
 };
