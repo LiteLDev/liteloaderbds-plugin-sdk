@@ -2,7 +2,11 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
+template <>
+class WeakRefT<struct EntityRefTraits>
+{
+    char filler[24];
+};
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
