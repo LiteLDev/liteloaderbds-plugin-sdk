@@ -20,12 +20,11 @@ public:
     PlayerRespawnRandomizer() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNRANDOMIZER
-public:
-#endif
     MCAPI ~PlayerRespawnRandomizer();
 
+protected:
+
+private:
 
 };

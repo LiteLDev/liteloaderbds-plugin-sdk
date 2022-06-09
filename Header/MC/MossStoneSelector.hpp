@@ -22,13 +22,19 @@ public:
     MossStoneSelector() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MossStoneSelector();
     /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOSSSTONESELECTOR
-public:
-#endif
+    /*
+    inline  ~MossStoneSelector(){
+         (MossStoneSelector::*rv)();
+        *((void**)&rv) = dlsym("??1MossStoneSelector@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

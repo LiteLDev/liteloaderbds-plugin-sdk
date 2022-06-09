@@ -23,13 +23,19 @@ public:
     ScriptLavaMovementComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptLavaMovementComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTLAVAMOVEMENTCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptLavaMovementComponent(){
+         (ScriptLavaMovementComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptLavaMovementComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptLavaMovementComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

@@ -28,11 +28,7 @@ public:
     FeatureTerrainAdjustments() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETERRAINADJUSTMENTS
-public:
-#endif
     MCAPI struct FeatureTerrainAdjustments::Descriptions at(class ChunkPos const &);
     MCAPI void garbageCollectDescriptions();
     MCAPI class std::shared_ptr<bool> setBeardAndShaver(class BoundingBox const &, int, float, float);
@@ -43,11 +39,10 @@ public:
     MCAPI static struct BeardKernel & getBeardKernel();
     MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const &);
 
-//private:
-    MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
+protected:
 
 private:
+    MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
     MCAPI static struct BeardKernel mBeardKernel;
-
 
 };

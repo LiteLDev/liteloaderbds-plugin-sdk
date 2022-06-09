@@ -21,12 +21,8 @@ public:
     ScriptSculkSpreader() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptSculkSpreader();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSCULKSPREADER
-public:
-#endif
     MCAPI void addCursorsWithOffset(class BlockPos const &, int);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class BlockPos>> getCursorPosition(int) const;
     MCAPI class Scripting::Result<int> getMaxCharge() const;
@@ -35,5 +31,8 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptSculkSpreader> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptSculkSpreader> getHandle(class BlockSource &, class BlockPos const &, class Scripting::WeakLifetimeScope const &);
 
+protected:
+
+private:
 
 };

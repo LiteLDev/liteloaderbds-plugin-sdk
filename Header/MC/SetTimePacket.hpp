@@ -22,18 +22,24 @@ public:
     SetTimePacket(class SetTimePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetTimePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTIMEPACKET
-public:
-#endif
+    /*
+    inline  ~SetTimePacket(){
+         (SetTimePacket::*rv)();
+        *((void**)&rv) = dlsym("??1SetTimePacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SetTimePacket(int);
     MCAPI SetTimePacket();
 
+protected:
+
+private:
 
 };

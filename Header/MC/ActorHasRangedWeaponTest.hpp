@@ -24,14 +24,20 @@ public:
     ActorHasRangedWeaponTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorHasRangedWeaponTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASRANGEDWEAPONTEST
-public:
-#endif
+    /*
+    inline  ~ActorHasRangedWeaponTest(){
+         (ActorHasRangedWeaponTest::*rv)();
+        *((void**)&rv) = dlsym("??1ActorHasRangedWeaponTest@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

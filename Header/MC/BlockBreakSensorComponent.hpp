@@ -21,11 +21,7 @@ public:
     BlockBreakSensorComponent(class BlockBreakSensorComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORCOMPONENT
-public:
-#endif
     MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent &&);
     MCAPI BlockBreakSensorComponent();
     MCAPI void initialize(class Actor &);
@@ -33,5 +29,8 @@ public:
     MCAPI void updateSensorPos(class Vec3 const &);
     MCAPI ~BlockBreakSensorComponent();
 
+protected:
+
+private:
 
 };

@@ -21,12 +21,18 @@ public:
     ScriptPushThroughComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptPushThroughComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPUSHTHROUGHCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptPushThroughComponent(){
+         (ScriptPushThroughComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptPushThroughComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

@@ -23,15 +23,14 @@ public:
     HungerAttributeDelegate() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HungerAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUNGERATTRIBUTEDELEGATE
-public:
-#endif
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);
 
+protected:
+
+private:
 
 };

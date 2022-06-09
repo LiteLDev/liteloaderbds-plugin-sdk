@@ -22,12 +22,19 @@ public:
     JsonSaver() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONSAVER
-public:
-#endif
+    /*0*/ virtual ~JsonSaver();
+    /*
+    inline  ~JsonSaver(){
+         (JsonSaver::*rv)();
+        *((void**)&rv) = dlsym("??1JsonSaver@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI std::string toString();
 
+protected:
+
+private:
 
 };

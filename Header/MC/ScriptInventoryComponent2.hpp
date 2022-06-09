@@ -23,12 +23,15 @@ public:
     ScriptInventoryComponent2() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptInventoryComponent2();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINVENTORYCOMPONENT2
-public:
-#endif
+    /*
+    inline  ~ScriptInventoryComponent2(){
+         (ScriptInventoryComponent2::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptInventoryComponent2@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
     MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
     MCAPI class Scripting::Result<std::string> getContainerType() const;
@@ -39,5 +42,8 @@ public:
     MCAPI class ScriptInventoryComponent2 & operator=(class ScriptInventoryComponent2 &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponent2> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

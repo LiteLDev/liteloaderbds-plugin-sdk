@@ -22,12 +22,19 @@ public:
     ScoreboardEventCoordinator() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTCOORDINATOR
-public:
-#endif
+    /*0*/ virtual ~ScoreboardEventCoordinator();
+    /*
+    inline  ~ScoreboardEventCoordinator(){
+         (ScoreboardEventCoordinator::*rv)();
+        *((void**)&rv) = dlsym("??1ScoreboardEventCoordinator@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
 
+protected:
+
+private:
 
 };

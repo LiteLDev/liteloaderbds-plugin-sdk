@@ -23,13 +23,19 @@ public:
     ScriptNavigationFloatComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptNavigationFloatComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONFLOATCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptNavigationFloatComponent(){
+         (ScriptNavigationFloatComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptNavigationFloatComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationFloatComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

@@ -21,13 +21,19 @@ public:
     ScriptIsHiddenWhenInvisibleComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsHiddenWhenInvisibleComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISHIDDENWHENINVISIBLECOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptIsHiddenWhenInvisibleComponent(){
+         (ScriptIsHiddenWhenInvisibleComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsHiddenWhenInvisibleComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

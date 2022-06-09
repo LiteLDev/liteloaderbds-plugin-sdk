@@ -23,14 +23,20 @@ public:
     ScriptMovementBasicComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptMovementBasicComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTBASICCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptMovementBasicComponent(){
+         (ScriptMovementBasicComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementBasicComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<float> getMaxTurn() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementBasicComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

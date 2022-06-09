@@ -22,11 +22,18 @@ public:
     UriListener() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_URILISTENER
-public:
-#endif
+    /*0*/ virtual ~UriListener();
+    /*
+    inline  ~UriListener(){
+         (UriListener::*rv)();
+        *((void**)&rv) = dlsym("??1UriListener@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

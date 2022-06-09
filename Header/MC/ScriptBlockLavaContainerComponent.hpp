@@ -22,17 +22,23 @@ public:
     ScriptBlockLavaContainerComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptBlockLavaContainerComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKLAVACONTAINERCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptBlockLavaContainerComponent(){
+         (ScriptBlockLavaContainerComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockLavaContainerComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent const &);
     MCAPI ScriptBlockLavaContainerComponent(class ScriptBlockLavaContainerComponent &&);
     MCAPI class ScriptBlockLavaContainerComponent & operator=(class ScriptBlockLavaContainerComponent &&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockLavaContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockLavaContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
+protected:
+
+private:
 
 };

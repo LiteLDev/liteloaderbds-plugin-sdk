@@ -22,11 +22,7 @@ public:
     DyeColorUtil() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYECOLORUTIL
-public:
-#endif
     MCAPI static class std::array<short, 16> const COLOR_TO_AUX;
     MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
     MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;
@@ -35,5 +31,8 @@ public:
     MCAPI static enum ItemColor getRandomItemColor(class Random &);
     MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
 
+protected:
+
+private:
 
 };

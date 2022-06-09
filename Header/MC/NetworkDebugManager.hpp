@@ -22,13 +22,13 @@ public:
     NetworkDebugManager() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKDEBUGMANAGER
-public:
-#endif
+    /*0*/ virtual ~NetworkDebugManager();
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
     MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
 
+protected:
+
+private:
 
 };

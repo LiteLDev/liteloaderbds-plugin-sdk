@@ -21,11 +21,7 @@ public:
     PushableComponent(class PushableComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLECOMPONENT
-public:
-#endif
     MCAPI PushableComponent();
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void initFromDefinition(class Actor &, struct PushableDescription &);
@@ -34,11 +30,10 @@ public:
     MCAPI void push(class Actor &, class Actor &, bool);
     MCAPI void push(class Actor &, class Vec3 const &);
 
-//private:
-    MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorBoat(class Actor &, class Actor &, bool);
-    MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorMinecart(class Actor &, class Actor &, bool);
+protected:
 
 private:
-
+    MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorBoat(class Actor &, class Actor &, bool);
+    MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorMinecart(class Actor &, class Actor &, bool);
 
 };

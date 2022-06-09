@@ -22,7 +22,6 @@ public:
     Recipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Recipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const = 0;
@@ -40,9 +39,13 @@ public:
     /*13*/ virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &, class CompoundTag const *) const;
     /*14*/ virtual bool itemsMatch(class ItemDescriptor const &, int, int, class CompoundTag const *) const;
     /*15*/ virtual void loadResultList(class BlockPalette const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPE
-public:
-#endif
+    /*
+    inline  ~Recipe(){
+         (Recipe::*rv)();
+        *((void**)&rv) = dlsym("??1Recipe@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI int countQuantityOfIngredient(class ItemInstance const &) const;
     MCAPI int getHeight() const;
     MCAPI std::vector<class RecipeIngredient> const & getIngredients() const;
@@ -54,10 +57,9 @@ public:
     MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const &);
 
-//protected:
+protected:
     MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const &);
 
-protected:
-
+private:
 
 };

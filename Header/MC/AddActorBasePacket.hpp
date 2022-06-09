@@ -20,12 +20,17 @@ public:
     AddActorBasePacket() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
-public:
-    MCVAPI ~AddActorBasePacket();
-#endif
+    /*
+    inline  ~AddActorBasePacket(){
+         (AddActorBasePacket::*rv)();
+        *((void**)&rv) = dlsym("??1AddActorBasePacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

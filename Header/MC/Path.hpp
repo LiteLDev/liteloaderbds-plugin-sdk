@@ -28,11 +28,7 @@ public:
     Path(class Path const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATH
-public:
-#endif
     MCAPI Path();
     MCAPI class Vec3 currentPos(class Actor const *) const;
     MCAPI class BlockPos const & currentPos() const;
@@ -54,10 +50,9 @@ public:
     MCAPI void setSize(unsigned __int64);
     MCAPI ~Path();
 
-//private:
-    MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum PathCompletionType);
+protected:
 
 private:
-
+    MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum PathCompletionType);
 
 };

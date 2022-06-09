@@ -28,19 +28,25 @@ public:
     InventoryTransactionPacket(class InventoryTransactionPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~InventoryTransactionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONPACKET
-public:
-#endif
+    /*
+    inline  ~InventoryTransactionPacket(){
+         (InventoryTransactionPacket::*rv)();
+        *((void**)&rv) = dlsym("??1InventoryTransactionPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
     MCAPI InventoryTransactionPacket();
     MCAPI void postLoadItems(class BlockPalette &, bool) const;
 
+protected:
+
+private:
 
 };

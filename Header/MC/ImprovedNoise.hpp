@@ -22,20 +22,15 @@ public:
     ImprovedNoise() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPROVEDNOISE
-public:
-#endif
     MCAPI ImprovedNoise(class IRandom &, struct YBlendingBugSettings);
     MCAPI float _getValue(class Vec3 const &) const;
     MCAPI void _readArea(float *, class Vec3 const &, int, int, int, class Vec3 const &, float) const;
 
-//private:
-    MCAPI void _blendCubeCorners(class Vec3 const &, int, int, int, float, float &, float &, float &, float &) const;
-    MCAPI void _init(class Vec3 const &, class IRandom &, struct YBlendingBugSettings);
+protected:
 
 private:
-
+    MCAPI void _blendCubeCorners(class Vec3 const &, int, int, int, float, float &, float &, float &, float &) const;
+    MCAPI void _init(class Vec3 const &, class IRandom &, struct YBlendingBugSettings);
 
 };

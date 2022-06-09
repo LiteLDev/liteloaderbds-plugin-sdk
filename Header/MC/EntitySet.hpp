@@ -20,11 +20,7 @@ public:
     class EntitySet& operator=(class EntitySet const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSET
-public:
-#endif
     MCAPI EntitySet(class EntitySet &&);
     MCAPI EntitySet(class EntitySet const &);
     MCAPI EntitySet();
@@ -33,5 +29,8 @@ public:
     MCAPI class WeakEntityRef find(class EntityContext const &) const;
     MCAPI class EntitySet & operator=(class EntitySet &&);
 
+protected:
+
+private:
 
 };

@@ -22,20 +22,26 @@ public:
     SwimIdleGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SwimIdleGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void tick();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMIDLEGOAL
-public:
-#endif
+    /*
+    inline void tick(){
+        void (SwimIdleGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@SwimIdleGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SwimIdleGoal(class Mob &);
 
+protected:
+
+private:
 
 };

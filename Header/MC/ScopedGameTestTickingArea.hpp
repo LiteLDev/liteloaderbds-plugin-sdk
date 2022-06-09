@@ -22,21 +22,16 @@ public:
     ScopedGameTestTickingArea() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDGAMETESTTICKINGAREA
-public:
-#endif
     MCAPI ScopedGameTestTickingArea(class Dimension &, class BoundingBox const &, std::string const &);
     MCAPI bool areChunksLoaded();
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea() const;
     MCAPI ~ScopedGameTestTickingArea();
     MCAPI static std::string const TICKING_AREA_PREFIX;
 
-//private:
-    MCAPI void _removeTickingArea();
+protected:
 
 private:
-
+    MCAPI void _removeTickingArea();
 
 };

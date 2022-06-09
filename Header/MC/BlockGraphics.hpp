@@ -22,11 +22,7 @@ public:
     BlockGraphics() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGRAPHICS
-public:
-#endif
     MCAPI enum BlockShape getBlockShape() const;
     MCAPI struct TextureUVCoordinateSet const & getIconTexture(int) const;
     MCAPI bool isFull() const;
@@ -40,10 +36,6 @@ public:
     MCAPI static std::vector<std::unique_ptr<class BlockGraphics>> mOwnedBlocks;
     MCAPI static void setAtlasItemManager(class std::shared_ptr<class AtlasItemManager>);
 
-//protected:
-
-//private:
-
 protected:
     MCAPI static class std::weak_ptr<class AtlasItemManager> mTerrainTextureAtlas;
 
@@ -53,6 +45,5 @@ private:
     MCAPI static bool mInitialized;
     MCAPI static class std::map<std::string, std::unique_ptr<struct BlockGeometry::Model>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<struct BlockGeometry::Model>>>> mModels;
     MCAPI static class std::map<std::string, std::unique_ptr<class BlockGeometry::TessellatedModel>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class BlockGeometry::TessellatedModel>>>> mTessellatedModels;
-
 
 };

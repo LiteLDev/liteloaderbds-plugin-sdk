@@ -22,14 +22,14 @@ public:
     DefendVillageTargetDefinition(class DefendVillageTargetDefinition const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDVILLAGETARGETDEFINITION
-public:
-#endif
+    /*0*/ virtual ~DefendVillageTargetDefinition();
     MCAPI DefendVillageTargetDefinition();
     MCAPI void initialize(class EntityContext &, class DefendVillageTargetGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DefendVillageTargetDefinition>> &);
 
+protected:
+
+private:
 
 };

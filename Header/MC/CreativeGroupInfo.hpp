@@ -21,11 +21,15 @@ public:
     CreativeGroupInfo() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEGROUPINFO
-public:
-#endif
+    /*0*/ virtual ~CreativeGroupInfo();
+    /*
+    inline  ~CreativeGroupInfo(){
+         (CreativeGroupInfo::*rv)();
+        *((void**)&rv) = dlsym("??1CreativeGroupInfo@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const &);
     MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
     MCAPI void addCreativeItem(class CreativeItemEntry *);
@@ -33,5 +37,8 @@ public:
     MCAPI unsigned int getIndex() const;
     MCAPI std::string const getName() const;
 
+protected:
+
+private:
 
 };

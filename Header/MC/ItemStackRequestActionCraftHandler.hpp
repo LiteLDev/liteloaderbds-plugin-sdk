@@ -22,11 +22,8 @@ public:
     ItemStackRequestActionCraftHandler() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTHANDLER
-public:
-#endif
+    /*0*/ virtual ~ItemStackRequestActionCraftHandler();
     MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler &, class Player &);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum ContainerEnumName);
     MCAPI enum ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, unsigned char);
@@ -44,11 +41,10 @@ public:
     MCAPI void postRequest(bool);
     MCAPI enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
 
-//private:
-    MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
-    MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
+protected:
 
 private:
-
+    MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
+    MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
 
 };

@@ -64,20 +64,26 @@ public:
     PlayerActionPacket(class PlayerActionPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayerActionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONPACKET
-public:
-#endif
+    /*
+    inline  ~PlayerActionPacket(){
+         (PlayerActionPacket::*rv)();
+        *((void**)&rv) = dlsym("??1PlayerActionPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
     MCAPI PlayerActionPacket();
 
+protected:
+
+private:
 
 };

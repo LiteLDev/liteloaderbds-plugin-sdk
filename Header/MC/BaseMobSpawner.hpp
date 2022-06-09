@@ -22,25 +22,27 @@ public:
     BaseMobSpawner() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BaseMobSpawner();
     /*1*/ virtual void tick(class BlockSource &);
     /*2*/ virtual void load(class CompoundTag const &);
     /*3*/ virtual void save(class CompoundTag &);
     /*4*/ virtual class BlockPos const & getPos() = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOBSPAWNER
-public:
-#endif
+    /*
+    inline  ~BaseMobSpawner(){
+         (BaseMobSpawner::*rv)();
+        *((void**)&rv) = dlsym("??1BaseMobSpawner@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     MCAPI class Actor * createAndAddDisplayEntity(class BlockSource &);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
     MCAPI class Mob * tryGetOrCreateDisplayEntity(class BlockSource &);
 
-//protected:
+protected:
     MCAPI void _delay(class BlockSource &);
 
-protected:
-
+private:
 
 };

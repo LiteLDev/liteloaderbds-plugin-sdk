@@ -23,12 +23,11 @@ public:
     PackSettingsJsonValidator() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSJSONVALIDATOR
-public:
-#endif
     MCAPI static class JsonValidator::Property getValidator();
 
+protected:
+
+private:
 
 };

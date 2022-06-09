@@ -23,15 +23,19 @@ public:
     GenericMoveControlDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~GenericMoveControlDescription();
-    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROLDESCRIPTION
-public:
-#endif
+    /*
+    inline  ~GenericMoveControlDescription(){
+         (GenericMoveControlDescription::*rv)();
+        *((void**)&rv) = dlsym("??1GenericMoveControlDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

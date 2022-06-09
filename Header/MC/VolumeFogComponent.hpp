@@ -20,12 +20,11 @@ public:
     VolumeFogComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEFOGCOMPONENT
-public:
-#endif
     MCAPI ~VolumeFogComponent();
 
+protected:
+
+private:
 
 };

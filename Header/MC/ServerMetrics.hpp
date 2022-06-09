@@ -22,11 +22,18 @@ public:
     ServerMetrics() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMETRICS
-public:
-#endif
+    /*0*/ virtual ~ServerMetrics();
+    /*
+    inline  ~ServerMetrics(){
+         (ServerMetrics::*rv)();
+        *((void**)&rv) = dlsym("??1ServerMetrics@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

@@ -22,11 +22,10 @@ public:
     DirectMobMovementProxy() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTMOBMOVEMENTPROXY
-public:
-#endif
 
+protected:
+
+private:
 
 };

@@ -22,7 +22,6 @@ public:
     RiverFollowingGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RiverFollowingGoal();
     /*1*/ virtual bool canUse();
@@ -32,15 +31,11 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIVERFOLLOWINGGOAL
-public:
-#endif
     MCAPI RiverFollowingGoal(class Mob &, float, float);
 
-//protected:
+protected:
     MCAPI void determineSteerDirection();
 
-protected:
-
+private:
 
 };

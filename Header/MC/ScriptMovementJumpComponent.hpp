@@ -23,13 +23,19 @@ public:
     ScriptMovementJumpComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptMovementJumpComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTJUMPCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptMovementJumpComponent(){
+         (ScriptMovementJumpComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementJumpComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementJumpComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

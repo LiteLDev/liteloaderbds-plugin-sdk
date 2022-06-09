@@ -22,17 +22,18 @@ public:
     ScatteredFeaturePiece() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
-public:
-    MCVAPI ~ScatteredFeaturePiece();
-#endif
-
-//protected:
-    MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
+    /*
+    inline  ~ScatteredFeaturePiece(){
+         (ScatteredFeaturePiece::*rv)();
+        *((void**)&rv) = dlsym("??1ScatteredFeaturePiece@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
+    MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
 
+private:
 
 };

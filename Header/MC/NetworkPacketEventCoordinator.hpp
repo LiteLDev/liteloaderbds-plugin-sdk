@@ -22,12 +22,12 @@ public:
     NetworkPacketEventCoordinator() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPACKETEVENTCOORDINATOR
-public:
-#endif
+    /*0*/ virtual ~NetworkPacketEventCoordinator();
     MCAPI void sendPacketReceivedFrom(class PacketHeader const &, class Packet const &);
 
+protected:
+
+private:
 
 };

@@ -22,11 +22,18 @@ public:
     BasicSaver() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICSAVER
-public:
-#endif
+    /*0*/ virtual ~BasicSaver();
+    /*
+    inline  ~BasicSaver(){
+         (BasicSaver::*rv)();
+        *((void**)&rv) = dlsym("??1BasicSaver@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

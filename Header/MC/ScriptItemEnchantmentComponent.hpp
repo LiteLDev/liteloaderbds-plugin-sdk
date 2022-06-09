@@ -19,12 +19,15 @@ public:
     ScriptItemEnchantmentComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptItemEnchantmentComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMENCHANTMENTCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptItemEnchantmentComponent(){
+         (ScriptItemEnchantmentComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemEnchantmentComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptItemEnchantmentComponent(class ScriptItemEnchantmentComponent const &);
     MCAPI ScriptItemEnchantmentComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<class ScriptItemEnchantments> getEnchantments() const;
@@ -34,5 +37,8 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemEnchantmentComponent> bind(struct Scripting::Version);
     MCAPI static std::string getTypeName();
 
+protected:
+
+private:
 
 };

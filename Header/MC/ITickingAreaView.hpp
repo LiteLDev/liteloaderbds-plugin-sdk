@@ -22,11 +22,18 @@ public:
     ITickingAreaView() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREAVIEW
-public:
-#endif
+    /*0*/ virtual ~ITickingAreaView();
+    /*
+    inline  ~ITickingAreaView(){
+         (ITickingAreaView::*rv)();
+        *((void**)&rv) = dlsym("??1ITickingAreaView@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

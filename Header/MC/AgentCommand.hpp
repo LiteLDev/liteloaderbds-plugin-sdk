@@ -23,16 +23,14 @@ public:
     AgentCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AgentCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMAND
-public:
-#endif
     MCAPI static void setup(class CommandRegistry &);
 
-//private:
+protected:
+
+private:
     MCAPI void createAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void createAgentOutputSuccess(class CommandOutput &, bool) const;
     MCAPI void directionCommand(class CommandOrigin const &, class CommandOutput &) const;
@@ -42,8 +40,5 @@ public:
     MCAPI void setAgentOwner(class Agent &, class Player &) const;
     MCAPI void setItem(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void tpAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
-
-private:
-
 
 };

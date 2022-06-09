@@ -37,7 +37,6 @@ public:
     NetworkPeer() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetworkPeer();
     /*1*/ virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility) = 0;
@@ -45,9 +44,16 @@ public:
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)> &&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPEER
-public:
-#endif
+    /*
+    inline  ~NetworkPeer(){
+         (NetworkPeer::*rv)();
+        *((void**)&rv) = dlsym("??1NetworkPeer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

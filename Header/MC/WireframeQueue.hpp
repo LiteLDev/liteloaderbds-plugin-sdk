@@ -20,12 +20,11 @@ public:
     WireframeQueue() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WIREFRAMEQUEUE
-public:
-#endif
     MCAPI ~WireframeQueue();
 
+protected:
+
+private:
 
 };

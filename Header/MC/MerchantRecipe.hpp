@@ -41,11 +41,7 @@ public:
     MerchantRecipe() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPE
-public:
-#endif
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &);
     MCAPI MerchantRecipe(class CompoundTag const *);
@@ -84,5 +80,8 @@ public:
     MCAPI bool shouldRewardExp() const;
     MCAPI ~MerchantRecipe();
 
+protected:
+
+private:
 
 };

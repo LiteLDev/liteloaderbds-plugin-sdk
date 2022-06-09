@@ -21,11 +21,15 @@ public:
     StructureTemplateData(class StructureTemplateData const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATA
-public:
-#endif
+    /*0*/ virtual ~StructureTemplateData();
+    /*
+    inline  ~StructureTemplateData(){
+         (StructureTemplateData::*rv)();
+        *((void**)&rv) = dlsym("??1StructureTemplateData@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StructureTemplateData();
     MCAPI void addEntityData(std::unique_ptr<class CompoundTag>);
     MCAPI void addPalette(std::string const &, class StructureBlockPalette);
@@ -44,7 +48,7 @@ public:
     MCAPI void setStructureWorldOrigin(class BlockPos const &);
     MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
-//protected:
+protected:
     MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const &);
     MCAPI enum StructureLoadResult _parseEntities(class CompoundTag const &);
     MCAPI enum StructureLoadResult _parseFormatVersion(class CompoundTag const &);
@@ -54,7 +58,6 @@ public:
     MCAPI void _savePalettes(class CompoundTag &) const;
     MCAPI void _saveStructureTag(class CompoundTag &) const;
 
-protected:
-
+private:
 
 };

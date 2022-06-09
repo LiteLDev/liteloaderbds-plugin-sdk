@@ -21,13 +21,12 @@ public:
     TrustingComponent(class TrustingComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTINGCOMPONENT
-public:
-#endif
     MCAPI TrustingComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
+protected:
+
+private:
 
 };

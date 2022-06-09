@@ -23,13 +23,19 @@ public:
     ScriptNavigationClimbComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptNavigationClimbComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTNAVIGATIONCLIMBCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptNavigationClimbComponent(){
+         (ScriptNavigationClimbComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptNavigationClimbComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationClimbComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

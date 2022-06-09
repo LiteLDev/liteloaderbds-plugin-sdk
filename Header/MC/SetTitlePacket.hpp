@@ -24,21 +24,27 @@ public:
     SetTitlePacket(class SetTitlePacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetTitlePacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTITLEPACKET
-public:
-#endif
+    /*
+    inline  ~SetTitlePacket(){
+         (SetTitlePacket::*rv)();
+        *((void**)&rv) = dlsym("??1SetTitlePacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SetTitlePacket(int, int, int);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
     MCAPI SetTitlePacket();
 
+protected:
+
+private:
 
 };

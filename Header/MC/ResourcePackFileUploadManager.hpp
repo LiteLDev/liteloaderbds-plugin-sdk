@@ -25,21 +25,23 @@ public:
     ResourcePackFileUploadManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ResourcePackFileUploadManager();
     /*2*/ virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKFILEUPLOADMANAGER
-public:
-#endif
+    /*
+    inline  ~ResourcePackFileUploadManager(){
+         (ResourcePackFileUploadManager::*rv)();
+        *((void**)&rv) = dlsym("??1ResourcePackFileUploadManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ResourcePackFileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
     MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum PackType);
 
-//private:
-    MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
-    MCAPI void _uploadResourcePackFolder(std::string const &, class ResourceLocation const &, class Core::Path const &, class Json::Value const &);
+protected:
 
 private:
-
+    MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
+    MCAPI void _uploadResourcePackFolder(std::string const &, class ResourceLocation const &, class Core::Path const &, class Json::Value const &);
 
 };

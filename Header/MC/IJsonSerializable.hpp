@@ -22,11 +22,18 @@ public:
     IJsonSerializable() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IJSONSERIALIZABLE
-public:
-#endif
+    /*0*/ virtual ~IJsonSerializable();
+    /*
+    inline  ~IJsonSerializable(){
+         (IJsonSerializable::*rv)();
+        *((void**)&rv) = dlsym("??1IJsonSerializable@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

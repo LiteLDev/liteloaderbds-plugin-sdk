@@ -22,7 +22,6 @@ public:
     FollowOwnerGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FollowOwnerGoal();
     /*1*/ virtual bool canUse();
@@ -34,10 +33,10 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWOWNERGOAL
-public:
-#endif
     MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
 
+protected:
+
+private:
 
 };

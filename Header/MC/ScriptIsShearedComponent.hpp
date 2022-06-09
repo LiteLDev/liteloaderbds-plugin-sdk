@@ -21,13 +21,19 @@ public:
     ScriptIsShearedComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsShearedComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISSHEAREDCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptIsShearedComponent(){
+         (ScriptIsShearedComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsShearedComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

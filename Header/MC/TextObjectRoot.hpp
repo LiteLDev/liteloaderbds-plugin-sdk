@@ -23,19 +23,25 @@ public:
     TextObjectRoot() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TextObjectRoot();
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTROOT
-public:
-#endif
+    /*
+    inline  ~TextObjectRoot(){
+         (TextObjectRoot::*rv)();
+        *((void**)&rv) = dlsym("??1TextObjectRoot@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void addChild(std::unique_ptr<class ITextObject>);
     MCAPI void clear();
     MCAPI bool isEmpty() const;
     MCAPI class ResolvedTextObject resolveRoot(class Actor const &, class Scoreboard const &) const;
 
+protected:
+
+private:
 
 };

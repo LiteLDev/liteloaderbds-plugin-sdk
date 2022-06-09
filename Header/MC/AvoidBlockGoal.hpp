@@ -22,7 +22,6 @@ public:
     AvoidBlockGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AvoidBlockGoal();
     /*1*/ virtual bool canUse();
@@ -32,15 +31,11 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVOIDBLOCKGOAL
-public:
-#endif
     MCAPI AvoidBlockGoal(class Mob &);
 
-//private:
-    MCAPI bool _isValidTarget(class Block const &) const;
+protected:
 
 private:
-
+    MCAPI bool _isValidTarget(class Block const &) const;
 
 };

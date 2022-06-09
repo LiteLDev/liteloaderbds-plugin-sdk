@@ -23,14 +23,20 @@ public:
     TripodCameraDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TripodCameraDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERADESCRIPTION
-public:
-#endif
+    /*
+    inline  ~TripodCameraDescription(){
+         (TripodCameraDescription::*rv)();
+        *((void**)&rv) = dlsym("??1TripodCameraDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

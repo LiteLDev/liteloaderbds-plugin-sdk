@@ -21,12 +21,18 @@ public:
     ScriptSkinIdComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptSkinIdComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSKINIDCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptSkinIdComponent(){
+         (ScriptSkinIdComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptSkinIdComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

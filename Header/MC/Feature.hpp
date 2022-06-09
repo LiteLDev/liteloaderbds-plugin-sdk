@@ -22,22 +22,24 @@ public:
     Feature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Feature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
-public:
-#endif
+    /*
+    inline  ~Feature(){
+         (Feature::*rv)();
+        *((void**)&rv) = dlsym("??1Feature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Feature(class Actor *);
 
-//protected:
+protected:
     MCAPI bool _placeBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void _setManuallyPlaced(class Actor *);
 
-protected:
-
+private:
 
 };

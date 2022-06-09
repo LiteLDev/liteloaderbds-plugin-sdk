@@ -22,11 +22,7 @@ public:
     ItemStackRequestData() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTDATA
-public:
-#endif
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const & getActions() const;
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const & getRequestId() const;
     MCAPI std::vector<std::string> const & getStringsToFilter() const;
@@ -36,5 +32,8 @@ public:
     MCAPI ~ItemStackRequestData();
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream &);
 
+protected:
+
+private:
 
 };

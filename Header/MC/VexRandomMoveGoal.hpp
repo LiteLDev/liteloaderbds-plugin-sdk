@@ -22,20 +22,26 @@ public:
     VexRandomMoveGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VexRandomMoveGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool canContinueToUse();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEXRANDOMMOVEGOAL
-public:
-#endif
+    /*
+    inline bool canContinueToUse(){
+        bool (VexRandomMoveGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@VexRandomMoveGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI VexRandomMoveGoal(class Mob &);
 
+protected:
+
+private:
 
 };

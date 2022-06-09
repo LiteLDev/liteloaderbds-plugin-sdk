@@ -24,14 +24,20 @@ public:
     ActorInLavaTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorInLavaTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINLAVATEST
-public:
-#endif
+    /*
+    inline  ~ActorInLavaTest(){
+         (ActorInLavaTest::*rv)();
+        *((void**)&rv) = dlsym("??1ActorInLavaTest@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

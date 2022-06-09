@@ -22,11 +22,7 @@ public:
     StructureTemplatePool() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEPOOL
-public:
-#endif
     MCAPI StructureTemplatePool(std::string, std::string, std::vector<struct std::pair<class StructurePoolElement const *, int>> &);
     MCAPI std::string const & getFallback() const;
     MCAPI std::string const & getName() const;
@@ -35,5 +31,8 @@ public:
     MCAPI class StructurePoolElement const * getTemplate(unsigned __int64) const;
     MCAPI bool isValid() const;
 
+protected:
+
+private:
 
 };

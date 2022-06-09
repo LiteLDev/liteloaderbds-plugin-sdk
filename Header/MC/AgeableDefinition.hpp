@@ -23,11 +23,7 @@ public:
     AgeableDefinition() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLEDEFINITION
-public:
-#endif
     MCAPI void addDropItem(class ItemDescriptor const &);
     MCAPI void addFeedItem(struct ActorDefinitionFeedItem const &);
     MCAPI void addFeedItemByName(std::string const &);
@@ -36,5 +32,8 @@ public:
     MCAPI void initialize(class EntityContext &, class AgeableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>> &);
 
+protected:
+
+private:
 
 };

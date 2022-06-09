@@ -22,15 +22,15 @@ public:
     ServerNetworkEventCoordinator() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTCOORDINATOR
-public:
-#endif
+    /*0*/ virtual ~ServerNetworkEventCoordinator();
     MCAPI class ServerNetworkEventHandler & getServerNetworkEventHandler();
     MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler> &&);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum CoordinatorResult>>);
     MCAPI void sendMessage(struct MessageEvent &);
 
+protected:
+
+private:
 
 };

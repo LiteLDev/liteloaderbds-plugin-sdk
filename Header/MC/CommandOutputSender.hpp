@@ -22,22 +22,23 @@ public:
     CommandOutputSender(class CommandOutputSender const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CommandOutputSender();
     /*1*/ virtual void send(class CommandOrigin const &, class CommandOutput const &);
-    /*2*/ virtual void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTSENDER
-public:
-#endif
+    /*
+    inline void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const & a0){
+        void (CommandOutputSender::*rv)(class std::function<void (class AutomationCmdOutput &)> const &);
+        *((void**)&rv) = dlsym("?registerOutputCallback@CommandOutputSender@@UEAAXAEBV?$function@$$A6AXAEAVAutomationCmdOutput@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<void (class AutomationCmdOutput &)> const &>(a0));
+    }
+    */
     MCAPI CommandOutputSender();
     MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum CommandPermissionLevel);
     MCAPI static std::vector<std::string> translate(std::vector<std::string> const &);
 
-//protected:
+protected:
     MCAPI class Json::Value _toJson(class CommandOutput const &) const;
 
-protected:
-
+private:
 
 };

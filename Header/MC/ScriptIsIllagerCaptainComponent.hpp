@@ -21,13 +21,19 @@ public:
     ScriptIsIllagerCaptainComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsIllagerCaptainComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISILLAGERCAPTAINCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptIsIllagerCaptainComponent(){
+         (ScriptIsIllagerCaptainComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsIllagerCaptainComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

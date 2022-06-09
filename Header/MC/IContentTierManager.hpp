@@ -20,12 +20,17 @@ public:
     IContentTierManager() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
-public:
-    MCVAPI ~IContentTierManager();
-#endif
+    /*
+    inline  ~IContentTierManager(){
+         (IContentTierManager::*rv)();
+        *((void**)&rv) = dlsym("??1IContentTierManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

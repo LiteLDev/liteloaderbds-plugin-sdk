@@ -19,7 +19,6 @@ public:
     TaskQueueImpl(class TaskQueueImpl const &) = delete;
 #endif
 
-
 public:
     /*3*/ virtual struct XTaskQueueObject * GetHandle();
     /*4*/ virtual long GetPortContext(enum XTaskQueuePort, struct ITaskQueuePortContext **);
@@ -32,17 +31,13 @@ public:
     /*11*/ virtual long Terminate(bool, void *, void ( *)(void *));
     /*12*/ virtual ~TaskQueueImpl();
     /*14*/ virtual void RundownObject();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEIMPL
-public:
-#endif
     MCAPI long Initialize(struct XTaskQueuePortObject *, struct XTaskQueuePortObject *);
     MCAPI long Initialize(enum XTaskQueueDispatchMode, enum XTaskQueueDispatchMode, bool, bool);
     MCAPI TaskQueueImpl();
 
-//private:
-    MCAPI static void OnTerminationCallback(void *);
+protected:
 
 private:
-
+    MCAPI static void OnTerminationCallback(void *);
 
 };

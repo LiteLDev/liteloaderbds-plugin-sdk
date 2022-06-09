@@ -23,11 +23,7 @@ public:
     MobEffectInstance() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTINSTANCE
-public:
-#endif
     MCAPI MobEffectInstance(class MobEffectInstance const &);
     MCAPI MobEffectInstance(unsigned int);
     MCAPI MobEffectInstance(unsigned int, int);
@@ -65,5 +61,8 @@ public:
     MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const &);
     MCAPI static class MobEffectInstance load(class CompoundTag const &);
 
+protected:
+
+private:
 
 };

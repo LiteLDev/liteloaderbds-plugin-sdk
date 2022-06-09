@@ -21,11 +21,15 @@ public:
     CreativeItemGroupCategory(class CreativeItemGroupCategory const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMGROUPCATEGORY
-public:
-#endif
+    /*0*/ virtual ~CreativeItemGroupCategory();
+    /*
+    inline  ~CreativeItemGroupCategory(){
+         (CreativeItemGroupCategory::*rv)();
+        *((void**)&rv) = dlsym("??1CreativeItemGroupCategory@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI CreativeItemGroupCategory(class CreativeItemRegistry *, std::string const &, enum CreativeItemCategory);
     MCAPI CreativeItemGroupCategory();
     MCAPI class CreativeGroupInfo * addAnonymousGroup();
@@ -34,5 +38,8 @@ public:
     MCAPI enum CreativeItemCategory getCreativeCategory();
     MCAPI class CreativeGroupInfo * getOrAddTailAnonymousGroup();
 
+protected:
+
+private:
 
 };

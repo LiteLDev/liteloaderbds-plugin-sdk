@@ -20,12 +20,11 @@ public:
     ReceivingEvent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVINGEVENT
-public:
-#endif
     MCAPI ~ReceivingEvent();
 
+protected:
+
+private:
 
 };

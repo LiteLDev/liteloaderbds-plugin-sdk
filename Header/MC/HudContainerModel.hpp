@@ -23,27 +23,25 @@ public:
     HudContainerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~HudContainerModel();
+    /*2*/ virtual void postInit();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
     /*12*/ virtual void __unk_vfn_12();
     /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container * _getContainer() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMODEL
-public:
-#endif
+    /*21*/ virtual int _getContainerOffset() const;
     MCAPI HudContainerModel(enum ContainerEnumName, class Player &);
 
-//private:
-    MCAPI void _refreshContainer();
+protected:
 
 private:
-
+    MCAPI void _refreshContainer();
 
 };

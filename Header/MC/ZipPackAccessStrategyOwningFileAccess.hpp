@@ -22,13 +22,13 @@ public:
     ZipPackAccessStrategyOwningFileAccess() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ZipPackAccessStrategyOwningFileAccess();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZIPPACKACCESSSTRATEGYOWNINGFILEACCESS
-public:
-#endif
+    /*18*/ virtual bool canRecurse() const;
     MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const &, class Core::Path const &);
 
+protected:
+
+private:
 
 };

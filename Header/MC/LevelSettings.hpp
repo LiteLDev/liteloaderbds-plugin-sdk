@@ -21,11 +21,7 @@ public:
     class LevelSettings& operator=(class LevelSettings const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSETTINGS
-public:
-#endif
     MCAPI LevelSettings(class LevelSettings const &);
     MCAPI LevelSettings(class LevelSettings &&);
     MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
@@ -100,5 +96,8 @@ public:
     MCAPI ~LevelSettings();
     MCAPI static class std::optional<class LevelSeed64> parseSeedString(std::string const &);
 
+protected:
+
+private:
 
 };

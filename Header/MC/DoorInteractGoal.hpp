@@ -23,7 +23,6 @@ public:
     DoorInteractGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DoorInteractGoal();
     /*1*/ virtual bool canUse();
@@ -33,20 +32,19 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORINTERACTGOAL
-public:
-#endif
+    /*
+    inline  ~DoorInteractGoal(){
+         (DoorInteractGoal::*rv)();
+        *((void**)&rv) = dlsym("??1DoorInteractGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DoorInteractGoal(class Mob &);
 
-//protected:
+protected:
     MCAPI bool _doorBlocksPath() const;
 
-//private:
-    MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum Direction::Type &, enum Direction::Type &);
-
-protected:
-
 private:
-
+    MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum Direction::Type &, enum Direction::Type &);
 
 };

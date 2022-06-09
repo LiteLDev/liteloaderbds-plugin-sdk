@@ -21,11 +21,15 @@ public:
     NpcComponent(class NpcComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMPONENT
-public:
-#endif
+    /*0*/ virtual ~NpcComponent();
+    /*
+    inline  ~NpcComponent(){
+         (NpcComponent::*rv)();
+        *((void**)&rv) = dlsym("??1NpcComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NpcComponent(class NpcComponent &&);
     MCAPI NpcComponent();
     MCAPI void addAdditionalSaveData(class Actor &, class CompoundTag &) const;
@@ -59,13 +63,13 @@ public:
     MCAPI void setSkinIndex(class Actor &, int, bool);
     MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
 
-//private:
+protected:
+
+private:
     MCAPI void _defineEntityDataString(class Actor &, enum ActorDataIDs);
     MCAPI void _deserializeData();
     MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>> &, std::string const &) const;
     MCAPI std::string _serializeActions() const;
-
-private:
     MCAPI static std::string const ACTIONS_TAG;
     MCAPI static std::string const INTERACTIVE_TAG;
     MCAPI static std::string const NAME_RAW_TEXT_TAG;
@@ -73,6 +77,5 @@ private:
     MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
     MCAPI static std::string const SCENE_NAME_TAG;
     MCAPI static std::string const URL_TAG;
-
 
 };

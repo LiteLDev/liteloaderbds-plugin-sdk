@@ -21,11 +21,7 @@ public:
     OreVeinifierNoises() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREVEINIFIERNOISES
-public:
-#endif
     MCAPI OreVeinifierNoises(class OreVeinifierNoises const &);
     MCAPI class XoroshiroPositionalRandomFactory const & getPositionalRandomFactory() const;
     MCAPI float sampleGapNoise(float, float, float) const;
@@ -35,10 +31,9 @@ public:
     MCAPI ~OreVeinifierNoises();
     MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const &);
 
-//private:
-    MCAPI OreVeinifierNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
+protected:
 
 private:
-
+    MCAPI OreVeinifierNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
 
 };

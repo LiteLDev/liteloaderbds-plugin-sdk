@@ -21,10 +21,9 @@ public:
     ServerScriptManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerScriptManager();
-    /*1*/ virtual enum EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
@@ -34,17 +33,25 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onServerThreadStarted(class ServerInstance &);
     /*10*/ virtual enum EventResult onServerThreadStopped(class ServerInstance &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
-public:
-#endif
+    /*
+    inline enum EventResult onServerLevelInitialized(class ServerInstance & a0, class Level & a1){
+        enum EventResult (ServerScriptManager::*rv)(class ServerInstance &, class Level &);
+        *((void**)&rv) = dlsym("?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z");
+        return (this->*rv)(std::forward<class ServerInstance &>(a0), std::forward<class Level &>(a1));
+    }
+    inline  ~ServerScriptManager(){
+         (ServerScriptManager::*rv)();
+        *((void**)&rv) = dlsym("??1ServerScriptManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ServerScriptManager(class std::optional<struct ScriptSettings> &&, class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI void onMainThreadStartLeaveGame();
 
-//private:
-    MCAPI void _registerEventHandlers(class Level &) const;
-    MCAPI void _unregisterEventHandlers(class Level &) const;
+protected:
 
 private:
-
+    MCAPI void _registerEventHandlers(class Level &) const;
+    MCAPI void _unregisterEventHandlers(class Level &) const;
 
 };

@@ -26,17 +26,12 @@ public:
     ItemStackNetResultMap() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETRESULTMAP
-public:
-#endif
     MCAPI static std::string const & getItemStackNetResultName(enum ItemStackNetResult);
 
-//private:
+protected:
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemStackNetResult, std::string> const mMap;
-
 
 };

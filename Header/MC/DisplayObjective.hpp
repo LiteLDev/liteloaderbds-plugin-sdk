@@ -22,11 +22,7 @@ public:
     DisplayObjective() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPLAYOBJECTIVE
-public:
-#endif
     MCAPI DisplayObjective(class Objective const &, enum ObjectiveSortOrder);
     MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const &) const;
     MCAPI class Objective const & getObjective() const;
@@ -36,5 +32,8 @@ public:
     MCAPI static class DisplayObjective deserialize(class CompoundTag const &, class Scoreboard const &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class DisplayObjective const &);
 
+protected:
+
+private:
 
 };

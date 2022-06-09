@@ -23,14 +23,13 @@ public:
     DispenserContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DispenserContainerManagerModel();
     /*16*/ virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERCONTAINERMANAGERMODEL
-public:
-#endif
     MCAPI DispenserContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
+protected:
+
+private:
 
 };

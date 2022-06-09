@@ -22,13 +22,12 @@ public:
     BoneAnimationChannel() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATIONCHANNEL
-public:
-#endif
     MCAPI class KeyFrameTransform & addKeyFrame(float);
     MCAPI void sortKeyFrames();
 
+protected:
+
+private:
 
 };

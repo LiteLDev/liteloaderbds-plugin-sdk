@@ -22,11 +22,11 @@ public:
     I18nObserver() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_I18NOBSERVER
-public:
-#endif
+    /*0*/ virtual ~I18nObserver();
 
+protected:
+
+private:
 
 };

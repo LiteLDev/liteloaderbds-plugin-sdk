@@ -22,11 +22,18 @@ public:
     ItemState() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTATE
-public:
-#endif
+    /*0*/ virtual ~ItemState();
+    /*
+    inline  ~ItemState(){
+         (ItemState::*rv)();
+        *((void**)&rv) = dlsym("??1ItemState@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

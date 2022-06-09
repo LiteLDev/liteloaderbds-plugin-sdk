@@ -61,7 +61,6 @@ public:
     MobEffect() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MobEffect();
     /*1*/ virtual void applyEffects(class Actor *, int, int) const;
@@ -69,9 +68,13 @@ public:
     /*3*/ virtual void applyInstantaneousEffect(class Actor *, class Actor *, class Actor *, int, float) const;
     /*4*/ virtual bool isInstantaneous() const;
     /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECT
-public:
-#endif
+    /*
+    inline  ~MobEffect(){
+         (MobEffect::*rv)();
+        *((void**)&rv) = dlsym("??1MobEffect@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MobEffect(int, std::string const &, std::string const &, bool, int, int, std::string const &, bool, struct MobEffect::FactorCalculationData const &);
     MCAPI void addAttributeBuff(class Attribute const &, class std::shared_ptr<class AttributeBuff>);
     MCAPI void addAttributeModifier(class Attribute const &, class std::shared_ptr<class AttributeModifier>);
@@ -126,16 +129,11 @@ public:
     MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
     MCAPI static void shutdownEffects();
 
-//protected:
+protected:
     MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const &, int, float) const;
     MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const &, int, int) const;
 
-//private:
-    MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData &, int);
-
-protected:
-
 private:
-
+    MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData &, int);
 
 };

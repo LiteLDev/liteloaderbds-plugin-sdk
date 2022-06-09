@@ -34,11 +34,18 @@ public:
     Connector() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTOR
-public:
-#endif
+    /*0*/ virtual ~Connector();
+    /*
+    inline  ~Connector(){
+         (Connector::*rv)();
+        *((void**)&rv) = dlsym("??1Connector@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

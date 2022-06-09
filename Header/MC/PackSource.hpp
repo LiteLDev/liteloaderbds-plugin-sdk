@@ -22,16 +22,29 @@ public:
     PackSource() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCE
-public:
-    MCVAPI enum PackOrigin getPackOrigin() const;
-    MCVAPI enum PackType getPackType() const;
-    MCVAPI ~PackSource();
-#endif
+    /*
+    inline enum PackOrigin getPackOrigin() const{
+        enum PackOrigin (PackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackOrigin@PackSource@@UEBA?AW4PackOrigin@@XZ");
+        return (this->*rv)();
+    }
+    inline enum PackType getPackType() const{
+        enum PackType (PackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackType@PackSource@@UEBA?AW4PackType@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~PackSource(){
+         (PackSource::*rv)();
+        *((void**)&rv) = dlsym("??1PackSource@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Pack * fetchPack(struct PackIdVersion const &);
     MCAPI void resolveUpgradeDependencies(class Pack &, class IContentKeyProvider const &);
 
+protected:
+
+private:
 
 };

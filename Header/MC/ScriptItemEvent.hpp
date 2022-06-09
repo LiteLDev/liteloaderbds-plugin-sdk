@@ -20,11 +20,18 @@ public:
     ScriptItemEvent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMEVENT
-public:
-#endif
+    /*0*/ virtual ~ScriptItemEvent();
+    /*
+    inline  ~ScriptItemEvent(){
+         (ScriptItemEvent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemEvent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

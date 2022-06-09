@@ -23,11 +23,7 @@ public:
     InMemoryFileStorage() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILESTORAGE
-public:
-#endif
     MCAPI InMemoryFileStorage(class leveldb::Env *);
     MCAPI class std::shared_ptr<class InMemoryFile> createFile(class Core::Path const &);
     MCAPI bool deleteFile(class Core::Path const &);
@@ -36,5 +32,8 @@ public:
     MCAPI void populateFileList(std::vector<std::string> &);
     MCAPI ~InMemoryFileStorage();
 
+protected:
+
+private:
 
 };

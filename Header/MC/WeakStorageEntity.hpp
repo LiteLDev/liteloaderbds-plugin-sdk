@@ -22,14 +22,10 @@ public:
     WeakStorageEntity() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEENTITY
-public:
-#endif
     MCAPI bool operator==(class WeakStorageEntity const &) const;
 
-//protected:
+protected:
     MCAPI WeakStorageEntity(class StackResultStorageEntity const &);
     MCAPI WeakStorageEntity(class OwnerStorageEntity const &);
     MCAPI WeakStorageEntity(enum WeakStorageEntity::EmptyInit);
@@ -37,7 +33,6 @@ public:
     MCAPI bool _isSet() const;
     MCAPI void _reset();
 
-protected:
-
+private:
 
 };

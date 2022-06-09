@@ -23,15 +23,21 @@ public:
     ScriptStrengthComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptStrengthComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSTRENGTHCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptStrengthComponent(){
+         (ScriptStrengthComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptStrengthComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<int> getMax() const;
     MCAPI class Scripting::Result<int> getValue() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptStrengthComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

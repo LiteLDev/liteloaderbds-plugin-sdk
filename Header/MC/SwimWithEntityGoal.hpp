@@ -22,25 +22,32 @@ public:
     SwimWithEntityGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SwimWithEntityGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWITHENTITYGOAL
-public:
-#endif
+    /*
+    inline bool canBeInterrupted(){
+        bool (SwimWithEntityGoal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@SwimWithEntityGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline void stop(){
+        void (SwimWithEntityGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@SwimWithEntityGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SwimWithEntityGoal(class Mob &);
 
-//private:
-    MCAPI bool _setWantedMob();
+protected:
 
 private:
-
+    MCAPI bool _setWantedMob();
 
 };

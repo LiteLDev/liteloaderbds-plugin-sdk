@@ -22,14 +22,13 @@ public:
     ExperimentStorage() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTSTORAGE
-public:
-#endif
     MCAPI bool isAnyToggleEnabled() const;
     MCAPI bool wereAnyExperimentsEverToggled() const;
     MCAPI ~ExperimentStorage();
 
+protected:
+
+private:
 
 };

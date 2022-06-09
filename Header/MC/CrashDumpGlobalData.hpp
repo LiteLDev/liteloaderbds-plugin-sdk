@@ -22,12 +22,11 @@ public:
     CrashDumpGlobalData() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPGLOBALDATA
-public:
-#endif
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
+protected:
+
+private:
 
 };

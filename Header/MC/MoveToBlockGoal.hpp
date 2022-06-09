@@ -22,7 +22,6 @@ public:
     MoveToBlockGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MoveToBlockGoal();
     /*1*/ virtual bool canUse();
@@ -32,18 +31,14 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOBLOCKGOAL
-public:
-#endif
     MCAPI MoveToBlockGoal(class Mob &, float, int, int, int, int, float, class Vec3, float, enum TargetSelectionMethod, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>, std::vector<class ItemDescriptor>);
 
-//private:
+protected:
+
+private:
     MCAPI void _checkIfStuck();
     MCAPI bool _isValidTarget(class Block const &) const;
     MCAPI void _moveToBlock();
     MCAPI bool _pathIsValid(class Path const *);
-
-private:
-
 
 };

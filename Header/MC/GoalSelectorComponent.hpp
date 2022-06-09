@@ -22,11 +22,7 @@ public:
     GoalSelectorComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOALSELECTORCOMPONENT
-public:
-#endif
     MCAPI void addGoal(int, std::unique_ptr<class Goal>);
     MCAPI void buildDebugInfo(std::string &) const;
     MCAPI void clearAllGoals();
@@ -37,11 +33,10 @@ public:
     MCAPI void stopAllGoals();
     MCAPI void stopNonTargetedGoals();
 
-//private:
-    MCAPI void _eraseGoals(bool ( *)(struct std::pair<unsigned short, class PrioritizedGoal> &));
-    MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal>>>> _findGoalByKey(unsigned short) const;
+protected:
 
 private:
-
+    MCAPI void _eraseGoals(bool ( *)(struct std::pair<unsigned short, class PrioritizedGoal> &));
+    MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal>>>> _findGoalByKey(unsigned short) const;
 
 };

@@ -23,7 +23,6 @@ public:
     ServerScoreboard() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerScoreboard();
     /*1*/ virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum ObjectiveSortOrder);
@@ -40,10 +39,18 @@ public:
     /*12*/ virtual void tick();
     /*13*/ virtual void setPacketSender(class PacketSender *);
     /*14*/ virtual void writeToLevelStorage();
-    /*15*/ virtual bool isClientSide() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCOREBOARD
-public:
-#endif
+    /*
+    inline bool isClientSide() const{
+        bool (ServerScoreboard::*rv)() const;
+        *((void**)&rv) = dlsym("?isClientSide@ServerScoreboard@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline  ~ServerScoreboard(){
+         (ServerScoreboard::*rv)();
+        *((void**)&rv) = dlsym("??1ServerScoreboard@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage *);
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
@@ -53,11 +60,10 @@ public:
     MCAPI void setScoreRemovedCallback(class std::function<void (struct ScoreboardId const &)>);
     MCAPI void setSetDisplayObjectiveCallback(class std::function<void (std::string const &, class DisplayObjective const &)>);
 
-//private:
-    MCAPI void _stopTrackingObjective(class Objective const &);
-    MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const &, std::string const &, int);
+protected:
 
 private:
-
+    MCAPI void _stopTrackingObjective(class Objective const &);
+    MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const &, std::string const &, int);
 
 };

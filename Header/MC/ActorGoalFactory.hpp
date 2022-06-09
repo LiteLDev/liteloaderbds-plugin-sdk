@@ -20,12 +20,11 @@ public:
     ActorGoalFactory() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORGOALFACTORY
-public:
-#endif
     MCAPI void _initializeBedrock();
 
+protected:
+
+private:
 
 };

@@ -22,7 +22,6 @@ public:
     SimpleRandom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SimpleRandom();
     /*1*/ virtual int nextInt();
@@ -35,9 +34,16 @@ public:
     /*8*/ virtual void consumeCount(unsigned int);
     /*9*/ virtual std::unique_ptr<class IRandom> fork();
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
-public:
-#endif
+    /*
+    inline  ~SimpleRandom(){
+         (SimpleRandom::*rv)();
+        *((void**)&rv) = dlsym("??1SimpleRandom@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

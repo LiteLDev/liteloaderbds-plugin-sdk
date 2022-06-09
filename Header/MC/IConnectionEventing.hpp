@@ -26,11 +26,18 @@ public:
     IConnectionEventing() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONNECTIONEVENTING
-public:
-#endif
+    /*0*/ virtual ~IConnectionEventing();
+    /*
+    inline  ~IConnectionEventing(){
+         (IConnectionEventing::*rv)();
+        *((void**)&rv) = dlsym("??1IConnectionEventing@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

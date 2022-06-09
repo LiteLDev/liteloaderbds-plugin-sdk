@@ -22,7 +22,6 @@ public:
     LayDownGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LayDownGoal();
     /*1*/ virtual bool canUse();
@@ -30,12 +29,19 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*6*/ virtual void tick();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAYDOWNGOAL
-public:
-#endif
+    /*
+    inline void tick(){
+        void (LayDownGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@LayDownGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LayDownGoal(class Mob &, int, int);
 
+protected:
+
+private:
 
 };

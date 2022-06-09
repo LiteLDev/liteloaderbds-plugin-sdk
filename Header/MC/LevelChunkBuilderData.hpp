@@ -19,13 +19,12 @@ public:
     LevelChunkBuilderData(class LevelChunkBuilderData const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKBUILDERDATA
-public:
-#endif
     MCAPI LevelChunkBuilderData();
     MCAPI ~LevelChunkBuilderData();
 
+protected:
+
+private:
 
 };

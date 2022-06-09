@@ -21,15 +21,20 @@ public:
     ShootBowNode(class ShootBowNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShootBowNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
-    /*2*/ virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTBOWNODE
-public:
-#endif
+    /*
+    inline void initializeFromDefinition(class Actor & a0){
+        void (ShootBowNode::*rv)(class Actor &);
+        *((void**)&rv) = dlsym("?initializeFromDefinition@ShootBowNode@@EEAAXAEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0));
+    }
+    */
     MCAPI ShootBowNode();
 
+protected:
+
+private:
 
 };

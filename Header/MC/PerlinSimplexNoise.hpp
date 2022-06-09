@@ -21,11 +21,7 @@ public:
     PerlinSimplexNoise() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINSIMPLEXNOISE
-public:
-#endif
     MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
     MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
     MCAPI PerlinSimplexNoise(unsigned int, int);
@@ -36,10 +32,9 @@ public:
     MCAPI float getValueNormalized(float, float) const;
     MCAPI ~PerlinSimplexNoise();
 
-//private:
-    MCAPI void _init(class IRandom &, bool);
+protected:
 
 private:
-
+    MCAPI void _init(class IRandom &, bool);
 
 };

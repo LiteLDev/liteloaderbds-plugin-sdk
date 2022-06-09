@@ -22,25 +22,27 @@ public:
     BarterGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BarterGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool canContinueToUse();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERGOAL
-public:
-#endif
+    /*
+    inline bool canContinueToUse(){
+        bool (BarterGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@BarterGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BarterGoal(class Mob &);
 
-//private:
-    MCAPI class Vec3 _getThrowVector();
+protected:
 
 private:
-
+    MCAPI class Vec3 _getThrowVector();
 
 };

@@ -23,12 +23,11 @@ public:
     BarterDefinition() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERDEFINITION
-public:
-#endif
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BarterDefinition>> &);
 
+protected:
+
+private:
 
 };

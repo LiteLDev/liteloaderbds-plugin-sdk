@@ -23,19 +23,14 @@ public:
     EffectCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EffectCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EFFECTCOMMAND
-public:
-#endif
     MCAPI static void setup(class CommandRegistry &);
 
-//private:
-    MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;
+protected:
 
 private:
-
+    MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;
 
 };

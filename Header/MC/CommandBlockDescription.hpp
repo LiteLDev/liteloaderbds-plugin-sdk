@@ -23,15 +23,26 @@ public:
     CommandBlockDescription() = delete;
 #endif
 
-
 public:
-    /*0*/ virtual char const * getJsonName() const;
+    /*0*/ virtual void __unk_vfn_0();
     /*1*/ virtual ~CommandBlockDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKDESCRIPTION
-public:
-#endif
+    /*
+    inline char const * getJsonName() const{
+        char const * (CommandBlockDescription::*rv)() const;
+        *((void**)&rv) = dlsym("?getJsonName@CommandBlockDescription@@UEBAPEBDXZ");
+        return (this->*rv)();
+    }
+    inline  ~CommandBlockDescription(){
+         (CommandBlockDescription::*rv)();
+        *((void**)&rv) = dlsym("??1CommandBlockDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

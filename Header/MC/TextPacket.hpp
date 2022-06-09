@@ -23,16 +23,19 @@ public:
     TextPacket(class TextPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TextPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTPACKET
-public:
-#endif
+    /*
+    inline  ~TextPacket(){
+         (TextPacket::*rv)();
+        *((void**)&rv) = dlsym("??1TextPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI TextPacket();
     MCAPI static class TextPacket createAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
     MCAPI static class TextPacket createChat(std::string const &, std::string const &, std::string const &, std::string const &);
@@ -44,10 +47,9 @@ public:
     MCAPI static class TextPacket createTranslatedAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
     MCAPI static class TextPacket createWhisper(std::string const &, std::string const &, std::string const &, std::string const &);
 
-//private:
-    MCAPI TextPacket(enum TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
+protected:
 
 private:
-
+    MCAPI TextPacket(enum TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
 
 };

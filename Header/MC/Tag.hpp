@@ -106,7 +106,6 @@ public:
     Tag(class Tag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Tag();
     /*1*/ virtual void deleteChildren();
@@ -119,19 +118,22 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const = 0;
     /*10*/ virtual unsigned __int64 hash() const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAG
-public:
-#endif
+    /*
+    inline  ~Tag(){
+         (Tag::*rv)();
+        *((void**)&rv) = dlsym("??1Tag@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static std::string const NullString;
     MCAPI static std::string getTagName(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput &, std::string &);
     MCAPI static void writeNamedTag(std::string const &, class Tag const &, class IDataOutput &);
 
-//protected:
+protected:
     MCAPI Tag();
 
-protected:
-
+private:
 
 };

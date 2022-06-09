@@ -22,7 +22,6 @@ public:
     AttributeInstanceDelegate() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttributeInstanceDelegate();
     /*1*/ virtual void tick();
@@ -30,16 +29,19 @@ public:
     /*3*/ virtual bool willChange(float, float, class AttributeBuff const &);
     /*4*/ virtual float change(float, float, class AttributeBuff const &);
     /*5*/ virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEDELEGATE
-public:
-#endif
+    /*
+    inline  ~AttributeInstanceDelegate(){
+         (AttributeInstanceDelegate::*rv)();
+        *((void**)&rv) = dlsym("??1AttributeInstanceDelegate@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
-//protected:
+protected:
     MCAPI class AttributeInstance const & _getInstance() const;
     MCAPI class AttributeInstance * _getMutableInstance() const;
 
-protected:
-
+private:
 
 };

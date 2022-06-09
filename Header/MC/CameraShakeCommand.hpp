@@ -23,20 +23,15 @@ public:
     CameraShakeCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CameraShakeCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKECOMMAND
-public:
-#endif
     MCAPI static void setup(class CommandRegistry &);
 
-//private:
-    MCAPI void _executeAdd(class CommandOrigin const &, class CommandOutput &) const;
-    MCAPI void _executeStop(class CommandOrigin const &, class CommandOutput &) const;
+protected:
 
 private:
-
+    MCAPI void _executeAdd(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _executeStop(class CommandOrigin const &, class CommandOutput &) const;
 
 };

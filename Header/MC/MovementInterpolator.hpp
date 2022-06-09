@@ -21,7 +21,6 @@ public:
     MovementInterpolator(class MovementInterpolator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MovementInterpolator();
     /*1*/ virtual void lerpTo(class Vec3 const &, class Vec2 const &, int);
@@ -32,12 +31,22 @@ public:
     /*6*/ virtual void reset();
     /*7*/ virtual void setHeadYawLerpTarget(float, int);
     /*8*/ virtual bool isActive() const;
-    /*9*/ virtual int getPositionSteps() const;
-    /*10*/ virtual int getRotationSteps() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATOR
-public:
-#endif
+    /*
+    inline int getPositionSteps() const{
+        int (MovementInterpolator::*rv)() const;
+        *((void**)&rv) = dlsym("?getPositionSteps@MovementInterpolator@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getRotationSteps() const{
+        int (MovementInterpolator::*rv)() const;
+        *((void**)&rv) = dlsym("?getRotationSteps@MovementInterpolator@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MovementInterpolator();
 
+protected:
+
+private:
 
 };

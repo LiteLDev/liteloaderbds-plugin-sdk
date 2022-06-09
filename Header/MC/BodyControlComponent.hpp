@@ -20,12 +20,11 @@ public:
     BodyControlComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROLCOMPONENT
-public:
-#endif
     MCAPI ~BodyControlComponent();
 
+protected:
+
+private:
 
 };

@@ -22,13 +22,12 @@ public:
     EquipItemComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPITEMCOMPONENT
-public:
-#endif
     MCAPI void onEquipItemPickedUp(class ItemStack, int);
     MCAPI ~EquipItemComponent();
 
+protected:
+
+private:
 
 };

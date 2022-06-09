@@ -62,13 +62,16 @@ public:
     ReadOnlyBinaryStream() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ReadOnlyBinaryStream();
     /*1*/ virtual bool read(void *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_READONLYBINARYSTREAM
-public:
-#endif
+    /*
+    inline  ~ReadOnlyBinaryStream(){
+         (ReadOnlyBinaryStream::*rv)();
+        *((void**)&rv) = dlsym("??1ReadOnlyBinaryStream@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ReadOnlyBinaryStream(std::string &&);
     MCAPI ReadOnlyBinaryStream(std::string const &, bool);
     MCAPI bool canReadBool() const;
@@ -92,5 +95,8 @@ public:
     MCAPI int getVarInt();
     MCAPI __int64 getVarInt64();
 
+protected:
+
+private:
 
 };

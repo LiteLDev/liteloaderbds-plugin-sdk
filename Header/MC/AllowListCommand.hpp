@@ -21,19 +21,14 @@ public:
     AllowListCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AllowListCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTCOMMAND
-public:
-#endif
     MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 
-//private:
+protected:
 
 private:
     MCAPI static class AllowListFile * mAllowListFile;
-
 
 };

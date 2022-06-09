@@ -22,25 +22,27 @@ public:
     FollowTargetCaptainGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FollowTargetCaptainGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWTARGETCAPTAINGOAL
-public:
-#endif
+    /*
+    inline void stop(){
+        void (FollowTargetCaptainGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@FollowTargetCaptainGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FollowTargetCaptainGoal(class Mob &, float, float, float);
 
-//private:
-    MCAPI void _determineMovePos();
+protected:
 
 private:
-
+    MCAPI void _determineMovePos();
 
 };

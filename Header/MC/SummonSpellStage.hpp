@@ -20,12 +20,11 @@ public:
     SummonSpellStage() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUMMONSPELLSTAGE
-public:
-#endif
     MCAPI ~SummonSpellStage();
 
+protected:
+
+private:
 
 };

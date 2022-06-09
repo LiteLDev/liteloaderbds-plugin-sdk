@@ -21,14 +21,13 @@ public:
     MobEffectComponent(class MobEffectComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTCOMPONENT
-public:
-#endif
     MCAPI MobEffectComponent();
     MCAPI class MobEffectComponent & operator=(class MobEffectComponent &&);
     MCAPI ~MobEffectComponent();
 
+protected:
+
+private:
 
 };

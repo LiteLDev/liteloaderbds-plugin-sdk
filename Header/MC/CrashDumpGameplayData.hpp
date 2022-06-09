@@ -22,12 +22,11 @@ public:
     CrashDumpGameplayData() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPGAMEPLAYDATA
-public:
-#endif
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
+protected:
+
+private:
 
 };

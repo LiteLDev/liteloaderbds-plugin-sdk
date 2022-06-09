@@ -22,11 +22,19 @@ public:
     ContainerSizeChangeListener() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSIZECHANGELISTENER
-public:
-#endif
+    /*0*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual ~ContainerSizeChangeListener();
+    /*
+    inline  ~ContainerSizeChangeListener(){
+         (ContainerSizeChangeListener::*rv)();
+        *((void**)&rv) = dlsym("??1ContainerSizeChangeListener@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

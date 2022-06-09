@@ -34,7 +34,6 @@ public:
     Container() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Container();
     /*1*/ virtual void init();
@@ -67,13 +66,30 @@ public:
     /*28*/ virtual void readAdditionalSaveData(class CompoundTag const &);
     /*29*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*30*/ virtual void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
-    /*31*/ virtual void initializeContainerContents(class BlockSource &);
+    /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual bool isEmpty() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINER
-public:
-    MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
-#endif
+    /*
+    inline bool canPushInItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
+        bool (Container::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
+        *((void**)&rv) = dlsym("?canPushInItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
+    }
+    inline bool canPullOutItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
+        bool (Container::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
+        *((void**)&rv) = dlsym("?canPullOutItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
+    }
+    inline void initializeContainerContents(class BlockSource & a0){
+        void (Container::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline  ~Container(){
+         (Container::*rv)();
+        *((void**)&rv) = dlsym("??1Container@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Container(class Container const &);
     MCAPI Container(enum ContainerType);
     MCAPI Container(enum ContainerType, std::string const &, bool);
@@ -89,12 +105,11 @@ public:
     MCAPI static enum ContainerType getContainerTypeId(std::string const &);
     MCAPI static std::string const & getContainerTypeName(enum ContainerType);
 
-//protected:
+protected:
     MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
-
-protected:
     MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
 
+private:
 
 };

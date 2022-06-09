@@ -22,11 +22,7 @@ public:
     ActorDefinitionDiffList() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONDIFFLIST
-public:
-#endif
     MCAPI ActorDefinitionDiffList(class ActorDefinitionGroup &);
     MCAPI void addDefinition(std::string const &);
     MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(unsigned __int64, unsigned __int64);
@@ -49,10 +45,9 @@ public:
     MCAPI void unlockChanges();
     MCAPI ~ActorDefinitionDiffList();
 
-//private:
-    MCAPI void _updateStack();
+protected:
 
 private:
-
+    MCAPI void _updateStack();
 
 };

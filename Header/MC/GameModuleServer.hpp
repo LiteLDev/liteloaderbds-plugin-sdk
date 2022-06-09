@@ -21,12 +21,19 @@ public:
     GameModuleServer(class GameModuleServer const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
-public:
-#endif
+    /*0*/ virtual ~GameModuleServer();
+    /*
+    inline  ~GameModuleServer(){
+         (GameModuleServer::*rv)();
+        *((void**)&rv) = dlsym("??1GameModuleServer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI GameModuleServer();
 
+protected:
+
+private:
 
 };

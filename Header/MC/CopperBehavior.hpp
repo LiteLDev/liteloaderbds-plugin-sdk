@@ -22,11 +22,7 @@ public:
     CopperBehavior() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBEHAVIOR
-public:
-#endif
     MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
     MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
     MCAPI bool canDecrementAge() const;
@@ -38,10 +34,9 @@ public:
     MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
     MCAPI ~CopperBehavior();
 
-//private:
-    MCAPI void _incrementAge(class BlockSource &, class Block const &, class BlockPos const &, float) const;
+protected:
 
 private:
-
+    MCAPI void _incrementAge(class BlockSource &, class Block const &, class BlockPos const &, float) const;
 
 };

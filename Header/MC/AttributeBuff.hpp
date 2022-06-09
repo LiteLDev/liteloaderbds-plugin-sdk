@@ -22,15 +22,18 @@ public:
     AttributeBuff() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttributeBuff();
     /*1*/ virtual bool isInstantaneous() const = 0;
     /*2*/ virtual bool isSerializable() const = 0;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEBUFF
-public:
-#endif
+    /*
+    inline  ~AttributeBuff(){
+         (AttributeBuff::*rv)();
+        *((void**)&rv) = dlsym("??1AttributeBuff@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI float getAmount() const;
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI unsigned __int64 getId() const;
@@ -45,10 +48,9 @@ public:
     MCAPI void setValueAmplifier(class std::shared_ptr<class Amplifier>);
     MCAPI static enum ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType);
 
-//protected:
+protected:
     MCAPI AttributeBuff(float, int, enum AttributeBuffType);
 
-protected:
-
+private:
 
 };

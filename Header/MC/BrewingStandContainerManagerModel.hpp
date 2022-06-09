@@ -23,7 +23,6 @@ public:
     BrewingStandContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BrewingStandContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -33,10 +32,10 @@ public:
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERMANAGERMODEL
-public:
-#endif
     MCAPI BrewingStandContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
+protected:
+
+private:
 
 };

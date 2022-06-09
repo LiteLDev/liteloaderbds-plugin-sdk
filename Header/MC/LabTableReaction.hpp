@@ -22,11 +22,8 @@ public:
     LabTableReaction() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTION
-public:
-#endif
+    /*0*/ virtual ~LabTableReaction();
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);
     MCAPI void addResultItem(class ItemStack const &);
     MCAPI int getReactionId();
@@ -34,5 +31,8 @@ public:
     MCAPI bool tick(class BlockSource &);
     MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum LabTableReactionType, class BlockPos const &, bool);
 
+protected:
+
+private:
 
 };

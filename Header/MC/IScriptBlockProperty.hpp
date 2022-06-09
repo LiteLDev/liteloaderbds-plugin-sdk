@@ -20,11 +20,18 @@ public:
     IScriptBlockProperty() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISCRIPTBLOCKPROPERTY
-public:
-#endif
+    /*0*/ virtual ~IScriptBlockProperty();
+    /*
+    inline  ~IScriptBlockProperty(){
+         (IScriptBlockProperty::*rv)();
+        *((void**)&rv) = dlsym("??1IScriptBlockProperty@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

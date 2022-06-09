@@ -23,13 +23,19 @@ public:
     ScriptMovementSkipComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptMovementSkipComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTSKIPCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptMovementSkipComponent(){
+         (ScriptMovementSkipComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementSkipComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementSkipComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

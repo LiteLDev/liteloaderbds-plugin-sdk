@@ -23,12 +23,18 @@ public:
     ScriptFlyingSpeedComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptFlyingSpeedComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFLYINGSPEEDCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptFlyingSpeedComponent(){
+         (ScriptFlyingSpeedComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptFlyingSpeedComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

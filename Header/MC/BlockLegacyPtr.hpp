@@ -22,12 +22,11 @@ public:
     BlockLegacyPtr() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACYPTR
-public:
-#endif
     MCAPI std::string toString() const;
 
+protected:
+
+private:
 
 };

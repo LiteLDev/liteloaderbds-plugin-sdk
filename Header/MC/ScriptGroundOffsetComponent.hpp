@@ -21,12 +21,18 @@ public:
     ScriptGroundOffsetComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptGroundOffsetComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGROUNDOFFSETCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptGroundOffsetComponent(){
+         (ScriptGroundOffsetComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptGroundOffsetComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

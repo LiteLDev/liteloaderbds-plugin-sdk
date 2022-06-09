@@ -23,20 +23,22 @@ public:
     FlowerFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FlowerFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERFEATURE
-public:
-#endif
+    /*
+    inline  ~FlowerFeature(){
+         (FlowerFeature::*rv)();
+        *((void**)&rv) = dlsym("??1FlowerFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FlowerFeature(class Block const &);
 
-//private:
-    MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
+protected:
 
 private:
-
+    MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
 
 };

@@ -22,12 +22,19 @@ public:
     DragonBaseGoal() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOAL
-public:
-#endif
+    /*0*/ virtual ~DragonBaseGoal();
+    /*
+    inline  ~DragonBaseGoal(){
+         (DragonBaseGoal::*rv)();
+        *((void**)&rv) = dlsym("??1DragonBaseGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DragonBaseGoal(class Mob &);
 
+protected:
+
+private:
 
 };

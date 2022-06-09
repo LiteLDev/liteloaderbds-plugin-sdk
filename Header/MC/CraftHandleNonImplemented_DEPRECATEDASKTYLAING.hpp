@@ -23,14 +23,15 @@ public:
     CraftHandleNonImplemented_DEPRECATEDASKTYLAING() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
+    /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
-public:
-#endif
+    /*5*/ virtual void _postCraftRequest(bool);
     MCAPI CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftHandler &);
 
+protected:
+
+private:
 
 };

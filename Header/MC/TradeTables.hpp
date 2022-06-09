@@ -23,19 +23,14 @@ public:
     TradeTables() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADETABLES
-public:
-#endif
     MCAPI struct TradeTable * fetchTable(std::string const &);
     MCAPI void reload(class Level &);
     MCAPI ~TradeTables();
 
-//private:
-    MCAPI void _parseAndStoreTradeTable(class ResourcePackManager *, class Core::Path const &);
+protected:
 
 private:
-
+    MCAPI void _parseAndStoreTradeTable(class ResourcePackManager *, class Core::Path const &);
 
 };

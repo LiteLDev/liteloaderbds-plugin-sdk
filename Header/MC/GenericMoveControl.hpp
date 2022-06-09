@@ -22,15 +22,21 @@ public:
     GenericMoveControl(class GenericMoveControl const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GenericMoveControl();
     /*1*/ virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /*2*/ virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROL
-public:
-#endif
+    /*
+    inline  ~GenericMoveControl(){
+         (GenericMoveControl::*rv)();
+        *((void**)&rv) = dlsym("??1GenericMoveControl@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI GenericMoveControl();
 
+protected:
+
+private:
 
 };

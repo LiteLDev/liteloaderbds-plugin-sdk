@@ -21,11 +21,7 @@ public:
     CSHA1(class CSHA1 const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CSHA1
-public:
-#endif
     MCAPI CSHA1();
     MCAPI void Final();
     MCAPI unsigned char * GetHash() const;
@@ -33,10 +29,9 @@ public:
     MCAPI void Update(unsigned char const *, unsigned int);
     MCAPI ~CSHA1();
 
-//private:
-    MCAPI void Transform(unsigned int *, unsigned char const *);
+protected:
 
 private:
-
+    MCAPI void Transform(unsigned int *, unsigned char const *);
 
 };

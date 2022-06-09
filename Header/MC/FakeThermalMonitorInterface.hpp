@@ -21,16 +21,29 @@ public:
     FakeThermalMonitorInterface(class FakeThermalMonitorInterface const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FakeThermalMonitorInterface();
-    /*1*/ virtual enum ThermalState getThermalState() const;
-    /*2*/ virtual float getThermalValueCelsius() const;
-    /*3*/ virtual bool isLowBatteryModeEnabled() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAKETHERMALMONITORINTERFACE
-public:
-#endif
+    /*
+    inline bool isLowBatteryModeEnabled() const{
+        bool (FakeThermalMonitorInterface::*rv)() const;
+        *((void**)&rv) = dlsym("?isLowBatteryModeEnabled@FakeThermalMonitorInterface@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum ThermalState getThermalState() const{
+        enum ThermalState (FakeThermalMonitorInterface::*rv)() const;
+        *((void**)&rv) = dlsym("?getThermalState@FakeThermalMonitorInterface@@UEBA?AW4ThermalState@@XZ");
+        return (this->*rv)();
+    }
+    inline float getThermalValueCelsius() const{
+        float (FakeThermalMonitorInterface::*rv)() const;
+        *((void**)&rv) = dlsym("?getThermalValueCelsius@FakeThermalMonitorInterface@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FakeThermalMonitorInterface();
 
+protected:
+
+private:
 
 };

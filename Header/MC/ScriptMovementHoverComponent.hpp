@@ -23,13 +23,19 @@ public:
     ScriptMovementHoverComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptMovementHoverComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMOVEMENTHOVERCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptMovementHoverComponent(){
+         (ScriptMovementHoverComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptMovementHoverComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementHoverComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

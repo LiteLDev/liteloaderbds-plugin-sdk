@@ -21,11 +21,7 @@ public:
     DamageSensorComponent(class DamageSensorComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGESENSORCOMPONENT
-public:
-#endif
     MCAPI DamageSensorComponent();
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI float getDamageModifier();
@@ -36,10 +32,9 @@ public:
     MCAPI bool recordDamage(class Actor &, class Actor *, enum ActorDamageCause, int, bool, class BlockPos);
     MCAPI bool recordDamage(class Actor &, class Actor *, enum ActorDamageCause, int, bool, class VariantParameterList);
 
-//private:
-    MCAPI bool _recordDamage(class Actor &, class Actor *, enum ActorDamageCause const &, class Actor *, int, bool, class VariantParameterList, bool);
+protected:
 
 private:
-
+    MCAPI bool _recordDamage(class Actor &, class Actor *, enum ActorDamageCause const &, class Actor *, int, bool, class VariantParameterList, bool);
 
 };

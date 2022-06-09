@@ -23,19 +23,21 @@ public:
     BonusChestFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BonusChestFeature();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONUSCHESTFEATURE
-public:
-#endif
+    /*
+    inline  ~BonusChestFeature(){
+         (BonusChestFeature::*rv)();
+        *((void**)&rv) = dlsym("??1BonusChestFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
-//private:
-    MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
+protected:
 
 private:
-
+    MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 };

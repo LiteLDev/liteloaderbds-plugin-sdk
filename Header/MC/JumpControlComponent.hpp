@@ -21,11 +21,7 @@ public:
     JumpControlComponent(class JumpControlComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLCOMPONENT
-public:
-#endif
     MCAPI JumpControlComponent();
     MCAPI int getAnimationDuration() const;
     MCAPI float getDistanceScale() const;
@@ -43,11 +39,10 @@ public:
     MCAPI void setSwimming(bool);
     MCAPI void update(class Mob &);
 
-//private:
-    MCAPI float _getDelayInternal() const;
-    MCAPI float _getHeightInternal() const;
+protected:
 
 private:
-
+    MCAPI float _getDelayInternal() const;
+    MCAPI float _getHeightInternal() const;
 
 };

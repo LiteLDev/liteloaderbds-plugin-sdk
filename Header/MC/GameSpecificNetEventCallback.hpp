@@ -22,13 +22,18 @@ public:
     GameSpecificNetEventCallback() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GameSpecificNetEventCallback();
-    /*1*/ virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMESPECIFICNETEVENTCALLBACK
-public:
-#endif
+    /*
+    inline void handle(class NetworkIdentifier const & a0, class ResourcePackClientResponsePacket const & a1){
+        void (GameSpecificNetEventCallback::*rv)(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
+        *((void**)&rv) = dlsym("?handle@GameSpecificNetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ResourcePackClientResponsePacket const &>(a1));
+    }
+    */
 
+protected:
+
+private:
 
 };

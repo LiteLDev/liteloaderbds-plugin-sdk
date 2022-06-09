@@ -24,11 +24,7 @@ public:
     PermissionsFile() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSFILE
-public:
-#endif
     MCAPI PermissionsFile(class Core::Path const &);
     MCAPI void applyPlayerPermissionsFromDisk(class Player &, class UserEntityIdentifierComponent const &, enum CommandPermissionLevel);
     MCAPI class std::unordered_map<std::string, enum PlayerPermissionLevel, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PlayerPermissionLevel>>> const & getPermissions() const;
@@ -38,11 +34,10 @@ public:
     MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum PlayerPermissionLevel);
     MCAPI enum FileReadResult reload();
 
-//private:
-    MCAPI class std::tuple<enum FileReadResult, class Json::Value> readPermissionFile();
-    MCAPI void setDefaultPlayerPermission(class Player &, enum CommandPermissionLevel);
+protected:
 
 private:
-
+    MCAPI class std::tuple<enum FileReadResult, class Json::Value> readPermissionFile();
+    MCAPI void setDefaultPlayerPermission(class Player &, enum CommandPermissionLevel);
 
 };

@@ -22,17 +22,18 @@ public:
     ITreeFeature() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREEFEATURE
-public:
-    MCVAPI ~ITreeFeature();
-#endif
-
-//protected:
-    MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
+    /*
+    inline  ~ITreeFeature(){
+         (ITreeFeature::*rv)();
+        *((void**)&rv) = dlsym("??1ITreeFeature@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
+    MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
+private:
 
 };

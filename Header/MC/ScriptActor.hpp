@@ -23,16 +23,19 @@ public:
     ScriptActor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptActor();
     /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
     /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const &) const;
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTACTOR
-public:
-#endif
+    /*
+    inline  ~ScriptActor(){
+         (ScriptActor::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptActor@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptActor(class ScriptActor &&);
     MCAPI ScriptActor(class Actor const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<void> addEffect(class ScriptEffectType const &, int, int, bool);
@@ -69,10 +72,9 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptActor> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Actor * tryGetActor(struct Scripting::TypedObjectHandle<class ScriptActor> &, class Scripting::WeakLifetimeScope const &);
 
-//protected:
+protected:
     MCAPI class Scripting::Result<struct Scripting::JSON> _runCommand(std::string const &, std::string const &, std::unique_ptr<class CommandOrigin>);
 
-protected:
-
+private:
 
 };

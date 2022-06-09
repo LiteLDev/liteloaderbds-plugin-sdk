@@ -20,12 +20,11 @@ public:
     SendEventStage() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTSTAGE
-public:
-#endif
     MCAPI ~SendEventStage();
 
+protected:
+
+private:
 
 };

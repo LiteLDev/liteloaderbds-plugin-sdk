@@ -22,12 +22,11 @@ public:
     CameraShakeComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKECOMPONENT
-public:
-#endif
     MCAPI static float getMaxIntensity();
 
+protected:
+
+private:
 
 };

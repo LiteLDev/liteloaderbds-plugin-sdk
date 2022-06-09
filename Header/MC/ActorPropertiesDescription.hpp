@@ -23,14 +23,20 @@ public:
     ActorPropertiesDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorPropertiesDescription();
     /*1*/ virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
-public:
-#endif
+    /*
+    inline  ~ActorPropertiesDescription(){
+         (ActorPropertiesDescription::*rv)();
+        *((void**)&rv) = dlsym("??1ActorPropertiesDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void parse(class Json::Value &);
 
+protected:
+
+private:
 
 };

@@ -22,7 +22,6 @@ public:
     BegGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BegGoal();
     /*1*/ virtual bool canUse();
@@ -32,15 +31,11 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEGGOAL
-public:
-#endif
     MCAPI BegGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, int, int);
 
-//private:
-    MCAPI bool _playerHoldingInteresting(class Player *);
+protected:
 
 private:
-
+    MCAPI bool _playerHoldingInteresting(class Player *);
 
 };

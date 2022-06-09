@@ -22,19 +22,25 @@ public:
     LevelEventPacket(class LevelEventPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelEventPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTPACKET
-public:
-#endif
+    /*
+    inline  ~LevelEventPacket(){
+         (LevelEventPacket::*rv)();
+        *((void**)&rv) = dlsym("??1LevelEventPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const &, int);
     MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
     MCAPI LevelEventPacket();
 
+protected:
+
+private:
 
 };

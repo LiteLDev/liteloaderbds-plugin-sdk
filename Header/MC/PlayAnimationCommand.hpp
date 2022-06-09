@@ -23,19 +23,21 @@ public:
     PlayAnimationCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlayAnimationCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYANIMATIONCOMMAND
-public:
-#endif
+    /*
+    inline  ~PlayAnimationCommand(){
+         (PlayAnimationCommand::*rv)();
+        *((void**)&rv) = dlsym("??1PlayAnimationCommand@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static void setup(class CommandRegistry &);
 
-//private:
+protected:
 
 private:
     MCAPI static enum MolangVersion const mStopExpressionVersion;
-
 
 };

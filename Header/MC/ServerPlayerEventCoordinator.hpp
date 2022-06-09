@@ -22,16 +22,16 @@ public:
     ServerPlayerEventCoordinator() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYEREVENTCOORDINATOR
-public:
-#endif
+    /*0*/ virtual ~ServerPlayerEventCoordinator();
     MCAPI void sendPlayerAuthInputApplied(class Player &);
     MCAPI void sendPlayerAuthInputReceived(class Player &);
     MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     MCAPI void sendPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
     MCAPI void sendPlayerOnGround(class Player &);
 
+protected:
+
+private:
 
 };

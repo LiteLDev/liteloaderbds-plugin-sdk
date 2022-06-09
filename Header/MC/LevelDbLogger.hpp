@@ -22,13 +22,18 @@ public:
     LevelDbLogger() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelDbLogger();
-    /*1*/ virtual void Logv(char const *, char *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBLOGGER
-public:
-#endif
+    /*
+    inline void Logv(char const * a0, char * a1){
+        void (LevelDbLogger::*rv)(char const *, char *);
+        *((void**)&rv) = dlsym("?Logv@LevelDbLogger@@EEAAXPEBDPEAD@Z");
+        return (this->*rv)(std::forward<char const *>(a0), std::forward<char *>(a1));
+    }
+    */
 
+protected:
+
+private:
 
 };

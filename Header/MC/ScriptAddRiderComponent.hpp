@@ -21,16 +21,22 @@ public:
     ScriptAddRiderComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptAddRiderComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTADDRIDERCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptAddRiderComponent(){
+         (ScriptAddRiderComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptAddRiderComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptAddRiderComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<std::string> getEntityType() const;
     MCAPI class Scripting::Result<std::string> getSpawnEvent() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAddRiderComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

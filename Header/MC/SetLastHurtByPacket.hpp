@@ -22,18 +22,24 @@ public:
     SetLastHurtByPacket(class SetLastHurtByPacket const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetLastHurtByPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETLASTHURTBYPACKET
-public:
-#endif
+    /*
+    inline  ~SetLastHurtByPacket(){
+         (SetLastHurtByPacket::*rv)();
+        *((void**)&rv) = dlsym("??1SetLastHurtByPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI SetLastHurtByPacket(enum ActorType);
     MCAPI SetLastHurtByPacket();
 
+protected:
+
+private:
 
 };

@@ -22,11 +22,15 @@ public:
     ScriptBoolBlockProperty() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBOOLBLOCKPROPERTY
-public:
-#endif
+    /*0*/ virtual ~ScriptBoolBlockProperty();
+    /*
+    inline  ~ScriptBoolBlockProperty(){
+         (ScriptBoolBlockProperty::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBoolBlockProperty@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty &&);
     MCAPI ScriptBoolBlockProperty(std::string, class ItemState const &, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<bool> getState() const;
@@ -34,5 +38,8 @@ public:
     MCAPI class Scripting::Result<void> setState(bool);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBoolBlockProperty> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

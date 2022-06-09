@@ -21,14 +21,13 @@ public:
     StructureTelemetryServerData(class StructureTelemetryServerData const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETELEMETRYSERVERDATA
-public:
-#endif
     MCAPI StructureTelemetryServerData();
     MCAPI bool hasBeenActivatedByRedstone();
     MCAPI void setHasBeenActivedByRedstone();
 
+protected:
+
+private:
 
 };

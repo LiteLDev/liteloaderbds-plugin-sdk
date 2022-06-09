@@ -19,13 +19,12 @@ public:
     BlockListEventMap() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLISTEVENTMAP
-public:
-#endif
     MCAPI BlockListEventMap(class BlockListEventMap const &);
     MCAPI ~BlockListEventMap();
 
+protected:
+
+private:
 
 };

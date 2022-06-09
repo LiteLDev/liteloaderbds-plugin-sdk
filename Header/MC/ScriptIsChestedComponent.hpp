@@ -21,13 +21,19 @@ public:
     ScriptIsChestedComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsChestedComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISCHESTEDCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptIsChestedComponent(){
+         (ScriptIsChestedComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsChestedComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

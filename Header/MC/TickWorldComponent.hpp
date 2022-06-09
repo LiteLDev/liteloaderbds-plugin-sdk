@@ -21,11 +21,7 @@ public:
     TickWorldComponent(class TickWorldComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKWORLDCOMPONENT
-public:
-#endif
     MCAPI TickWorldComponent(class TickWorldComponent &&);
     MCAPI TickWorldComponent();
     MCAPI unsigned int getChunkRadius() const;
@@ -40,5 +36,8 @@ public:
     MCAPI void updateArea(class Actor &);
     MCAPI ~TickWorldComponent();
 
+protected:
+
+private:
 
 };

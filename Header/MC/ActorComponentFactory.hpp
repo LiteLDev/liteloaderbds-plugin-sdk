@@ -22,16 +22,12 @@ public:
     ActorComponentFactory() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMPONENTFACTORY
-public:
-#endif
+    /*0*/ virtual ~ActorComponentFactory();
 
-//private:
-    MCAPI void _initialize(class BaseGameVersion const &, class Experiments const &);
+protected:
 
 private:
-
+    MCAPI void _initialize(class BaseGameVersion const &, class Experiments const &);
 
 };

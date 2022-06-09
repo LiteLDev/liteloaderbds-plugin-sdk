@@ -23,14 +23,13 @@ public:
     MeCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MeCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MECOMMAND
-public:
-#endif
     MCAPI static void setup(class CommandRegistry &);
 
+protected:
+
+private:
 
 };

@@ -2,14 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "TransactionalWorldBlockTarget.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class EncryptedProxyEnv : public TransactionalWorldBlockTarget {
+class EncryptedProxyEnv {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,18 +22,23 @@ public:
     EncryptedProxyEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EncryptedProxyEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDPROXYENV
-public:
-    MCVAPI class leveldb::Status DeleteFileA(std::string const &);
-    MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
-    MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
-#endif
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
     MCAPI EncryptedProxyEnv(class leveldb::Env *, class ContentIdentity const &, std::string const &, enum EncryptedProxyReadMode);
 
+protected:
+
+private:
 
 };

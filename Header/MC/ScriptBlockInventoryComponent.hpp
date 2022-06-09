@@ -22,12 +22,15 @@ public:
     ScriptBlockInventoryComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptBlockInventoryComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKINVENTORYCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptBlockInventoryComponent(){
+         (ScriptBlockInventoryComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptBlockInventoryComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent &&);
     MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponentContainer>> getOrCreateContainer();
@@ -35,5 +38,8 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
+protected:
+
+private:
 
 };

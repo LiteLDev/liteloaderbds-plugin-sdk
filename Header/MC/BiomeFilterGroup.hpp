@@ -23,15 +23,21 @@ public:
     BiomeFilterGroup() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BiomeFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEFILTERGROUP
-public:
-#endif
+    /*
+    inline  ~BiomeFilterGroup(){
+         (BiomeFilterGroup::*rv)();
+        *((void**)&rv) = dlsym("??1BiomeFilterGroup@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
 
+protected:
+
+private:
 
 };

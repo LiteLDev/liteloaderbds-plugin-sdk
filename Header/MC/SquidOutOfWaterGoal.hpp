@@ -22,7 +22,6 @@ public:
     SquidOutOfWaterGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SquidOutOfWaterGoal();
     /*1*/ virtual void __unk_vfn_1();
@@ -32,13 +31,31 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDOUTOFWATERGOAL
-public:
-    MCVAPI bool canContinueToUse();
-    MCVAPI bool canUse();
-    MCVAPI void stop();
-    MCVAPI void tick();
-#endif
+    /*
+    inline void stop(){
+        void (SquidOutOfWaterGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@SquidOutOfWaterGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void tick(){
+        void (SquidOutOfWaterGoal::*rv)();
+        *((void**)&rv) = dlsym("?tick@SquidOutOfWaterGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool canUse(){
+        bool (SquidOutOfWaterGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@SquidOutOfWaterGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (SquidOutOfWaterGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@SquidOutOfWaterGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

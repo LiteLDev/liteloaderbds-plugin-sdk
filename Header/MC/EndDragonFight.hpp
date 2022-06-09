@@ -29,11 +29,7 @@ public:
     EndDragonFight() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDDRAGONFIGHT
-public:
-#endif
     MCAPI EndDragonFight(class BlockSource &);
     MCAPI void loadData(class CompoundTag const &);
     MCAPI void onCrystalDestroyed(class EnderCrystal const &, class ActorDamageSource const &);
@@ -45,7 +41,9 @@ public:
     MCAPI void verifyExitPositions(class EndGatewayBlockActor &);
     MCAPI ~EndDragonFight();
 
-//private:
+protected:
+
+private:
     MCAPI bool _canSpawnNewGateway(class ChunkViewSource *, class BlockPos const &) const;
     MCAPI void _createNewDragon();
     MCAPI struct BuildMatch _findExitPortal();
@@ -60,8 +58,6 @@ public:
     MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const &, int);
     MCAPI void _updateCrystalCount();
     MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
-
-private:
     MCAPI static int const ARENA_SIZE_CHUNKS;
     MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
     MCAPI static int const GATEWAY_CHUNK_RADIUS;
@@ -71,6 +67,5 @@ private:
     MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
     MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
     MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
-
 
 };

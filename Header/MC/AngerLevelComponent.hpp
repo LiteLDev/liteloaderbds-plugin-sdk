@@ -19,11 +19,7 @@ public:
     AngerLevelComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELCOMPONENT
-public:
-#endif
     MCAPI AngerLevelComponent(class AngerLevelComponent &&);
     MCAPI AngerLevelComponent(class AngerLevelComponent const &);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
@@ -42,11 +38,10 @@ public:
     MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
     MCAPI static bool canBeNuisance(class Actor const *);
 
-//private:
-    MCAPI void _createOrModifyAngerLevel(struct ActorUniqueID, class std::function<int (int)> const &);
-    MCAPI class std::optional<enum LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
+protected:
 
 private:
-
+    MCAPI void _createOrModifyAngerLevel(struct ActorUniqueID, class std::function<int (int)> const &);
+    MCAPI class std::optional<enum LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
 
 };

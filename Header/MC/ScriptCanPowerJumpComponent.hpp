@@ -21,13 +21,19 @@ public:
     ScriptCanPowerJumpComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptCanPowerJumpComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCANPOWERJUMPCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptCanPowerJumpComponent(){
+         (ScriptCanPowerJumpComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptCanPowerJumpComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

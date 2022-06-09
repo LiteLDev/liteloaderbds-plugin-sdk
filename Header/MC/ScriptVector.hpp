@@ -20,11 +20,7 @@ public:
     ScriptVector() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTVECTOR
-public:
-#endif
     MCAPI ScriptVector(class Vec3 const &);
     MCAPI class ScriptVector normalized() const;
     MCAPI bool operator==(class ScriptVector const &) const;
@@ -39,5 +35,8 @@ public:
     MCAPI static class ScriptVector slerp(class ScriptVector const &, class ScriptVector const &, float);
     MCAPI static class ScriptVector subtract(class ScriptVector const &, class ScriptVector const &);
 
+protected:
+
+private:
 
 };

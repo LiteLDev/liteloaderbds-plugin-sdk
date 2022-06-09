@@ -28,11 +28,15 @@ public:
     NetworkChunkPublisher() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHER
-public:
-#endif
+    /*0*/ virtual ~NetworkChunkPublisher();
+    /*
+    inline  ~NetworkChunkPublisher(){
+         (NetworkChunkPublisher::*rv)();
+        *((void**)&rv) = dlsym("??1NetworkChunkPublisher@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI NetworkChunkPublisher(class Level &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, class NetworkIdentifier const &, unsigned char);
     MCAPI void clearRegion();
     MCAPI void destroyRegion();
@@ -42,11 +46,10 @@ public:
     MCAPI void prepareRegion(class ChunkSource &, class ChunkPos &);
     MCAPI void sendQueuedChunks();
 
-//private:
-    MCAPI bool _sendQueuedChunk(class ChunkPos const &, class ClientBlobCache::Server::TransferBuilder *);
-    MCAPI void _serializeAndCache(class LevelChunkPacket &, class ClientBlobCache::Server::TransferBuilder &, class std::function<void (class VarIntDataOutput &)> &&);
+protected:
 
 private:
-
+    MCAPI bool _sendQueuedChunk(class ChunkPos const &, class ClientBlobCache::Server::TransferBuilder *);
+    MCAPI void _serializeAndCache(class LevelChunkPacket &, class ClientBlobCache::Server::TransferBuilder &, class std::function<void (class VarIntDataOutput &)> &&);
 
 };

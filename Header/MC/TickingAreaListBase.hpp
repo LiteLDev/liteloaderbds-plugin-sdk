@@ -22,13 +22,16 @@ public:
     TickingAreaListBase() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TickingAreaListBase();
     /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREALISTBASE
-public:
-#endif
+    /*
+    inline  ~TickingAreaListBase(){
+         (TickingAreaListBase::*rv)();
+        *((void**)&rv) = dlsym("??1TickingAreaListBase@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void add(std::unique_ptr<class ITickingArea>);
     MCAPI unsigned int countEntityTickingAreas() const;
     MCAPI unsigned int countStandaloneTickingAreas() const;
@@ -48,10 +51,9 @@ public:
     MCAPI void tick(struct Tick const &);
     MCAPI void tickSeasons(class Random &);
 
-//protected:
+protected:
     MCAPI bool _shouldRemoveArea(unsigned int, std::vector<class Vec3> const &) const;
 
-protected:
-
+private:
 
 };

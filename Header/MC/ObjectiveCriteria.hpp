@@ -22,16 +22,15 @@ public:
     ObjectiveCriteria() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVECRITERIA
-public:
-#endif
     MCAPI ObjectiveCriteria(std::string const &, bool, enum ObjectiveRenderType);
     MCAPI std::string const & getName() const;
     MCAPI bool isReadOnly() const;
     MCAPI static std::unique_ptr<class ObjectiveCriteria> deserialize(class CompoundTag const &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ObjectiveCriteria const &);
 
+protected:
+
+private:
 
 };

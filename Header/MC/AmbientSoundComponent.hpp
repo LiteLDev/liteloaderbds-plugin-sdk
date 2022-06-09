@@ -22,12 +22,11 @@ public:
     AmbientSoundComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDCOMPONENT
-public:
-#endif
     MCAPI static void setAmbientSoundRemainingTime(class Actor &, float);
 
+protected:
+
+private:
 
 };

@@ -20,19 +20,14 @@ public:
     ContainerScreenValidationCrafting() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ContainerScreenValidationCrafting();
     /*1*/ virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
     /*2*/ virtual struct ContainerValidationCraftResult getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATIONCRAFTING
-public:
-#endif
 
-//private:
-    MCAPI void _appendCraftResult(struct ContainerValidationCraftResult &);
+protected:
 
 private:
-
+    MCAPI void _appendCraftResult(struct ContainerValidationCraftResult &);
 
 };

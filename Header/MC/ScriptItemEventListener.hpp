@@ -20,7 +20,6 @@ public:
     ScriptItemEventListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptItemEventListener();
     /*1*/ virtual void __unk_vfn_1();
@@ -41,11 +40,10 @@ public:
     /*16*/ virtual enum EventResult onEvent(struct ItemDefinitionEventTriggeredEvent const &);
     /*17*/ virtual enum EventResult onEvent(struct ItemUseOnEvent const &);
     /*18*/ virtual enum EventResult onEvent(struct ItemUseEvent const &);
-    /*19*/ virtual enum EventResult onEvent(struct ItemNotificationEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMEVENTLISTENER
-public:
-#endif
     MCAPI ScriptItemEventListener(class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
+protected:
+
+private:
 
 };

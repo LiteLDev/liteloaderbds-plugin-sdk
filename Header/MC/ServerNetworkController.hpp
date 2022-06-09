@@ -22,16 +22,22 @@ public:
     ServerNetworkController() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ServerNetworkController();
-    /*1*/ virtual bool isDedicatedServer() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool isHost(class mce::UUID const &) const;
     /*3*/ virtual bool canChangePermission(class mce::UUID const &, class ServerPlayer const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKCONTROLLER
-public:
-#endif
+    /*
+    inline bool isDedicatedServer() const{
+        bool (ServerNetworkController::*rv)() const;
+        *((void**)&rv) = dlsym("?isDedicatedServer@ServerNetworkController@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum AbilitiesIndex)>);
 
+protected:
+
+private:
 
 };

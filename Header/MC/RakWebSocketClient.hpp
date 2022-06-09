@@ -23,15 +23,21 @@ public:
     RakWebSocketClient() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RakWebSocketClient();
     /*8*/ virtual void _updateState();
     /*9*/ virtual unsigned int _genMaskingKey() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETCLIENT
-public:
-#endif
+    /*
+    inline  ~RakWebSocketClient(){
+         (RakWebSocketClient::*rv)();
+        *((void**)&rv) = dlsym("??1RakWebSocketClient@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
 
+protected:
+
+private:
 
 };

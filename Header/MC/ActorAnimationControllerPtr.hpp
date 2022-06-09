@@ -22,11 +22,7 @@ public:
     ActorAnimationControllerPtr() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERPTR
-public:
-#endif
     MCAPI ActorAnimationControllerPtr(class ActorAnimationControllerGroup &, class HashedString const &);
     MCAPI class HashedString const & getName() const;
     MCAPI bool isNull() const;
@@ -35,5 +31,8 @@ public:
     MCAPI ~ActorAnimationControllerPtr();
     MCAPI static class ActorAnimationControllerPtr const NONE;
 
+protected:
+
+private:
 
 };

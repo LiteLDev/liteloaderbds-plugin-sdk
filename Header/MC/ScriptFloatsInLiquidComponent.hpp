@@ -21,13 +21,19 @@ public:
     ScriptFloatsInLiquidComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptFloatsInLiquidComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFLOATSINLIQUIDCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptFloatsInLiquidComponent(){
+         (ScriptFloatsInLiquidComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptFloatsInLiquidComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

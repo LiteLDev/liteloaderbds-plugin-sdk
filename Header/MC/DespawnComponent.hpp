@@ -22,18 +22,13 @@ public:
     DespawnComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT
-public:
-#endif
     MCAPI void onDespawn(class Actor &);
     MCAPI void tick(class Actor &);
 
-//private:
-    MCAPI bool _tryStandardDespawnRules(class Actor &) const;
+protected:
 
 private:
-
+    MCAPI bool _tryStandardDespawnRules(class Actor &) const;
 
 };

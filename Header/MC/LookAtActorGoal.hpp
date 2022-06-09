@@ -22,7 +22,6 @@ public:
     LookAtActorGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LookAtActorGoal();
     /*1*/ virtual bool canUse();
@@ -32,15 +31,18 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATACTORGOAL
-public:
-#endif
+    /*
+    inline  ~LookAtActorGoal(){
+         (LookAtActorGoal::*rv)();
+        *((void**)&rv) = dlsym("??1LookAtActorGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI LookAtActorGoal(class Mob &, float, float, int, int, int, int);
 
-//private:
-    MCAPI bool _withinFieldOfView(class Actor &);
+protected:
 
 private:
-
+    MCAPI bool _withinFieldOfView(class Actor &);
 
 };

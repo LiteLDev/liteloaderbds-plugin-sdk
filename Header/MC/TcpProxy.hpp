@@ -22,11 +22,18 @@ public:
     TcpProxy() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TCPPROXY
-public:
-#endif
+    /*0*/ virtual ~TcpProxy();
+    /*
+    inline  ~TcpProxy(){
+         (TcpProxy::*rv)();
+        *((void**)&rv) = dlsym("??1TcpProxy@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

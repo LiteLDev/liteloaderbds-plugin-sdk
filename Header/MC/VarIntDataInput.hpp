@@ -22,7 +22,6 @@ public:
     VarIntDataInput() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VarIntDataInput();
     /*1*/ virtual void __unk_vfn_1();
@@ -33,13 +32,33 @@ public:
     /*6*/ virtual short readShort();
     /*7*/ virtual int readInt();
     /*8*/ virtual __int64 readLongLong();
-    /*9*/ virtual bool readBytes(void *, unsigned __int64);
+    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAINPUT
-public:
-    MCVAPI std::string readLongString();
-    MCVAPI std::string readString();
-#endif
+    /*
+    inline  ~VarIntDataInput(){
+         (VarIntDataInput::*rv)();
+        *((void**)&rv) = dlsym("??1VarIntDataInput@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline bool readBytes(void * a0, unsigned __int64 a1){
+        bool (VarIntDataInput::*rv)(void *, unsigned __int64);
+        *((void**)&rv) = dlsym("?readBytes@VarIntDataInput@@UEAA_NPEAX_K@Z");
+        return (this->*rv)(std::forward<void *>(a0), std::forward<unsigned __int64>(a1));
+    }
+    inline std::string readLongString(){
+        std::string (VarIntDataInput::*rv)();
+        *((void**)&rv) = dlsym("?readLongString@VarIntDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string readString(){
+        std::string (VarIntDataInput::*rv)();
+        *((void**)&rv) = dlsym("?readString@VarIntDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

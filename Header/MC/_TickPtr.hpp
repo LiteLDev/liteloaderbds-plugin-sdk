@@ -22,11 +22,19 @@ public:
     _TickPtr() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL__TICKPTR
-public:
-#endif
+    /*0*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual ~_TickPtr();
+    /*
+    inline  ~_TickPtr(){
+         (_TickPtr::*rv)();
+        *((void**)&rv) = dlsym("??1_TickPtr@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

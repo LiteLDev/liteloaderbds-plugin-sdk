@@ -23,14 +23,20 @@ public:
     RuntimeIdentifierDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
     /*1*/ virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMEIDENTIFIERDESCRIPTION
-public:
-#endif
+    /*
+    inline  ~RuntimeIdentifierDescription(){
+         (RuntimeIdentifierDescription::*rv)();
+        *((void**)&rv) = dlsym("??1RuntimeIdentifierDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void parse(class Json::Value const &);
 
+protected:
+
+private:
 
 };

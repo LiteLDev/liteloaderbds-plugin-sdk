@@ -22,14 +22,19 @@ public:
     LootSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LootSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher &);
-    /*2*/ virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
-public:
-#endif
+    /*
+    inline void tick(class EntityRegistry & a0){
+        void (LootSystem::*rv)(class EntityRegistry &);
+        *((void**)&rv) = dlsym("?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z");
+        return (this->*rv)(std::forward<class EntityRegistry &>(a0));
+    }
+    */
 
+protected:
+
+private:
 
 };

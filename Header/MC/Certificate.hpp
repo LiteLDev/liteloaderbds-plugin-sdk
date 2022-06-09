@@ -23,11 +23,7 @@ public:
     Certificate() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CERTIFICATE
-public:
-#endif
     MCAPI Certificate(class Certificate const &);
     MCAPI __int64 getExpirationDate() const;
     MCAPI class Json::Value getExtraData(std::string const &, class Json::Value const &) const;
@@ -38,10 +34,9 @@ public:
     MCAPI bool validate(__int64);
     MCAPI ~Certificate();
 
-//private:
-    MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
+protected:
 
 private:
-
+    MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
 
 };

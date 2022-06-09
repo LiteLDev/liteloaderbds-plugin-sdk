@@ -21,15 +21,20 @@ public:
     LookAtBlockNode(class LookAtBlockNode const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LookAtBlockNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor &);
-    /*2*/ virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATBLOCKNODE
-public:
-#endif
+    /*
+    inline void initializeFromDefinition(class Actor & a0){
+        void (LookAtBlockNode::*rv)(class Actor &);
+        *((void**)&rv) = dlsym("?initializeFromDefinition@LookAtBlockNode@@EEAAXAEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor &>(a0));
+    }
+    */
     MCAPI LookAtBlockNode();
 
+protected:
+
+private:
 
 };

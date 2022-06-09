@@ -22,20 +22,15 @@ public:
     GeneticsDefinition(class GeneticsDefinition const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSDEFINITION
-public:
-#endif
     MCAPI GeneticsDefinition();
     MCAPI void addGeneDefinition(struct GeneDefinition const &);
     MCAPI void initialize(class EntityContext &, class GeneticsComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>> &);
 
-//private:
+protected:
 
 private:
     MCAPI static float const DEFAULT_MUTATION_RATE;
-
 
 };

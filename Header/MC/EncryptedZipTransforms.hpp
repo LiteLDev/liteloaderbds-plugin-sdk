@@ -22,15 +22,20 @@ public:
     EncryptedZipTransforms() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EncryptedZipTransforms();
     /*1*/ virtual bool readTransform(std::vector<unsigned char> &) const;
-    /*2*/ virtual bool writeTransform(std::vector<unsigned char> &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDZIPTRANSFORMS
-public:
-#endif
+    /*
+    inline bool writeTransform(std::vector<unsigned char> & a0) const{
+        bool (EncryptedZipTransforms::*rv)(std::vector<unsigned char> &) const;
+        *((void**)&rv) = dlsym("?writeTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z");
+        return (this->*rv)(std::forward<std::vector<unsigned char> &>(a0));
+    }
+    */
     MCAPI EncryptedZipTransforms(class IContentKeyProvider const &);
 
+protected:
+
+private:
 
 };

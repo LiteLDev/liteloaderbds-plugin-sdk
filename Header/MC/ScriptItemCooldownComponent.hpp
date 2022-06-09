@@ -19,12 +19,15 @@ public:
     ScriptItemCooldownComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptItemCooldownComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMCOOLDOWNCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptItemCooldownComponent(){
+         (ScriptItemCooldownComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemCooldownComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptItemCooldownComponent(class ScriptItemCooldownComponent const &);
     MCAPI ScriptItemCooldownComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<std::string> getCooldownCategory();
@@ -34,5 +37,8 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemCooldownComponent> bind(struct Scripting::Version);
     MCAPI static std::string const & getTypeName();
 
+protected:
+
+private:
 
 };

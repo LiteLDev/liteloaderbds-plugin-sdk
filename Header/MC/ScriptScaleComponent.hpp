@@ -21,12 +21,18 @@ public:
     ScriptScaleComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptScaleComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSCALECOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptScaleComponent(){
+         (ScriptScaleComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptScaleComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

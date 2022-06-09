@@ -22,19 +22,14 @@ public:
     CompoundTagEditHelper() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGEDITHELPER
-public:
-#endif
     MCAPI class CompoundTag const * getParent() const;
     MCAPI void replaceWith(std::string const &, std::unique_ptr<class Tag>);
     MCAPI ~CompoundTagEditHelper();
 
-//private:
-    MCAPI void pushChild(std::string const &);
+protected:
 
 private:
-
+    MCAPI void pushChild(std::string const &);
 
 };

@@ -22,13 +22,12 @@ public:
     ChestContainerScreenValidator(class ChestContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChestContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERSCREENVALIDATOR
-public:
-#endif
     MCAPI ChestContainerScreenValidator();
 
+protected:
+
+private:
 
 };

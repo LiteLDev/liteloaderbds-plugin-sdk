@@ -23,7 +23,6 @@ public:
     EnchantingContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnchantingContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -33,13 +32,13 @@ public:
     /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGCONTAINERMANAGERMODEL
-public:
-#endif
     MCAPI EnchantingContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI std::vector<class ItemEnchantOption> const & getEnchantOptions() const;
     MCAPI void recalculateOptions();
     MCAPI static int const NUM_OPTIONS;
 
+protected:
+
+private:
 
 };

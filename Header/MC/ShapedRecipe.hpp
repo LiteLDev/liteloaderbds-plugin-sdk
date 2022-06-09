@@ -23,7 +23,6 @@ public:
     ShapedRecipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShapedRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
@@ -33,17 +32,21 @@ public:
     /*5*/ virtual bool isShapeless() const;
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*7*/ virtual int size() const;
+    /*10*/ virtual bool isMultiRecipe() const;
     /*15*/ virtual void loadResultList(class BlockPalette const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPEDRECIPE
-public:
-#endif
+    /*
+    inline  ~ShapedRecipe(){
+         (ShapedRecipe::*rv)();
+        *((void**)&rv) = dlsym("??1ShapedRecipe@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ShapedRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     MCAPI void generateUUID();
 
-//private:
-    MCAPI bool matches(class CraftingContainer &, int, int, bool) const;
+protected:
 
 private:
-
+    MCAPI bool matches(class CraftingContainer &, int, int, bool) const;
 
 };

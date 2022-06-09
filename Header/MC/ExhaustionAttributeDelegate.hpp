@@ -23,14 +23,14 @@ public:
     ExhaustionAttributeDelegate() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ExhaustionAttributeDelegate();
     /*1*/ virtual void tick();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONATTRIBUTEDELEGATE
-public:
-#endif
+    /*2*/ virtual void notify(__int64);
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
 
+protected:
+
+private:
 
 };

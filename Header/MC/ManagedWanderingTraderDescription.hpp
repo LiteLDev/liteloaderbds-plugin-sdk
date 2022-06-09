@@ -23,14 +23,20 @@ public:
     ManagedWanderingTraderDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~ManagedWanderingTraderDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANAGEDWANDERINGTRADERDESCRIPTION
-public:
-#endif
+    /*
+    inline  ~ManagedWanderingTraderDescription(){
+         (ManagedWanderingTraderDescription::*rv)();
+        *((void**)&rv) = dlsym("??1ManagedWanderingTraderDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

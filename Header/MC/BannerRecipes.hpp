@@ -20,12 +20,11 @@ public:
     BannerRecipes() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERRECIPES
-public:
-#endif
     MCAPI static void addRecipes(class Recipes &);
 
+protected:
+
+private:
 
 };

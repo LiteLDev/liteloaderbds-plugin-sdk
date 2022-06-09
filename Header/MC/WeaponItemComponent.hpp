@@ -22,18 +22,21 @@ public:
     WeaponItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WeaponItemComponent();
-    /*1*/ virtual bool isNetworkComponent() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEMCOMPONENT
-public:
-#endif
+    /*
+    inline bool isNetworkComponent() const{
+        bool (WeaponItemComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkComponent@WeaponItemComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI WeaponItemComponent(class ComponentItem *);
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     MCAPI void hitActor(class ItemStack &, class Actor &, class Mob &) const;
@@ -42,5 +45,8 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
+protected:
+
+private:
 
 };

@@ -23,14 +23,13 @@ public:
     DialogueCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DialogueCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIALOGUECOMMAND
-public:
-#endif
     MCAPI static void setup(class CommandRegistry &);
 
+protected:
+
+private:
 
 };

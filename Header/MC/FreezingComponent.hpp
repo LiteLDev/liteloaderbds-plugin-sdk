@@ -22,11 +22,7 @@ public:
     FreezingComponent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZINGCOMPONENT
-public:
-#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &);
     MCAPI void decreaseFreezingEffect();
     MCAPI float getFreezingEffectStrength() const;
@@ -36,5 +32,8 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void resetFreezingEffect();
 
+protected:
+
+private:
 
 };

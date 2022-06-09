@@ -21,14 +21,20 @@ public:
     ScriptItemActorComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptItemActorComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTITEMACTORCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptItemActorComponent(){
+         (ScriptItemActorComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemActorComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemStack>> getItemStack() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemActorComponent> bind(struct Scripting::Version);
 
+protected:
+
+private:
 
 };

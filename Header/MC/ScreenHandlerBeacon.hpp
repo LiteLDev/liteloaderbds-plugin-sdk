@@ -22,22 +22,17 @@ public:
     ScreenHandlerBeacon() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScreenHandlerBeacon();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /*2*/ virtual enum ItemStackNetResult endRequest();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void postRequest(bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBEACON
-public:
-#endif
     MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
-//private:
-    MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
+protected:
 
 private:
-
+    MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
 
 };

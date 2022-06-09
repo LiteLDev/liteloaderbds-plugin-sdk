@@ -22,11 +22,7 @@ public:
     InventoryTransactionManager() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONMANAGER
-public:
-#endif
     MCAPI void _createServerSideAction(class ItemStack const &, class ItemStack const &);
     MCAPI void _logExpectedActions() const;
     MCAPI void addAction(class InventoryAction const &, bool);
@@ -36,5 +32,8 @@ public:
     MCAPI void resetExpectedActions();
     MCAPI ~InventoryTransactionManager();
 
+protected:
+
+private:
 
 };

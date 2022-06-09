@@ -23,21 +23,16 @@ public:
     LootTable() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLE
-public:
-#endif
     MCAPI LootTable(std::string);
     MCAPI void deserialize(class Json::Value const &);
     MCAPI void fill(class Container &, class Random &, class LootTableContext &);
     MCAPI std::vector<class ItemStack> getRandomItems(class Random &, class LootTableContext &) const;
 
-//private:
-    MCAPI std::vector<int> getAvailableSlots(class Container &, class Random &);
-    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack> &, int, class Random &);
+protected:
 
 private:
-
+    MCAPI std::vector<int> getAvailableSlots(class Container &, class Random &);
+    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack> &, int, class Random &);
 
 };

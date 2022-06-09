@@ -22,11 +22,18 @@ public:
     IScreenChangedEventing() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISCREENCHANGEDEVENTING
-public:
-#endif
+    /*0*/ virtual ~IScreenChangedEventing();
+    /*
+    inline  ~IScreenChangedEventing(){
+         (IScreenChangedEventing::*rv)();
+        *((void**)&rv) = dlsym("??1IScreenChangedEventing@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

@@ -22,12 +22,11 @@ public:
     AsyncTracker() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCTRACKER
-public:
-#endif
     MCAPI bool hasAsyncOperationTimedOut();
 
+protected:
+
+private:
 
 };

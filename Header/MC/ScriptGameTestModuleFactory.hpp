@@ -2,15 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
-#include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class ScriptGameTestModuleFactory : public TextObjectText {
+class ScriptGameTestModuleFactory {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,21 +22,16 @@ public:
     ScriptGameTestModuleFactory() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTMODULEFACTORY
-public:
-#endif
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
     MCAPI static std::string getModuleUUIDAsString();
 
-//private:
-    MCAPI void _addV1();
+protected:
 
 private:
+    MCAPI void _addV1();
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID ModuleUUID;
-
 
 };

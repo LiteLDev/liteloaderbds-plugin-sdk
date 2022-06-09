@@ -19,7 +19,6 @@ public:
     TaskQueuePortImpl(class TaskQueuePortImpl const &) = delete;
 #endif
 
-
 public:
     /*3*/ virtual struct XTaskQueuePortObject * GetHandle();
     /*4*/ virtual long QueueItem(struct ITaskQueuePortContext *, unsigned int, void *, void ( *)(void *, bool));
@@ -36,13 +35,19 @@ public:
     /*15*/ virtual long SuspendTermination(struct ITaskQueuePortContext *);
     /*16*/ virtual void ResumeTermination(struct ITaskQueuePortContext *);
     /*17*/ virtual ~TaskQueuePortImpl();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTIMPL
-public:
-#endif
+    /*
+    inline  ~TaskQueuePortImpl(){
+         (TaskQueuePortImpl::*rv)();
+        *((void**)&rv) = dlsym("??1TaskQueuePortImpl@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI long Initialize(enum XTaskQueueDispatchMode);
     MCAPI TaskQueuePortImpl();
 
-//private:
+protected:
+
+private:
     MCAPI bool AppendEntry(struct TaskQueuePortImpl::QueueEntry const &, unsigned __int64, bool);
     MCAPI bool AppendWaitRegistrationEntry(struct TaskQueuePortImpl::WaitRegistration *, bool);
     MCAPI void CancelPendingEntries(struct ITaskQueuePortContext *, bool);
@@ -51,8 +56,5 @@ public:
     MCAPI void SubmitPendingCallback();
     MCAPI static void EraseQueue(class LocklessQueue<struct TaskQueuePortImpl::QueueEntry> *);
     MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE *, void *, struct _TP_WAIT *, unsigned long);
-
-private:
-
 
 };

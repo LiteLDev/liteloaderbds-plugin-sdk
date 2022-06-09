@@ -24,7 +24,6 @@ public:
     ActorHasEquipmentTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorHasEquipmentTest();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
@@ -33,9 +32,16 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
-public:
-#endif
+    /*
+    inline  ~ActorHasEquipmentTest(){
+         (ActorHasEquipmentTest::*rv)();
+        *((void**)&rv) = dlsym("??1ActorHasEquipmentTest@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

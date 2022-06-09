@@ -23,17 +23,27 @@ public:
     TextObjectText() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TextObjectText();
-    /*1*/ virtual std::string asString() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual class Json::Value asJsonValue() const;
-    /*3*/ virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTTEXT
-public:
-#endif
+    /*
+    inline std::string asString() const{
+        std::string (TextObjectText::*rv)() const;
+        *((void**)&rv) = dlsym("?asString@TextObjectText@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class Json::Value resolve(struct ResolveData const & a0) const{
+        class Json::Value (TextObjectText::*rv)(struct ResolveData const &) const;
+        *((void**)&rv) = dlsym("?resolve@TextObjectText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z");
+        return (this->*rv)(std::forward<struct ResolveData const &>(a0));
+    }
+    */
     MCAPI TextObjectText(std::string);
     MCAPI static class Json::Value asJsonValue(std::string const &);
 
+protected:
+
+private:
 
 };

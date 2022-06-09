@@ -20,25 +20,27 @@ public:
     StayNearNoteblockGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StayNearNoteblockGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAYNEARNOTEBLOCKGOAL
-public:
-#endif
+    /*
+    inline void stop(){
+        void (StayNearNoteblockGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@StayNearNoteblockGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI StayNearNoteblockGoal(class Mob &);
 
-//private:
-    MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
+protected:
 
 private:
-
+    MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
 
 };

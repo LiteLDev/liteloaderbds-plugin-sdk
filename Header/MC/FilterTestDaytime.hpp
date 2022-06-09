@@ -24,14 +24,20 @@ public:
     FilterTestDaytime() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FilterTestDaytime();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDAYTIME
-public:
-#endif
+    /*
+    inline  ~FilterTestDaytime(){
+         (FilterTestDaytime::*rv)();
+        *((void**)&rv) = dlsym("??1FilterTestDaytime@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

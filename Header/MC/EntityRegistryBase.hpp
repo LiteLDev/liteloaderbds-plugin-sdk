@@ -22,20 +22,15 @@ public:
     EntityRegistryBase() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRYBASE
-public:
-#endif
     MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId> &);
     MCAPI bool isValidEntity(class EntityContextBase const &) const;
     MCAPI ~EntityRegistryBase();
 
-//protected:
-    MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
-
 protected:
+    MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
     MCAPI static struct std::atomic<unsigned int> mRegistryCount;
 
+private:
 
 };

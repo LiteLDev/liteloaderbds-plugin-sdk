@@ -21,13 +21,19 @@ public:
     ScriptFireImmuneComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptFireImmuneComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFIREIMMUNECOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptFireImmuneComponent(){
+         (ScriptFireImmuneComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptFireImmuneComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

@@ -25,11 +25,7 @@ public:
     RakPeerHelper() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKPEERHELPER
-public:
-#endif
     MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface &);
     MCAPI int getConnectionIndex(class Social::GameConnectionInfo const &) const;
     MCAPI unsigned short getIPv4BoundPort() const;
@@ -41,12 +37,11 @@ public:
     MCAPI enum RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &);
     MCAPI void reset();
 
-//private:
+protected:
+
+private:
     MCAPI void LogIPSupport();
     MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int &);
     MCAPI enum RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int &, int);
-
-private:
-
 
 };

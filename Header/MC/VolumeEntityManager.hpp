@@ -28,21 +28,24 @@ public:
     VolumeEntityManager() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEENTITYMANAGER
-public:
-#endif
+    /*0*/ virtual ~VolumeEntityManager();
+    /*
+    inline  ~VolumeEntityManager(){
+         (VolumeEntityManager::*rv)();
+        *((void**)&rv) = dlsym("??1VolumeEntityManager@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI unsigned __int64 getVolumeInstanceCount() const;
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
     MCAPI static bool isTriggerVolumesEnabled;
     MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry &);
 
-//protected:
+protected:
     MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const &);
 
-protected:
-
+private:
 
 };

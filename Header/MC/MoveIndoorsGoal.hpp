@@ -22,7 +22,6 @@ public:
     MoveIndoorsGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MoveIndoorsGoal();
     /*1*/ virtual bool canUse();
@@ -32,16 +31,12 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINDOORSGOAL
-public:
-#endif
     MCAPI MoveIndoorsGoal(class Mob &);
 
-//private:
-    MCAPI bool _isInside(class BlockPos const &);
-    MCAPI void _startPathfinding();
+protected:
 
 private:
-
+    MCAPI bool _isInside(class BlockPos const &);
+    MCAPI void _startPathfinding();
 
 };

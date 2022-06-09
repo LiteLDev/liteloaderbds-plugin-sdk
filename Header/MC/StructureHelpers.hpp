@@ -22,11 +22,7 @@ public:
     StructureHelpers() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREHELPERS
-public:
-#endif
     MCAPI static bool createChest(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, unsigned char, std::string const &);
     MCAPI static bool createDispenser(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, int, std::string const &);
     MCAPI static bool createMinecartChest(class StructurePiece &, class BlockSource &, class BoundingBox const &, class Random &, int, int, int, int, std::string const &);
@@ -38,5 +34,8 @@ public:
     MCAPI static int getTorchRotation(int, unsigned short);
     MCAPI static int getWeirdoDirectionRotation(int, unsigned short);
 
+protected:
+
+private:
 
 };

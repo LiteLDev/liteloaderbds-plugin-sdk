@@ -20,12 +20,17 @@ public:
     IEntityRegistryOwner() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
-public:
-    MCVAPI ~IEntityRegistryOwner();
-#endif
+    /*
+    inline  ~IEntityRegistryOwner(){
+         (IEntityRegistryOwner::*rv)();
+        *((void**)&rv) = dlsym("??1IEntityRegistryOwner@@MEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

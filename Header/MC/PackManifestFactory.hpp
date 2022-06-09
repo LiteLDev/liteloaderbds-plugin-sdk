@@ -23,13 +23,16 @@ public:
     PackManifestFactory() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PackManifestFactory();
     /*1*/ virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy &, class ResourceLocation const &, class PackReport &, class SubpackInfoCollection *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMANIFESTFACTORY
-public:
-#endif
+    /*
+    inline  ~PackManifestFactory(){
+         (PackManifestFactory::*rv)();
+        *((void**)&rv) = dlsym("??1PackManifestFactory@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PackManifestFactory(class IPackTelemetry &);
     MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
     MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
@@ -41,5 +44,8 @@ public:
     MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mAlternateContentKeys;
     MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mContentKeys;
 
+protected:
+
+private:
 
 };

@@ -21,13 +21,19 @@ public:
     ScriptIsChargedComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptIsChargedComponent();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTISCHARGEDCOMPONENT
-public:
-#endif
+    /*
+    inline  ~ScriptIsChargedComponent(){
+         (ScriptIsChargedComponent::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptIsChargedComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI static class HashedString const & getHashedName();
 
+protected:
+
+private:
 
 };

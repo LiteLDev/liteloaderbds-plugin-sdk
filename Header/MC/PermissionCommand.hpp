@@ -23,22 +23,17 @@ public:
     PermissionCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PermissionCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONCOMMAND
-public:
-#endif
     MCAPI static void setup(class CommandRegistry &, class PermissionsFile *);
 
-//private:
+protected:
+
+private:
     MCAPI void list(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void reload(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void set(class CommandOrigin const &, class CommandOutput &) const;
-
-private:
     MCAPI static class PermissionsFile * mPermissionsFile;
-
 
 };

@@ -22,22 +22,24 @@ public:
     MobEffectSubcomponent(class MobEffectSubcomponent const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MobEffectSubcomponent();
     /*1*/ virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /*2*/ virtual void writetoJSON(class Json::Value &) const;
     /*3*/ virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /*4*/ virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTSUBCOMPONENT
-public:
-#endif
+    /*
+    inline  ~MobEffectSubcomponent(){
+         (MobEffectSubcomponent::*rv)();
+        *((void**)&rv) = dlsym("??1MobEffectSubcomponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MobEffectSubcomponent();
 
-//private:
-    MCAPI void _addEffectFromJSON(class Json::Value &);
+protected:
 
 private:
-
+    MCAPI void _addEffectFromJSON(class Json::Value &);
 
 };

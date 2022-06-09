@@ -23,7 +23,6 @@ public:
     DelayedAttackGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DelayedAttackGoal();
     /*1*/ virtual bool canUse();
@@ -36,17 +35,13 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _attemptMoveToTarget(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYEDATTACKGOAL
-public:
-#endif
     MCAPI DelayedAttackGoal(class Mob &);
 
-//private:
+protected:
+
+private:
     MCAPI void _attemptAttack(class Actor *);
     MCAPI void _attemptStartAttacking(class Actor *) const;
     MCAPI void _manageAttackTime();
-
-private:
-
 
 };

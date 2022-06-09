@@ -22,27 +22,29 @@ public:
     DrinkPotionGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DrinkPotionGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void start();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRINKPOTIONGOAL
-public:
-#endif
+    /*
+    inline void start(){
+        void (DrinkPotionGoal::*rv)();
+        *((void**)&rv) = dlsym("?start@DrinkPotionGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DrinkPotionGoal(class Mob &, float, std::vector<struct DrinkPotionData> const &);
 
-//private:
-    MCAPI void _updateEquipment(class ItemStack const &);
+protected:
 
 private:
+    MCAPI void _updateEquipment(class ItemStack const &);
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
     MCAPI static int const THROTTLE_COOLDOWN;
-
 
 };

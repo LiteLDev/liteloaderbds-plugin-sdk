@@ -20,11 +20,7 @@ public:
     class ActorDefinitionPtr& operator=(class ActorDefinitionPtr const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONPTR
-public:
-#endif
     MCAPI ActorDefinitionPtr();
     MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
@@ -32,5 +28,8 @@ public:
     MCAPI ~ActorDefinitionPtr();
     MCAPI static class ActorDefinitionPtr const NONE;
 
+protected:
+
+private:
 
 };

@@ -56,7 +56,6 @@ public:
     ListTag(class ListTag const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ListTag();
     /*1*/ virtual void deleteChildren();
@@ -68,9 +67,13 @@ public:
     /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAG
-public:
-#endif
+    /*
+    inline  ~ListTag(){
+         (ListTag::*rv)();
+        *((void**)&rv) = dlsym("??1ListTag@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ListTag();
     MCAPI void add(std::unique_ptr<class Tag>);
     MCAPI std::unique_ptr<class ListTag> copyList() const;
@@ -86,5 +89,8 @@ public:
     MCAPI void popBack();
     MCAPI int size() const;
 
+protected:
+
+private:
 
 };

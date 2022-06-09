@@ -23,14 +23,20 @@ public:
     TradeResupplyDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~TradeResupplyDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADERESUPPLYDESCRIPTION
-public:
-#endif
+    /*
+    inline  ~TradeResupplyDescription(){
+         (TradeResupplyDescription::*rv)();
+        *((void**)&rv) = dlsym("??1TradeResupplyDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
+protected:
+
+private:
 
 };

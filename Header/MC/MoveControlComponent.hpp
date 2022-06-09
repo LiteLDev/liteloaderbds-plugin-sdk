@@ -21,11 +21,7 @@ public:
     MoveControlComponent(class MoveControlComponent const &) = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLCOMPONENT
-public:
-#endif
     MCAPI MoveControlComponent();
     MCAPI bool getHasWantedPosition() const;
     MCAPI float getMaxTurn() const;
@@ -43,10 +39,9 @@ public:
     MCAPI void setWantedPosition(class Mob &, class Vec3 const &, float);
     MCAPI void update(class Mob &);
 
-//private:
-    MCAPI void _setWantedPosition(class Vec3 const &);
+protected:
 
 private:
-
+    MCAPI void _setWantedPosition(class Vec3 const &);
 
 };

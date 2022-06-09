@@ -22,18 +22,14 @@ public:
     ScriptDebugCommand(class ScriptDebugCommand const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptDebugCommand();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGCOMMAND
-public:
-#endif
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
     MCAPI ScriptDebugCommand();
 
-//protected:
+protected:
     MCAPI void _handleDebuggerAttach(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::DebuggerAction, std::string const &, unsigned short, class CommandOutput &) const;
 
-protected:
-
+private:
 
 };

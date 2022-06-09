@@ -20,12 +20,11 @@ public:
     ActorParticleEffectEvent() = delete;
 #endif
 
-
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPARTICLEEFFECTEVENT
-public:
-#endif
     MCAPI ~ActorParticleEffectEvent();
 
+protected:
+
+private:
 
 };
