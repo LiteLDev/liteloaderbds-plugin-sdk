@@ -20,7 +20,10 @@ public:
     class PackSourceReport& operator=(class PackSourceReport const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEREPORT
+#endif
     MCAPI PackSourceReport(class PackSourceReport const &);
     MCAPI PackSourceReport();
     MCAPI void addReport(struct PackIdVersion const &, class PackReport &&);
@@ -28,8 +31,6 @@ public:
     MCAPI bool hasErrors() const;
     MCAPI ~PackSourceReport();
 
-protected:
 
-private:
 
 };

@@ -22,7 +22,10 @@ public:
     CommandAreaFactory() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREAFACTORY
+#endif
     MCAPI CommandAreaFactory(class Dimension &);
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool) const;
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, bool, bool) const;
@@ -31,9 +34,11 @@ public:
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, int, bool) const;
     MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int);
 
-protected:
+//private:
+    MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool) const;
+
 
 private:
-    MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool) const;
+
 
 };

@@ -20,11 +20,12 @@ public:
     TripodCameraActivatedComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERAACTIVATEDCOMPONENT
+#endif
     MCAPI ~TripodCameraActivatedComponent();
 
-protected:
 
-private:
 
 };

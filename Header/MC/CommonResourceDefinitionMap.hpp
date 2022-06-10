@@ -21,7 +21,10 @@ public:
     CommonResourceDefinitionMap(class CommonResourceDefinitionMap const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMONRESOURCEDEFINITIONMAP
+#endif
     MCAPI CommonResourceDefinitionMap();
     MCAPI std::vector<struct NamedMolangScript> const & getAnimateScriptArray() const;
     MCAPI class std::unordered_map<class HashedString, class ActorAnimationControllerPtr, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class ActorAnimationControllerPtr>>> const & getAnimationControllers() const;
@@ -32,9 +35,11 @@ public:
     MCAPI void mergeAnimation(class HashedString const &, class ActorSkeletalAnimationPtr);
     MCAPI void mergeAnimationController(class HashedString const &, class ActorAnimationControllerPtr);
 
-protected:
+//private:
+    MCAPI static class std::recursive_mutex & _getAnimationResourceDefinitionLock();
+
 
 private:
-    MCAPI static class std::recursive_mutex & _getAnimationResourceDefinitionLock();
+
 
 };

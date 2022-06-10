@@ -2,7 +2,11 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
+template <>
+class WeakRefT<struct EntityRefTraits>
+{
+    char filler[24];
+};
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -22,13 +26,18 @@ public:
     EntityContext() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXT
+#endif
     MCAPI EntityContext(class EntityRegistry &, class EntityId);
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 
-protected:
+//protected:
     MCAPI class EntityRegistry & _registry() const;
 
-private:
+
+protected:
+
 
 };

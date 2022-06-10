@@ -22,7 +22,10 @@ public:
     RaidBossComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDBOSSCOMPONENT
+#endif
     MCAPI RaidBossComponent(class RaidBossComponent &&);
     MCAPI enum BossBarColor getColor();
     MCAPI float getHealthPercent();
@@ -46,10 +49,12 @@ public:
     MCAPI void updateBossBarStats(class Actor &, class Raid const &);
     MCAPI ~RaidBossComponent();
 
-protected:
-
-private:
+//private:
     MCAPI void _broadcastBossEvent(enum BossEventUpdateType, class Actor &);
     MCAPI void _sendBossEvent(enum BossEventUpdateType, class Player &);
+
+
+private:
+
 
 };

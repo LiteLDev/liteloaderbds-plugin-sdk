@@ -20,11 +20,12 @@ public:
     LoadedResourceData() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADEDRESOURCEDATA
+#endif
     MCAPI ~LoadedResourceData();
 
-protected:
 
-private:
 
 };

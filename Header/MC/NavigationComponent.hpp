@@ -21,7 +21,10 @@ public:
     NavigationComponent(class NavigationComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCOMPONENT
+#endif
     MCAPI NavigationComponent(class NavigationComponent &&);
     MCAPI NavigationComponent();
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Actor &);
@@ -88,8 +91,6 @@ public:
     MCAPI void updateLastStuckCheck(class Mob const &);
     MCAPI ~NavigationComponent();
 
-protected:
 
-private:
 
 };

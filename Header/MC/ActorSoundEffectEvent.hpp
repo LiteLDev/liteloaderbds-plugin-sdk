@@ -20,11 +20,12 @@ public:
     ActorSoundEffectEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSOUNDEFFECTEVENT
+#endif
     MCAPI ~ActorSoundEffectEvent();
 
-protected:
 
-private:
 
 };

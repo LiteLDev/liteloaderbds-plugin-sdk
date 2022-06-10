@@ -22,12 +22,13 @@ public:
     ResolvedTextObject() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOLVEDTEXTOBJECT
+#endif
     MCAPI std::string getAsJsonString() const;
     MCAPI ~ResolvedTextObject();
 
-protected:
 
-private:
 
 };

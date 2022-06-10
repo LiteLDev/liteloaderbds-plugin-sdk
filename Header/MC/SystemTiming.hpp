@@ -20,11 +20,12 @@ public:
     SystemTiming() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMTIMING
+#endif
     MCAPI ~SystemTiming();
 
-protected:
 
-private:
 
 };

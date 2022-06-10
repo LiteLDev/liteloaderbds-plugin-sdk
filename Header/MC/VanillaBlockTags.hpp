@@ -22,7 +22,10 @@ public:
     VanillaBlockTags() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKTAGS
+#endif
     MCAPI static char const Acacia[];
     MCAPI static char const Birch[];
     MCAPI static char const DarkOak[];
@@ -31,8 +34,6 @@ public:
     MCAPI static char const Oak[];
     MCAPI static char const Spruce[];
 
-protected:
 
-private:
 
 };

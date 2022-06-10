@@ -22,12 +22,13 @@ public:
     EnchantingContainerScreenValidator(class EnchantingContainerScreenValidator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~EnchantingContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGCONTAINERSCREENVALIDATOR
+#endif
     MCAPI EnchantingContainerScreenValidator();
 
-protected:
 
-private:
 
 };

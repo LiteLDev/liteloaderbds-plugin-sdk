@@ -20,11 +20,12 @@ public:
     SideBySideLevelSystem() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDELEVELSYSTEM
+#endif
     MCAPI static struct TickingSystemWithInfo emptySoundRequests();
 
-protected:
 
-private:
 
 };

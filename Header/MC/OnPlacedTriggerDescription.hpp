@@ -23,13 +23,14 @@ public:
     OnPlacedTriggerDescription() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~OnPlacedTriggerDescription();
     /*1*/ virtual std::string const & getName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGERDESCRIPTION
+#endif
     MCAPI static std::string const NameID;
 
-protected:
 
-private:
 
 };

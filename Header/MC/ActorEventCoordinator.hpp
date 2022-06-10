@@ -22,8 +22,10 @@ public:
     ActorEventCoordinator() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ActorEventCoordinator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTCOORDINATOR
+#endif
     MCAPI class ActorGameplayHandler & getActorGameplayHandler();
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler> &&);
     MCAPI void sendActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
@@ -44,8 +46,6 @@ public:
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum CoordinatorResult>>);
     MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
 
-protected:
 
-private:
 
 };

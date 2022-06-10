@@ -19,11 +19,12 @@ public:
     SkinAdjustments(class SkinAdjustments const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKINADJUSTMENTS
+#endif
     MCAPI SkinAdjustments();
 
-protected:
 
-private:
 
 };

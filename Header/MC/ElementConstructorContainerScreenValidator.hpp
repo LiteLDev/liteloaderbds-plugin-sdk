@@ -22,12 +22,13 @@ public:
     ElementConstructorContainerScreenValidator(class ElementConstructorContainerScreenValidator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ElementConstructorContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTCONSTRUCTORCONTAINERSCREENVALIDATOR
+#endif
     MCAPI ElementConstructorContainerScreenValidator();
 
-protected:
 
-private:
 
 };

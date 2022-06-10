@@ -28,7 +28,10 @@ public:
     BlockVolume() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKVOLUME
+#endif
     MCAPI BlockVolume(class buffer_span_mut<class Block const *>, int, int, int, class Block const &, int);
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;
     MCAPI std::unique_ptr<std::vector<short>> computeHeightMap() const;
@@ -44,8 +47,6 @@ public:
     MCAPI bool isInBounds(class Pos const &) const;
     MCAPI bool isInBounds(class BlockPos const &) const;
 
-protected:
 
-private:
 
 };

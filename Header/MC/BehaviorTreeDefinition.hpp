@@ -22,11 +22,12 @@ public:
     BehaviorTreeDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITION
+#endif
     MCAPI class BehaviorDefinition const * getRoot() const;
 
-protected:
 
-private:
 
 };

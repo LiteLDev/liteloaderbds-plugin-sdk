@@ -25,7 +25,10 @@ public:
     LevelData() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATA
+#endif
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
     MCAPI LevelData(bool);
     MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;
@@ -151,11 +154,13 @@ public:
     MCAPI void v1_read(class RakNet::BitStream &, enum StorageVersion);
     MCAPI ~LevelData();
 
-protected:
-
-private:
+//private:
     MCAPI void _determineMaxBaseGameVersion();
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();
     MCAPI void _setValue(class HashedString const &, struct LevelDataValue &&);
+
+
+private:
+
 
 };

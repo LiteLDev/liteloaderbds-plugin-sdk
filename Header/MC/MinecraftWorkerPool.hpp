@@ -23,7 +23,10 @@ public:
     MinecraftWorkerPool() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTWORKERPOOL
+#endif
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC;
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> CONNECTEDSTORAGE;
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> DISK;
@@ -42,8 +45,6 @@ public:
     MCAPI static void initializeDefaults();
     MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
 
-protected:
 
-private:
 
 };

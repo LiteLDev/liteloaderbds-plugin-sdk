@@ -22,7 +22,10 @@ public:
     ActorSkeletalAnimation() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATION
+#endif
     MCAPI ActorSkeletalAnimation(std::string const &, std::string const &);
     MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
     MCAPI class BoneAnimation & addBoneAnimation(std::string const &);
@@ -44,8 +47,6 @@ public:
     MCAPI void sortSoundEffectEvents();
     MCAPI ~ActorSkeletalAnimation();
 
-protected:
 
-private:
 
 };

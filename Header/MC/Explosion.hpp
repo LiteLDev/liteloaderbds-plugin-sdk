@@ -22,7 +22,10 @@ public:
     Explosion() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSION
+#endif
     MCAPI Explosion(class BlockSource &, class Actor *, class Vec3 const &, float);
     MCAPI void explode();
     MCAPI void overrideInWater(bool);
@@ -32,8 +35,6 @@ public:
     MCAPI void setMaxResistance(float);
     MCAPI ~Explosion();
 
-protected:
 
-private:
 
 };

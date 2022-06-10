@@ -22,11 +22,12 @@ public:
     ColorChannel() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLORCHANNEL
+#endif
     MCAPI static class ColorChannel const INVALID;
 
-protected:
 
-private:
 
 };

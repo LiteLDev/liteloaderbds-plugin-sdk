@@ -22,7 +22,10 @@ public:
     NoiseCellInterpolator() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISECELLINTERPOLATOR
+#endif
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
     MCAPI float getLerpedValue() const;
@@ -30,8 +33,6 @@ public:
     MCAPI void updateForX(unsigned char);
     MCAPI void updateForZ(unsigned char);
 
-protected:
 
-private:
 
 };

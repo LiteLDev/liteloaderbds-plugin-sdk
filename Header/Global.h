@@ -8,6 +8,7 @@
 #endif
 
 #define MCAPI __declspec(dllimport)
+#define MCVAPI __declspec(dllimport)
 #define MCINLINE inline
 #define MCCLS
 
@@ -37,6 +38,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <xhash>
+#include <shared_mutex>
 
 #include <minwindef.h>
 

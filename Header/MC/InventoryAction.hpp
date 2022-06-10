@@ -41,13 +41,14 @@ public:
     InventoryAction() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYACTION
+#endif
     MCAPI InventoryAction(class InventoryAction const &);
     MCAPI void postLoadItems(class BlockPalette &, bool);
     MCAPI ~InventoryAction();
 
-protected:
 
-private:
 
 };

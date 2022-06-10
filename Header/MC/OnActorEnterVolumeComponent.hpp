@@ -20,11 +20,12 @@ public:
     OnActorEnterVolumeComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMECOMPONENT
+#endif
     MCAPI ~OnActorEnterVolumeComponent();
 
-protected:
 
-private:
 
 };

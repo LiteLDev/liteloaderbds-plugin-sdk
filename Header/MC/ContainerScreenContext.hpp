@@ -21,7 +21,10 @@ public:
     ContainerScreenContext(class ContainerScreenContext const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENCONTEXT
+#endif
     MCAPI ContainerScreenContext(class Player &, enum ContainerType, struct ActorUniqueID const &);
     MCAPI ContainerScreenContext(class Player &, enum ContainerType, class BlockPos const &);
     MCAPI ContainerScreenContext();
@@ -30,8 +33,6 @@ public:
     MCAPI class Actor * tryGetActor() const;
     MCAPI class BlockActor * tryGetBlockActor() const;
 
-protected:
 
-private:
 
 };

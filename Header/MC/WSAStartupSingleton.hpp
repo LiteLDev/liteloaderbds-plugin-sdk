@@ -22,13 +22,18 @@ public:
     WSAStartupSingleton() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WSASTARTUPSINGLETON
+#endif
     MCAPI static void AddRef();
     MCAPI static void Deref();
+
+//protected:
+
 
 protected:
     MCAPI static int refCount;
 
-private:
 
 };

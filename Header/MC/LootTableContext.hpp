@@ -22,7 +22,10 @@ public:
     LootTableContext() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLECONTEXT
+#endif
     MCAPI LootTableContext(float, class ILevel *, struct ActorUniqueID, class Player *, class Actor *, class ActorDamageSource const *, float, class AutomaticID<class Dimension, int>, class ItemStack const *);
     MCAPI bool addVisitedTable(class LootTable const *);
     MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
@@ -41,8 +44,6 @@ public:
     MCAPI void setOriginalItemName(std::string const &);
     MCAPI ~LootTableContext();
 
-protected:
 
-private:
 
 };

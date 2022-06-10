@@ -21,8 +21,10 @@ public:
     ItemEventCoordinator(class ItemEventCoordinator const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ItemEventCoordinator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTCOORDINATOR
+#endif
     MCAPI ItemEventCoordinator();
     MCAPI class ItemGameplayHandler & getItemGameplayHandler();
     MCAPI void onItemModifiedActor(class ItemStackBase const &, class Actor const &);
@@ -30,8 +32,6 @@ public:
     MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<enum CoordinatorResult>>);
 
-protected:
 
-private:
 
 };

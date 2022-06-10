@@ -21,7 +21,10 @@ public:
     BoostableComponent(class BoostableComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLECOMPONENT
+#endif
     MCAPI BoostableComponent();
     MCAPI int getBoostTime() const;
     MCAPI int getBoostTimeTotal() const;
@@ -33,11 +36,13 @@ public:
     MCAPI void setIsBoosting(bool);
     MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();
 
-protected:
+//private:
+    MCAPI bool _canUseItem(class Actor &, class ItemStack &);
+
 
 private:
-    MCAPI bool _canUseItem(class Actor &, class ItemStack &);
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
+
 
 };

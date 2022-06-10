@@ -24,8 +24,10 @@ public:
     Biome() = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~Biome();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOME
+#endif
     MCAPI Biome(int);
     MCAPI class Biome & addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
     MCAPI bool canHaveSnowfall(class BlockSource const &, class BlockPos const &) const;
@@ -69,8 +71,6 @@ public:
     MCAPI static float const RAIN_TEMP_THRESHOLD;
     MCAPI static void buildCachedTemperatureNoise(class LevelChunk &);
 
-protected:
 
-private:
 
 };

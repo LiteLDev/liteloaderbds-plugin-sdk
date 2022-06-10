@@ -20,11 +20,12 @@ public:
     ReceivingEvent() = delete;
 #endif
 
+
 public:
-    MCAPI ~ReceivingEvent();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVINGEVENT
+#endif
+    MCAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
 
-protected:
 
-private:
 
 };

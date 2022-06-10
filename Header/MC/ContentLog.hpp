@@ -21,8 +21,10 @@ public:
     ContentLog(class ContentLog const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~ContentLog();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOG
+#endif
     MCAPI ContentLog();
     MCAPI bool isEnabled() const;
     MCAPI void log(bool, enum LogLevel, enum LogArea, ...);
@@ -31,9 +33,11 @@ public:
     MCAPI static char const * getLogAreaName(enum LogArea);
     MCAPI static char const * getLogLevelName(enum LogLevel);
 
-protected:
+//private:
+    MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char *&);
+
 
 private:
-    MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char *&);
+
 
 };

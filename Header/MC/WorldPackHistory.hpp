@@ -22,7 +22,10 @@ public:
     WorldPackHistory() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKHISTORY
+#endif
     MCAPI WorldPackHistory(class WorldPackHistory &&);
     MCAPI WorldPackHistory(class WorldPackHistory const &);
     MCAPI bool getCanBeRedownloaded() const;
@@ -35,10 +38,7 @@ public:
     MCAPI bool hasSourceUUID() const;
     MCAPI bool hasSubpacks() const;
     MCAPI bool initializeFromJson(class Json::Value const &);
-    MCAPI ~WorldPackHistory();
 
-protected:
 
-private:
 
 };

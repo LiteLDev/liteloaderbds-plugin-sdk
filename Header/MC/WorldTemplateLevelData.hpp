@@ -21,7 +21,10 @@ public:
     WorldTemplateLevelData(class WorldTemplateLevelData const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATELEVELDATA
+#endif
     MCAPI WorldTemplateLevelData();
     MCAPI WorldTemplateLevelData(bool, bool, class BaseGameVersion const &, class BaseGameVersion const &);
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
@@ -38,10 +41,12 @@ public:
     MCAPI void setWorldTemplateIdentity(struct PackIdVersion const &);
     MCAPI ~WorldTemplateLevelData();
 
-protected:
+//protected:
     MCAPI void _getTagData(class CompoundTag const &);
     MCAPI void _setTagData(class CompoundTag &) const;
 
-private:
+
+protected:
+
 
 };

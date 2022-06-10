@@ -20,12 +20,13 @@ public:
     WorldTemplateManagerProxy() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGERPROXY
+#endif
     MCAPI WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const &);
     MCAPI ~WorldTemplateManagerProxy();
 
-protected:
 
-private:
 
 };

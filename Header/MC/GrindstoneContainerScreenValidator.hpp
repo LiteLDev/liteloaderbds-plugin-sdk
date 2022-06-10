@@ -22,12 +22,13 @@ public:
     GrindstoneContainerScreenValidator(class GrindstoneContainerScreenValidator const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~GrindstoneContainerScreenValidator();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONECONTAINERSCREENVALIDATOR
+#endif
     MCAPI GrindstoneContainerScreenValidator();
 
-protected:
 
-private:
 
 };

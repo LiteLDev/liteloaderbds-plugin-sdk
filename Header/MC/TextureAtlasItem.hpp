@@ -20,11 +20,12 @@ public:
     TextureAtlasItem() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTUREATLASITEM
+#endif
     MCAPI ~TextureAtlasItem();
 
-protected:
 
-private:
 
 };

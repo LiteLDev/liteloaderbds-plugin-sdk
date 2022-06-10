@@ -22,11 +22,12 @@ public:
     AABBPred() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABBPRED
+#endif
     MCAPI bool operator()(class AABB const &, class AABB const &) const;
 
-protected:
 
-private:
 
 };

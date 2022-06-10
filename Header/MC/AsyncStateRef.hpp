@@ -20,11 +20,12 @@ public:
     AsyncStateRef() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCSTATEREF
+#endif
     MCAPI ~AsyncStateRef();
 
-protected:
 
-private:
 
 };

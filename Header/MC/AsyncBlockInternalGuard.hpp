@@ -20,11 +20,12 @@ public:
     AsyncBlockInternalGuard() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCBLOCKINTERNALGUARD
+#endif
     MCAPI AsyncBlockInternalGuard(struct XAsyncBlock *);
 
-protected:
 
-private:
 
 };

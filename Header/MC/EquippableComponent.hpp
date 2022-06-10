@@ -22,7 +22,10 @@ public:
     EquippableComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPPABLECOMPONENT
+#endif
     MCAPI EquippableComponent(class EquippableComponent &&);
     MCAPI class UpdateEquipPacket createDataPacket(class Actor &, enum ContainerID) const;
     MCAPI std::unique_ptr<class CompoundTag> createTag(class Actor &) const;
@@ -33,8 +36,6 @@ public:
     MCAPI std::vector<class ItemDescriptor> const * tryGetSlotAllowedItems(int) const;
     MCAPI ~EquippableComponent();
 
-protected:
 
-private:
 
 };

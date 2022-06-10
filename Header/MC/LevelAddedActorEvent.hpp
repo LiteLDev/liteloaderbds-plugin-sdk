@@ -20,11 +20,12 @@ public:
     LevelAddedActorEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELADDEDACTOREVENT
+#endif
     MCAPI ~LevelAddedActorEvent();
 
-protected:
 
-private:
 
 };

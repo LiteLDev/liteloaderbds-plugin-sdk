@@ -21,11 +21,14 @@ public:
     LegacyTradeableComponent(class LegacyTradeableComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLECOMPONENT
+#endif
     MCAPI void DecrementMerchantTimer();
     MCAPI void IncrementTradeTier();
     MCAPI LegacyTradeableComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI class UpdateTradePacket createDataPacket(class Actor &, enum ContainerID);
     MCAPI bool getAddRecipeOnUpdate() const;
     MCAPI std::string const & getDisplayName() const;
@@ -54,12 +57,13 @@ public:
     MCAPI ~LegacyTradeableComponent();
     MCAPI static bool isUseNewTradeScreen(class Actor const &);
 
-protected:
-
-private:
+//private:
     MCAPI struct TradeTable * _getTradeTable(class Actor &);
     MCAPI void _rearrangeTradeList(class Actor &, std::vector<struct Trade> &, unsigned __int64);
     MCAPI bool _refreshTrades(class Actor &);
-    MCAPI void _updateMaxTradeTier(class Actor &, int);
+
+
+private:
+
 
 };

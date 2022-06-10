@@ -23,15 +23,11 @@ public:
     ScriptRideableComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptRideableComponent();
-    /*
-    inline  ~ScriptRideableComponent(){
-         (ScriptRideableComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptRideableComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTRIDEABLECOMPONENT
+#endif
     MCAPI ScriptRideableComponent(class WeakEntityRef const &, class Scripting::WeakLifetimeScope const &, std::string const &);
     MCAPI class Scripting::Result<bool> addPassenger(class ScriptActor &) const;
     MCAPI class Scripting::Result<void> ejectPassenger(class ScriptActor &) const;
@@ -46,8 +42,6 @@ public:
     MCAPI class Scripting::Result<std::vector<struct SeatDescription>> getSeats() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptRideableComponent> bind(struct Scripting::Version);
 
-protected:
 
-private:
 
 };

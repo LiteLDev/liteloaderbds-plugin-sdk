@@ -20,11 +20,12 @@ public:
     GameTestSaveData() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTSAVEDATA
+#endif
     MCAPI ~GameTestSaveData();
 
-protected:
 
-private:
 
 };

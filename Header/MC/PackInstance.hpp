@@ -23,7 +23,10 @@ public:
     PackInstance() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCE
+#endif
     MCAPI PackInstance(class PackInstance &&);
     MCAPI PackInstance(class PackInstance const &);
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
@@ -50,9 +53,11 @@ public:
     MCAPI void setLocale(std::string const &);
     MCAPI ~PackInstance();
 
-protected:
+//private:
+    MCAPI bool _isPackPointerValid() const;
+
 
 private:
-    MCAPI bool _isPackPointerValid() const;
+
 
 };

@@ -20,11 +20,12 @@ public:
     OnActorLeaveVolumeComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORLEAVEVOLUMECOMPONENT
+#endif
     MCAPI ~OnActorLeaveVolumeComponent();
 
-protected:
 
-private:
 
 };

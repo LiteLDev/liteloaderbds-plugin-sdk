@@ -21,7 +21,10 @@ public:
     FlockingComponent(class FlockingComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOCKINGCOMPONENT
+#endif
     MCAPI FlockingComponent(class FlockingComponent &&);
     MCAPI FlockingComponent();
     MCAPI void addFlockMember(struct ActorUniqueID);
@@ -36,8 +39,6 @@ public:
     MCAPI void updateNeighborhoodData(class Actor const &);
     MCAPI bool validateVariantEntityTypes(class Actor const &, class Actor const &) const;
 
-protected:
 
-private:
 
 };

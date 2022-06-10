@@ -22,11 +22,12 @@ public:
     LevelStorageObserver() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEOBSERVER
+#endif
     MCAPI void onSave(std::string const &);
 
-protected:
 
-private:
 
 };

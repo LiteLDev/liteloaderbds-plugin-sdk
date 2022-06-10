@@ -21,7 +21,10 @@ public:
     IdentityDictionary(class IdentityDictionary const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTITYDICTIONARY
+#endif
     MCAPI IdentityDictionary();
     MCAPI bool clearIdentity(struct ScoreboardId const &);
     MCAPI struct ScoreboardId const & convertFakeToReal(struct ScoreboardId const &, struct PlayerScoreboardId const &);
@@ -35,8 +38,6 @@ public:
     MCAPI bool shouldConvertFakePlayer(struct PlayerScoreboardId const &, std::string const &);
     MCAPI ~IdentityDictionary();
 
-protected:
 
-private:
 
 };

@@ -30,7 +30,10 @@ public:
     GameRule() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULE
+#endif
     MCAPI GameRule(class GameRule const &);
     MCAPI GameRule(class GameRule &&);
     MCAPI GameRule(std::string const &, bool);
@@ -42,6 +45,7 @@ public:
     MCAPI std::string const & getName() const;
     MCAPI enum GameRule::Type getType() const;
     MCAPI union GameRule::Value const & getValue() const;
+    MCAPI class GameRule & operator=(class GameRule &&);
     MCAPI bool requiresCheats() const;
     MCAPI void resetType(enum GameRule::Type);
     MCAPI bool setBool(bool, bool *, class GameRule::ValidationError *);
@@ -51,8 +55,17 @@ public:
     MCAPI class GameRule & setValidateValueCallback(class std::function<bool (union GameRule::Value const &, class GameRule::ValidationError *)>);
     MCAPI ~GameRule();
 
+//protected:
+    MCAPI class GameRule & _setDefaultValue(int);
+    MCAPI class GameRule & _setDefaultValue(bool);
+
+//private:
+    MCAPI bool _set(union GameRule::Value const &, bool *, class GameRule::ValidationError *);
+
+
 protected:
 
 private:
+
 
 };

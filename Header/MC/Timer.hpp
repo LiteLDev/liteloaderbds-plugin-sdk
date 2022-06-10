@@ -22,7 +22,10 @@ public:
     Timer() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMER
+#endif
     MCAPI Timer(float, class std::function<__int64 (void)>);
     MCAPI void advanceTime(float);
     MCAPI unsigned __int64 getTicks() const;
@@ -32,8 +35,6 @@ public:
     MCAPI void stepTick(int);
     MCAPI bool stepping() const;
 
-protected:
 
-private:
 
 };

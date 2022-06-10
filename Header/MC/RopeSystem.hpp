@@ -21,7 +21,10 @@ public:
     RopeSystem(class RopeSystem const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPESYSTEM
+#endif
     MCAPI RopeSystem();
     MCAPI void _initializePins(class Vec3 const &, class Vec3 const &);
     MCAPI void cutAtPercent(float);
@@ -34,9 +37,8 @@ public:
     MCAPI static bool sEnabled;
     MCAPI static float const sEpsilon;
 
-protected:
-
-private:
+//private:
+    MCAPI bool _cacheColliders(class BlockSource &);
     MCAPI void _finalizeBucket(struct AABBBucket &);
     MCAPI void _initializePins();
     MCAPI void _integrate();
@@ -50,5 +52,9 @@ private:
     MCAPI float _solveDistanceConstraints3();
     MCAPI void _tick();
     MCAPI void _tickWaves();
+
+
+private:
+
 
 };

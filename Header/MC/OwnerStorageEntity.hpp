@@ -22,9 +22,12 @@ public:
     OwnerStorageEntity() = delete;
 #endif
 
-public:
 
-protected:
+public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERSTORAGEENTITY
+#endif
+
+//protected:
     MCAPI OwnerStorageEntity(class OwnerStorageEntity &&);
     MCAPI OwnerStorageEntity(enum OwnerStorageEntity::EmptyInit);
     MCAPI OwnerStorageEntity(enum OwnerStorageEntity::VariadicInit, class EntityRegistry &);
@@ -35,6 +38,8 @@ protected:
     MCAPI class OwnerStorageEntity & operator=(class OwnerStorageEntity &&);
     MCAPI ~OwnerStorageEntity();
 
-private:
+
+protected:
+
 
 };

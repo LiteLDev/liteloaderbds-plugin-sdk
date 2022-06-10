@@ -45,10 +45,11 @@ class PlayerActionPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    BlockPos position;           //48
-    FaceID blockFace;            //60
-    PlayerActionType actionType; //64
-    ActorRuntimeID runtimeID;    //72
+    BlockPos position;           // 48
+    BlockPos position2;          // 60
+    FaceID blockFace;            // 72
+    PlayerActionType actionType; // 76
+    ActorRuntimeID runtimeID;    // 80
 
     inline std::string toDebugString() {
         return fmt::format("{}: position: ({}), blockFace: {}, actionType: {}, runtimeID: {}",
@@ -64,26 +65,22 @@ public:
     PlayerActionPacket(class PlayerActionPacket const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~PlayerActionPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /*
-    inline  ~PlayerActionPacket(){
-         (PlayerActionPacket::*rv)();
-        *((void**)&rv) = dlsym("??1PlayerActionPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONPACKET
+#endif
+    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, class BlockPos const &, int, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
     MCAPI PlayerActionPacket();
 
-protected:
 
-private:
 
 };

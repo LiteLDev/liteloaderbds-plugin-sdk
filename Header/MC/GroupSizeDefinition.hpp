@@ -23,11 +23,12 @@ public:
     GroupSizeDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROUPSIZEDEFINITION
+#endif
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GroupSizeDefinition>> &);
 
-protected:
 
-private:
 
 };

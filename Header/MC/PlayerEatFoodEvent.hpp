@@ -20,11 +20,12 @@ public:
     PlayerEatFoodEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREATFOODEVENT
+#endif
     MCAPI ~PlayerEatFoodEvent();
 
-protected:
 
-private:
 
 };

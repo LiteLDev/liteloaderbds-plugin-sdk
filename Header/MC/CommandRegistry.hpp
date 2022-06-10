@@ -670,7 +670,10 @@ public:
     CommandRegistry(class CommandRegistry const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDREGISTRY
+#endif
     MCAPI CommandRegistry();
     MCAPI void addEnumValueConstraints(std::string const &, std::vector<std::string> const &, enum SemanticConstraint);
     MCAPI int addEnumValues(std::string const &, std::vector<std::string> const &);
@@ -704,9 +707,7 @@ public:
     MCAPI static char const * HASITEM_PARAM_SLOT;
     MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
 
-protected:
-
-private:
+//private:
     MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const &, enum SemanticConstraint);
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<std::string, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &, class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
@@ -730,8 +731,8 @@ private:
     MCAPI std::string describe(struct CommandRegistry::Signature const &, std::string const &, struct CommandRegistry::Overload const &, unsigned int, unsigned int *, unsigned int *) const;
     MCAPI std::string describe(class CommandParameterData const &) const;
     MCAPI std::string describe(class CommandRegistry::Symbol) const;
-    MCAPI struct CommandRegistry::Signature const * findCommand(std::string const &) const;
     MCAPI struct CommandRegistry::Signature * findCommand(std::string const &);
+    MCAPI struct CommandRegistry::Signature const * findCommand(std::string const &) const;
     MCAPI class CommandRegistry::Symbol findEnumValue(std::string const &) const;
     MCAPI class CommandRegistry::Symbol findIdentifierInfo(std::string const &) const;
     MCAPI class CommandRegistry::Symbol findPostfix(std::string const &) const;
@@ -742,13 +743,11 @@ private:
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
     MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Overload const &) const;
     MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Signature const &) const;
-    MCAPI bool parseOperator(enum CommandOperator *, struct CommandRegistry::ParseToken const &, std::string &, std::vector<std::string> &) const;
     MCAPI bool parseSelector(struct ActorSelectorArgs &, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const;
     MCAPI bool parseSelector(class CommandSelectorBase *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &, bool) const;
     MCAPI void registerOverloadInternal(struct CommandRegistry::Signature &, struct CommandRegistry::Overload &);
     MCAPI void setupOverloadRules(struct CommandRegistry::Signature &, struct CommandRegistry::Overload &);
     MCAPI std::string symbolToString(class CommandRegistry::Symbol) const;
-    MCAPI static struct std::pair<bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, class CommandRegistry::Symbol> const ParseRuleSymbols[];
     MCAPI static std::string _removeStringQuotes(std::string const &);
     MCAPI static struct CommandRegistry::ParseToken * collapse(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol);
     MCAPI static struct CommandRegistry::ParseToken * collapseOn(struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
@@ -759,5 +758,10 @@ private:
     MCAPI static bool readFloat(float &, struct CommandRegistry::ParseToken const &, std::string &, std::vector<std::string> &);
     MCAPI static bool readInt(int &, struct CommandRegistry::ParseToken const &, std::string &, std::vector<std::string> &);
     MCAPI static bool readRelativeCoordinate(bool &, float &, struct CommandRegistry::ParseToken const &, bool, std::string &, std::vector<std::string> &);
+
+
+private:
+    MCAPI static struct std::pair<bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, class CommandRegistry::Symbol> const ParseRuleSymbols[];
+
 
 };

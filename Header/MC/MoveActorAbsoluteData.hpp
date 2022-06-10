@@ -21,7 +21,10 @@ public:
     MoveActorAbsoluteData(class MoveActorAbsoluteData const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEACTORABSOLUTEDATA
+#endif
     MCAPI MoveActorAbsoluteData(class Actor const &);
     MCAPI MoveActorAbsoluteData();
     MCAPI class MoveActorDeltaData calculateDelta(class MoveActorAbsoluteData const &) const;
@@ -31,8 +34,6 @@ public:
     MCAPI void setRot(class Vec2 const &);
     MCAPI void setYHeadRot(float);
 
-protected:
 
-private:
 
 };

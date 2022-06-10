@@ -20,11 +20,12 @@ public:
     ExternalLinkSettings() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALLINKSETTINGS
+#endif
     MCAPI ~ExternalLinkSettings();
 
-protected:
 
-private:
 
 };

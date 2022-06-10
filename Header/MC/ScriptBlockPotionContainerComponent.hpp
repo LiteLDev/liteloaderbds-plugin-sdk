@@ -22,15 +22,11 @@ public:
     ScriptBlockPotionContainerComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptBlockPotionContainerComponent();
-    /*
-    inline  ~ScriptBlockPotionContainerComponent(){
-         (ScriptBlockPotionContainerComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptBlockPotionContainerComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTBLOCKPOTIONCONTAINERCOMPONENT
+#endif
     MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent const &);
     MCAPI ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent &&);
     MCAPI class ScriptBlockPotionContainerComponent & operator=(class ScriptBlockPotionContainerComponent &&);
@@ -38,8 +34,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPotionContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPotionContainerComponent> tryCreate(class BlockSource &, class BlockPos, class Scripting::WeakLifetimeScope const &);
 
-protected:
 
-private:
 
 };

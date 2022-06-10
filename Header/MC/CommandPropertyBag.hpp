@@ -22,8 +22,10 @@ public:
     CommandPropertyBag(class CommandPropertyBag const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~CommandPropertyBag();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPROPERTYBAG
+#endif
     MCAPI CommandPropertyBag(class Json::Value const &);
     MCAPI CommandPropertyBag();
     MCAPI void addToResultList(std::string const &, std::string const &);
@@ -31,8 +33,6 @@ public:
     MCAPI void set(std::string const &, class BlockPos const &);
     MCAPI void set(std::string const &, class Vec3);
 
-protected:
 
-private:
 
 };

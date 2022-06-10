@@ -20,11 +20,12 @@ public:
     ActorKilledEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORKILLEDEVENT
+#endif
     MCAPI ~ActorKilledEvent();
 
-protected:
 
-private:
 
 };

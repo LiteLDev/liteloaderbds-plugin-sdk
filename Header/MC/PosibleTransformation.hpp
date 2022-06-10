@@ -20,11 +20,12 @@ public:
     PosibleTransformation() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSIBLETRANSFORMATION
+#endif
     MCAPI ~PosibleTransformation();
 
-protected:
 
-private:
 
 };

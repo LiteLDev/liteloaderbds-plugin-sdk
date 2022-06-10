@@ -20,11 +20,12 @@ public:
     EntitiesEnteredVolumeComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESENTEREDVOLUMECOMPONENT
+#endif
     MCAPI ~EntitiesEnteredVolumeComponent();
 
-protected:
 
-private:
 
 };

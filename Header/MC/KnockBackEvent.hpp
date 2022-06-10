@@ -20,11 +20,12 @@ public:
     KnockBackEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKEVENT
+#endif
     MCAPI ~KnockBackEvent();
 
-protected:
 
-private:
 
 };

@@ -20,11 +20,12 @@ public:
     ServerInstanceLeaveGameDoneEvent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCELEAVEGAMEDONEEVENT
+#endif
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
 
-protected:
 
-private:
 
 };

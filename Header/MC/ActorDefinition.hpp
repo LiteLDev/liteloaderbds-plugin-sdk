@@ -23,7 +23,10 @@ public:
     ActorDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITION
+#endif
     MCAPI ActorDefinition(std::string const &);
     MCAPI void parse(struct DeserializeDataParams, class ActorDefinitionDescriptor &, class ActorFactory &, enum LogArea);
     MCAPI void parseAttributes(struct DeserializeDataParams, class ActorDefinitionDescriptor &);
@@ -33,8 +36,6 @@ public:
     MCAPI bool validatePermutationJson(class Json::Value &);
     MCAPI ~ActorDefinition();
 
-protected:
 
-private:
 
 };
