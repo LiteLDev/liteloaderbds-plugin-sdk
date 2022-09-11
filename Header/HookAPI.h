@@ -81,30 +81,29 @@ FixedString(char const (&)[N]) -> FixedString<N - 1>;
 } // namespace
 
 #if _HAS_CXX20
-
 template <FixedString Fn>
 __declspec(selectany) void* __dlsym_ptr_cache = dlsym_real(Fn);
 
 #define VA_EXPAND(...) __VA_ARGS__
 template <FixedString Fn, typename ret, typename... p>
-static inline auto __imp_Call() {
+static __forceinline auto __imp_Call() {
     return ((ret(*)(p...))(__dlsym_ptr_cache<Fn>));
 }
 
-template <FixedString Fn, typename ret, typename... p>
-static inline auto __imp_Call_Sig() {
-    return ((ret(*)(p...))((void*)ModUtils::FindSig(Fn)));
+template <FixedString Sig>
+__declspec(selectany) void* __sigfind_ptr_cache = (void*)ModUtils::FindSig(Sig);
+template <FixedString Sig, typename ret, typename... p>
+static __forceinline auto __imp_Call_Sig() {
+    return ((ret(*)(p...))(__sigfind_ptr_cache<Sig>));
 }
 
-template <FixedString Fn, typename ret, typename... p>
-static inline auto __imp_Call_Addr() {
-    return ((ret(*)(p...))((void*)Fn));
+template <typename ret, typename... p>
+static __forceinline auto __imp_Call_Addr(void* Fn) {
+    return ((ret(*)(p...))(Fn));
 }
 
-#define AddrCall(fn, ret, ...) (__imp_Call_Addr<fn, ret, __VA_ARGS__>())
+#define AddrCall(fn, ret, ...) (__imp_Call_Addr<ret, __VA_ARGS__>((void*)fn))
 #define SigCall(fn, ret, ...) (__imp_Call_Sig<fn, ret, __VA_ARGS__>())
-#define AddrCall2(name, fn, ret, ...) (__imp_Call_Addr<fn, ret, __VA_ARGS__>())
-#define SigCall2(name, fn, ret, ...) (__imp_Call_Sig<fn, ret, __VA_ARGS__>())
 #define SymCall(fn, ret, ...) (__imp_Call<fn, ret, __VA_ARGS__>())
 #define SYM(fn) (__dlsym_ptr_cache<fn>)
 #define dlsym(xx) SYM(xx)
