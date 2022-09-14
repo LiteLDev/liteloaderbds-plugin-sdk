@@ -9,8 +9,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include <MC/NetworkIdentifier.hpp>
-#include <MC/Certificate.hpp>
+#include "NetworkIdentifier.hpp"
+#include "Certificate.hpp"
 
 #undef BEFORE_EXTRA
 

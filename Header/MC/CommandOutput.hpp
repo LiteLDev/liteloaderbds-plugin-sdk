@@ -13,18 +13,13 @@
 #include "CommandOrigin.hpp"
 #include "Command.hpp"
 #include "ServerPlayer.hpp"
-#include "../Utils/PluginOwnData.h"
+#include "../utils/PluginOwnData.h"
 #include "../I18nAPI.h"
 
 #define POD_COMMANDOUTPUT_LANGCODE ("_ll_plugin_cmdoutp_langcode_" + std::to_string((uint64_t)this))
 #undef BEFORE_EXTRA
 
 /**
- * \~chinese
- * @brief 命令执行输出
- * 
- * 
- * \~english
  * @brief Command execution output
  *
  */
@@ -33,13 +28,6 @@ class CommandOutput {
 #define AFTER_EXTRA // Add members here
 public:
     /**
-     * \~chinese
-     * @brief 输出普通消息。
-     *
-     * @param str 消息
-     * 
-     * 
-     * \~english
      * @brief Output a normal message.
      * 
      * @param str The message
@@ -47,13 +35,6 @@ public:
     LIAPI void addMessage(const std::string& str);
 
     /**
-     * \~chinese
-     * @brief 输出执行成功消息。
-     *
-     * @param str 消息
-     * 
-     * 
-     * \~english
      * @brief Output a success message.
      * 
      * @param str The message
@@ -61,13 +42,6 @@ public:
     LIAPI void success(const string& str);
 
     /**
-     * \~chinese
-     * @brief 输出错误消息。
-     *
-     * @param str 消息
-     * 
-     * 
-     * \~english
      * @brief Output a error message.
      * 
      * @param str The message

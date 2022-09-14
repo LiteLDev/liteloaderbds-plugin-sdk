@@ -1,6 +1,6 @@
 #pragma once
 #include "../Global.h"
-#include <MC/Tag.hpp>
+#include "Tag.hpp"
 
 struct PrettySnbtFormat
 {
