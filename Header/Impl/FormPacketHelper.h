@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include "../Global.h"
 #include "../FormUI.h"
-#include <MC/Player.hpp>
+#include "../mc/Player.hpp"
 
 LIAPI unsigned NewFormId();
 

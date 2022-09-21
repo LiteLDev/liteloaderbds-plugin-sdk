@@ -1,5 +1,6 @@
 #pragma once
 #include "../Global.h"
+
 class Vec3;
 class BlockPos {
 public:
@@ -19,7 +20,7 @@ public:
 
     MCAPI class BlockPos neighbor(unsigned char) const;
     MCAPI class BlockPos relative(unsigned char, int) const;
-    MCAPI class BlockPos transform(enum Rotation, enum Mirror, class Vec3 const&) const;
+    MCAPI class BlockPos transform(enum class Rotation, enum class Mirror, class Vec3 const&) const;
 
     MCAPI int randomSeed() const;
 
@@ -173,14 +174,6 @@ public:
         return (*this - a).length();
     }
 
-    inline static BlockPos max(const BlockPos& a, const BlockPos& b) {
-        return {std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z)};
-    }
-
-    inline static BlockPos min(const BlockPos& a, const BlockPos& b) {
-        return {std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z)};
-    }
-
     LIAPI Vec3 toVec3() const;
     LIAPI class BoundingBox toBoundingBox() const;
     LIAPI class AABB toAABB() const;
@@ -191,7 +184,8 @@ public:
 
 namespace std {
 
-template <> struct hash<BlockPos> {
+template <>
+struct hash<BlockPos> {
     std::size_t operator()(BlockPos const& pos) const noexcept {
         //??$hash3@HHH@Math@mce@@SA_KAEBH00@Z
         unsigned __int64 t1; // r8

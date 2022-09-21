@@ -7,8 +7,12 @@
  *
  */
 #pragma once
-#include <LLAPI.h>
+#include "LLAPI.h"
 #include "Global.h"
+#include "mc/BlockPos.hpp"
+#include "mc/Vec3.hpp"
+#include "mc/BoundingBox.hpp"
+#include "mc/AABB.hpp"
 
 class ParticleAPI {
     using FuncSpawnParticle = void (*)(int, Vec3 const&, std::string const&, int);
@@ -37,7 +41,7 @@ public:
 
     void inline init(HMODULE hModule = nullptr) {
         if (!hModule) {
-            auto pPtr = LL::getPlugin("ParticleAPI");
+            auto pPtr = ll::getPlugin("ParticleAPI");
             if (!pPtr) {
                 throw std::runtime_error("Cannot get ParticleAPI.dll");
             }
@@ -57,43 +61,43 @@ public:
     }
     void inline spawnParticle(int displayRadius, Vec3 const& pos, std::string const& particleName, int dimId) {
         if (funcSpawnParticle == nullptr) {
-            throw std::runtime_error("Function not found");
+            throw std::runtime_error("Function PTAPI_spawnParticle not found");
         }
         return funcSpawnParticle(displayRadius, pos, particleName, dimId);
     }
     void inline drawPoint(int displayRadius, Vec3 const& pos, int dimId, char lineWidth, enum class mce::ColorPalette color) {
         if (funcDrawPoint == nullptr) {
-            throw std::runtime_error("Function not found");
+            throw std::runtime_error("Function PTAPI_drawPoint not found");
         }
         return funcDrawPoint(displayRadius, pos, dimId, lineWidth, color);
     }
     void inline drawNumber(int displayRadius, Vec3 const& pos, int dimId, char num, enum class mce::ColorPalette color) {
         if (funcDrawNumber == nullptr) {
-            throw std::runtime_error("Function not found");
+            throw std::runtime_error("Function PTAPI_drawNumber not found");
         }
         return funcDrawNumber(displayRadius, pos, dimId, num, color);
     }
     void inline drawAxialLine(int displayRadius, bool highDetial, bool doubleSide, const Vec3& originPoint, char direction, double length, int dimId, enum class mce::ColorPalette color) {
         if (funcDrawAxialLine == nullptr) {
-            throw std::runtime_error("Function not found");
+            throw std::runtime_error("Function PTAPI_drawAxialLine not found");
         }
         return funcDrawAxialLine(displayRadius, highDetial, doubleSide, originPoint, direction, length, dimId, color);
     }
     void inline drawOrientedLine(int displayRadius, const Vec3& start, const Vec3& end, int dimId, char lineWidth, double minSpacing, int maxParticlesNum, enum class mce::ColorPalette color) {
         if (funcDrawOrientedLine == nullptr) {
-            throw std::runtime_error("Function not found");
+            throw std::runtime_error("Function PTAPI_drawOrientedLine not found");
         }
         return funcDrawOrientedLine(displayRadius, start, end, dimId, lineWidth, minSpacing, maxParticlesNum, color);
     }
     void inline drawCuboid(int displayRadius, bool highDetial, bool doubleSide, const AABB& aabb, int dimId, enum class mce::ColorPalette color) {
         if (funcDrawCuboid == nullptr) {
-            throw std::runtime_error("Function not found");
+            throw std::runtime_error("Function PTAPI_drawCuboid not found");
         }
         return funcDrawCuboid(displayRadius, highDetial, doubleSide, aabb, dimId, color);
     }
     void inline drawCircle(int displayRadius, const Vec3& originPoint, char facing, double radius, int dimId, char lineWidth, double minSpacing, int maxParticlesNum, enum class mce::ColorPalette color) {
         if (funcDrawCircle == nullptr) {
-            throw std::runtime_error("Function not found");
+            throw std::runtime_error("Function PTAPI_drawCircle not found");
         }
         return funcDrawCircle(displayRadius, originPoint, facing, radius, dimId, lineWidth, minSpacing, maxParticlesNum, color);
     }
@@ -174,13 +178,13 @@ public:
     void inline drawNumber(Vec3 const& pos, int dimId, enum NumType num = NumType::NUM0, enum class mce::ColorPalette color = mce::ColorPalette::WHITE) {
         api.drawNumber(displayRadius, pos, dimId, num, color);
     }
-    void inline drawAxialLine(const Vec3& originPoint, enum Direction direction, double length, int dimId, enum class mce::ColorPalette color = mce::ColorPalette::WHITE){
+    void inline drawAxialLine(const Vec3& originPoint, enum Direction direction, double length, int dimId, enum class mce::ColorPalette color = mce::ColorPalette::WHITE) {
         api.drawAxialLine(displayRadius, highDetial, doubleSide, originPoint, direction, length, dimId, color);
     }
-    void inline drawOrientedLine(const Vec3& start, const Vec3& end, int dimId, enum PointSize lineWidth = PointSize::PX4, double minSpacing = 1, int maxParticlesNum = 64, enum class mce::ColorPalette color = mce::ColorPalette::WHITE){
+    void inline drawOrientedLine(const Vec3& start, const Vec3& end, int dimId, enum PointSize lineWidth = PointSize::PX4, double minSpacing = 1, int maxParticlesNum = 64, enum class mce::ColorPalette color = mce::ColorPalette::WHITE) {
         api.drawOrientedLine(displayRadius, start, end, dimId, lineWidth, minSpacing, maxParticlesNum, color);
     }
-    void inline drawCuboid(const AABB& aabb, int dimId, enum class mce::ColorPalette color = mce::ColorPalette::WHITE){
+    void inline drawCuboid(const AABB& aabb, int dimId, enum class mce::ColorPalette color = mce::ColorPalette::WHITE) {
         api.drawCuboid(displayRadius, highDetial, doubleSide, aabb, dimId, color);
     }
     void inline drawCircle(const Vec3& originPoint, enum Direction facing, double radius, int dimId, enum PointSize lineWidth = PointSize::PX4, double minSpacing = 1, int maxParticlesNum = 64, enum class mce::ColorPalette color = mce::ColorPalette::WHITE) {
