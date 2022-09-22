@@ -7,12 +7,15 @@
  * 
  */
 #pragma once
-#include <Nlohmann/json.hpp>
+#include <third-party/Nlohmann/json.hpp>
 #include "Foundation.hpp"
 
-namespace ll::perm {
+namespace PERM {
 
-
+    /**
+     * @brief Permission instance.
+     * 
+     */
     struct PermInstance {
         std::string name;        ///< Name of the permission.
         bool enabled;            ///< Whether the permission is enabled.
@@ -42,7 +45,10 @@ namespace ll::perm {
         }
     };
 
-
+    /**
+     * @brief Permission information.
+     * 
+     */
     struct PermInfo {
         std::string name; ///< Name of the permission.
         std::string desc; ///< Description of the permission.

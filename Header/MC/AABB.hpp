@@ -1,6 +1,5 @@
 #pragma once
 #include "../Global.h"
-#include "Vec3.hpp"
 
 class AABB {
 
@@ -108,10 +107,10 @@ public:
     }
 
     inline AABB merge(AABB const& a) {
-        return AABB(std::min(a.min, min), std::max(a.max, max));
+        return AABB(Vec3::min(a.min, min), Vec3::max(a.max, max));
     }
 
     inline AABB merge(Vec3 const& a) {
-        return AABB(std::min(a, min), std::max(a, max));
+        return AABB(Vec3::min(a, min), Vec3::max(a, max));
     }
 };

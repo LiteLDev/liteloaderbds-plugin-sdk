@@ -35,15 +35,18 @@
 
 #include "Global.h"
 #include "LLAPI.h"
-#include "utils/FileHelper.h"
-#include "utils/PluginOwnData.h"
-#include <Nlohmann/json.hpp>
-#include <FMT/core.h>
-#include <FMT/os.h>
+#include "Utils/FileHelper.h"
+#include "Utils/PluginOwnData.h"
+#include "third-party/Nlohmann/json.hpp"
+#include "third-party/FMT/core.h"
+#include "third-party/FMT/os.h"
 #include <string>
-#include "utils/StringHelper.h"
+#include "Utils/StringHelper.h"
 
-
+/**
+ * @brief I18nBase API class.
+ *
+ */
 class I18nBase {
 
 public:
@@ -76,7 +79,7 @@ public:
     LIAPI virtual std::string get(const std::string& key, const std::string& localeName = "");
 
     /**
-     * @brief Get the type of the i18n object.
+     * @breif Get the type of the i18n object.
      *
      * @return  The type of the i18n object
      */
@@ -99,7 +102,12 @@ public:
     static const constexpr char* POD_KEY = "ll_plugin_i18n"; ///< PluginOwnData key
 };
 
-
+/**
+ * @brief Lightweight and simple I18nBase support.
+ *
+ * @note  Use this, all the language data will be saved in a single JSON file.
+ *        So it is not recommended to use it in large plugins(that have a lot of strings to translate)
+ */
 class SingleFileI18N : public I18nBase {
 
 public:
@@ -115,6 +123,7 @@ public:
      * @brief Construct a SingleFileI18N object.
      *
      * @param filePath         The path to the i18n file(json)
+     * @param pattern          The i18n file pattern(SingleFile I18nBase supports `Mode::Normal` and `Mode::Normal`
      * @param defaultLocaleName  The default language code(if empty, default the system default language)
      * @param defaultLangData  The default translation data
      */
@@ -154,6 +163,7 @@ public:
      * @brief Construct a heavy I18nBase object.
      *
      * @param dirPath          The path to the i18n dir
+     * @param pattern          The i18n file pattern
      * @param defaultLocaleName  The default language code
      * @param defaultLangData  The default translation data
      */
@@ -179,10 +189,10 @@ public:
 };
 
 #ifdef UNICODE
-#include <compact_enc_det/compact_enc_det.h>
+#include "third-party/compact_enc_det/compact_enc_det.h"
 #define UNICODE
 #else
-#include <compact_enc_det/compact_enc_det.h>
+#include "third-party/compact_enc_det/compact_enc_det.h"
 #endif
 
 namespace Translation {
@@ -309,7 +319,7 @@ inline I18nBase* load(const std::string& path,
 /**
  * Load i18n with custom i18n type.
  * 
- * @param args  The args to pass to the i18n type constructor
+ * @param args...  The args to pass to the i18n type constructor
  * @return I18nBase*   The pointer to the I18nBase object in PluginOwnData, null if failed
  */
 template <typename T, typename... Args>
@@ -328,8 +338,8 @@ inline I18nBase* load(Args&&... args) {
  * @return I18nBase*   The pointer to the I18nBase object in PluginOwnData, null if failed
  */
 inline I18nBase* loadFrom(const std::string& plugin) {
-    if (ll::hasPlugin(plugin)) {
-        auto p = ll::getPlugin(plugin);
+    if (LL::hasPlugin(plugin)) {
+        auto p = LL::getPlugin(plugin);
         if (p) {
             return loadFromImpl(GetCurrentModule(), p->handle);
         }

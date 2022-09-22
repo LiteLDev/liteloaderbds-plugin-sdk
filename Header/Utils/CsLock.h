@@ -1,6 +1,6 @@
 #pragma once
 #include "../Global.h"
-#include <minwinbase.h>
+#include <windows.h>
 
 // ===== Critical Section Locker =====
 // a simple lock which is much faster than std::mutex

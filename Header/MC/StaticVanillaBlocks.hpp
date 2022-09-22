@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Global.h"
-#include "Block.hpp"
+#include "MC/Block.hpp"
 
 namespace StaticVanillaBlocks {
 

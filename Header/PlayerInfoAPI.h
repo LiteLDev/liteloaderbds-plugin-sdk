@@ -7,11 +7,14 @@
  *
  */
 #pragma once
-#include "Global.h"
+#include <Global.h>
 #include <string>
 namespace PlayerInfo {
 
-
+/**
+ * @brief Player information structure.
+ * 
+ */
 struct Info {
     std::string name; ///< Real name(xbox)
     xuid_t xuid;      ///< Xuid(online-mode is required)

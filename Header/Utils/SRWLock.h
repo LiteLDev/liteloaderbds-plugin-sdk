@@ -1,6 +1,5 @@
 #pragma once
 #include "../Global.h"
-#include <synchapi.h>
 
 class SRWLock {
     bool inited = false;

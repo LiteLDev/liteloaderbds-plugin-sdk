@@ -10,9 +10,12 @@
 #include "Member.hpp"
 #include "Permission.hpp"
 
-namespace ll::perm {
+namespace PERM {
 
-
+    /**
+     * @brief Role instance.
+     * 
+     */
     class Role {
 
     protected:
@@ -173,7 +176,10 @@ namespace ll::perm {
         }
     };
 
-
+    /**
+     * @brief General role type.
+     * 
+     */
     class GeneralRole : public Role {
 
         using Base = Role;
@@ -203,7 +209,10 @@ namespace ll::perm {
         }
     };
 
-
+    /**
+     * @brief Everyone role type.
+     * 
+     */
     class EveryoneRole : public Role {
 
         using Base = Role;
@@ -233,7 +242,10 @@ namespace ll::perm {
         }
     };
 
-
+    /**
+     * @brief Admin role type.
+     * 
+     */
     class AdminRole : public Role {
 
         using Base = Role;
@@ -271,7 +283,10 @@ namespace ll::perm {
         }
     };
 
-
+    /**
+     * @brief Container to hold roles.
+     * 
+     */
     class Roles : public PermPtrContainer<Role> {
 
         using Base = PermPtrContainer<Role>;

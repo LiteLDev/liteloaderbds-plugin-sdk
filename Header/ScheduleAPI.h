@@ -1,38 +1,40 @@
-/*
-MIT License
-
-Copyright (c) 2022 LiteLDev
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-*/
-
 #pragma once
-
-#include <functional>
-
 #include "Global.h"
-#include "utils/WinHelper.h"
+#include <functional>
+#include "Utils/WinHelper.h"
 
-/**
- * @brief The scheduled task
- */
+///////////////////////////////////////////////////////
+// Schedule future callback plans
+//
+// [Usage]
+//
+//   Schedule::nextTick([](){
+//      Logger::Error("hello");
+//   }, 20);                        // Delay this callback to next game tick (20 ticks = 1 second)
+//
+//   Schedule::delay([](){
+//      Logger::Error("hello");
+//   }, 20);                        // Delay this callback for 20 ticks (20 ticks = 1 second)
+//
+//   Schedule::repeat([](){
+//      Logger::Error("hello");
+//   }, 40);                        // Schedule this callback once per 40 ticks (20 ticks = 1 second)
+//
+//   auto sche = Schedule::delayRepeat([](){
+//      Logger::Error("hello");
+//   }, 20, 60);                    // Delay first call to callback for 20 ticks
+//                                  // then schedule this callback once per 60 ticks (20 ticks = 1 second)
+//
+//   //......
+//   sche.cancel();                 // Cancel the schedule
+//
+/////////////////////////////////////////////////////
+
 class ScheduleTask {
-public:
-    /**
-     * @brief Cancel the scheduled task.
-     *
-     * @return True if canceled; otherwise false.
-     */
-    LIAPI bool cancel();
+    unsigned int taskId;
 
+public:
+    LIAPI bool cancel();
     LIAPI ScheduleTask() = default;
     LIAPI ScheduleTask(unsigned int taskId);
 
@@ -40,74 +42,12 @@ public:
         return taskId;
     }
 
-    /**
-     * @brief Check if the scheduled task is finished.
-     *
-     * @return True if finished; otherwise false.
-     */
     LIAPI bool isFinished() const;
-
-private:
-    unsigned int taskId;
 };
 
-/**
- * @brief The schedule system
- *
- * @par Example:
- * @code
- * // Do some thing after 20 ticks
- * auto task = Schedule::delay(
- *   [](){
- *     // Do some thing
- *   },
- *   20
- * );
- *
- * // Cancel the task
- * task.cancel();
- * @endcode
- * 
- * @note You should not assume a 0.05s gap between two ticks, for Minecraft does not guarantee 20 ticks per second.
- */
 namespace Schedule {
-
-/**
- * @brief Delay `tickDelay` ticks to execute the function.
- * 
- * @param task The function to execute
- * @param tickDelay The delayed ticks
- * @return The scheduled task
- */
 LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle = GetCurrentModule());
-
-/**
- * @brief Execute the function every `tickInterval` ticks.
- * 
- * @param task The function to execute
- * @param tickInterval The ticks in an interval
- * @param maxCount The maximum number of executions, -1 means the function will always execute
- * @return The scheduled task
- */
 LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
-
-/**
- * @brief After `tickDelay` ticks, execute the function every `tickInterval` ticks.
- * 
- * @param task The function to execute
- * @param tickDelay The delayed ticks
- * @param tickInterval The ticks in an interval
- * @param maxCount The maximum number of executions, -1 means the function will always execute
- * @return The scheduled task
- */
 LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
-
-/**
- * @brief Execute the function the next tick.
- * 
- * @param task The function to execute
- * @return The scheduled task
- */
 LIAPI ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle = GetCurrentModule());
-
 }; // namespace Schedule

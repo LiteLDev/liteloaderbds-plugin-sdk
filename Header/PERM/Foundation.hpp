@@ -7,11 +7,15 @@
  * 
  */
 #pragma once
-#include "../Global.h"
+#include <Global.h>
 
-namespace ll::perm {
+namespace PERM {
 
-
+    /**
+     * @brief Vector for Members.
+     * 
+     * @tparam T  Type of the elements in the vector.
+     */
     template <typename T>
     class PermVector : public std::vector<T> {
 
@@ -69,7 +73,11 @@ namespace ll::perm {
         PermVector<T>& operator=(PermVector<T>&& other) = default;
     };
 
-
+    /**
+     * @brief Vector for PermInfoList.
+     * 
+     * @tparam T  Type of the elements in the vector(object with field `name`).
+     */
     template <typename T>
     class PermContainer : public std::vector<T> {
 
@@ -194,7 +202,11 @@ namespace ll::perm {
         }
     };
 
-
+    /**
+     * @brief Vector for Roles.
+     * 
+     * @tparam T  Type of the elements in the vector(object with field `name`).
+     */
     template <typename T>
     class PermPtrContainer : public std::vector<std::shared_ptr<T>> {
 

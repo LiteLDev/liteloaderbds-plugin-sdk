@@ -5,7 +5,10 @@
 namespace DB
 {
 
-
+/**
+ * @brief Connection parameters
+ *
+ */
 class ConnParams : public std::unordered_map<std::string, Any>
 {
 
