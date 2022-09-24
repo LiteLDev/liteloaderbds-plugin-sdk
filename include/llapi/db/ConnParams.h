@@ -1,14 +1,11 @@
 #pragma once
-#include "Any.h"
+#include "llapi/db/Any.h"
 #include <unordered_map>
 
 namespace DB
 {
 
-/**
- * @brief Connection parameters
- *
- */
+
 class ConnParams : public std::unordered_map<std::string, Any>
 {
 

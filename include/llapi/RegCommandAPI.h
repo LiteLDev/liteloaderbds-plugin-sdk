@@ -1,14 +1,14 @@
 #pragma once
-#include "Global.h"
-#include "MC/Actor.hpp"
-#include "MC/Player.hpp"
-#include "MC/Command.hpp"
-#include "MC/CommandMessage.hpp"
-#include "MC/CommandOutput.hpp"
-#include "MC/CommandParameterData.hpp"
-#include "MC/CommandPosition.hpp"
-#include "MC/CommandSelector.hpp"
-#include "MC/CommandRegistry.hpp"
+#include "llapi/Global.h"
+#include "llapi/mc/Actor.hpp"
+#include "llapi/mc/Player.hpp"
+#include "llapi/mc/Command.hpp"
+#include "llapi/mc/CommandMessage.hpp"
+#include "llapi/mc/CommandOutput.hpp"
+#include "llapi/mc/CommandParameterData.hpp"
+#include "llapi/mc/CommandPosition.hpp"
+#include "llapi/mc/CommandSelector.hpp"
+#include "llapi/mc/CommandRegistry.hpp"
 #include <tuple>
 
 namespace RegisterCommandHelper {

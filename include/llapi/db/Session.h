@@ -1,8 +1,8 @@
 #pragma once
-#include "RowSet.h"
-#include "Stmt.h"
-#include "ConnParams.h"
-#include "Pointer.h"
+#include "llapi/db/RowSet.h"
+#include "llapi/db/Stmt.h"
+#include "llapi/db/ConnParams.h"
+#include "llapi/db/Pointer.h"
 
 class Logger;
 
@@ -44,7 +44,7 @@ public:
      * @brief Change current user and database.
      *
      * @param  user  Username
-     * @param  pass  Password
+     * @param  password  Password
      * @param  db    Database name
      * @return bool  Success or not
      * @throws std::runtime_error  If not implemented

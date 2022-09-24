@@ -1,5 +1,4 @@
 /**
- * @file   Members.hpp
  * @author LiteLDev (https://github.com/LiteLDev)
  * @brief  Member type for PermissionAPI
  * 
@@ -7,9 +6,9 @@
  * 
  */
 #pragma once
-#include "Foundation.hpp"
+#include "llapi/perm/Foundation.hpp"
 
-namespace PERM {
+namespace ll::perm {
 
     using Members = PermVector<xuid_t>;
 

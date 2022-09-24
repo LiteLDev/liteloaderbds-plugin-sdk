@@ -1,7 +1,7 @@
 #pragma once
-#include <../Global.h>
+#include "llapi/Global.h"
 #include <string>
-#include <third-party/ModUtils/ModUtils.h>
+#include <ModUtils/ModUtils.h>
 using namespace std;
 
 namespace TCHelper {

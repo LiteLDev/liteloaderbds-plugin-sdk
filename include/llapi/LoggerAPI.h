@@ -12,7 +12,8 @@
 //  if(pl)
 //      logger.setPlayer(pl);                   // Optional, also record log to a Player
 //  ......
-//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like this)
+//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like
+//  this)
 //
 //
 //  [Use Logger]
@@ -30,17 +31,17 @@
 #endif
 
 #include <filesystem>
-#include "third-party/FMT/chrono.h"
-#include "third-party/FMT/color.h"
-#include "third-party/FMT/core.h"
-#include "third-party/FMT/os.h"
-#include "third-party/FMT/printf.h"
-#include "Utils/CsLock.h"
-#include "Utils/WinHelper.h"
-#include "Utils/FileHelper.h"
-#include "Utils/PluginOwnData.h"
-#include "Utils/StringHelper.h"
-#include "I18nAPI.h"
+#include <FMT/chrono.h>
+#include <FMT/color.h>
+#include <FMT/core.h>
+#include <FMT/os.h>
+#include <FMT/printf.h>
+#include "llapi/utils/CsLock.h"
+#include "llapi/utils/WinHelper.h"
+#include "llapi/utils/FileHelper.h"
+#include "llapi/utils/PluginOwnData.h"
+#include "llapi/utils/StringHelper.h"
+#include "llapi/I18nAPI.h"
 #include <string>
 #include <sstream>
 #include <iostream>

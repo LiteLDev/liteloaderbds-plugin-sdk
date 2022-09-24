@@ -1,5 +1,5 @@
 #pragma once
-#include "Any.h"
+#include "llapi/db/Any.h"
 #include <unordered_map>
 #include <vector>
 
@@ -8,10 +8,7 @@ namespace DB
 
 class Row;
 
-/**
- * @brief The header of a row
- *
- */
+
 class RowHeader : private std::vector<std::string>
 {
 
@@ -127,10 +124,7 @@ public:
     RowHeader& operator=(const RowHeader& other) = default;
 };
 
-/**
- * @brief A row of data
- *
- */
+
 class Row : public std::vector<Any>
 {
 public:
@@ -209,7 +203,7 @@ public:
     /**
      * @brief Get the value of a column
      *
-     * @param  column  The name of the column
+     * @param  name  The name of the column
      * @return Any&    The value of the column
      * @note   It will create a new Any object if the column doesn't exist
      */
@@ -217,7 +211,7 @@ public:
     /**
      * @brief Get the value of a column
      *
-     * @param  column  The name of the column
+     * @param  name  The name of the column
      * @return Any&    The value of the column
      * @see    Row::at
      */

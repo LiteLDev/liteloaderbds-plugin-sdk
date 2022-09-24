@@ -1,5 +1,5 @@
 #pragma once
-#include "Row.h"
+#include "llapi/db/Row.h"
 #include <vector>
 
 #undef max
@@ -58,7 +58,7 @@ public:
     /**
      * @brief Convert to the table string.
      *
-     * @param  nullPattern When the value is null, what to replace with(default '<NULL>')
+     * @param  nullPattern When the value is null, what to replace with(default '\<NULL\>')
      * @return std::string The result string
      * @par  sample
      * @code
