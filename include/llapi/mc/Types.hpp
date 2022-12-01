@@ -446,7 +446,6 @@ public:
 template <typename T>
 class WeakRefT : public WeakStorageSharePtr<T> {};
 
-
 struct ISurfaceBuilder {
     struct BuildParameters;
 };
@@ -605,9 +604,8 @@ public:
     }
 };
 
-
 template <typename T>
-struct SharePtrRefTraits {};
+struct SharePtrRefTraits;
 
 template <typename T>
 class SubChunkStorage;
