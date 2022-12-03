@@ -32,7 +32,7 @@ public:
     }
     // Do not use _getServerPlayer directly
     inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
-        auto v3 = (ServerNetworkHandler*)((char*)this + 16);
+        auto v3 = (ServerNetworkHandler*)((char*)this - 16);
         return v3->_getServerPlayer(a0, (SubClientId)a1);
     }
 
