@@ -18,8 +18,7 @@
 class EntityContextBase {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
+// Add Member There
     class EntityRegistryBase* mRegistry;
     const class EntityId mEntity;
 

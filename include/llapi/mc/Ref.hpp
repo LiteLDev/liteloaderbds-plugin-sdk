@@ -1,6 +1,5 @@
 #pragma once
 #include <memory>
-#include <type_traits>
 
 template <typename T>
 class WeakStorageSharePtr {
@@ -12,10 +11,6 @@ public:
         NoValue = 0,
     };
     std::weak_ptr<T> mHandle;
-
-    T* get() const {
-        return mHandle.lock().get();
-    }
 };
 
 template <typename T>
@@ -28,20 +23,12 @@ public:
         NoValue = 0,
     };
     std::shared_ptr<T> mHandle;
-
-    T* get() const {
-        return mHandle.get();
-    }
 };
 
 template <typename T>
 class StackResultStorageSharePtr {
 public:
     std::shared_ptr<T> mHandle;
-
-    T* get() const {
-        return mHandle.get();
-    }
 };
 
 template <typename T>
@@ -69,246 +56,113 @@ public:
 template <typename T>
 class SharedCounter {
 public:
-    SharedCounter(T* p = nullptr) : ptr(p), share_count(1), weak_count(0) {}
-
-    void addShareCount() {
-        share_count++;
-    }
-
-    void addWeakCount() {
-        weak_count++;
-    }
-
-    int getShareCount() const {
-        return share_count.load();
-    }
-
-    int getWeakCount() const {
-        return weak_count.load();
-    }
-
-    T* get() const {
-        return ptr;
-    }
-
-    void reset() {
-        ptr = nullptr;
-        share_count = 0;
-        weak_count = 0;
-    }
-
-    void release() {
-        if (--share_count == 0) {
-            delete ptr;
-            ptr = nullptr;
-            releaseWeak();
-        }
-    }
-
-    void releaseWeak() {
-        if (--weak_count == 0) {
-            delete this;
-        }
-    }
-
-private:
     T* ptr;
     std::atomic<int> share_count;
     std::atomic<int> weak_count;
-};
 
-template <typename T>
-class SharedPtr;
+    SharedCounter(T* ptr) : ptr(ptr) {}
 
-template <typename T>
-class WeakPtr;
+    SharedCounter(T&) : ptr(&ptr) {}
 
-template <typename T>
-class SharedPtr {
-public:
-    SharedPtr() : counter(nullptr) {}
-
-    SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
-
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr(const SharedPtr<Y>& other) {
-        counter = other.counter;
-        if (counter) {
-            counter->addShareCount();
-        }
+    constexpr T* get() {
+        return ptr;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr(SharedPtr<Y>&& other) {
-        counter = other.counter;
-        other.counter = nullptr;
+    constexpr T const* get() const {
+        return ptr;
     }
-
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr(const WeakPtr<Y>& other) {
-        counter = other.counter;
-        if (other) {
-            counter->addShareCount();
-        }
-    }
-
-    ~SharedPtr() {
-        if (counter) {
-            counter->release();
-        }
-    }
-
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr<T>& operator=(const SharedPtr<Y>& other) {
-        if (counter != other.counter) {
-            counter = other.counter;
-            if (counter) {
-                counter->addShareCount();
-            }
-        }
-        return *this;
-    }
-
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr<T>& operator=(SharedPtr<Y>&& other) {
-        if (counter != other.counter) {
-            counter = other.counter;
-            other.counter = nullptr;
-        }
-        return *this;
-    }
-
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr<T>& operator=(const WeakPtr<Y>& other) {
-        counter = other.counter;
-        if (other) {
-            counter->addShareCount();
-        }
-    }
-
-    T* operator->() const {
-        return counter->get();
-    }
-
-    T* get() const {
-        return counter->get();
-    }
-
-    T& operator*() const {
-        return *(counter->get());
-    }
-
-    operator bool() const {
-        return counter != nullptr;
-    }
-
-    int use_count() const {
-        return counter ? counter->getShareCount() : 0;
-    }
-
-    void reset() {
-        counter->release();
-        counter = nullptr;
-    }
-
-private:
-    SharedCounter<T>* counter;
-
-    friend class WeakPtr<T>;
 };
 
 template <typename T>
 class WeakPtr {
 public:
-    WeakPtr() : counter(nullptr) {}
+    SharedCounter<T>* value;
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr(const SharedPtr<Y>& other) {
-        counter = other.counter;
-        if (counter) {
-            counter->addWeakCount();
-        }
-    }
+public:
+    WeakPtr(T* ptr) : value(new SharedCounter(ptr)) {}
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr(const WeakPtr<Y>& other) {
-        counter = other.counter;
-        if (counter) {
-            counter->addWeakCount();
-        }
-    }
-
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr(WeakPtr<Y>&& other) {
-        counter = other.counter;
-        other.counter = nullptr;
-    }
+    WeakPtr(T& ptr) : value(new SharedCounter(ptr)) {}
 
     ~WeakPtr() {
-        if (counter) {
-            counter->releaseWeak();
-        }
+        delete value;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr<T>& operator=(const SharedPtr<Y>& other) {
-        if (counter != other.counter) {
-            counter = other.counter;
-            if (counter) {
-                counter->addWeakCount();
-            }
-        }
-        return *this;
+    constexpr T* get() {
+        if (value)
+            return value->get();
+        return nullptr;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr<T>& operator=(const WeakPtr<Y>& other) {
-        if (counter != other.counter) {
-            counter = other.counter;
-            if (counter) {
-                counter->addWeakCount();
-            }
-        }
-        return *this;
+    constexpr T const* get() const {
+        if (value)
+            return value->get();
+        return nullptr;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    WeakPtr<T>& operator=(WeakPtr<Y>&& other) {
-        if (counter != other.counter) {
-            counter = other.counter;
-            other.counter = nullptr;
-        }
-        return *this;
+    constexpr T* operator->() {
+        return get();
     }
 
-    int use_count() const {
-        return counter ? counter->getShareCount() : 0;
+    constexpr T const* operator->() const {
+        return get();
     }
 
-    bool expired() const {
-        return use_count() == 0;
+    constexpr T& operator*() {
+        return *get();
     }
 
-    SharedPtr<T> lock() const {
-        return expired() ? SharedPtr<T>() : SharedPtr<T>(*this);
+    constexpr T const& operator*() const {
+        return *get();
     }
 
-    T* operator->() const {
-        return counter->get();
+    constexpr operator bool() const {
+        return get() != nullptr;
+    }
+};
+
+template <typename T>
+class SharedPtr {
+public:
+    SharedCounter<T>* value;
+
+public:
+    SharedPtr(T* ptr) : value(new SharedCounter(ptr)) {}
+
+    SharedPtr(T& ptr) : value(new SharedCounter(ptr)) {}
+
+    ~SharedPtr() {
+        delete value;
     }
 
-    T* get() const {
-        return counter->get();
+    constexpr T* get() {
+        if (value)
+            return value->get();
+        return nullptr;
     }
 
-    T& operator*() const {
-        return *(counter->get());
+    constexpr T const* get() const {
+        if (value)
+            return value->get();
+        return nullptr;
     }
 
-    operator bool() const {
-        return expired();
+    constexpr T* operator->() {
+        return get();
     }
 
-private:
-    SharedCounter<T>* counter;
+    constexpr T const* operator->() const {
+        return get();
+    }
+
+    constexpr T& operator*() {
+        return *get();
+    }
+
+    constexpr T const& operator*() const {
+        return *get();
+    }
+
+    constexpr operator bool() const {
+        return get() != nullptr;
+    }
 };
