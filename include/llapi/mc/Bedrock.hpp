@@ -57,13 +57,58 @@ struct CrashUploadStatus {
     CrashUploadStatus(CrashUploadStatus const&) = delete;
     CrashUploadStatus(CrashUploadStatus const&&) = delete;
 };
-template <typename T0>
+
+
+class EnableNonOwnerReferences {
+public:
+    struct ControlBlock {
+        EnableNonOwnerReferences* mPtr;
+    };
+
+    std::shared_ptr<ControlBlock> mControlBlock; // this+0x8
+
+    // prevent constructor by default
+    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&) = delete;
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1EnableNonOwnerReferences@Bedrock@@UEAA@XZ
+    virtual ~EnableNonOwnerReferences();
+
+    // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@XZ
+    MCAPI EnableNonOwnerReferences();
+
+    // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@AEBV01@@Z
+    MCAPI EnableNonOwnerReferences(class Bedrock::EnableNonOwnerReferences const&);
+
+    // NOLINTEND
+};
+
+template <typename T>
 class NonOwnerPointer {
 public:
-    std::shared_ptr<T0> mPtr;
+    std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> mControlBlock;
 
-    NonOwnerPointer(T0& a1) {
-        mPtr = std::make_shared<T0>(a1);
+    NonOwnerPointer(std::nullptr_t) noexcept {} // NOLINT
+
+    T* get() const {
+        return reinterpret_cast<T*>(mControlBlock.get());
+    }
+
+    explicit operator bool() const noexcept {
+        return get() != nullptr;
+    }
+
+    constexpr operator T*() const {
+        return get();
+    }
+
+    constexpr T* operator->() const {
+        return get();
+    }
+
+    constexpr decltype(auto) operator*() const {
+        return *get();
     }
 };
 
